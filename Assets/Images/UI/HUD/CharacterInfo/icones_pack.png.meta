@@ -1,0 +1,402 @@
+fileFormatVersion: 2
+guid: 100d8b0f2785cb141b25e63494370af3
+timeCreated: 1459714082
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: icones_pack_0
+    21300002: icones_pack_1
+    21300004: icones_pack_2
+    21300006: icones_pack_4
+    21300008: icones_pack_5
+    21300010: icones_pack_6
+    21300012: icones_pack_7
+    21300014: icones_pack_13
+    21300016: icones_pack_14
+    21300018: icones_pack_16
+    21300020: icones_pack_17
+    21300022: icones_pack_18
+    21300024: icones_pack_19
+    21300026: icones_pack_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: icones_pack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 129
+        width: 660
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 163, y: -58.308273}
+        - {x: 163, y: 13.691727}
+        - {x: 159, y: 20.691727}
+        - {x: 150, y: 88.69173}
+        - {x: 88, y: 92.69173}
+        - {x: 77, y: 185.69173}
+        - {x: -23, y: 185.69173}
+        - {x: -27, y: 175.69173}
+        - {x: -38, y: 117.69173}
+        - {x: -108, y: 152.69173}
+        - {x: -114, y: 150.69173}
+        - {x: -114, y: 143.69173}
+        - {x: -172, y: 68.69173}
+        - {x: -174, y: 63.691727}
+        - {x: -147, y: 41.691727}
+        - {x: -218, y: 21.691727}
+        - {x: -218, y: -52.308273}
+        - {x: -148, y: -86.30827}
+        - {x: -155, y: -170.30827}
+        - {x: -126, y: -185.30827}
+        - {x: -36, y: -185.30827}
+        - {x: -6, y: -146.30827}
+        - {x: 46, y: -183.30827}
+        - {x: 52, y: -181.30827}
+        - {x: 131, y: -118.30827}
+      - - {x: 162, y: 18.691727}
+        - {x: 162, y: -21.308273}
+        - {x: 164, y: -52.308273}
+        - {x: 189, y: -52.308273}
+        - {x: 190, y: -3.3082733}
+        - {x: 190, y: 17.691727}
+        - {x: 189, y: 18.691727}
+      - - {x: 193, y: 17.691727}
+        - {x: 193, y: -52.308273}
+        - {x: 218, y: -52.308273}
+        - {x: 218, y: 18.691727}
+        - {x: 195, y: 18.691727}
+    - name: icones_pack_1
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 478
+        width: 314
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 70.60275, y: 101.17166}
+        - {x: -24.397247, y: 101.17166}
+        - {x: -55.397247, y: 95.17166}
+        - {x: -103.39725, y: 55.17166}
+        - {x: -103.39725, y: -39.82834}
+        - {x: -63.397247, y: -68.82834}
+        - {x: -26.397247, y: -70.82834}
+        - {x: -4.3972473, y: -99.82834}
+        - {x: 69.60275, y: -99.82834}
+        - {x: 104.60275, y: -55.82834}
+        - {x: 104.60275, y: 25.171661}
+        - {x: 93.60275, y: 72.17166}
+    - name: icones_pack_2
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 465
+        width: 192
+        height: 319
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63.104004, y: 105.58646}
+        - {x: -63.104004, y: 31.586456}
+        - {x: -50.104004, y: 24.586456}
+        - {x: -24.104004, y: -105.41354}
+        - {x: 15.895996, y: -105.41354}
+        - {x: 64.895996, y: 7.5864563}
+        - {x: 64.895996, y: 105.58646}
+    - name: icones_pack_4
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 469
+        width: 318
+        height: 318
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 105.85712, y: 58.228058}
+        - {x: 105.85712, y: 93.22806}
+        - {x: 77.85712, y: 106.22806}
+        - {x: -80.14288, y: 106.22806}
+        - {x: -105.14288, y: 71.22806}
+        - {x: -105.14288, y: -100.77194}
+        - {x: -101.14288, y: -104.77194}
+        - {x: 89.85712, y: -104.77194}
+        - {x: 105.85712, y: -98.77194}
+        - {x: 105.85712, y: -49.771942}
+        - {x: 69.85712, y: 4.228058}
+    - name: icones_pack_5
+      rect:
+        serializedVersion: 2
+        x: 2001
+        y: 500
+        width: 295
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 97.4624, y: 55.2005}
+        - {x: 43.462402, y: 98.2005}
+        - {x: -33.537598, y: 98.2005}
+        - {x: -62.537598, y: 86.2005}
+        - {x: -97.5376, y: 39.2005}
+        - {x: -97.5376, y: -36.7995}
+        - {x: -70.5376, y: -85.7995}
+        - {x: -30.537598, y: -97.7995}
+        - {x: 37.462402, y: -97.7995}
+        - {x: 67.4624, y: -84.7995}
+        - {x: 98.4624, y: -38.7995}
+        - {x: 98.4624, y: 50.2005}
+    - name: icones_pack_6
+      rect:
+        serializedVersion: 2
+        x: 2396
+        y: 495
+        width: 297
+        height: 297
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 48.8208, y: 99.8985}
+        - {x: -39.1792, y: 99.8985}
+        - {x: -87.1792, y: 64.8985}
+        - {x: -98.1792, y: 36.8985}
+        - {x: -98.1792, y: -30.101501}
+        - {x: -86.1792, y: -67.1015}
+        - {x: -43.1792, y: -98.1015}
+        - {x: 44.8208, y: -98.1015}
+        - {x: 78.8208, y: -73.1015}
+        - {x: 98.8208, y: -33.1015}
+        - {x: 98.8208, y: 47.8985}
+    - name: icones_pack_7
+      rect:
+        serializedVersion: 2
+        x: 2762
+        y: 503
+        width: 297
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39.527466, y: 97.6817}
+        - {x: -32.472534, y: 97.6817}
+        - {x: -52.472534, y: 93.6817}
+        - {x: -79.472534, y: 64.6817}
+        - {x: -98.472534, y: 38.6817}
+        - {x: -98.472534, y: -33.3183}
+        - {x: -76.472534, y: -75.3183}
+        - {x: -41.472534, y: -97.3183}
+        - {x: 36.527466, y: -97.3183}
+        - {x: 66.527466, y: -90.3183}
+        - {x: 98.527466, y: -52.3183}
+        - {x: 98.527466, y: 51.6817}
+        - {x: 62.527466, y: 85.6817}
+    - name: icones_pack_13
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 17
+        width: 192
+        height: 319
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63.122803, y: 105.726814}
+        - {x: -63.122803, y: 33.726814}
+        - {x: -56.122803, y: 27.726814}
+        - {x: -24.122803, y: -105.273186}
+        - {x: 19.877197, y: -105.273186}
+        - {x: 64.8772, y: -6.2731857}
+        - {x: 64.8772, y: 105.726814}
+    - name: icones_pack_14
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 24
+        width: 314
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72.14035, y: 89.349625}
+        - {x: -39.85965, y: 89.349625}
+        - {x: -99.85965, y: 59.349625}
+        - {x: -103.85965, y: 38.349625}
+        - {x: -103.85965, y: -44.650375}
+        - {x: -64.85965, y: -69.650375}
+        - {x: -17.85965, y: -73.650375}
+        - {x: 0.14035034, y: -99.650375}
+        - {x: 73.14035, y: -99.650375}
+        - {x: 88.14035, y: -96.650375}
+        - {x: 105.14035, y: -63.650375}
+        - {x: 105.14035, y: 2.3496246}
+        - {x: 80.14035, y: 69.349625}
+    - name: icones_pack_16
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 0
+        width: 318
+        height: 318
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 49.196716, y: 105.5}
+        - {x: -4.8032837, y: 87.5}
+        - {x: -50.803284, y: 105.5}
+        - {x: -101.80328, y: 105.5}
+        - {x: -103.80328, y: 92.5}
+        - {x: -103.80328, y: -105.5}
+        - {x: 99.19672, y: -105.5}
+        - {x: 106.19672, y: -81.5}
+        - {x: 106.19672, y: 88.5}
+        - {x: 90.19672, y: 105.5}
+    - name: icones_pack_17
+      rect:
+        serializedVersion: 2
+        x: 2006
+        y: 21
+        width: 295
+        height: 297
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 97.764404, y: 68.86842}
+        - {x: 41.764404, y: 99.86842}
+        - {x: -38.235596, y: 99.86842}
+        - {x: -64.235596, y: 88.86842}
+        - {x: -85.235596, y: 57.868423}
+        - {x: -97.235596, y: 26.868423}
+        - {x: -97.235596, y: -37.131577}
+        - {x: -96.235596, y: -41.131577}
+        - {x: -62.235596, y: -85.13158}
+        - {x: -27.235596, y: -98.13158}
+        - {x: 38.764404, y: -98.13158}
+        - {x: 92.764404, y: -69.13158}
+        - {x: 98.764404, y: -38.131577}
+        - {x: 98.764404, y: 64.86842}
+    - name: icones_pack_18
+      rect:
+        serializedVersion: 2
+        x: 2402
+        y: 18
+        width: 297
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98.7832, y: 32.887215}
+        - {x: 86.7832, y: 68.887215}
+        - {x: 37.783203, y: 98.887215}
+        - {x: -52.216797, y: 98.887215}
+        - {x: -98.2168, y: 44.887215}
+        - {x: -98.2168, y: -37.112785}
+        - {x: -75.2168, y: -91.112785}
+        - {x: -38.216797, y: -97.112785}
+        - {x: 43.783203, y: -97.112785}
+        - {x: 61.783203, y: -86.112785}
+        - {x: 97.7832, y: -40.112785}
+        - {x: 98.7832, y: -33.112785}
+    - name: icones_pack_19
+      rect:
+        serializedVersion: 2
+        x: 2803
+        y: 0
+        width: 297
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 96.604004, y: 53.5}
+        - {x: 55.604004, y: 97.5}
+        - {x: -50.395996, y: 97.5}
+        - {x: -85.395996, y: 56.5}
+        - {x: -98.395996, y: 31.5}
+        - {x: -98.395996, y: -30.5}
+        - {x: -97.395996, y: -41.5}
+        - {x: -80.395996, y: -68.5}
+        - {x: -39.395996, y: -97.5}
+        - {x: 36.604004, y: -97.5}
+        - {x: 70.604004, y: -86.5}
+        - {x: 98.604004, y: -38.5}
+        - {x: 98.604004, y: 43.5}
+    - name: icones_pack_3
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 135
+        width: 108
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

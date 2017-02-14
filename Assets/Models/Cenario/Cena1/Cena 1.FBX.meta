@@ -1,0 +1,434 @@
+fileFormatVersion: 2
+guid: 080a87ccc5065cc429b1537360368465
+timeCreated: 1457604233
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 'arma '
+    100002: armari gav01
+    100004: armari gav02
+    100006: armari gav03
+    100008: armario
+    100010: bau
+    100012: bau tampa
+    100014: cadeira
+    100016: chave
+    100018: chicara
+    100020: Cylinder001
+    100022: dor
+    100024: dor002
+    100026: dor003
+    100028: dor004
+    100030: dor005
+    100032: dor006
+    100034: dor01
+    100036: faca
+    100038: fechadura
+    100040: fechadura001
+    100042: fechadura002
+    100044: fechadura003
+    100046: fechadura004
+    100048: fechadura005
+    100050: fechadura006
+    100052: fechadura007
+    100054: fechadura008
+    100056: fechadura009
+    100058: Foliage002
+    100060: Foliage003
+    100062: Foliage004
+    100064: Foliage005
+    100066: Foliage006
+    100068: Foliage007
+    100070: garrafa
+    100072: janela
+    100074: janela mestre
+    100076: janela2
+    100078: macaneta
+    100080: macaneta001
+    100082: macaneta002
+    100084: macaneta003
+    100086: macaneta004
+    100088: macaneta005
+    100090: macaneta006
+    100092: macaneta007
+    100094: machado
+    100096: mesa
+    100098: mesinha
+    100100: mesinha001
+    100102: parede
+    100104: parede001
+    100106: pc
+    100108: pilar 003
+    100110: pilar 004
+    100112: pilar 01
+    100114: pilar 02
+    100116: Plane001
+    100118: quadro
+    100120: quadro2
+    100122: //RootNode
+    100124: sofa
+    100126: sofa001
+    100128: teclado
+    100130: tv
+    100132: vaso 002
+    100134: vaso 003
+    100136: vaso 01
+    100138: vaso001
+    100140: vaso002
+    100142: vaso003
+    100144: vassoura
+    400000: 'arma '
+    400002: armari gav01
+    400004: armari gav02
+    400006: armari gav03
+    400008: armario
+    400010: bau
+    400012: bau tampa
+    400014: cadeira
+    400016: chave
+    400018: chicara
+    400020: Cylinder001
+    400022: dor
+    400024: dor002
+    400026: dor003
+    400028: dor004
+    400030: dor005
+    400032: dor006
+    400034: dor01
+    400036: faca
+    400038: fechadura
+    400040: fechadura001
+    400042: fechadura002
+    400044: fechadura003
+    400046: fechadura004
+    400048: fechadura005
+    400050: fechadura006
+    400052: fechadura007
+    400054: fechadura008
+    400056: fechadura009
+    400058: Foliage002
+    400060: Foliage003
+    400062: Foliage004
+    400064: Foliage005
+    400066: Foliage006
+    400068: Foliage007
+    400070: garrafa
+    400072: janela
+    400074: janela mestre
+    400076: janela2
+    400078: macaneta
+    400080: macaneta001
+    400082: macaneta002
+    400084: macaneta003
+    400086: macaneta004
+    400088: macaneta005
+    400090: macaneta006
+    400092: macaneta007
+    400094: machado
+    400096: mesa
+    400098: mesinha
+    400100: mesinha001
+    400102: parede
+    400104: parede001
+    400106: pc
+    400108: pilar 003
+    400110: pilar 004
+    400112: pilar 01
+    400114: pilar 02
+    400116: Plane001
+    400118: quadro
+    400120: quadro2
+    400122: //RootNode
+    400124: sofa
+    400126: sofa001
+    400128: teclado
+    400130: tv
+    400132: vaso 002
+    400134: vaso 003
+    400136: vaso 01
+    400138: vaso001
+    400140: vaso002
+    400142: vaso003
+    400144: vassoura
+    2300000: 'arma '
+    2300002: armari gav01
+    2300004: armari gav02
+    2300006: armari gav03
+    2300008: armario
+    2300010: bau
+    2300012: bau tampa
+    2300014: cadeira
+    2300016: chave
+    2300018: chicara
+    2300020: Cylinder001
+    2300022: dor
+    2300024: dor002
+    2300026: dor003
+    2300028: dor004
+    2300030: dor005
+    2300032: dor006
+    2300034: dor01
+    2300036: faca
+    2300038: fechadura
+    2300040: fechadura001
+    2300042: fechadura002
+    2300044: fechadura003
+    2300046: fechadura004
+    2300048: fechadura005
+    2300050: fechadura006
+    2300052: fechadura007
+    2300054: fechadura008
+    2300056: fechadura009
+    2300058: Foliage002
+    2300060: Foliage003
+    2300062: Foliage004
+    2300064: Foliage005
+    2300066: Foliage006
+    2300068: Foliage007
+    2300070: garrafa
+    2300072: janela
+    2300074: janela mestre
+    2300076: janela2
+    2300078: macaneta
+    2300080: macaneta001
+    2300082: macaneta002
+    2300084: macaneta003
+    2300086: macaneta004
+    2300088: macaneta005
+    2300090: macaneta006
+    2300092: macaneta007
+    2300094: machado
+    2300096: mesa
+    2300098: mesinha
+    2300100: mesinha001
+    2300102: parede
+    2300104: parede001
+    2300106: pc
+    2300108: pilar 003
+    2300110: pilar 004
+    2300112: pilar 01
+    2300114: pilar 02
+    2300116: Plane001
+    2300118: quadro
+    2300120: quadro2
+    2300122: sofa
+    2300124: sofa001
+    2300126: teclado
+    2300128: tv
+    2300130: vaso 002
+    2300132: vaso 003
+    2300134: vaso 01
+    2300136: vaso001
+    2300138: vaso002
+    2300140: vaso003
+    2300142: vassoura
+    3300000: 'arma '
+    3300002: armari gav01
+    3300004: armari gav02
+    3300006: armari gav03
+    3300008: armario
+    3300010: bau
+    3300012: bau tampa
+    3300014: cadeira
+    3300016: chave
+    3300018: chicara
+    3300020: Cylinder001
+    3300022: dor
+    3300024: dor002
+    3300026: dor003
+    3300028: dor004
+    3300030: dor005
+    3300032: dor006
+    3300034: dor01
+    3300036: faca
+    3300038: fechadura
+    3300040: fechadura001
+    3300042: fechadura002
+    3300044: fechadura003
+    3300046: fechadura004
+    3300048: fechadura005
+    3300050: fechadura006
+    3300052: fechadura007
+    3300054: fechadura008
+    3300056: fechadura009
+    3300058: Foliage002
+    3300060: Foliage003
+    3300062: Foliage004
+    3300064: Foliage005
+    3300066: Foliage006
+    3300068: Foliage007
+    3300070: garrafa
+    3300072: janela
+    3300074: janela mestre
+    3300076: janela2
+    3300078: macaneta
+    3300080: macaneta001
+    3300082: macaneta002
+    3300084: macaneta003
+    3300086: macaneta004
+    3300088: macaneta005
+    3300090: macaneta006
+    3300092: macaneta007
+    3300094: machado
+    3300096: mesa
+    3300098: mesinha
+    3300100: mesinha001
+    3300102: parede
+    3300104: parede001
+    3300106: pc
+    3300108: pilar 003
+    3300110: pilar 004
+    3300112: pilar 01
+    3300114: pilar 02
+    3300116: Plane001
+    3300118: quadro
+    3300120: quadro2
+    3300122: sofa
+    3300124: sofa001
+    3300126: teclado
+    3300128: tv
+    3300130: vaso 002
+    3300132: vaso 003
+    3300134: vaso 01
+    3300136: vaso001
+    3300138: vaso002
+    3300140: vaso003
+    3300142: vassoura
+    4300000: pilar 01
+    4300002: pilar 02
+    4300004: pilar 003
+    4300006: pilar 004
+    4300008: parede
+    4300010: parede001
+    4300012: chicara
+    4300014: tv
+    4300016: quadro
+    4300018: quadro2
+    4300020: mesa
+    4300022: cadeira
+    4300024: sofa
+    4300026: sofa001
+    4300028: mesinha
+    4300030: mesinha001
+    4300032: vaso001
+    4300034: Foliage002
+    4300036: vaso002
+    4300038: Foliage003
+    4300040: vaso003
+    4300042: Foliage004
+    4300044: vassoura
+    4300046: vaso 01
+    4300048: Foliage005
+    4300050: vaso 002
+    4300052: Foliage006
+    4300054: teclado
+    4300056: pc
+    4300058: Plane001
+    4300060: faca
+    4300062: machado
+    4300064: chave
+    4300066: 'arma '
+    4300068: garrafa
+    4300070: armario
+    4300072: armari gav03
+    4300074: armari gav02
+    4300076: armari gav01
+    4300078: dor
+    4300080: dor01
+    4300082: macaneta
+    4300084: fechadura
+    4300086: macaneta001
+    4300088: fechadura001
+    4300090: janela mestre
+    4300092: janela2
+    4300094: janela
+    4300096: Cylinder001
+    4300098: dor003
+    4300100: dor002
+    4300102: fechadura002
+    4300104: macaneta002
+    4300106: macaneta003
+    4300108: fechadura003
+    4300110: dor005
+    4300112: dor004
+    4300114: fechadura004
+    4300116: fechadura005
+    4300118: macaneta004
+    4300120: macaneta005
+    4300122: dor006
+    4300124: fechadura006
+    4300126: fechadura007
+    4300128: macaneta006
+    4300130: macaneta007
+    4300132: bau
+    4300134: fechadura008
+    4300136: bau tampa
+    4300138: fechadura009
+    4300140: vaso 003
+    4300142: Foliage007
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
