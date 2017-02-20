@@ -6,11 +6,16 @@ public class TestScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		anotherTestMethod();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    void anotherTestMethod()
+    {
+
+    }
 }
