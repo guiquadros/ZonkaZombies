@@ -10,6 +10,7 @@ public class TestScript : MonoBehaviour {
 		anotherTestMethod();
 
 	    this.CallingAnotherTestMethod();
+	    this.OneMoreTest();
 	}
 
     private void CallingAnotherTestMethod()
@@ -30,5 +31,10 @@ public class TestScript : MonoBehaviour {
     void anotherTestMethod()
     {
 
+    }
+
+    private void OneMoreTest()
+    {
+        
     }
 }
