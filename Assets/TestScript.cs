@@ -9,9 +9,11 @@ public class TestScript : MonoBehaviour {
 		
 		this.testMethod();
 		anotherTestMethod();
+
+	    this.OneMoreTest();
 	}
-	
-	// Update is called once per frame
+
+    // Update is called once per frame
 	void Update () {
 		
 	}
@@ -24,5 +26,10 @@ public class TestScript : MonoBehaviour {
     void anotherTestMethod()
     {
 
+    }
+
+    private void OneMoreTest()
+    {
+        
     }
 }
