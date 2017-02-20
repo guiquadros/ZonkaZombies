@@ -6,7 +6,9 @@ public class TestScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 		this.testMethod();
+		anotherTestMethod();
 	}
 	
 	// Update is called once per frame
@@ -17,5 +19,10 @@ public class TestScript : MonoBehaviour {
     void testMethod()
     {
         
+    }
+
+    void anotherTestMethod()
+    {
+
     }
 }
