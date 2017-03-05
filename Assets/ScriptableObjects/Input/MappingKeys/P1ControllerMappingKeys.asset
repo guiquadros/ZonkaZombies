@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d8a7d7c5904964ab8de62f5f70fd81, type: 3}
+  m_Name: P1ControllerMappingKeys
+  m_EditorClassIdentifier: 
+  LeftHorizontalStick: LeftHStick_c1
+  LeftVerticalStick: LeftVStick_c1
+  rightStickHorizontal: RightHStick_c1
+  RightStickVertical: RightVStick_c1
+  dPadHorizontal: dPadH_c1
+  dPadVertical: dPadV_c1
+  RightTrigger: RightTrigger_c1
+  LeftTrigger: LeftTrigger_c1
+  LeftStickButton: LeftStickButton_c1
+  RightStickButton: RightStickButton_c1
+  A: btnA_c1
+  B: btnB_c1
+  X: btnX_c1
+  Y: btnY_c1
+  Back: back_c1
+  Start: start_c1
+  LeftBumper: bumperL_c1
+  RightBumper: bumperR_c1
