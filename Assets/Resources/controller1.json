@@ -1,0 +1,20 @@
+{
+    "LeftStickHorizontal": "LeftHStick_c1",
+    "LeftStickVertical": "LeftVStick_c1",
+    "RightStickHorizontal": "RightHStick_c1",
+    "RightStickVertical": "RightVStick_c1",
+    "DPadHorizontal": "dPadH_c1",
+    "DPadVertical": "dPadV_c1",
+    "RightTrigger": "RightTrigger_c1",
+    "LeftTrigger": "LeftTrigger_c1",
+    "LeftStickButton": "LeftStickButton_c1",
+    "RightStickButton": "RightStickButton_c1",
+    "A": "btnA_c1",
+    "B": "btnB_c1",
+    "X": "btnX_c1",
+    "Y": "btnY_c1",
+    "Back": "back_c1",
+    "Start": "start_c1",
+    "LeftBumper": "bumperL_c1",
+    "RightBumper": "bumperR_c1"
+}

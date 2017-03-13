@@ -1,208 +1,105 @@
-﻿using System;
-using Assets.Scripts.TinyCrew.ScriptableObjects.Input;
-using UnityEngine;
-using UnityInput = UnityEngine.Input;
-// ReSharper disable InconsistentNaming
+﻿using UnityEngine;
 
-namespace Assets.Scripts.TinyCrew.Input
+namespace TinyCrew.Input
 {
     /// <summary>
     /// This class is responsible for providing a simplified reading of input for generic keys in high level, accessing those as if those were a Xbox controller.
     /// </summary>
-    public class InputReader
+    public abstract class InputReader
     {
-        private const float TRIGGERS_TOLERANCE = .05f;
+        internal readonly MappingKeys MappingKeys;
 
-        private readonly MappingKeys _mappingKeys;
-        
-        public InputReader(MappingKeys mapping)
+        public bool IsAController { get; protected set; }
+
+        internal InputReader(MappingKeys mapping)
         {
-            _mappingKeys = mapping;
+            MappingKeys = mapping;
         }
 
         #region BUTTONS
 
-        public bool A()
-        {
-            return UnityInput.GetButton(_mappingKeys.A);
-        }
-        public bool ADown()
-        {
-            return UnityInput.GetButtonDown(_mappingKeys.A);
-        }
-        public bool AUp()
-        {
-            return UnityInput.GetButtonUp(_mappingKeys.A);
-        }
+        public abstract bool A();
+        public abstract bool ADown();
+        public abstract bool AUp();
 
-        public bool B()
-        {
-            return UnityInput.GetButton(_mappingKeys.B);
-        }
-        public bool BDown()
-        {
-            return UnityInput.GetButtonDown(_mappingKeys.B);
-        }
-        public bool BUp()
-        {
-            return UnityInput.GetButtonUp(_mappingKeys.B);
-        }
+        public abstract bool B();
+        public abstract bool BDown();
+        public abstract bool BUp();
 
-        public bool X()
-        {
-            return UnityInput.GetButton(_mappingKeys.X);
-        }
-        public bool XDown()
-        {
-            return UnityInput.GetButtonDown(_mappingKeys.X);
-        }
-        public bool XUp()
-        {
-            return UnityInput.GetButtonUp(_mappingKeys.X);
-        }
+        public abstract bool X();
+        public abstract bool XDown();
+        public abstract bool XUp();
 
-        public bool Y()
-        {
-            return UnityInput.GetButton(_mappingKeys.Y);
-        }
-        public bool YDown()
-        {
-            return UnityInput.GetButtonDown(_mappingKeys.Y);
-        }
-        public bool YUp()
-        {
-            return UnityInput.GetButtonUp(_mappingKeys.Y);
-        }
+        public abstract bool Y();
+        public abstract bool YDown();
+        public abstract bool YUp();
 
-        public bool Back()
-        {
-            return UnityInput.GetButton(_mappingKeys.Back);
-        }
-        public bool Start()
-        {
-            return UnityInput.GetButton(_mappingKeys.Start);
-        }
+        public abstract bool Back();
+        public abstract bool Start();
 
-        public bool LeftStickButton()
-        {
-            return UnityInput.GetButton(_mappingKeys.LeftStickButton);
-        }
-        public bool LeftStickButtonDown()
-        {
-            return UnityInput.GetButtonDown(_mappingKeys.LeftStickButton);
-        }
-        public bool LeftStickButtonUp()
-        {
-            return UnityInput.GetButtonUp(_mappingKeys.LeftStickButton);
-        }
+        public abstract bool LeftStickButton();
+        public abstract bool LeftStickButtonDown();
+        public abstract bool LeftStickButtonUp();
 
-        public bool RightStickButton()
-        {
-            return UnityInput.GetButton(_mappingKeys.RightStickButton);
-        }
-        public bool RightStickButtonDown()
-        {
-            return UnityInput.GetButtonDown(_mappingKeys.RightStickButton);
-        }
-        public bool RightStickButtonUp()
-        {
-            return UnityInput.GetButtonUp(_mappingKeys.RightStickButton);
-        }
+        public abstract bool RightStickButton();
+        public abstract bool RightStickButtonDown();
+        public abstract bool RightStickButtonUp();
 
         #endregion
 
         #region BUMPERS
 
-        public bool LeftBumper()
-        {
-            return UnityInput.GetButton(_mappingKeys.LeftBumper);
-        }
-        public bool LeftBumperDown()
-        {
-            return UnityInput.GetButtonDown(_mappingKeys.LeftBumper);
-        }
-        public bool LeftBumperUp()
-        {
-            return UnityInput.GetButtonUp(_mappingKeys.LeftBumper);
-        }
+        public abstract bool LeftBumper();
+        public abstract bool LeftBumperDown();
+        public abstract bool LeftBumperUp();
 
-        public bool RightBumper()
-        {
-            return UnityInput.GetButton(_mappingKeys.RightBumper);
-        }
-        public bool RightBumperDown()
-        {
-            return UnityInput.GetButtonDown(_mappingKeys.RightBumper);
-        }
-        public bool RightBumperUp()
-        {
-            return UnityInput.GetButtonUp(_mappingKeys.RightBumper);
-        }
+        public abstract bool RightBumper();
+        public abstract bool RightBumperDown();
+        public abstract bool RightBumperUp();
 
         #endregion
 
         #region ANALOG STICKS
 
-        public Vector2 LeftAnalogStick()
-        {
-            return new Vector2(LeftAnalogStickHorizontal(), LeftAnalogStickVertical());
-        }
-        /// <summary>
-        /// X value between -1 and 1.
-        /// </summary>
-        public float LeftAnalogStickHorizontal()
-        {
-            return UnityInput.GetAxisRaw(_mappingKeys.LeftHorizontalStick);
-        }
-        /// <summary>
-        /// Y value between -1 and 1.
-        /// </summary>
-        public float LeftAnalogStickVertical()
-        {
-            return UnityInput.GetAxisRaw(_mappingKeys.LeftVerticalStick);
-        }
+        public abstract Vector2 LeftAnalogStick();
 
-        public Vector2 RightAnalogStick()
-        {
-            return new Vector2(RightAnalogStickHorizontal(), RightAnalogStickVertical());
-        }
         /// <summary>
         /// X value between -1 and 1.
         /// </summary>
-        public float RightAnalogStickHorizontal()
-        {
-            return UnityInput.GetAxisRaw(_mappingKeys.rightStickHorizontal);
-        }
+        public abstract float LeftAnalogStickHorizontal();
+
         /// <summary>
         /// Y value between -1 and 1.
         /// </summary>
-        public float RightAnalogStickVertical()
-        {
-            return UnityInput.GetAxisRaw(_mappingKeys.RightStickVertical);
-        }
+        public abstract float LeftAnalogStickVertical();
+
+        public abstract Vector2 RightAnalogStick();
+
+        /// <summary>
+        /// X value between -1 and 1.
+        /// </summary>
+        public abstract float RightAnalogStickHorizontal();
+
+        /// <summary>
+        /// Y value between -1 and 1.
+        /// </summary>
+        public abstract float RightAnalogStickVertical();
 
         #endregion
 
         #region DIGITAL PAD (D-PAD)
 
-        public Vector2 DigitalPad()
-        {
-            return new Vector2(DigitalPadHorizontal(), DigitalPadVertical());
-        }
+        public abstract Vector2 DigitalPad();
+
         /// <summary>
         /// X value between -1 and 1.
         /// </summary>
-        public float DigitalPadHorizontal()
-        {
-            return UnityInput.GetAxisRaw(_mappingKeys.dPadHorizontal);
-        }
+        public abstract float DigitalPadHorizontal();
+
         /// <summary>
         /// Y value between -1 and 1.
         /// </summary>
-        public float DigitalPadVertical()
-        {
-            return UnityInput.GetAxisRaw(_mappingKeys.dPadVertical);
-        }
+        public abstract float DigitalPadVertical();
 
         #endregion
 
@@ -211,46 +108,32 @@ namespace Assets.Scripts.TinyCrew.Input
         /// <summary>
         /// Value between 0 (released) and 1 (pressed).
         /// </summary>
-        public float LeftTrigger()
-        {
-            return UnityInput.GetAxisRaw(_mappingKeys.LeftTrigger);
-        }
+        public abstract float LeftTrigger();
+
         /// <summary>
         /// Returns TRUE if the trigger is being fully pressed.
         /// </summary>
-        public bool LeftTriggerDown()
-        {
-            return Math.Abs(LeftTrigger() - 1.0f) < TRIGGERS_TOLERANCE;
-        }
+        public abstract bool LeftTriggerDown();
+
         /// <summary>
         /// Returns TRUE if the trigger is being fully released.
         /// </summary>
-        public bool LeftTriggerUp()
-        {
-            return Math.Abs(LeftTrigger()) < TRIGGERS_TOLERANCE;
-        }
+        public abstract bool LeftTriggerUp();
 
         /// <summary>
         /// Value between 0 (released) and 1 (pressed).
         /// </summary>
-        public float RightTrigger()
-        {
-            return UnityInput.GetAxisRaw(_mappingKeys.RightTrigger);
-        }
+        public abstract float RightTrigger();
+
         /// <summary>
         /// Returns TRUE if the trigger is being fully pressed.
         /// </summary>
-        public bool RightTriggerDown()
-        {
-            return Math.Abs(RightTrigger() - 1.0f) < TRIGGERS_TOLERANCE;
-        }
+        public abstract bool RightTriggerDown();
+
         /// <summary>
         /// Returns TRUE if the trigger is being fully released.
         /// </summary>
-        public bool RightTriggerUp()
-        {
-            return Math.Abs(RightTrigger()) < TRIGGERS_TOLERANCE;
-        }
+        public abstract bool RightTriggerUp();
 
         #endregion
     }

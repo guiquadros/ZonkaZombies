@@ -1,37 +1,31 @@
 ﻿using System.Text;
-using Assets.Scripts.TinyCrew.ScriptableObjects.Input;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scripts.TinyCrew.Input.Test
+namespace TinyCrew.Input.Test
 {
     public class InputDebugger : MonoBehaviour
     {
         [SerializeField]
-        private MappingKeys mappingKeys;
+        private InputType _inputType;
 
         [SerializeField]
-        private Text debugText;
+        private Text _debugText;
 
-        private InputReader inputReader;
+        private InputReader _inputReader;
 
         private void Awake()
         {
-            if (!debugText)
+            if (!_debugText)
             {
                 Debug.LogException(new MissingReferenceException("debugText can't be null!"), this);
-                Application.Quit(); //Forces application to finish
-            }
-            else if (!mappingKeys)
-            {
-                Debug.LogException(new MissingReferenceException("mappingKeys can't be null!"), this);
                 Application.Quit(); //Forces application to finish
             }
         }
 
         private void Start()
         {
-            inputReader = new InputReader(mappingKeys);
+            _inputReader = InputFactory.Create(_inputType);
         }
 
         private void Update()
@@ -52,28 +46,28 @@ namespace Assets.Scripts.TinyCrew.Input.Test
 
             DebugAnalogSticksState(sb);
 
-            debugText.text = sb.ToString();
+            _debugText.text = sb.ToString();
         }
 
         private void DebugButtonsState(StringBuilder sb)
         {
             sb.Append("Buttons: ");
 
-            if (inputReader.X())
+            if (_inputReader.X())
                 sb.Append("X ");
-            if (inputReader.A())
+            if (_inputReader.A())
                 sb.Append("A ");
-            if (inputReader.B())
+            if (_inputReader.B())
                 sb.Append("B ");
-            if (inputReader.Y())
+            if (_inputReader.Y())
                 sb.Append("Y ");
-            if (inputReader.Start())
+            if (_inputReader.Start())
                 sb.Append("START ");
-            if (inputReader.Back())
+            if (_inputReader.Back())
                 sb.Append("BACK ");
-            if (inputReader.LeftStickButton())
+            if (_inputReader.LeftStickButton())
                 sb.Append("LSB ");
-            if (inputReader.RightStickButton())
+            if (_inputReader.RightStickButton())
                 sb.Append("RSB");
         }
 
@@ -81,38 +75,38 @@ namespace Assets.Scripts.TinyCrew.Input.Test
         {
             sb.Append("Bumpers: ");
 
-            if (inputReader.LeftBumper())
+            if (_inputReader.LeftBumper())
                 sb.Append("LB ");
-            if (inputReader.RightBumper())
+            if (_inputReader.RightBumper())
                 sb.Append("RB");
         }
 
         private void DebugTriggersState(StringBuilder sb)
         {
             sb.Append("Left Trigger: ");
-            sb.Append(inputReader.LeftTrigger());
+            sb.Append(_inputReader.LeftTrigger());
 
             sb.AppendLine();
 
             sb.Append("Right Trigger: ");
-            sb.Append(inputReader.RightTrigger());
+            sb.Append(_inputReader.RightTrigger());
         }
 
         private void DebugAnalogSticksState(StringBuilder sb)
         {
             sb.Append("Left Analog Stick: ");
-            sb.Append(inputReader.LeftAnalogStick());
+            sb.Append(_inputReader.LeftAnalogStick());
 
             sb.AppendLine();
 
             sb.Append("Right Analog Stick: ");
-            sb.Append(inputReader.RightAnalogStick());
+            sb.Append(_inputReader.RightAnalogStick());
         }
 
         private void DebugDigitalPadState(StringBuilder sb)
         {
             sb.Append("D-pad: ");
-            sb.Append(inputReader.DigitalPad());
+            sb.Append(_inputReader.DigitalPad());
         }
 
     }
