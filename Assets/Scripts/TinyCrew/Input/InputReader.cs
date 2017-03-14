@@ -7,16 +7,23 @@ namespace TinyCrew.Input
     /// <summary>
     /// This class is responsible for providing a simplified reading of input for generic keys in high level, accessing those as if those were a Xbox controller.
     /// </summary>
-    public abstract class InputReader : Memento<string>
+    public abstract class InputReader
     {
         internal readonly MappingKeys MappingKeys;
 
         public bool IsAController { get; protected set; }
 
+        protected readonly Memento<string> SavedData = new Memento<string>();
+
         internal InputReader(MappingKeys mapping)
         {
             MappingKeys = mapping;            
         }
+
+        /// <summary>
+        /// Updates this InputReader to maintain data between frames. This method needs to be called each frame to updates its internal data to be used in the next frame, correctly.
+        /// </summary>
+        public abstract void Update();
 
         #region BUTTONS
 

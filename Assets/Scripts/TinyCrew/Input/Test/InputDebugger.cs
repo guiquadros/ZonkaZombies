@@ -48,7 +48,7 @@ namespace TinyCrew.Input.Test
 
             _debugText.text = sb.ToString();
 
-            _inputReader.SaveState();
+            _inputReader.Update();
         }
 
         private void DebugButtonsState(StringBuilder sb)

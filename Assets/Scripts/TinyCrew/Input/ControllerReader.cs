@@ -3,30 +3,25 @@ using UnityInput = UnityEngine.Input;
 
 namespace TinyCrew.Input
 {
-    public class ControllerReader : InputReader
+    public sealed class ControllerReader : InputReader
     {
         private const float TriggersTolerance = .05f;
 
         internal ControllerReader(MappingKeys mapping) : base(mapping)
         {
             IsAController = true;
+
+            // Create the input keys into the Memento object, to be used later
+            SavedData.CreateState(MappingKeys.LeftTrigger, LeftTrigger());
+            SavedData.CreateState(MappingKeys.RightTrigger, RightTrigger());
         }
 
-        #region MEMENTO
-
-        internal override void OnCreateStates()
+        public override void Update()
         {
-            CreateState(MappingKeys.LeftTrigger, LeftTrigger());
-            CreateState(MappingKeys.RightTrigger, RightTrigger());
+            // Save the input's current data into the Memento object
+            SavedData.SetState(MappingKeys.LeftTrigger, LeftTrigger());
+            SavedData.SetState(MappingKeys.RightTrigger, RightTrigger());
         }
-
-        protected override void OnSaveState()
-        {
-            SaveState(MappingKeys.LeftTrigger, LeftTrigger());
-            SaveState(MappingKeys.RightTrigger, RightTrigger());
-        }
-
-        #endregion
 
         #region TRIGGERS
 
@@ -42,14 +37,16 @@ namespace TinyCrew.Input
         /// </summary>
         public override bool LeftTriggerDown()
         {
-            return LoadState<float>(MappingKeys.LeftTrigger) < TriggersTolerance && Math.Abs(LeftTrigger() - 1.0f) < TriggersTolerance;
+            float lastKnownState = SavedData.GetState<float>(MappingKeys.LeftTrigger);
+            return lastKnownState < TriggersTolerance && Math.Abs(LeftTrigger() - 1.0f) < TriggersTolerance;
         }
         /// <summary>
         /// Returns TRUE if the trigger is being fully released.
         /// </summary>
         public override bool LeftTriggerUp()
         {
-            return LoadState<float>(MappingKeys.LeftTrigger) > TriggersTolerance && LeftTrigger() < TriggersTolerance;
+            float lastKnownState = SavedData.GetState<float>(MappingKeys.LeftTrigger);
+            return lastKnownState > TriggersTolerance && LeftTrigger() < TriggersTolerance;
         }
 
         /// <summary>
@@ -64,14 +61,16 @@ namespace TinyCrew.Input
         /// </summary>
         public override bool RightTriggerDown()
         {
-            return LoadState<float>(MappingKeys.RightTrigger) < TriggersTolerance && Math.Abs(RightTrigger() - 1.0f) < TriggersTolerance;
+            float lastKnownState = SavedData.GetState<float>(MappingKeys.RightTrigger);
+            return lastKnownState < TriggersTolerance && Math.Abs(RightTrigger() - 1.0f) < TriggersTolerance;
         }
         /// <summary>
         /// Returns TRUE if the trigger is being fully released.
         /// </summary>
         public override bool RightTriggerUp()
         {
-            return LoadState<float>(MappingKeys.RightTrigger) > TriggersTolerance && RightTrigger() < TriggersTolerance;
+            float lastKnownState = SavedData.GetState<float>(MappingKeys.RightTrigger);
+            return lastKnownState > TriggersTolerance && RightTrigger() < TriggersTolerance;
         }
 
         #endregion
