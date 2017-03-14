@@ -38,7 +38,18 @@ namespace TinyCrew.Input
                 throw new NullReferenceException(string.Format("\"{0}\" doesn't exist inside Resources folder!", inputFilePath));
             }
 
-            return JsonUtility.FromJson<MappingKeys>(fileTextAsset.text);
+            if (string.IsNullOrEmpty(fileTextAsset.text))
+            {
+                throw new NullReferenceException(string.Format("The file \"{0}\" is blank!", inputFilePath));
+            }
+            else
+            {
+                Debug.Log(fileTextAsset.text);
+            }
+
+            MappingKeys mappingKeys = (MappingKeys) JsonUtility.FromJson(fileTextAsset.text, typeof(MappingKeys));
+
+            return mappingKeys;
         }
     }
 }
