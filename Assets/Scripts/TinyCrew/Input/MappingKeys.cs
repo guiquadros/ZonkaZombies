@@ -1,5 +1,8 @@
-﻿namespace TinyCrew.Input
+﻿using System;
+
+namespace TinyCrew.Input
 {
+    [Serializable]
     internal sealed class MappingKeys
     {
         #region STICKS
