@@ -24,6 +24,7 @@ namespace TinyCrew.Input
             MappingKeys mappingKeys = FindMappingKeysFromResources(inputFilePath);
 
             InputReader inputReader = new ControllerReader(mappingKeys);
+            inputReader.OnCreateStates();
 
             return inputReader;
         }

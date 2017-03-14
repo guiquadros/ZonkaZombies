@@ -28,7 +28,7 @@ namespace TinyCrew.Input.Test
             _inputReader = InputFactory.Create(_inputType);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             StringBuilder sb = new StringBuilder();
 
@@ -47,6 +47,8 @@ namespace TinyCrew.Input.Test
             DebugAnalogSticksState(sb);
 
             _debugText.text = sb.ToString();
+
+            _inputReader.SaveState();
         }
 
         private void DebugButtonsState(StringBuilder sb)
