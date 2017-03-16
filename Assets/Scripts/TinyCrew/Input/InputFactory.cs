@@ -7,19 +7,7 @@ namespace TinyCrew.Input
     {
         public static InputReader Create(InputType inputType)
         {
-            string inputFilePath;
-
-            switch (inputType)
-            {
-                case InputType.Controller1:
-                    inputFilePath = "controller1";
-                    break;
-                case InputType.Controller2:
-                    inputFilePath = "controller2";
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException("inputType", inputType, "InputType's value is not valid!");
-            }
+            string inputFilePath = ToFileName(inputType);
 
             MappingKeys mappingKeys = FindMappingKeysFromResources(inputFilePath);
 
@@ -28,6 +16,25 @@ namespace TinyCrew.Input
             return inputReader;
         }
 
+        /// <summary>
+        /// Transforms an InputType into a string containing the name of the correct MappingKeys' file.
+        /// </summary>
+        private static string ToFileName(InputType inputType)
+        {
+            switch (inputType)
+            {
+                case InputType.Controller1:
+                    return "controller1";
+                case InputType.Controller2:
+                    return "controller2";
+                default:
+                    throw new ArgumentOutOfRangeException("inputType", inputType, "InputType's value is not valid!");
+            }
+        }
+
+        /// <summary>
+        /// Find, deserialize and returns an instance of MappingKeys containing the correct input's mapping, according to the parameter 'inputFilePath'.
+        /// </summary>
         private static MappingKeys FindMappingKeysFromResources(string inputFilePath)
         {
             TextAsset fileTextAsset = Resources.Load<TextAsset>(inputFilePath);
@@ -41,12 +48,8 @@ namespace TinyCrew.Input
             {
                 throw new NullReferenceException(string.Format("The file \"{0}\" is blank!", inputFilePath));
             }
-            else
-            {
-                Debug.Log(fileTextAsset.text);
-            }
 
-            MappingKeys mappingKeys = (MappingKeys) JsonUtility.FromJson(fileTextAsset.text, typeof(MappingKeys));
+            MappingKeys mappingKeys = JsonUtility.FromJson<MappingKeys>(fileTextAsset.text);
 
             return mappingKeys;
         }
