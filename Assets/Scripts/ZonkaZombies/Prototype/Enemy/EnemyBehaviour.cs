@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-namespace TinyCrew.Prototype.Enemy
+namespace ZonkaZombies.Prototype.Enemy
 {
     [RequireComponent(typeof(NavMeshAgent))]
     public class EnemyBehaviour : MonoBehaviour

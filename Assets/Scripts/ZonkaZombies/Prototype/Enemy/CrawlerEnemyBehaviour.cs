@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
 
-namespace TinyCrew.Prototype.Enemy
+namespace ZonkaZombies.Prototype.Enemy
 {
     public class CrawlerEnemyBehaviour : EnemyBehaviour
     {

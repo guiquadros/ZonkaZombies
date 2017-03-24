@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TinyCrew.Input
+namespace ZonkaZombies.Input
 {
     [Serializable]
     internal sealed class MappingKeys

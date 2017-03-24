@@ -1,8 +1,8 @@
-﻿using TinyCrew.Util;
-using UnityEngine;
+﻿using UnityEngine;
+using ZonkaZombies.Util;
 using UnityInput = UnityEngine.Input;
 
-namespace TinyCrew.Input
+namespace ZonkaZombies.Input
 {
     /// <summary>
     /// This class is responsible for providing a simplified reading of input for generic keys in high level, accessing those as if those were a Xbox controller.

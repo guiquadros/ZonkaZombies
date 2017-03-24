@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TinyCrew.Input
+namespace ZonkaZombies.Input
 {
     public static class InputFactory
     {

@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+
 // ReSharper disable InconsistentNaming
 // ReSharper disable VirtualMemberCallInConstructor
 
-namespace TinyCrew.Util
+namespace ZonkaZombies.Util
 {
     /// <summary>
     /// This class is a generic holder that can save generic data in order to use it later. It also gives you a simplified way of reading and writing data.

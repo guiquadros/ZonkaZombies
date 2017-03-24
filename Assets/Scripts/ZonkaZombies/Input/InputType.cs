@@ -1,5 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
-namespace TinyCrew.Input
+namespace ZonkaZombies.Input
 {
     /// <summary>
     /// Defines a type of input that could be created by the InputFactory.

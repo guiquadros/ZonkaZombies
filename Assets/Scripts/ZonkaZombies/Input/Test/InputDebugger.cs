@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TinyCrew.Input.Test
+namespace ZonkaZombies.Input.Test
 {
     public class InputDebugger : MonoBehaviour
     {

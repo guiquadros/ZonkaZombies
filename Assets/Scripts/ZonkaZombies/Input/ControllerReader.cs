@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityInput = UnityEngine.Input;
 
-namespace TinyCrew.Input
+namespace ZonkaZombies.Input
 {
     public sealed class ControllerReader : InputReader
     {
