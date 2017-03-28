@@ -23,5 +23,13 @@ namespace ZonkaZombies.Prototype.Enemy
 
             agent.SetDestination(target.position);
         }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.layer == 8)
+            {
+                Destroy(other.gameObject);
+            }
+        }
     }
 }
