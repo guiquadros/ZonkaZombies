@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using UnityInput = UnityEngine.Input;
 
 namespace ZonkaZombies.Input
@@ -32,21 +33,21 @@ namespace ZonkaZombies.Input
         {
             return UnityInput.GetAxisRaw(MappingKeys.LeftTrigger);
         }
+
         /// <summary>
         /// Returns TRUE if the trigger is being fully pressed.
         /// </summary>
         public override bool LeftTriggerDown()
         {
-            float lastKnownState = SavedData.GetState<float>(MappingKeys.LeftTrigger);
-            return lastKnownState < TriggersTolerance && Math.Abs(LeftTrigger() - 1.0f) < TriggersTolerance;
+            return !IsTriggerPressed(PreviousLeftTrigger()) && IsTriggerPressed(LeftTrigger());
         }
+
         /// <summary>
         /// Returns TRUE if the trigger is being fully released.
         /// </summary>
         public override bool LeftTriggerUp()
         {
-            float lastKnownState = SavedData.GetState<float>(MappingKeys.LeftTrigger);
-            return lastKnownState > TriggersTolerance && LeftTrigger() < TriggersTolerance;
+            return IsTriggerUp(PreviousLeftTrigger(), LeftTrigger());
         }
 
         /// <summary>
@@ -56,23 +57,61 @@ namespace ZonkaZombies.Input
         {
             return UnityInput.GetAxisRaw(MappingKeys.RightTrigger);
         }
+
         /// <summary>
         /// Returns TRUE if the trigger is being fully pressed.
         /// </summary>
         public override bool RightTriggerDown()
         {
-            float lastKnownState = SavedData.GetState<float>(MappingKeys.RightTrigger);
-            return lastKnownState < TriggersTolerance && Math.Abs(RightTrigger() - 1.0f) < TriggersTolerance;
+            return !IsTriggerPressed(PreviousRightTrigger()) && IsTriggerPressed(RightTrigger());
         }
+
         /// <summary>
         /// Returns TRUE if the trigger is being fully released.
         /// </summary>
         public override bool RightTriggerUp()
         {
-            float lastKnownState = SavedData.GetState<float>(MappingKeys.RightTrigger);
-            return lastKnownState > TriggersTolerance && RightTrigger() < TriggersTolerance;
+            return IsTriggerUp(PreviousRightTrigger(), RightTrigger());
         }
 
+        /// <summary>
+        /// Returns True if the value of the trigger (axisRawValue) minus the max value of the trigger (1.0f) is less than the TriggersTolerance.
+        /// </summary>
+        /// <param name="axisRawValue">Value of the trigger</param>
+        /// <returns></returns>
+        private static bool IsTriggerPressed(float axisRawValue)
+        {
+            return Math.Abs(axisRawValue - 1.0f) < TriggersTolerance;
+        }
+
+        /// <summary>
+        /// Returns the previous of the RightTrigger.
+        /// </summary>
+        /// <returns>The previous of the RightTrigger</returns>
+        public override float PreviousRightTrigger()
+        {
+            return SavedData.GetState<float>(MappingKeys.RightTrigger);
+        }
+
+        /// <summary>
+        /// Returns the previous of the LeftTrigger.
+        /// </summary>
+        /// <returns>The previous of the LeftTrigger</returns>
+        public override float PreviousLeftTrigger()
+        {
+            return SavedData.GetState<float>(MappingKeys.LeftTrigger);
+        }
+
+        /// <summary>
+        /// Returns TRUE if the Trigger is up.
+        /// </summary>
+        /// <param name="previousTriggerValue">The previous value of the trigger</param>
+        /// <param name="currentTriggerValue">The current value of the trigger</param>
+        /// <returns></returns>
+        private static bool IsTriggerUp(float previousTriggerValue, float currentTriggerValue)
+        {
+            return previousTriggerValue > TriggersTolerance && currentTriggerValue < TriggersTolerance;
+        }
         #endregion
     }
 }
