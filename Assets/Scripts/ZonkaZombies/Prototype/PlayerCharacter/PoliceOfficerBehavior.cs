@@ -49,8 +49,10 @@ namespace ZonkaZombies.Prototype.PlayerCharacter
 
             //rotation
             Vector3 rotationDirection = new Vector3(_inputReader.RightAnalogStickHorizontal() * -1, 0f, _inputReader.RightAnalogStickVertical() * -1);
+            //avoids Debug.Log() messages when call Quaternion.LookRotation(rotationDirection) with rotationDirection == Vector3.zero
             if (rotationDirection == Vector3.zero) return;
             Quaternion rotation = Quaternion.LookRotation(rotationDirection);
+            //if no rotation does not neet to call _characteRigidbody.MoveRotation()
             if (rotation == Quaternion.identity) return;
             _characteRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, rotation, _characterRotationLerpT));
         }
