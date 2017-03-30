@@ -17,6 +17,9 @@ namespace ZonkaZombies.Prototype.PlayerCharacter
         [SerializeField]
         private Transform _gunTransform;
 
+        [SerializeField]
+        private float _characterRotationLerpT = 0.2f;
+
         private Vector3 _movement;
         private InputReader _inputReader;
         private Rigidbody _characteRigidbody;
@@ -39,20 +42,17 @@ namespace ZonkaZombies.Prototype.PlayerCharacter
 
         private void FixedUpdate()
         {
+            //translation
             _movement.Set(_inputReader.LeftAnalogStickHorizontal(), 0f, _inputReader.LeftAnalogStickVertical());
-            _movement = _movement/*.normalized*/ * _speed * Time.deltaTime;
-
+            _movement = _movement.normalized * _speed * Time.deltaTime;
             _characteRigidbody.MovePosition(this.transform.position + _movement);
 
+            //rotation
             Vector3 rotationDirection = new Vector3(_inputReader.RightAnalogStickHorizontal() * -1, 0f, _inputReader.RightAnalogStickVertical() * -1);
-
             if (rotationDirection == Vector3.zero) return;
-
-            Quaternion rotation = Quaternion.LookRotation(rotationDirection/*, Vector3.up*/);
-
+            Quaternion rotation = Quaternion.LookRotation(rotationDirection);
             if (rotation == Quaternion.identity) return;
-
-            _characteRigidbody.MoveRotation(rotation);
+            _characteRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, rotation, _characterRotationLerpT));
         }
     }
 }
