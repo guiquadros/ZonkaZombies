@@ -32,26 +32,36 @@ namespace ZonkaZombies.Prototype.PlayerCharacter
 
         private void Update()
         {
-            if (_inputReader.RightTriggerDown())
-            {
-                Instantiate(_bulletPrefab, _gunTransform.position, _gunTransform.rotation);
-            }
+            HandleGunFire();
+            HandleMovement();
+            HandleRotation();
 
             _inputReader.Update();
         }
 
-        private void FixedUpdate()
+        private void HandleMovement()
         {
             //translation
             _movement.Set(_inputReader.LeftAnalogStickHorizontal(), 0f, _inputReader.LeftAnalogStickVertical());
             _movement = _movement.normalized * _speed * Time.deltaTime;
             _characteRigidbody.MovePosition(this.transform.position + _movement);
+        }
 
+        private void HandleRotation()
+        {
             //rotation
-            Vector3 rotationDirection = new Vector3(_inputReader.RightAnalogStickHorizontal() * -1, 0f, _inputReader.RightAnalogStickVertical() * -1);
+            Vector3 rotationDirection = new Vector3(-_inputReader.RightAnalogStickHorizontal(), 0f, -_inputReader.RightAnalogStickVertical());
             if (rotationDirection == Vector3.zero) return;
             Quaternion rotation = Quaternion.LookRotation(rotationDirection);
             _bodyTransform.rotation = rotation;
+        }
+
+        private void HandleGunFire()
+        {
+            if (_inputReader.RightTriggerDown())
+            {
+                Instantiate(_bulletPrefab, _gunTransform.position, _gunTransform.rotation);
+            }
         }
     }
 }
