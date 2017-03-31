@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.Enemy
 {
@@ -26,7 +27,7 @@ namespace ZonkaZombies.Prototype.Enemy
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.layer == 8)
+            if (other.gameObject.layer == LayerConstants.PLAYER_CHARACTER_LAYER)
             {
                 Destroy(other.gameObject);
             }

@@ -6,8 +6,6 @@ namespace ZonkaZombies.Input
 {
     public sealed class ControllerReader : InputReader
     {
-        private const float TriggersTolerance = .05f;
-
         internal ControllerReader(MappingKeys mapping) : base(mapping)
         {
             IsAController = true;
@@ -39,7 +37,7 @@ namespace ZonkaZombies.Input
         /// </summary>
         public override bool LeftTriggerDown()
         {
-            return !IsTriggerPressed(PreviousLeftTrigger()) && IsTriggerPressed(LeftTrigger());
+            return PreviousLeftTrigger() < 1f && LeftTrigger() >= 1f;
         }
 
         /// <summary>
@@ -47,7 +45,7 @@ namespace ZonkaZombies.Input
         /// </summary>
         public override bool LeftTriggerUp()
         {
-            return IsTriggerUp(PreviousLeftTrigger(), LeftTrigger());
+            return PreviousLeftTrigger() > 0f && LeftTrigger() <= 0f;
         }
 
         /// <summary>
@@ -63,7 +61,7 @@ namespace ZonkaZombies.Input
         /// </summary>
         public override bool RightTriggerDown()
         {
-            return !IsTriggerPressed(PreviousRightTrigger()) && IsTriggerPressed(RightTrigger());
+            return PreviousRightTrigger() < 1f && RightTrigger() >= 1f;
         }
 
         /// <summary>
@@ -71,17 +69,7 @@ namespace ZonkaZombies.Input
         /// </summary>
         public override bool RightTriggerUp()
         {
-            return IsTriggerUp(PreviousRightTrigger(), RightTrigger());
-        }
-
-        /// <summary>
-        /// Returns True if the value of the trigger (axisRawValue) minus the max value of the trigger (1.0f) is less than the TriggersTolerance.
-        /// </summary>
-        /// <param name="axisRawValue">Value of the trigger</param>
-        /// <returns></returns>
-        private static bool IsTriggerPressed(float axisRawValue)
-        {
-            return Math.Abs(axisRawValue - 1.0f) < TriggersTolerance;
+            return PreviousRightTrigger() > 0f && RightTrigger() <= 0f;
         }
 
         /// <summary>
@@ -100,17 +88,6 @@ namespace ZonkaZombies.Input
         public override float PreviousLeftTrigger()
         {
             return SavedData.GetState<float>(MappingKeys.LeftTrigger);
-        }
-
-        /// <summary>
-        /// Returns TRUE if the Trigger is up.
-        /// </summary>
-        /// <param name="previousTriggerValue">The previous value of the trigger</param>
-        /// <param name="currentTriggerValue">The current value of the trigger</param>
-        /// <returns></returns>
-        private static bool IsTriggerUp(float previousTriggerValue, float currentTriggerValue)
-        {
-            return previousTriggerValue > TriggersTolerance && currentTriggerValue < TriggersTolerance;
         }
         #endregion
     }

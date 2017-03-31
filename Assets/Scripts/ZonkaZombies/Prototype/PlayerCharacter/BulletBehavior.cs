@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.PlayerCharacter
 {
@@ -9,13 +10,13 @@ namespace ZonkaZombies.Prototype.PlayerCharacter
 
         private void Update()
         {
-            Vector3 deltaPos = Time.deltaTime * _bulletSpeed * transform.forward *-1;
+            Vector3 deltaPos = Time.deltaTime * _bulletSpeed * transform.forward;
             transform.position += deltaPos;
         }
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.layer == 11)
+            if (other.gameObject.layer == LayerConstants.ENEMY_LAYER)
             {
                 Destroy(other.gameObject);
             }
