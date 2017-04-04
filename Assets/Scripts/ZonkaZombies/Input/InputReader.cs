@@ -240,6 +240,11 @@ namespace ZonkaZombies.Input
         public abstract float LeftTrigger();
 
         /// <summary>
+        /// Value between 0 (released) and 1 (pressed).
+        /// </summary>
+        public abstract float PreviousLeftTrigger();
+
+        /// <summary>
         /// Returns TRUE if the trigger is being fully pressed.
         /// </summary>
         public abstract bool LeftTriggerDown();
@@ -253,6 +258,11 @@ namespace ZonkaZombies.Input
         /// Value between 0 (released) and 1 (pressed).
         /// </summary>
         public abstract float RightTrigger();
+
+        /// <summary>
+        /// Value between 0 (released) and 1 (pressed).
+        /// </summary>
+        public abstract float PreviousRightTrigger();
 
         /// <summary>
         /// Returns TRUE if the trigger is being fully pressed.
