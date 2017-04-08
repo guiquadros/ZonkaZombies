@@ -8,4 +8,9 @@ namespace ZonkaZombies.Util
         public static readonly int ENEMY_LAYER = LayerMask.NameToLayer("Enemy");
         public static readonly int PLAYER_CHARACTER_LAYER = LayerMask.NameToLayer("PlayerCharacter");
     }
+
+    public static class TagConstants
+    {
+        public static readonly string PLAYER_DAMAGER = "PlayerDamager";
+    }
 }

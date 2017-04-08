@@ -1,9 +1,10 @@
+using System.ComponentModel;
 using UnityEngine;
 using ZonkaZombies.Input;
 
 namespace ZonkaZombies.Prototype.PlayerCharacter
 {
-    public class PoliceOfficerBehavior : MonoBehaviour
+    public class PoliceOfficerBehavior : PlayerCharacterBehaviour
     {
         [SerializeField]
         private float _speed = 6f;
@@ -34,19 +35,33 @@ namespace ZonkaZombies.Prototype.PlayerCharacter
         private Quaternion _startRotation = Quaternion.identity;
         private Quaternion _endRotation = Quaternion.identity;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             _characteRigidbody = GetComponent<Rigidbody>();
             _inputReader = InputFactory.Create(_inputType);
         }
 
         private void Update()
         {
+            HandlePunch();
             HandleGunFire();
             HandleMovement();
             HandleRotation();
+        }
 
+        private void LateUpdate()
+        {
             _inputReader.Update();
+        }
+        
+        private void HandlePunch()
+        {
+            if (_inputReader.XDown() || UnityEngine.Input.GetKeyDown(KeyCode.Space))
+            {
+                DoPunch();
+            }
         }
 
         private void HandleMovement()

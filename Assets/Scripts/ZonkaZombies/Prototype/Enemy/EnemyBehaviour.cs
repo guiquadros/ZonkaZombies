@@ -32,5 +32,14 @@ namespace ZonkaZombies.Prototype.Enemy
                 Destroy(other.gameObject);
             }
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag(TagConstants.PLAYER_DAMAGER))
+            {
+                //The enemy was punched by the player
+                //TODO Apply damage to the enemy
+            }
+        }
     }
 }
