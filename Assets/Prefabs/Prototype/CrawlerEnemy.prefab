@@ -190,6 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848735b1b2fd4d4990a6e40b06654372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LifePoints: 3
+  HitPoints: 1
   target: {fileID: 0}
   _velocityMultiplier: 2
   _animationCurve:

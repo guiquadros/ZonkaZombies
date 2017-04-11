@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using ZonkaZombies.Prototype.Characters.PlayerCharacter;
 using ZonkaZombies.Util;
 
-namespace ZonkaZombies.Prototype.Enemy
+namespace ZonkaZombies.Prototype.Characters.Enemy
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    public class EnemyBehaviour : MonoBehaviour
+    public class EnemyBehavior : CharacterBehavior
     {
         [SerializeField]
         private Transform target;
@@ -30,7 +31,8 @@ namespace ZonkaZombies.Prototype.Enemy
         {
             if (other.gameObject.layer == LayerConstants.PLAYER_CHARACTER_LAYER)
             {
-                SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME);
+                PlayerCharacterBehavior characterBehavior = other.gameObject.GetComponent<PlayerCharacterBehavior>();
+                characterBehavior.Damage(HitPoints, () => SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME));
             }
         }
 

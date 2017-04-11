@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ZonkaZombies.Prototype.PlayerCharacter
+namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 {
     public class ArmsDamagerHandler : MonoBehaviour
     {

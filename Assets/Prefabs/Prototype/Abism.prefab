@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54117098154098066}
   - component: {fileID: 114914337115129916}
   m_Layer: 9
-  m_Name: DeadAbism
+  m_Name: Abism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,10 +1,12 @@
-using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using ZonkaZombies.Input;
+using ZonkaZombies.Prototype.Characters.Enemy;
+using ZonkaZombies.Util;
 
-namespace ZonkaZombies.Prototype.PlayerCharacter
+namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 {
-    public class PoliceOfficerBehavior : PlayerCharacterBehaviour
+    public class PoliceOfficerBehavior : PlayerCharacterBehavior
     {
         [SerializeField]
         private float _speed = 6f;
@@ -19,15 +21,15 @@ namespace ZonkaZombies.Prototype.PlayerCharacter
         private Transform _gunTransform;
 
         [SerializeField]
-        private Transform _bodyTransform;
-
-        [SerializeField]
         private float _rotationCounter = 0.0f;
         private float _rotationDelta = 0.0f;
 
         [SerializeField]
         [Range(0, 1440)]
         private float _angularSpeed = 720.0f;
+
+        [SerializeField]
+        private GameObject _enemies;
 
         private Vector3 _movement;
         private InputReader _inputReader;
@@ -49,6 +51,14 @@ namespace ZonkaZombies.Prototype.PlayerCharacter
             HandleGunFire();
             HandleMovement();
             HandleRotation();
+
+            //TODO: find a better way to do this in terms of performance. The PoliceOfficerBehavior class is not the best place to put the win condition (we should have a GameManager class).
+            EnemyBehavior[] childrenComponents = _enemies.GetComponentsInChildren<EnemyBehavior>();
+
+            if (childrenComponents.Length == 0)
+            {
+                SceneManager.LoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
+            }
         }
 
         private void LateUpdate()

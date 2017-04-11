@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using ZonkaZombies.Input;
 using ZonkaZombies.Util;
 
-namespace ZonkaZombies.Prototype.GameOverScene
+namespace ZonkaZombies.Prototype.Scenes
 {
     public class GameOverSceneBehavior : MonoBehaviour
     {

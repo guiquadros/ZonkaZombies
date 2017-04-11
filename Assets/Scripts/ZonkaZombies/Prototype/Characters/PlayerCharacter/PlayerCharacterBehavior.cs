@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-namespace ZonkaZombies.Prototype.PlayerCharacter
+namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 {
-    public class PlayerCharacterBehaviour : MonoBehaviour
+    public class PlayerCharacterBehavior : CharacterBehavior
     {
         [SerializeField]
         protected Animator Animator;
-
+        
         private static readonly int ANIM_PUNCH_ID = Animator.StringToHash("Punch");
 
         protected virtual void Awake()

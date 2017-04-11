@@ -18,5 +18,6 @@ namespace ZonkaZombies.Util
     {
         public const string GAME_OVER_SCENE_NAME = "GameOver";
         public const string MANY_ENEMIES_VS_CHARACTER = "ManyEnemiesVsCharacter";
+        public const string PLAYER_WIN_SCENE_NAME = "PlayerWin";
     }
 }

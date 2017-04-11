@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace ZonkaZombies.Prototype.Enemy
+namespace ZonkaZombies.Prototype.Characters.Enemy
 {
-    public class CrawlerEnemyBehaviour : EnemyBehaviour
+    public class CrawlerEnemyBehavior : EnemyBehavior
     {
         [SerializeField, Range(.5f, 4)]
         private float _velocityMultiplier = 2;

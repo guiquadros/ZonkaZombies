@@ -549,15 +549,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3291f7b99c04414ba59c477313cdb10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LifePoints: 5
+  HitPoints: 1
   Animator: {fileID: 95353844813754670}
   _speed: 12
   _inputType: 0
   _bulletPrefab: {fileID: 1390078013216962, guid: ac6d09e425daa67429adbac88481b8b6,
     type: 2}
   _gunTransform: {fileID: 4496586810234966}
-  _bodyTransform: {fileID: 4348942723632018}
   _rotationCounter: 0
   _angularSpeed: 720
+  _enemies: {fileID: 0}
 --- !u!135 &135431347595129172
 SphereCollider:
   m_ObjectHideFlags: 1
