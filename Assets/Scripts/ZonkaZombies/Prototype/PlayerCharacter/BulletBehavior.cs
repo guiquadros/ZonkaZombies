@@ -8,6 +8,11 @@ namespace ZonkaZombies.Prototype.PlayerCharacter
         [SerializeField]
         private float _bulletSpeed = 15f;
 
+        private void Awake()
+        {
+            Destroy(this.gameObject, 5.0f);
+        }
+
         private void Update()
         {
             Vector3 deltaPos = Time.deltaTime * _bulletSpeed * transform.forward;

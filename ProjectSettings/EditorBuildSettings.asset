@@ -7,3 +7,15 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Prototype/InputDebugger.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/EnemyMovementandPursuit.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/EnemyVsCharacter.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/GameOver.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/ManyEnemiesVsCharacter.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P1P2Movement.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/PlayerCharacterMovement.unity

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.Enemy
@@ -29,7 +30,7 @@ namespace ZonkaZombies.Prototype.Enemy
         {
             if (other.gameObject.layer == LayerConstants.PLAYER_CHARACTER_LAYER)
             {
-                Destroy(other.gameObject);
+                SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME);
             }
         }
 

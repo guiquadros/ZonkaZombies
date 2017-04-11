@@ -11,6 +11,12 @@ namespace ZonkaZombies.Util
 
     public static class TagConstants
     {
-        public static readonly string PLAYER_DAMAGER = "PlayerDamager";
+        public const string PLAYER_DAMAGER = "PlayerDamager";
+    }
+
+    public static class SceneConstants
+    {
+        public const string GAME_OVER_SCENE_NAME = "GameOver";
+        public const string MANY_ENEMIES_VS_CHARACTER = "ManyEnemiesVsCharacter";
     }
 }
