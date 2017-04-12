@@ -37,6 +37,13 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
         private Quaternion _startRotation = Quaternion.identity;
         private Quaternion _endRotation = Quaternion.identity;
 
+        public int ShotHitPoints
+        {
+            //the shot gives a random damage
+            //TODO: We can have a specific enemy animations based in the intensity of the damage. For instance, a damage = 1 can be a shot in the chest and a damage = 3 can be a shot in the head, then we avoid localized damage logic/physics.
+            get { return Random.Range(1, 3); }
+        }
+
         protected override void Awake()
         {
             base.Awake();

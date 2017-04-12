@@ -10,9 +10,6 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
         [SerializeField]
         private float _bulletSpeed = 15f;
 
-        [SerializeField]
-        private int _bulletHitPoints = 1;
-
         private void Awake()
         {
             Destroy(this.gameObject, 5.0f);
@@ -28,8 +25,10 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
         {
             if (other.gameObject.layer == LayerConstants.ENEMY_LAYER)
             {
+                PoliceOfficerBehavior policeOfficer = GameObject.FindObjectOfType<PoliceOfficerBehavior>();
+
                 EnemyBehavior characterBehavior = other.gameObject.GetComponent<EnemyBehavior>();
-                characterBehavior.Damage(_bulletHitPoints, () => Destroy(other.gameObject));
+                characterBehavior.Damage(policeOfficer.ShotHitPoints, () => Destroy(other.gameObject));
             }
         }
     }

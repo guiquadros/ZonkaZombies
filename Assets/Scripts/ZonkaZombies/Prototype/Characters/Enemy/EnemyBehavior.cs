@@ -38,10 +38,11 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
 
         private void OnTriggerEnter(Collider other)
         {
+            //The enemy was punched by the player
             if (other.CompareTag(TagConstants.PLAYER_DAMAGER))
             {
-                //The enemy was punched by the player
-                //TODO Apply damage to the enemy
+                var playerCharacter = other.gameObject.GetComponentInParent<PlayerCharacterBehavior>();
+                this.Damage(playerCharacter.HitPoints, () => Destroy(this.gameObject));
             }
         }
     }
