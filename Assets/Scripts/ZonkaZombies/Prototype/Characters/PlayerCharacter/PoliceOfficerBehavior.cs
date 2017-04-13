@@ -1,3 +1,4 @@
+using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using ZonkaZombies.Input;
@@ -15,13 +16,6 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
         private InputType _inputType = InputType.Controller1;
 
         [SerializeField]
-        private Transform _gunTransform;
-
-        [SerializeField]
-        private float _rotationCounter = 0.0f;
-        private float _rotationDelta = 0.0f;
-
-        [SerializeField]
         [Range(0, 1440)]
         private float _angularSpeed = 720.0f;
 
@@ -30,7 +24,6 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 
         private Vector3 _movement;
         private Rigidbody _characteRigidbody;
-        private Quaternion _startRotation = Quaternion.identity;
         private Quaternion _endRotation = Quaternion.identity;
         
         protected override void Awake()
@@ -86,30 +79,14 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
             //rotation
             Vector3 rotationDirection = new Vector3(-InputReader.RightAnalogStickHorizontal(), 0f, -InputReader.RightAnalogStickVertical());
 
-            if (rotationDirection != Vector3.zero) 
+            if (Mathf.Abs(rotationDirection.x) >= .2f || Mathf.Abs(rotationDirection.z) >= .2f)
             {
-                _rotationCounter = 0.0f;
-                _startRotation = transform.rotation;
                 _endRotation = Quaternion.LookRotation(rotationDirection);
-
-                float startY = _startRotation.eulerAngles.y;
-                float endY = _endRotation.eulerAngles.y;
-
-                _rotationDelta = Mathf.Abs(startY - endY);
-                float result = Mathf.Abs(startY - (endY - 360f));
-
-                if (result < _rotationDelta)
-                    _rotationDelta = result;
-                result = Mathf.Abs(startY - (endY + 360f));
-
-                if (result < _rotationDelta)
-                    _rotationDelta = result;
-
-                if (_rotationDelta <= 0.01f) return;
             }
 
-            _rotationCounter += Time.deltaTime * _angularSpeed / _rotationDelta;
-            transform.rotation = Quaternion.Lerp(_startRotation, _endRotation, _rotationCounter);
+            Vector3 tempRotation = transform.rotation.eulerAngles;
+            tempRotation.y = Mathf.MoveTowardsAngle(tempRotation.y, _endRotation.eulerAngles.y, _angularSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(tempRotation);
         }
     }
 }
