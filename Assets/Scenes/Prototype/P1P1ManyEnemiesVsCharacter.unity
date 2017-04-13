@@ -1841,12 +1841,12 @@ Prefab:
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -185
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 193
+      value: -96
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
@@ -1861,32 +1861,32 @@ Prefab:
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1676476666714978, guid: 3daa16feb00022148a83b9b556e51b52, type: 2}
       propertyPath: m_Name
@@ -6987,12 +6987,12 @@ Prefab:
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -185
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 269
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
@@ -7007,42 +7007,42 @@ Prefab:
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224385506031090770, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676476666714978, guid: 3daa16feb00022148a83b9b556e51b52, type: 2}
+      propertyPath: m_Name
+      value: PlayerHUD1
       objectReference: {fileID: 0}
     - target: {fileID: 114709574508956358, guid: 3daa16feb00022148a83b9b556e51b52,
         type: 2}
       propertyPath: _playerCharacterBehavior
       value: 
       objectReference: {fileID: 650249192}
-    - target: {fileID: 1676476666714978, guid: 3daa16feb00022148a83b9b556e51b52, type: 2}
-      propertyPath: m_Name
-      value: PlayerHUD1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3daa16feb00022148a83b9b556e51b52, type: 2}
   m_IsPrefabParent: 0

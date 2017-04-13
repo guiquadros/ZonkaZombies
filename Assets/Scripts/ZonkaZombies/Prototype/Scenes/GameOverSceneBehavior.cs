@@ -18,9 +18,13 @@ namespace ZonkaZombies.Prototype.Scenes
 
         private void Update()
         {
-            if (_inputReaderController1.Start() || _inputReaderController2.Start())
+            if (_inputReaderController1.Start())
             {
                 SceneManager.LoadScene(SceneConstants.MANY_ENEMIES_VS_CHARACTER);
+            }
+            else if (_inputReaderController1.Back() || _inputReaderController2.Back())
+            {
+                SceneManager.LoadScene(SceneConstants.P1P2_MANY_ENEMIES_VS_CHARACTER);
             }
         }
     }
