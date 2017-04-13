@@ -5,8 +5,13 @@ namespace ZonkaZombies.Util
 {
     public static class LayerConstants
     {
-        public static readonly int ENEMY_LAYER = LayerMask.NameToLayer("Enemy");
-        public static readonly int PLAYER_CHARACTER_LAYER = LayerMask.NameToLayer("PlayerCharacter");
+        //layer name
+        public const string ENEMY_LAYER_NAME = "Enemy";
+        public const string PLAYER_CHARACTER_LAYER_NAME = "PlayerCharacter";
+
+        //layer index
+        public static readonly int ENEMY_LAYER = LayerMask.NameToLayer(ENEMY_LAYER_NAME);
+        public static readonly int PLAYER_CHARACTER_LAYER = LayerMask.NameToLayer(PLAYER_CHARACTER_LAYER_NAME);
     }
 
     public static class TagConstants

@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using ZonkaZombies.Input;
 
 namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 {
     public class PlayerCharacterBehavior : CharacterBehavior
     {
+        public InputReader InputReader;
+        
         [SerializeField]
         protected Animator Animator;
         
