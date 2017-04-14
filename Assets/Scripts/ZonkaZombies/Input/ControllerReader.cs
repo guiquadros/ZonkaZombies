@@ -1,12 +1,10 @@
-﻿using System;
-using UnityEngine;
-using UnityInput = UnityEngine.Input;
+﻿using UnityInput = UnityEngine.Input;
 
 namespace ZonkaZombies.Input
 {
     public sealed class ControllerReader : InputReader
     {
-        internal ControllerReader(MappingKeys mapping) : base(mapping)
+        internal ControllerReader(MappingKeys mapping) : base(mapping, true)
         {
             IsAController = true;
 
@@ -15,7 +13,7 @@ namespace ZonkaZombies.Input
             SavedData.CreateState(MappingKeys.RightTrigger, RightTrigger());
         }
 
-        public override void Update()
+        public override void SaveState()
         {
             // Save the input's current data into the Memento object
             SavedData.SetState(MappingKeys.LeftTrigger, LeftTrigger());
@@ -23,7 +21,6 @@ namespace ZonkaZombies.Input
         }
 
         #region TRIGGERS
-
         /// <summary>
         /// Value between 0 (released) and 1 (pressed).
         /// </summary>
@@ -72,20 +69,23 @@ namespace ZonkaZombies.Input
             return PreviousRightTrigger() > 0f && RightTrigger() <= 0f;
         }
 
-        /// <summary>
-        /// Returns the previous of the RightTrigger.
+
+        /// /// <summary>
+        /// Value between 0 (released) and 1 (pressed).
         /// </summary>
-        /// <returns>The previous of the RightTrigger</returns>
-        public override float PreviousRightTrigger()
+        public float PreviousRightTrigger()
         {
             return SavedData.GetState<float>(MappingKeys.RightTrigger);
         }
 
         /// <summary>
+        /// Value between 0 (released) and 1 (pressed).
+        /// </summary>
+        /// <summary>
         /// Returns the previous of the LeftTrigger.
         /// </summary>
         /// <returns>The previous of the LeftTrigger</returns>
-        public override float PreviousLeftTrigger()
+        public float PreviousLeftTrigger()
         {
             return SavedData.GetState<float>(MappingKeys.LeftTrigger);
         }

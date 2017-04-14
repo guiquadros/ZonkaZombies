@@ -15,15 +15,29 @@ namespace ZonkaZombies.Input
 
         protected readonly Memento<string> SavedData = new Memento<string>();
 
-        internal InputReader(MappingKeys mapping)
+        private readonly bool _needToSaveState;
+
+        internal InputReader(MappingKeys mapping, bool needToSaveState = false)
         {
-            MappingKeys = mapping;            
+            _needToSaveState = needToSaveState;
+            MappingKeys = mapping;
+            if (_needToSaveState)
+            {
+                EventProxy.OnLateUpdate.AddListener(SaveState);
+            }
+        }
+        ~InputReader()
+        {
+            if (_needToSaveState)
+            {
+                EventProxy.OnLateUpdate.RemoveListener(SaveState);
+            }
         }
 
-        /// <summary>
+/// <summary>
         /// Updates this InputReader to maintain data between frames. This method needs to be called each frame to updates its internal data to be used in the next frame, correctly.
         /// </summary>
-        public abstract void Update();
+        public virtual void SaveState() { }
 
         #region BUTTONS
 
@@ -237,42 +251,50 @@ namespace ZonkaZombies.Input
         /// <summary>
         /// Value between 0 (released) and 1 (pressed).
         /// </summary>
-        public abstract float LeftTrigger();
-
-        /// <summary>
-        /// Value between 0 (released) and 1 (pressed).
-        /// </summary>
-        public abstract float PreviousLeftTrigger();
-
-        /// <summary>
-        /// Returns TRUE if the trigger is being fully pressed.
-        /// </summary>
-        public abstract bool LeftTriggerDown();
-
-        /// <summary>
-        /// Returns TRUE if the trigger is being fully released.
-        /// </summary>
-        public abstract bool LeftTriggerUp();
-
-        /// <summary>
-        /// Value between 0 (released) and 1 (pressed).
-        /// </summary>
-        public abstract float RightTrigger();
-
-        /// <summary>
-        /// Value between 0 (released) and 1 (pressed).
-        /// </summary>
-        public abstract float PreviousRightTrigger();
+        public virtual float LeftTrigger()
+        {
+            return UnityInput.GetButton(MappingKeys.LeftTrigger) ? 1 : 0;
+        }
 
         /// <summary>
         /// Returns TRUE if the trigger is being fully pressed.
         /// </summary>
-        public abstract bool RightTriggerDown();
+        public virtual bool LeftTriggerDown()
+        {
+            return UnityInput.GetButtonDown(MappingKeys.LeftTrigger);
+        }
 
         /// <summary>
         /// Returns TRUE if the trigger is being fully released.
         /// </summary>
-        public abstract bool RightTriggerUp();
+        public virtual bool LeftTriggerUp()
+        {
+            return UnityInput.GetButtonUp(MappingKeys.LeftTrigger);
+        }
+
+        /// <summary>
+        /// Value between 0 (released) and 1 (pressed).
+        /// </summary>
+        public virtual float RightTrigger()
+        {
+            return UnityInput.GetButton(MappingKeys.RightTrigger) ? 1 : 0;
+        }
+
+        /// <summary>
+        /// Returns TRUE if the trigger is being fully pressed.
+        /// </summary>
+        public virtual bool RightTriggerDown()
+        {
+            return UnityInput.GetButtonDown(MappingKeys.RightTrigger);
+        }
+
+        /// <summary>
+        /// Returns TRUE if the trigger is being fully released.
+        /// </summary>
+        public virtual bool RightTriggerUp()
+        {
+            return UnityInput.GetButtonUp(MappingKeys.RightTrigger);
+        }
 
         #endregion
     }

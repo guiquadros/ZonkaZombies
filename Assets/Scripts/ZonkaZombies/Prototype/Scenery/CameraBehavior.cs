@@ -7,10 +7,16 @@ namespace ZonkaZombies.Prototype.Scenery
         [SerializeField]
         private Transform _playerCharacterTransform;
 
-        private void Update()
+        private Vector3 _offset;
+
+        private void Start()
         {
-            Vector3 currentCameraPosition = this.transform.position;
-            this.transform.position = new Vector3(_playerCharacterTransform.position.x, currentCameraPosition.y, currentCameraPosition.z);
+            _offset = transform.position - _playerCharacterTransform.position;
+        }
+
+        private void LateUpdate()
+        {
+            transform.position = _offset + _playerCharacterTransform.position;
         }
     }
 }

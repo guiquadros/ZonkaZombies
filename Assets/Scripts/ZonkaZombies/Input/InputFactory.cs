@@ -11,9 +11,14 @@ namespace ZonkaZombies.Input
 
             MappingKeys mappingKeys = FindMappingKeysFromResources(inputFilePath);
 
-            InputReader inputReader = new ControllerReader(mappingKeys);
-
-            return inputReader;
+            if (inputType == InputType.Keyboard)
+            {
+                return new KeyboardReader(mappingKeys);
+            }
+            else
+            {
+                return new ControllerReader(mappingKeys);
+            }
         }
 
         /// <summary>
@@ -27,6 +32,8 @@ namespace ZonkaZombies.Input
                     return "controller1";
                 case InputType.Controller2:
                     return "controller2";
+                case InputType.Keyboard:
+                    return "keyboard";
                 default:
                     throw new ArgumentOutOfRangeException("inputType", inputType, "InputType's value is not valid!");
             }

@@ -6,6 +6,6 @@ namespace ZonkaZombies.Input
     /// </summary>
     public enum InputType
     {
-        Controller1, Controller2
+        Controller1, Controller2, Keyboard
     }
 }

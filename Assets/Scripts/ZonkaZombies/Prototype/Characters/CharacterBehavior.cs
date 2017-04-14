@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ZonkaZombies.Prototype.Characters
 {
-    public class CharacterBehavior : MonoBehaviour
+    public abstract class CharacterBehavior : MonoBehaviour
     {
         public int LifePoints = 5;
         public int HitPoints = 1;

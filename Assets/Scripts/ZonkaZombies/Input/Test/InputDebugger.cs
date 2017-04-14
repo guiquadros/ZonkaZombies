@@ -48,7 +48,7 @@ namespace ZonkaZombies.Input.Test
 
             _debugText.text = sb.ToString();
 
-            _inputReader.Update();
+            _inputReader.SaveState();
         }
 
         private void DebugButtonsState(StringBuilder sb)
