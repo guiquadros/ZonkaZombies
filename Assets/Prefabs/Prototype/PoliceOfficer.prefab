@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 114804829813101800}
   m_Layer: 8
   m_Name: PoliceOfficer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,7 +251,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1570277227858556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.45463192, y: -1.69, z: -0.69146335}
+  m_LocalPosition: {x: 12, y: -1.357, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4348942723632018}
@@ -594,7 +594,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 1
 --- !u!65 &65185676879951758
@@ -824,9 +824,9 @@ MonoBehaviour:
   LifePoints: 5
   HitPoints: 1
   Animator: {fileID: 95353844813754670}
-  _speed: 12
+  _speed: 18
   _angularSpeed: 720
-  _inputType: 2
+  _inputType: 0
   _enemies: {fileID: 0}
 --- !u!114 &114187205494703036
 MonoBehaviour:

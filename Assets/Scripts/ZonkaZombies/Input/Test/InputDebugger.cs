@@ -86,12 +86,12 @@ namespace ZonkaZombies.Input.Test
         private void DebugTriggersState(StringBuilder sb)
         {
             sb.Append("Left Trigger: ");
-            sb.Append(_inputReader.LeftTrigger());
+            sb.Append(_inputReader.LeftTriggerValue());
 
             sb.AppendLine();
 
             sb.Append("Right Trigger: ");
-            sb.Append(_inputReader.RightTrigger());
+            sb.Append(_inputReader.RightTriggerValue());
         }
 
         private void DebugAnalogSticksState(StringBuilder sb)

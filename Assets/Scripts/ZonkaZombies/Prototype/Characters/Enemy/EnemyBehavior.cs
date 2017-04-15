@@ -10,21 +10,33 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
     public class EnemyBehavior : CharacterBehavior
     {
         [SerializeField]
-        private Transform target;
+        private Transform _target;
 
-        protected NavMeshAgent agent;
+        [SerializeField]
+        private Transform _playerCharacterTransform;
+
+        [SerializeField]
+        private bool _useFieldOfView = false;
+
+        protected NavMeshAgent Agent;
+
+        [SerializeField]
+        private float _minPlayerDetectDistance = 5.0f, _fieldOfViewRange = 68.0f;
 
         protected virtual void Awake()
         {
-            agent = GetComponent<NavMeshAgent>();
+            Agent = GetComponent<NavMeshAgent>();
         }
 
-        protected virtual void Update ()
+        protected virtual void Update()
         {
-            if (target == null)
+            if (_target == null)
                 return;
 
-            agent.SetDestination(target.position);
+            if (CanSeePlayerCharacter())
+            {
+                Agent.SetDestination(_target.position);
+            }
         }
 
         private void OnCollisionEnter(Collision other)
@@ -44,6 +56,45 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
                 var playerCharacter = other.gameObject.GetComponentInParent<PlayerCharacterBehavior>();
                 this.Damage(playerCharacter.HitPoints, () => Destroy(this.gameObject));
             }
+        }
+
+        private bool CanSeePlayerCharacter()
+        {
+            if (!_useFieldOfView) return true;
+
+            RaycastHit hit;
+            var rayDirection = _playerCharacterTransform.position - transform.position;
+            var distanceToPlayer = Vector3.Distance(transform.position, _playerCharacterTransform.position);
+
+            if (Physics.Raycast(transform.position, rayDirection, out hit))
+            {
+                // If the player is very close behind the player and in view the enemy will detect the player
+                if ((hit.transform.CompareTag("Player")) && (distanceToPlayer <= _minPlayerDetectDistance))
+                {
+                    return true;
+                }
+            }
+
+            if ((Vector3.Angle(rayDirection, transform.forward)) < _fieldOfViewRange)
+            {
+                // Detect if player is within the field of view
+                if (Physics.Raycast(transform.position, rayDirection, out hit))
+                {
+
+                    if (hit.transform.CompareTag(TagConstants.PLAYER))
+                    {
+                        Debug.Log("Can see player");
+                        return true;
+                    }
+                    else
+                    {
+                        Debug.Log("Can not see player");
+                        return false;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }

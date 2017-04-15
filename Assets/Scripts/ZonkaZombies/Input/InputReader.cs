@@ -243,7 +243,7 @@ namespace ZonkaZombies.Input
         {
             return UnityInput.GetAxisRaw(MappingKeys.DPadVertical);
         }
-
+        
         #endregion
 
         #region TRIGGERS
@@ -251,7 +251,7 @@ namespace ZonkaZombies.Input
         /// <summary>
         /// Value between 0 (released) and 1 (pressed).
         /// </summary>
-        public virtual float LeftTrigger()
+        public virtual float LeftTriggerValue()
         {
             return UnityInput.GetButton(MappingKeys.LeftTrigger) ? 1 : 0;
         }
@@ -275,7 +275,7 @@ namespace ZonkaZombies.Input
         /// <summary>
         /// Value between 0 (released) and 1 (pressed).
         /// </summary>
-        public virtual float RightTrigger()
+        public virtual float RightTriggerValue()
         {
             return UnityInput.GetButton(MappingKeys.RightTrigger) ? 1 : 0;
         }
@@ -296,6 +296,33 @@ namespace ZonkaZombies.Input
             return UnityInput.GetButtonUp(MappingKeys.RightTrigger);
         }
 
+        /// <summary>
+        /// Returns the previous of the RightTriggerValue.
+        /// </summary>
+        /// <returns>The previous of the RightTriggerValue</returns>
+        public float PreviousRightTriggerValue()
+        {
+            return SavedData.GetState<float>(MappingKeys.RightTrigger);
+        }
+
+        /// <summary>
+        /// Returns the previous of the LeftTriggerValue.
+        /// </summary>
+        /// <returns>The previous of the LeftTriggerValue</returns>
+        public float PreviousLeftTriggerValue()
+        {
+            return SavedData.GetState<float>(MappingKeys.LeftTrigger);
+        }
+
+        public virtual bool RightTrigger()
+        {
+            return UnityInput.GetButton(MappingKeys.RightTrigger);
+        }
+
+        public virtual bool LeftTrigger()
+        {
+            return UnityInput.GetButton(MappingKeys.LeftTrigger);
+        }
         #endregion
     }
 }

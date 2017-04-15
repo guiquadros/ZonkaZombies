@@ -56,7 +56,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
             _timer += Time.deltaTime;
 
             // If the Fire1 button is being press and it's time to fire...
-            if (_playerCharacterBehavior.InputReader.RightTriggerDown() && _timer >= _timeBetweenBullets &&
+            if (_playerCharacterBehavior.InputReader.RightTrigger() && _timer >= _timeBetweenBullets &&
                 Time.timeScale != 0)
             {
                 // ... shoot the gun.

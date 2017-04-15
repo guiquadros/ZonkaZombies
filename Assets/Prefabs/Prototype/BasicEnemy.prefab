@@ -191,7 +191,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifePoints: 3
-  target: {fileID: 0}
+  HitPoints: 1
+  _target: {fileID: 0}
+  _playerCharacterTransform: {fileID: 0}
+  _minPlayerDetectDistance: 5
+  _fieldOfViewRange: 68
 --- !u!195 &195910512332848816
 NavMeshAgent:
   m_ObjectHideFlags: 1

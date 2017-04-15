@@ -154,6 +154,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -215,6 +225,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -276,6 +296,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -342,6 +372,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -403,6 +443,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -464,6 +514,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -525,6 +585,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -586,6 +656,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (71)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -657,6 +737,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -728,6 +818,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -964,6 +1064,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1025,6 +1135,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1086,6 +1206,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1206,6 +1336,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1401,6 +1541,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1462,6 +1612,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1524,6 +1684,16 @@ Prefab:
       propertyPath: m_Center.z
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1585,6 +1755,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (75)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1646,6 +1826,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1707,6 +1897,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1778,6 +1978,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1973,6 +2183,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2086,6 +2306,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2214,6 +2444,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2285,6 +2525,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (78)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2351,6 +2601,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2427,6 +2687,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2538,6 +2808,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 650249191}
   m_Script: {fileID: 11500000, guid: c3291f7b99c04414ba59c477313cdb10, type: 3}
+--- !u!4 &650249193 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4218829520987330, guid: 495045a7554e90442951986219c087bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 650249191}
 --- !u!1001 &658232095
 Prefab:
   m_ObjectHideFlags: 0
@@ -2596,6 +2871,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2686,6 +2971,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2752,6 +3047,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (73)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2872,6 +3177,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2963,6 +3278,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (68)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3024,6 +3349,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (66)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3105,6 +3440,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3297,6 +3642,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3358,6 +3713,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3424,6 +3789,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3490,6 +3865,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3556,6 +3941,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3617,6 +4012,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3688,6 +4093,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3749,6 +4164,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3810,6 +4235,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3870,6 +4305,52 @@ Transform:
   m_PrefabParentObject: {fileID: 4783920072999176, guid: 16928b06bbb50864a902129e63676683,
     type: 2}
   m_PrefabInternal: {fileID: 609813217}
+--- !u!1001 &980428599
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4055626928839182, guid: f9572ca2e00b31444be4552476110bd9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.0626688
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055626928839182, guid: f9572ca2e00b31444be4552476110bd9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.0826263
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055626928839182, guid: f9572ca2e00b31444be4552476110bd9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.887713
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055626928839182, guid: f9572ca2e00b31444be4552476110bd9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055626928839182, guid: f9572ca2e00b31444be4552476110bd9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055626928839182, guid: f9572ca2e00b31444be4552476110bd9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055626928839182, guid: f9572ca2e00b31444be4552476110bd9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055626928839182, guid: f9572ca2e00b31444be4552476110bd9, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519610093902290, guid: f9572ca2e00b31444be4552476110bd9, type: 2}
+      propertyPath: m_Name
+      value: EventProxy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f9572ca2e00b31444be4552476110bd9, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &991544182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4028,6 +4509,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4089,6 +4580,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4150,6 +4651,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4211,6 +4722,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (67)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4277,6 +4798,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (77)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4338,6 +4869,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4508,6 +5049,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4569,6 +5120,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (65)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4655,6 +5216,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4813,6 +5384,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4879,6 +5460,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4940,6 +5531,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (76)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5001,6 +5602,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (82)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5077,6 +5688,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (81)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5173,6 +5794,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5244,6 +5875,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (72)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5320,6 +5961,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5396,6 +6047,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5462,6 +6123,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5591,6 +6262,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5652,6 +6333,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5713,6 +6404,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5774,6 +6475,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5835,6 +6546,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5926,6 +6647,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5987,6 +6718,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (70)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6058,6 +6799,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6119,6 +6870,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (80)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6185,6 +6946,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6246,6 +7017,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6307,6 +7088,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6432,6 +7223,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6493,6 +7294,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6554,6 +7365,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6620,6 +7441,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6681,6 +7512,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (79)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6742,6 +7583,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6803,6 +7654,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6934,6 +7795,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7134,6 +8005,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7200,6 +8081,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7271,6 +8162,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7332,6 +8233,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (74)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7393,6 +8304,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7454,6 +8375,16 @@ Prefab:
       propertyPath: m_Name
       value: BasicEnemy (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 650249193}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _playerCharacterTransform
+      value: 
+      objectReference: {fileID: 720924273}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
