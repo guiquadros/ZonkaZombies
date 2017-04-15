@@ -137,10 +137,10 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, LayerConstants.FLOOR_LAYER))
             {
-                _movement = Vector3.ProjectOnPlane(_movement, hitInfo.normal);
+                _movement = Vector3.ProjectOnPlane(_movement, hitInfo.normal.normalized);
             }
 
-            _movement = _movement.normalized * _speed * Time.deltaTime;
+            _movement = _movement * _speed * Time.deltaTime;
             _characterRigidbody.MovePosition(this.transform.position + _movement);
         }
 
