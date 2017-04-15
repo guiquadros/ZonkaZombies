@@ -194,6 +194,7 @@ MonoBehaviour:
   HitPoints: 1
   _target: {fileID: 0}
   _playerCharacterTransform: {fileID: 0}
+  _useFieldOfView: 0
   _minPlayerDetectDistance: 5
   _fieldOfViewRange: 68
 --- !u!195 &195910512332848816
