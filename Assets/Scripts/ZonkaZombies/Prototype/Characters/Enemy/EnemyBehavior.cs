@@ -43,8 +43,11 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
         {
             if (other.gameObject.layer == LayerConstants.PLAYER_CHARACTER_LAYER)
             {
-                PlayerCharacterBehavior characterBehavior = other.gameObject.GetComponent<PlayerCharacterBehavior>();
-                characterBehavior.Damage(HitPoints, () => SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME));
+                PlayerCharacterBehavior playerCharacter = other.gameObject.GetComponent<PlayerCharacterBehavior>();
+#if UNITY_EDITOR
+                if (playerCharacter.CanReceiveDamage)
+#endif
+                    playerCharacter.Damage(HitPoints, () => SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME));
             }
         }
 

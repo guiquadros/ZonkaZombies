@@ -251,7 +251,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1570277227858556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12, y: -1.357, z: 4}
+  m_LocalPosition: {x: 12, y: -1.28, z: -5.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4348942723632018}
@@ -824,9 +824,10 @@ MonoBehaviour:
   LifePoints: 5
   HitPoints: 1
   Animator: {fileID: 95353844813754670}
-  _speed: 18
+  _speed: 15
   _angularSpeed: 720
   _inputType: 0
+  CanReceiveDamage: 1
   _enemies: {fileID: 0}
 --- !u!114 &114187205494703036
 MonoBehaviour:
