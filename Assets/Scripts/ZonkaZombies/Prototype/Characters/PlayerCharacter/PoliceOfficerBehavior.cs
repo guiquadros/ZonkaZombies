@@ -26,7 +26,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
             if (_enemies != null)
             {
                 EnemyBehavior[] childrenComponents = _enemies.GetComponentsInChildren<EnemyBehavior>();
-
+                
                 if (childrenComponents.Length == 0)
                 {
                     SceneManager.LoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
