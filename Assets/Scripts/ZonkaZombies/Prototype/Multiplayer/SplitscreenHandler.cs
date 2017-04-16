@@ -207,7 +207,6 @@ namespace ZonkaZombies.Prototype.Multiplayer
             // Clone the primary camera
             this._secondaryCamera = GameObject.Instantiate(this._primaryCamera);
             this._secondaryCamera.transform.parent = this.transform;
-            this._secondaryCamera.clearFlags = CameraClearFlags.Depth;
 
             GetCentralPosition();
 

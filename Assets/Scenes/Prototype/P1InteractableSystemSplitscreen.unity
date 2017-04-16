@@ -495,6 +495,16 @@ Prefab:
       propertyPath: _primaryCamera
       value: 
       objectReference: {fileID: 1113829053}
+    - target: {fileID: 114136640896050988, guid: f89b6e2ef6e5f4447afeba02e330c046,
+        type: 2}
+      propertyPath: _cameraDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136640896050988, guid: f89b6e2ef6e5f4447afeba02e330c046,
+        type: 2}
+      propertyPath: _triggerDistance
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89b6e2ef6e5f4447afeba02e330c046, type: 2}
   m_IsPrefabParent: 0
@@ -1031,21 +1041,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4192534304221776, guid: 495045a7554e90442951986219c087bb, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54170023859118000, guid: 495045a7554e90442951986219c087bb,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 114144592912273310, guid: 495045a7554e90442951986219c087bb,
-        type: 2}
-      propertyPath: _speed
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114144592912273310, guid: 495045a7554e90442951986219c087bb,
-        type: 2}
-      propertyPath: _inputType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

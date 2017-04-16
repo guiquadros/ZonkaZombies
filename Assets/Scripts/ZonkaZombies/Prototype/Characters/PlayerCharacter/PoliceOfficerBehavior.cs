@@ -25,9 +25,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
             //TODO: find a better way to do this in terms of performance. The PoliceOfficerBehavior class is not the best place to put the win condition (we should have a GameManager class).
             if (_enemies != null)
             {
-                EnemyBehavior[] childrenComponents = _enemies.GetComponentsInChildren<EnemyBehavior>();
-                
-                if (childrenComponents.Length == 0)
+                if (_enemies.transform.childCount == 0)
                 {
                     SceneManager.LoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
                 }
