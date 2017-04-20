@@ -22,7 +22,10 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
         protected NavMeshAgent Agent;
 
         [SerializeField]
-        private float _minPlayerDetectDistance = 5.0f, _fieldOfViewAngle = 68.0f, _fieldOfVisionTimeout = 5f;
+        private float _minPlayerDetectDistance = 5.0f, _fieldOfVisionTimeout = 5f;
+
+        [SerializeField]
+        private float _fieldOfViewAngle = 68.0f; // in degrees (I use 68, this gives the enemy a vision of 136 degrees)
 
         private float _timeWithoutSeeingThePlayer;
 
