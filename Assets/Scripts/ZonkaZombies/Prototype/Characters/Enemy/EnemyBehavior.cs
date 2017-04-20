@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading;
+using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using ZonkaZombies.Prototype.Characters.PlayerCharacter;
@@ -16,12 +17,14 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
         private Transform _playerCharacterTransform;
 
         [SerializeField]
-        private bool _useFieldOfView = false;
+        private bool _useFieldOfView = false, _agentStopped = false;
 
         protected NavMeshAgent Agent;
 
         [SerializeField]
-        private float _minPlayerDetectDistance = 5.0f, _fieldOfViewRange = 68.0f;
+        private float _minPlayerDetectDistance = 5.0f, _fieldOfViewAngle = 68.0f, _fieldOfVisionTimeout = 5f;
+
+        private float _timeWithoutSeeingThePlayer;
 
         protected virtual void Awake()
         {
@@ -35,7 +38,28 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
 
             if (CanSeePlayerCharacter())
             {
+                Debug.Log("Can see the player");
                 Agent.SetDestination(_target.position);
+                _timeWithoutSeeingThePlayer = 0f;
+
+                if (_agentStopped)
+                {
+                    Agent.Resume();
+                }
+            }
+            else
+            {
+                Debug.Log("Can NOT see the player");
+                _timeWithoutSeeingThePlayer += Time.deltaTime;
+            }
+            
+            //stops the pursuit after some time without see the player
+            if (_timeWithoutSeeingThePlayer >= _fieldOfVisionTimeout)
+            {
+                _timeWithoutSeeingThePlayer = 0f;
+                Agent.Stop();
+
+                _agentStopped = true;
             }
         }
 
@@ -66,38 +90,24 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             if (!_useFieldOfView) return true;
 
             RaycastHit hit;
-            var rayDirection = _playerCharacterTransform.position - transform.position;
-            var distanceToPlayer = Vector3.Distance(transform.position, _playerCharacterTransform.position);
+            Vector3 rayDirection = _playerCharacterTransform.position - transform.position;
+            float distanceToPlayer = Vector3.Distance(transform.position, _playerCharacterTransform.position);
 
-            if (Physics.Raycast(transform.position, rayDirection, out hit))
-            {
-                // If the player is very close behind the player and in view the enemy will detect the player
-                if ((hit.transform.CompareTag("Player")) && (distanceToPlayer <= _minPlayerDetectDistance))
-                {
-                    return true;
-                }
-            }
+            //raycast to the player direction
+            bool raycastObj = Physics.Raycast(transform.position, rayDirection, out hit);
 
-            if ((Vector3.Angle(rayDirection, transform.forward)) < _fieldOfViewRange)
-            {
-                // Detect if player is within the field of view
-                if (Physics.Raycast(transform.position, rayDirection, out hit))
-                {
+            //verify if the object hit is a player character
+            bool playerHit = hit.transform.CompareTag(TagConstants.PLAYER);
 
-                    if (hit.transform.CompareTag(TagConstants.PLAYER))
-                    {
-                        Debug.Log("Can see player");
-                        return true;
-                    }
-                    else
-                    {
-                        Debug.Log("Can not see player");
-                        return false;
-                    }
-                }
-            }
+            //verify if the distance to the player matches the min distance
+            bool matchedMinDistance = distanceToPlayer <= _minPlayerDetectDistance;
 
-            return false;
+            float angle = Vector3.Angle(rayDirection, transform.forward);
+
+            //verify the player is in the angle range of the field of vision of the enemy
+            bool matchedFieldOfVisionAngle = angle < _fieldOfViewAngle;
+            
+            return raycastObj && playerHit && (matchedMinDistance || matchedFieldOfVisionAngle);
         }
     }
 }

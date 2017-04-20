@@ -20,8 +20,10 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
         [SerializeField, Header("Input Settings")]
         private InputType _inputType = InputType.Controller1;
 
+#if UNITY_EDITOR
         public bool CanReceiveDamage = true;
-        
+#endif
+
         public bool CanMove { get; internal set; }
         public bool CanPunch { get; internal set; }
         public bool CanRotate { get; internal set; }
