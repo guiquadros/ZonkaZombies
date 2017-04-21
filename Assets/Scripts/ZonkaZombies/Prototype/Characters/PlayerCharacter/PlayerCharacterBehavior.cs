@@ -7,8 +7,6 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
     [RequireComponent(typeof(InteractionHandler), typeof(MonoBehaviour), typeof(Rigidbody))]
     public abstract class PlayerCharacterBehavior : CharacterBehavior
     {
-        private static readonly int AnimPunchId = Animator.StringToHash("Punch");
-
         [SerializeField]
         protected Animator Animator;
 
@@ -28,6 +26,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
         public bool CanPunch { get; internal set; }
         public bool CanRotate { get; internal set; }
         public bool CanInteract { get; internal set; }
+        public bool IsMoving { get; internal set; }
         public PlayerCharacterType Type { get; internal set; }
 
         public InputReader InputReader;
@@ -108,24 +107,22 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 
         protected virtual void Update()
         {
-            if (CanPunch)
-                HandlePunch();
-
-            if (CanMove)
-                HandleMovement();
-
-            if (CanRotate)
-                HandleRotation();
-
-            if (CanInteract)
-                HandleInteraction();
+            HandleMovement();
+            HandlePunch();
+            HandleRotation();
+            HandleInteraction();
         }
 
         protected virtual void HandlePunch()
         {
-            if (InputReader.XDown() || UnityEngine.Input.GetKeyDown(KeyCode.Space))
+            if (!CanPunch)
             {
-                Animator.SetTrigger(AnimPunchId);
+                return;
+            }
+
+            if (InputReader.XDown())
+            {
+                Animator.SetTrigger(SharedAnimatorParameters.PUNCH_ID);
             }
         }
 
@@ -134,8 +131,17 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
             //translation
             _movement = Camera.main.transform.right   * InputReader.LeftAnalogStickHorizontal() +
                         Camera.main.transform.forward * InputReader.LeftAnalogStickVertical();
+            _movement.y = 0; // Forces the Y axis to be 0
 
-            _movement.y = 0;
+            IsMoving = _movement != Vector3.zero && CanMove;
+
+            Animator.SetBool(SharedAnimatorParameters.WALKING_ID, IsMoving);
+
+            if (!IsMoving)
+            {
+                // Don't need to do the raycast and move the rigidbody if the player didn't applies any input
+                return;
+            }
 
             Ray ray = new Ray(transform.position, -transform.up * .5f);
             RaycastHit hitInfo;
@@ -145,11 +151,16 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
             }
 
             _movement = _movement * _speed * Time.deltaTime;
-            _characterRigidbody.MovePosition(this.transform.position + _movement);
+            _characterRigidbody.MovePosition(transform.position + _movement);
         }
 
         protected virtual void HandleRotation()
         {
+            if (!CanRotate)
+            {
+                return;
+            }
+
             //rotation
             Vector3 rotationDirection = Camera.main.transform.right * InputReader.RightAnalogStickHorizontal() +
                         Camera.main.transform.forward * InputReader.RightAnalogStickVertical();
@@ -168,6 +179,11 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 
         protected virtual void HandleInteraction()
         {
+            if (!CanInteract)
+            {
+                return;
+            }
+
             if (InputReader.ADown())
             {
                 _interactionHandler.TryToInteract();

@@ -29,4 +29,10 @@ namespace ZonkaZombies.Util
         public const string PLAYER_WIN_SCENE_NAME = "PlayerWin";
         public const string P1P2_MANY_ENEMIES_VS_CHARACTER = "P1P2ManyEnemiesVsCharacter";
     }
+
+    public static class SharedAnimatorParameters
+    {
+        public static readonly int WALKING_ID = Animator.StringToHash("Walking");
+        public static readonly int PUNCH_ID = Animator.StringToHash("Punch");
+    }
 }
