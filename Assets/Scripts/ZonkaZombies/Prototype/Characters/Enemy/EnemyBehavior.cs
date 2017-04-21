@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using ZonkaZombies.Prototype.Characters.PlayerCharacter;
+using ZonkaZombies.Prototype.Managers;
 using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.Characters.Enemy
@@ -29,6 +30,10 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
 
         private float _timeWithoutSeeingThePlayer;
 
+        //TODO Move this to a ScriptableObject so It can be easily accessed by each enemy on scene
+        [SerializeField]
+        private AudioClip _damagedAudioClip;
+
         protected virtual void Awake()
         {
             Agent = GetComponent<NavMeshAgent>();
@@ -41,7 +46,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
 
             if (CanSeePlayerCharacter())
             {
-                Debug.Log("Can see the player");
+                //Debug.Log("Can see the player");
                 Agent.SetDestination(_target.position);
                 _timeWithoutSeeingThePlayer = 0f;
 
@@ -52,7 +57,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             }
             else
             {
-                Debug.Log("Can NOT see the player");
+                //Debug.Log("Can NOT see the player");
                 _timeWithoutSeeingThePlayer += Time.deltaTime;
             }
             
@@ -86,6 +91,11 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
                 var playerCharacter = other.gameObject.GetComponentInParent<PlayerCharacterBehavior>();
                 this.Damage(playerCharacter.HitPoints, () => Destroy(this.gameObject));
             }
+        }
+
+        protected override void OnTakeDamage(int damage)
+        {
+            AudioManager.Instance.PlayEffect(_damagedAudioClip);
         }
 
         private bool CanSeePlayerCharacter()

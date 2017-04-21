@@ -146,7 +146,7 @@ namespace ZonkaZombies.Prototype.Multiplayer
         /// Set centralPosition to the 3D central point in the world equidistant from both players
         /// </summary>
         /// <remarks>If there is only one player, this will return that player's position</remarks>
-        private Vector3 GetCentralPosition()
+        public Vector3 GetCentralPosition()
         {
             if (NumPlayers == 2)
             {

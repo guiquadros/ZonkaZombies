@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using ZonkaZombies.Prototype.UI;
 
 namespace ZonkaZombies.Prototype.Characters
 {
@@ -11,14 +12,16 @@ namespace ZonkaZombies.Prototype.Characters
         /// <summary>
         /// Apply damage to the character.
         /// </summary>
-        /// <param name="lifePoints">Life Points the character lost.</param>
+        /// <param name="damage">Life Points the character lost.</param>
         /// <param name="deathAction">Action to be executed when the character has no life points.</param>
         /// <returns>Returns true if the character is dead.</returns>
-        public bool Damage(int lifePoints, Action deathAction = null)
+        public bool Damage(int damage, Action deathAction = null)
         {
-            LifePoints -= lifePoints;
+            LifePoints -= damage;
 
             bool isDead = LifePoints <= 0;
+
+            OnTakeDamage(damage);
 
             if (isDead && deathAction != null)
             {
@@ -27,5 +30,7 @@ namespace ZonkaZombies.Prototype.Characters
 
             return isDead;
         }
+
+        protected virtual void OnTakeDamage(int damage) { }
     }
 }
