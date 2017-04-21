@@ -10,6 +10,9 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
     [RequireComponent(typeof(NavMeshAgent))]
     public class EnemyBehavior : CharacterBehavior
     {
+        public MeshFilter MeshFilter;
+        public Mesh Mesh;
+
         [SerializeField]
         private Transform _target;
 
@@ -32,6 +35,8 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
         protected virtual void Awake()
         {
             Agent = GetComponent<NavMeshAgent>();
+            MeshFilter = GetComponent<MeshFilter>();
+            Mesh = new Mesh();
         }
 
         protected virtual void Update()
@@ -41,7 +46,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
 
             if (CanSeePlayerCharacter())
             {
-                Debug.Log("Can see the player");
+                //Debug.Log("Can see the player");
                 Agent.SetDestination(_target.position);
                 _timeWithoutSeeingThePlayer = 0f;
 
@@ -52,7 +57,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             }
             else
             {
-                Debug.Log("Can NOT see the player");
+                //Debug.Log("Can NOT see the player");
                 _timeWithoutSeeingThePlayer += Time.deltaTime;
             }
             
@@ -111,6 +116,23 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             bool matchedFieldOfVisionAngle = angle < _fieldOfViewAngle;
             
             return raycastObj && playerHit && (matchedMinDistance || matchedFieldOfVisionAngle);
+        }
+
+        void OnDrawGizmos()
+        {
+            if (MeshFilter == null) return;
+
+            Mesh.Clear();
+
+            Vector3 v0 = this.transform.position;
+            Vector3 v1 = this.transform.position - this.transform.right * 3f + this.transform.forward * 5f;
+            Vector3 v2 = this.transform.position + this.transform.forward * 5f;
+            Vector3 v3 = this.transform.position + this.transform.right * 3f + this.transform.forward * 5f;
+
+            Mesh.vertices = new Vector3[] { v0, v1, v2, v3 };
+            Mesh.triangles = new int[] { 0, 1, 2, 0, 2, 3 };
+
+            MeshFilter.mesh = Mesh;
         }
     }
 }

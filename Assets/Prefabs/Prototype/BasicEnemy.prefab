@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1665345165575208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 16.84, y: 0, z: -7.06}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children:
   - {fileID: 4121195865572416}
@@ -163,7 +163,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -194,9 +194,11 @@ MonoBehaviour:
   HitPoints: 1
   _target: {fileID: 0}
   _playerCharacterTransform: {fileID: 0}
-  _useFieldOfView: 0
+  _useFieldOfView: 1
+  _agentStopped: 0
   _minPlayerDetectDistance: 5
-  _fieldOfViewRange: 68
+  _fieldOfVisionTimeout: 5
+  _fieldOfViewAngle: 68
 --- !u!195 &195910512332848816
 NavMeshAgent:
   m_ObjectHideFlags: 1

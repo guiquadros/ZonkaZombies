@@ -165,6 +165,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -236,6 +241,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -307,6 +317,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -383,6 +398,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -446,7 +466,7 @@ Prefab:
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 984.1851
+      value: 944.90857
       objectReference: {fileID: 0}
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
@@ -579,6 +599,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -650,6 +675,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -721,6 +751,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -792,6 +827,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -873,6 +913,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -954,6 +999,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1200,6 +1250,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1271,6 +1326,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1342,6 +1402,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1472,6 +1537,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1677,6 +1747,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1748,6 +1823,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1820,6 +1900,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1891,6 +1976,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -1962,6 +2052,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2033,6 +2128,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2114,6 +2214,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2200,6 +2305,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2323,6 +2433,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2526,6 +2641,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2607,6 +2727,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2683,6 +2808,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -2751,7 +2881,7 @@ Prefab:
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 999.1851
+      value: 959.90857
       objectReference: {fileID: 0}
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
@@ -2761,7 +2891,7 @@ Prefab:
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 984.1851
+      value: 944.90857
       objectReference: {fileID: 0}
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
@@ -2884,6 +3014,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3068,6 +3203,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3255,6 +3395,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3331,6 +3476,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3461,6 +3611,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3562,6 +3717,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3633,6 +3793,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3724,6 +3889,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3810,6 +3980,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3881,6 +4056,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -3957,6 +4137,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4033,6 +4218,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4109,6 +4299,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4180,6 +4375,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4261,6 +4461,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4332,6 +4537,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4403,6 +4613,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4664,6 +4879,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4735,6 +4955,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4806,6 +5031,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4877,6 +5107,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -4953,6 +5188,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5024,6 +5264,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5203,6 +5448,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5274,6 +5524,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5370,6 +5625,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5538,6 +5798,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5614,6 +5879,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5685,6 +5955,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5756,6 +6031,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5842,6 +6122,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -5948,6 +6233,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6029,6 +6319,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6115,6 +6410,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6201,6 +6501,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6277,6 +6582,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6483,6 +6793,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6554,6 +6869,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6625,6 +6945,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6696,6 +7021,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6767,6 +7097,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6868,6 +7203,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -6939,6 +7279,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7020,6 +7365,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7091,6 +7441,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7167,6 +7522,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7238,6 +7598,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7309,6 +7674,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7444,6 +7814,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7515,6 +7890,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7586,6 +7966,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7662,6 +8047,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7733,6 +8123,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7804,6 +8199,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -7875,6 +8275,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -8016,6 +8421,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -8117,6 +8527,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -8193,6 +8608,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -8274,6 +8694,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -8345,6 +8770,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -8416,6 +8846,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -8487,6 +8922,11 @@ Prefab:
       propertyPath: _playerCharacterTransform
       value: 
       objectReference: {fileID: 720924273}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _useFieldOfView
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
