@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1061002872015860}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.91, y: -1, z: 8.53}
+  m_LocalPosition: {x: 23.119999, y: -1, z: 14.29}
   m_LocalScale: {x: 1, y: 1, z: 2.1599896}
   m_Children:
   - {fileID: 4154694730754312}
@@ -199,6 +199,7 @@ MonoBehaviour:
   _minPlayerDetectDistance: 5
   _fieldOfVisionTimeout: 5
   _fieldOfViewAngle: 68
+  _damagedAudioClip: {fileID: 8300000, guid: c9792b7cb9677254a8e66c5aa84bc715, type: 3}
   _velocityMultiplier: 2
   _animationCurve:
     serializedVersion: 2

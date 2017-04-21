@@ -199,6 +199,7 @@ MonoBehaviour:
   _minPlayerDetectDistance: 5
   _fieldOfVisionTimeout: 5
   _fieldOfViewAngle: 68
+  _damagedAudioClip: {fileID: 8300000, guid: c9792b7cb9677254a8e66c5aa84bc715, type: 3}
 --- !u!195 &195910512332848816
 NavMeshAgent:
   m_ObjectHideFlags: 1
