@@ -11,37 +11,26 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
     [RequireComponent(typeof(NavMeshAgent))]
     public class EnemyBehavior : CharacterBehavior
     {
-        public MeshFilter MeshFilter;
-        public Mesh Mesh;
+        [SerializeField] private Transform _target;
 
-        [SerializeField]
-        private Transform _target;
+        [SerializeField] private Transform _playerCharacterTransform;
 
-        [SerializeField]
-        private Transform _playerCharacterTransform;
-
-        [SerializeField]
-        private bool _useFieldOfView = false, _agentStopped = false;
+        [SerializeField] private bool _useFieldOfView = false, _agentStopped = false;
 
         protected NavMeshAgent Agent;
 
-        [SerializeField]
-        private float _minPlayerDetectDistance = 5.0f, _fieldOfVisionTimeout = 5f;
+        [SerializeField] private float _minPlayerDetectDistance = 5.0f, _fieldOfVisionTimeout = 5f;
 
-        [SerializeField]
-        private float _fieldOfViewAngle = 68.0f; // in degrees (I use 68, this gives the enemy a vision of 136 degrees)
+        public float FieldOfViewAngle = 68.0f; // in degrees (I use 68, this gives the enemy a vision of 136 degrees) 
 
         private float _timeWithoutSeeingThePlayer;
 
         //TODO Move this to a ScriptableObject so It can be easily accessed by each enemy on scene
-        [SerializeField]
-        private AudioClip _damagedAudioClip;
+        [SerializeField] private AudioClip _damagedAudioClip;
 
         protected virtual void Awake()
         {
             Agent = GetComponent<NavMeshAgent>();
-            MeshFilter = GetComponent<MeshFilter>();
-            Mesh = new Mesh();
         }
 
         protected virtual void Update()
@@ -65,7 +54,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
                 //Debug.Log("Can NOT see the player");
                 _timeWithoutSeeingThePlayer += Time.deltaTime;
             }
-            
+
             //stops the pursuit after some time without see the player
             if (_timeWithoutSeeingThePlayer >= _fieldOfVisionTimeout)
             {
@@ -84,7 +73,8 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
 #if UNITY_EDITOR
                 if (playerCharacter.CanReceiveDamage)
 #endif
-                    playerCharacter.Damage(HitPoints, () => SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME));
+                    playerCharacter.Damage(HitPoints,
+                        () => SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME));
             }
         }
 
@@ -123,26 +113,9 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             float angle = Vector3.Angle(rayDirection, transform.forward);
 
             //verify the player is in the angle range of the field of vision of the enemy
-            bool matchedFieldOfVisionAngle = angle < _fieldOfViewAngle;
-            
+            bool matchedFieldOfVisionAngle = angle < FieldOfViewAngle;
+
             return raycastObj && playerHit && (matchedMinDistance || matchedFieldOfVisionAngle);
-        }
-
-        void OnDrawGizmos()
-        {
-            if (MeshFilter == null) return;
-
-            Mesh.Clear();
-
-            Vector3 v0 = this.transform.position;
-            Vector3 v1 = this.transform.position - this.transform.right * 3f + this.transform.forward * 5f;
-            Vector3 v2 = this.transform.position + this.transform.forward * 5f;
-            Vector3 v3 = this.transform.position + this.transform.right * 3f + this.transform.forward * 5f;
-
-            Mesh.vertices = new Vector3[] { v0, v1, v2, v3 };
-            Mesh.triangles = new int[] { 0, 1, 2, 0, 2, 3 };
-
-            MeshFilter.mesh = Mesh;
         }
     }
 }
