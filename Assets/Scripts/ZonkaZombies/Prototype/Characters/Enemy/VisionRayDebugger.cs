@@ -7,7 +7,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
     public class VisionRayDebugger : MonoBehaviour
     {
         [SerializeField]
-        private EnemyBehavior _enemyBehavior;
+        private Enemy _enemyBehavior;
          
         [SerializeField]
         private float _fieldOfViewSize = 5f;

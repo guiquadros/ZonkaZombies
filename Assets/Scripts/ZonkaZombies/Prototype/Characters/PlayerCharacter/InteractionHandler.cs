@@ -8,11 +8,11 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
     {
         private IInteractable _interactable;
         
-        private Player _characterBehaviour;
+        private Player player;
 
         internal void SetUp(Player abstractPlayerCharacterBehavior)
         {
-            _characterBehaviour = abstractPlayerCharacterBehavior;
+            player = abstractPlayerCharacterBehavior;
         }
 
         protected virtual void OnTriggerEnter(Collider other)
@@ -72,12 +72,12 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 
         public void OnBegin()
         {
-            _interactable.OnBegin(_characterBehaviour);
+            _interactable.OnBegin(this);
         }
 
         public Character GetCharacter()
         {
-            return _characterBehaviour;
+            return player;
         }
 
         public void OnFinish() { }
