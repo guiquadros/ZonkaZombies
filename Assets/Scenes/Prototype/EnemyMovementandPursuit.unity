@@ -605,6 +605,11 @@ Prefab:
       propertyPath: _useFieldOfView
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 839099338}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
   m_IsPrefabParent: 0
@@ -775,6 +780,11 @@ Prefab:
       propertyPath: _useFieldOfView
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114353560634271112, guid: 822751f5e4efb7b4f90ace0d2f0c9479,
+        type: 2}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 839099338}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 822751f5e4efb7b4f90ace0d2f0c9479, type: 2}
   m_IsPrefabParent: 0
