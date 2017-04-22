@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using ZonkaZombies.Prototype.Characters.PlayerCharacter;
+using ZonkaZombies.Prototype.Characters.Player;
 
 namespace ZonkaZombies.Prototype.UI
 {
     public class PlayerLifePointsBehavior : MonoBehaviour
     {
         [SerializeField]
-        private Player _abstractPlayerCharacterBehavior;
+        private Player _player;
 
         [SerializeField]
         private Text _lifePointsText;
@@ -25,7 +25,7 @@ namespace ZonkaZombies.Prototype.UI
 
         private void Update()
         {
-            _lifePointsText.text = string.Format(_pattern, _abstractPlayerCharacterBehavior.LifePoints.ToString("00"));
+            _lifePointsText.text = string.Format(_pattern, _player.LifePoints.ToString("00"));
         }
     }
 }

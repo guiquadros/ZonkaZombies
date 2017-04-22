@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class Spinner : MonoBehaviour
+namespace GlowingObjects.Scripts
 {
-	public Vector3 EulersPerSecond;
+    public class Spinner : MonoBehaviour
+    {
+        public Vector3 EulersPerSecond;
 
-	void Update()
-	{
-		transform.Rotate(EulersPerSecond * Time.deltaTime);
+        void Update()
+        {
+            transform.Rotate(EulersPerSecond * Time.deltaTime);
+        }
     }
 }

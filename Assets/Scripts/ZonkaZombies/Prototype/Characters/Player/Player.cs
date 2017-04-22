@@ -2,7 +2,7 @@
 using ZonkaZombies.Input;
 using ZonkaZombies.Util;
 
-namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
+namespace ZonkaZombies.Prototype.Characters.Player
 {
     [RequireComponent(typeof(InteractionHandler), typeof(MonoBehaviour), typeof(Rigidbody))]
     public class Player : Character
@@ -27,7 +27,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
         public bool CanRotate { get; internal set; }
         public bool CanInteract { get; internal set; }
         public bool IsMoving { get; internal set; }
-        public PlayerCharacterType Type { get; internal set; }
+        public PlayerType Type { get; internal set; }
 
         public InputReader InputReader;
         private InteractionHandler _interactionHandler;

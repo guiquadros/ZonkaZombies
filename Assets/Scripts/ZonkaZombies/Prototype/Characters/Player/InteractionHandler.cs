@@ -2,7 +2,7 @@
 using ZonkaZombies.Prototype.Scenery.Interaction;
 using ZonkaZombies.Util;
 
-namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
+namespace ZonkaZombies.Prototype.Characters.Player
 {
     public class InteractionHandler : MonoBehaviour, IInteractor, ICommand
     {

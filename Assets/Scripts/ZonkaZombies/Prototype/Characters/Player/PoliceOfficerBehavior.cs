@@ -1,10 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using ZonkaZombies.Input;
-using ZonkaZombies.Prototype.Characters.Enemy;
 using ZonkaZombies.Util;
 
-namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
+namespace ZonkaZombies.Prototype.Characters.Player
 {
     public class PoliceOfficerBehavior : Player
     {
@@ -15,7 +13,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
         {
             base.Awake();
 
-            Type = PlayerCharacterType.PoliceOfficer;
+            Type = PlayerType.PoliceOfficer;
         }
 
         protected override void Update()

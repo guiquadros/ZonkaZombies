@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GlowingObjects.Scripts;
 using UnityEngine;
 using ZonkaZombies.Prototype.Characters;
-using ZonkaZombies.Prototype.Characters.PlayerCharacter;
+using ZonkaZombies.Prototype.Characters.Player;
 
 namespace ZonkaZombies.Prototype.Scenery.Interaction
 {
@@ -16,7 +17,7 @@ namespace ZonkaZombies.Prototype.Scenery.Interaction
         [SerializeField]
         private InteractableType _type;
         [SerializeField]
-        private List<PlayerCharacterType> _validCharacterTypes;
+        private List<PlayerType> _validCharacterTypes;
         [SerializeField]
         private GlowableObject _glowableObject;
         public GameObject MainGameObject;

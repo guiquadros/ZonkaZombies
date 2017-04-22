@@ -20,11 +20,6 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             _mesh = new Mesh();
         }
 
-        //private void Start()
-        //{
-        //    BuildMesh();
-        //}
-
         private void BuildMesh()
         {
             _angle = _enemyBehavior.FieldOfViewAngle * 2f;
@@ -42,7 +37,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
 
         private void OnDrawGizmos()
         {
-            if (_mesh == null) return;
+            if (_mesh == null || _enemyBehavior == null) return;
 
             BuildMesh();
 

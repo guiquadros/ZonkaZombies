@@ -1,4 +1,4 @@
-﻿namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
+﻿namespace ZonkaZombies.Prototype.Characters.Player
 {
     public enum CharacterState
     {

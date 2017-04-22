@@ -67,7 +67,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
         {
             if (other.gameObject.layer == LayerConstants.PLAYER_CHARACTER_LAYER)
             {
-                PlayerCharacter.Player abstractPlayerCharacter = other.gameObject.GetComponent<PlayerCharacter.Player>();
+                Player.Player abstractPlayerCharacter = other.gameObject.GetComponent<Player.Player>();
 
                 abstractPlayerCharacter.Damage(HitPoints, () => SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME));
             }
@@ -78,7 +78,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             //The enemy was punched by the player
             if (other.CompareTag(TagConstants.PLAYER_DAMAGER))
             {
-                var playerCharacter = other.gameObject.GetComponentInParent<PlayerCharacter.Player>();
+                var playerCharacter = other.gameObject.GetComponentInParent<Player.Player>();
                 this.Damage(playerCharacter.HitPoints, () => Destroy(this.gameObject));
             }
         }

@@ -20,6 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prototype/PlayerCharacterMovement.unity
   - enabled: 1
-    path: Assets/Scenes/Prototype/P1P1ManyEnemiesVsCharacter.unity
-  - enabled: 1
     path: Assets/Scenes/Prototype/PlayerWin.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P1P2ManyEnemiesVsCharacter.unity
