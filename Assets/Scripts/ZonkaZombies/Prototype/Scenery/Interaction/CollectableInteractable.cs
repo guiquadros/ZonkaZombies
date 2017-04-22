@@ -23,6 +23,8 @@ namespace ZonkaZombies.Prototype.Scenery.Interaction
 
         public InteractableType Type { get { return _type; } }
 
+        private bool _isBeingInteracted;
+
         private void Awake()
         {
             _collider = GetComponent<Collider>();
@@ -30,6 +32,13 @@ namespace ZonkaZombies.Prototype.Scenery.Interaction
 
         public override void OnBegin(IInteractor interactor)
         {
+            if (_isBeingInteracted)
+            {
+                return;
+            }
+
+            _isBeingInteracted = true;
+
             Player player = interactor.GetCharacter() as Player;
 
             if (IsValidCharacter(player))
