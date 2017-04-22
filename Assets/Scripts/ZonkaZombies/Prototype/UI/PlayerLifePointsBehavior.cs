@@ -7,7 +7,7 @@ namespace ZonkaZombies.Prototype.UI
     public class PlayerLifePointsBehavior : MonoBehaviour
     {
         [SerializeField]
-        private PlayerCharacterBehavior _playerCharacterBehavior;
+        private Player _abstractPlayerCharacterBehavior;
 
         [SerializeField]
         private Text _lifePointsText;
@@ -25,7 +25,7 @@ namespace ZonkaZombies.Prototype.UI
 
         private void Update()
         {
-            _lifePointsText.text = string.Format(_pattern, _playerCharacterBehavior.LifePoints.ToString("00"));
+            _lifePointsText.text = string.Format(_pattern, _abstractPlayerCharacterBehavior.LifePoints.ToString("00"));
         }
     }
 }

@@ -1,90 +1,85 @@
 ﻿using UnityEngine;
 using ZonkaZombies.Prototype.Scenery.Interaction;
+using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 {
-    public class InteractionHandler : MonoBehaviour
+    public class InteractionHandler : MonoBehaviour, IInteractor, ICommand
     {
-        private AbstractInteractable _interactable;
-        public bool IsInteractingWithSomething { get; private set; }
+        private IInteractable _interactable;
         
-        private PlayerCharacterBehavior _playerCharacterBehavior;
+        private Player _characterBehaviour;
 
-        [SerializeField]
-        private Transform _characterHand;
-
-        internal void SetUp(PlayerCharacterBehavior playerCharacterBehavior)
+        internal void SetUp(Player abstractPlayerCharacterBehavior)
         {
-            _playerCharacterBehavior = playerCharacterBehavior;
-        }
-
-        protected virtual void Update()
-        {
-            if (IsInteractingWithSomething)
-            {
-                HandleInteraction();
-            }
+            _characterBehaviour = abstractPlayerCharacterBehavior;
         }
 
         protected virtual void OnTriggerEnter(Collider other)
         {
-            // If we are already interacting with something, do nothing
-            if (IsInteractingWithSomething)
+            IInteractable interactable = other.gameObject.GetComponent<IInteractable>();
+
+            if (interactable == null)
             {
                 return;
             }
 
-            AbstractInteractable tempInteractable = other.gameObject.GetComponent<AbstractInteractable>();
-
-            if (tempInteractable != null && !tempInteractable.IsSomeoneInteractingWithIt && tempInteractable.IsValidForInteraction(_playerCharacterBehavior.Type))
-            {
-                _interactable = tempInteractable;
-
-                // TODO Show hud info
-            }
+            OnEnter(interactable);
         }
 
         protected virtual void OnTriggerExit(Collider other)
         {
-            if (!IsInteractingWithSomething || other.gameObject != _interactable.gameObject)
+            IInteractable interactable = other.gameObject.GetComponent<IInteractable>();
+
+            if (interactable == null)
             {
-                // Make sure the _interactable is null
-                _interactable = null;
                 return;
             }
 
-            FinishCurrentInteraction();
+            OnExit(interactable);            
         }
 
-        private void FinishCurrentInteraction()
+        /// <summary>
+        /// This method is called when the player presses the ACTION button.
+        /// </summary>
+        public void Execute()
         {
-            _interactable.FinishInteraction();
-            _interactable = null;
-            IsInteractingWithSomething = false;
-            // TODO Hude hud info
-        }
-
-        private void HandleInteraction()
-        {
-            // TODO Handle interaction logic. It could be better to break the logic into different classes, so each one handles its own logic (for example, per object type). We can handle player input in here, too!
-
-            _interactable.MainGameObject.transform.position = _characterHand.position; //Holds the object in character hand
-        }
-
-        internal void TryToInteract()
-        {
-            if (_interactable != null)
+            if (_interactable == null)
             {
-                if (IsInteractingWithSomething)
-                {
-                    FinishCurrentInteraction();
-                }
-                else
-                {
-                    IsInteractingWithSomething = true;
-                    _interactable.StartInteraction(_playerCharacterBehavior);
-                }
+                return;
+            }
+
+            OnBegin();
+        }
+
+        public void OnEnter(IInteractable interactable)
+        {
+            // If we are already interacting with something, do nothing
+            //TODO Review this!
+            _interactable = interactable;
+
+            _interactable.OnAwake();
+        }
+
+        public void OnExit(IInteractable interactable)
+        {
+            if (interactable.GetGameObject() == _interactable.GetGameObject())
+            {
+                _interactable.OnSleep();
+                _interactable = null;
             }
         }
+
+        public void OnBegin()
+        {
+            _interactable.OnBegin(_characterBehaviour);
+        }
+
+        public Character GetCharacter()
+        {
+            return _characterBehaviour;
+        }
+
+        public void OnFinish() { }
     }
 }

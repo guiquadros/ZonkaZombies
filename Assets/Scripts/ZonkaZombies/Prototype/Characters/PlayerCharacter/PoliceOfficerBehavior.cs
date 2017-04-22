@@ -6,7 +6,7 @@ using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 {
-    public class PoliceOfficerBehavior : PlayerCharacterBehavior
+    public class PoliceOfficerBehavior : Player
     {
         [SerializeField]
         private GameObject _enemies;

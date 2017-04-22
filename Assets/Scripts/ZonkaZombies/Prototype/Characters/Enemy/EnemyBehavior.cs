@@ -1,15 +1,13 @@
-﻿using System.Threading;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
-using ZonkaZombies.Prototype.Characters.PlayerCharacter;
 using ZonkaZombies.Prototype.Managers;
 using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.Characters.Enemy
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    public class EnemyBehavior : CharacterBehavior
+    public class Enemy : Character
     {
         public MeshFilter MeshFilter;
         public Mesh Mesh;
@@ -80,11 +78,11 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
         {
             if (other.gameObject.layer == LayerConstants.PLAYER_CHARACTER_LAYER)
             {
-                PlayerCharacterBehavior playerCharacter = other.gameObject.GetComponent<PlayerCharacterBehavior>();
+                PlayerCharacter.Player abstractPlayerCharacter = other.gameObject.GetComponent<PlayerCharacter.Player>();
 #if UNITY_EDITOR
-                if (playerCharacter.CanReceiveDamage)
+                if (abstractPlayerCharacter.CanReceiveDamage)
 #endif
-                    playerCharacter.Damage(HitPoints, () => SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME));
+                    abstractPlayerCharacter.Damage(HitPoints, () => SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME));
             }
         }
 
@@ -93,7 +91,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             //The enemy was punched by the player
             if (other.CompareTag(TagConstants.PLAYER_DAMAGER))
             {
-                var playerCharacter = other.gameObject.GetComponentInParent<PlayerCharacterBehavior>();
+                var playerCharacter = other.gameObject.GetComponentInParent<PlayerCharacter.Player>();
                 this.Damage(playerCharacter.HitPoints, () => Destroy(this.gameObject));
             }
         }

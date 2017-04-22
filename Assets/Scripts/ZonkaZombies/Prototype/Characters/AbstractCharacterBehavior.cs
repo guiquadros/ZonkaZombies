@@ -4,7 +4,7 @@ using ZonkaZombies.Prototype.UI;
 
 namespace ZonkaZombies.Prototype.Characters
 {
-    public abstract class CharacterBehavior : MonoBehaviour
+    public abstract class Character : MonoBehaviour
     {
         public int LifePoints = 5;
         public int HitPoints = 1;

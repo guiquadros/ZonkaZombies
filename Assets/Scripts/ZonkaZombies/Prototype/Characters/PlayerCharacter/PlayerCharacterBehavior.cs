@@ -5,7 +5,7 @@ using ZonkaZombies.Util;
 namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 {
     [RequireComponent(typeof(InteractionHandler), typeof(MonoBehaviour), typeof(Rigidbody))]
-    public abstract class PlayerCharacterBehavior : CharacterBehavior
+    public class Player : Character
     {
         [SerializeField]
         protected Animator Animator;
@@ -186,7 +186,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 
             if (InputReader.ADown())
             {
-                _interactionHandler.TryToInteract();
+                _interactionHandler.Execute();
             }
         }
     }

@@ -832,7 +832,7 @@ MonoBehaviour:
   _timeBetweenBullets: 0.12
   _range: 100
   _faceLight: {fileID: 108088550493943024}
-  _playerCharacterBehavior: {fileID: 114144592912273310}
+  _abstractPlayerCharacterBehavior: {fileID: 114144592912273310}
 --- !u!114 &114804829813101800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1016,7 +1016,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1509211917
+  randomSeed: 201522181
   InitialModule:
     serializedVersion: 3
     enabled: 1

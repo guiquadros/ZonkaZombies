@@ -23,7 +23,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
         private Light _faceLight;
 
         [SerializeField]
-        private PlayerCharacterBehavior _playerCharacterBehavior;
+        private Player _abstractPlayerCharacterBehavior;
 
         private float _timer; // A timer to determine when to fire.
         private Ray _shootRay = new Ray(); // A ray from the gun end forwards.
@@ -56,7 +56,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
             _timer += Time.deltaTime;
 
             // If the Fire1 button is being press and it's time to fire...
-            if (_playerCharacterBehavior.InputReader.RightTrigger() && _timer >= _timeBetweenBullets &&
+            if (_abstractPlayerCharacterBehavior.InputReader.RightTrigger() && _timer >= _timeBetweenBullets &&
                 Time.timeScale != 0)
             {
                 // ... shoot the gun.
@@ -109,7 +109,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
             if (Physics.Raycast(_shootRay, out _shootHit, _range, _enemyLayerMask))
             {
                 // Try and find an EnemyHealth script on the gameobject hit.
-                EnemyBehavior enemy = _shootHit.collider.GetComponent<EnemyBehavior>();
+                Enemy.Enemy enemy = _shootHit.collider.GetComponent<Enemy.Enemy>();
 
                 // If the EnemyBehavior component exist...
                 if (enemy != null)

@@ -2,7 +2,7 @@
 
 namespace ZonkaZombies.Prototype.Characters.Enemy
 {
-    public class CrawlerEnemyBehavior : EnemyBehavior
+    public class CrawlerEnemyBehavior : Enemy
     {
         [SerializeField, Range(.5f, 4)]
         private float _velocityMultiplier = 2;
