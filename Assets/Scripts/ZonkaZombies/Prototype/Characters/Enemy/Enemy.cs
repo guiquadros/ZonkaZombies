@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
-using ZonkaZombies.Prototype.Characters.PlayerCharacter;
 using ZonkaZombies.Prototype.Managers;
 using ZonkaZombies.Util;
 
@@ -9,7 +8,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
     [RequireComponent(typeof(NavMeshAgent))]
     public class Enemy : Character
     {
-        [SerializeField] private Player _target;
+        private Player.Player _target;
 
         [SerializeField] private bool _useFieldOfView = false, _agentStopped = false;
 
@@ -79,7 +78,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
         {
             if (other.gameObject.layer == LayerConstants.PLAYER_CHARACTER_LAYER)
             {
-                PlayerCharacter.Player abstractPlayerCharacter = other.gameObject.GetComponent<PlayerCharacter.Player>();
+                Player.Player abstractPlayerCharacter = other.gameObject.GetComponent<Player.Player>();
 
                 abstractPlayerCharacter.Damage(HitPoints);
             }
@@ -90,7 +89,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             //The enemy was punched by the player
             if (other.CompareTag(TagConstants.PLAYER_DAMAGER))
             {
-                var playerCharacter = other.gameObject.GetComponentInParent<Player>();
+                var playerCharacter = other.gameObject.GetComponentInParent<Player.Player>();
                 Damage(playerCharacter.HitPoints);
             }
         }

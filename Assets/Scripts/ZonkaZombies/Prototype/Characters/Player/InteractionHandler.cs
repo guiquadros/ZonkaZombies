@@ -2,17 +2,17 @@
 using ZonkaZombies.Prototype.Scenery.Interaction;
 using ZonkaZombies.Util;
 
-namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
+namespace ZonkaZombies.Prototype.Characters.Player
 {
     public class InteractionHandler : MonoBehaviour, IInteractor, ICommand
     {
         private IInteractable _interactable;
         
-        private Player.Player _player;
+        private Player _player;
 
         public void SetUp(object obj)
         {
-            _player = obj as Player.Player;
+            _player = obj as Player;
         }
 
         protected virtual void OnTriggerEnter(Collider other)

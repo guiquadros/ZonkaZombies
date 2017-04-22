@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using ZonkaZombies.Prototype.Characters.Enemy;
 using ZonkaZombies.Util;
 
-namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
+namespace ZonkaZombies.Prototype.Characters.Player
 {
     public class PlayerShooting : MonoBehaviour
     {

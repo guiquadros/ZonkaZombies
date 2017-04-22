@@ -456,7 +456,7 @@ Prefab:
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
@@ -466,7 +466,7 @@ Prefab:
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 944.90857
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
@@ -481,7 +481,7 @@ Prefab:
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
@@ -491,7 +491,7 @@ Prefab:
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
@@ -505,30 +505,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114600595227687712, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
-      propertyPath: _playerCharacterBehavior
+      propertyPath: _player
       value: 
       objectReference: {fileID: 650249192}
     - target: {fileID: 1256972539743526, guid: 570d595020fb66640be14b0d843ab62f, type: 2}
       propertyPath: m_Name
       value: NewPlayerHUD1
       objectReference: {fileID: 0}
-    - target: {fileID: 114600595227687712, guid: 570d595020fb66640be14b0d843ab62f,
-        type: 2}
-      propertyPath: _pattern
-      value: 'Player 1: <color=black>{0}</color> pts'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114652587317992928, guid: 570d595020fb66640be14b0d843ab62f,
-        type: 2}
-      propertyPath: m_Text
-      value: 'Player 1: <color=black>{0}</color> pts'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114652587317992928, guid: 570d595020fb66640be14b0d843ab62f,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114291787007881276, guid: 570d595020fb66640be14b0d843ab62f, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 570d595020fb66640be14b0d843ab62f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &37028742
@@ -2881,7 +2865,7 @@ Prefab:
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 959.90857
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
@@ -2891,7 +2875,7 @@ Prefab:
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 944.90857
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
@@ -2906,7 +2890,7 @@ Prefab:
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
@@ -2916,7 +2900,7 @@ Prefab:
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224111351271554402, guid: 570d595020fb66640be14b0d843ab62f,
         type: 2}
@@ -2928,17 +2912,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114600595227687712, guid: 570d595020fb66640be14b0d843ab62f,
+        type: 2}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 421291028}
     - target: {fileID: 1256972539743526, guid: 570d595020fb66640be14b0d843ab62f, type: 2}
       propertyPath: m_Name
       value: NewPlayerHUD2
       objectReference: {fileID: 0}
-    - target: {fileID: 114600595227687712, guid: 570d595020fb66640be14b0d843ab62f,
-        type: 2}
-      propertyPath: _playerCharacterBehavior
-      value: 
-      objectReference: {fileID: 421291028}
-    m_RemovedComponents:
-    - {fileID: 114726417495276778, guid: 570d595020fb66640be14b0d843ab62f, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 570d595020fb66640be14b0d843ab62f, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &568811021 stripped

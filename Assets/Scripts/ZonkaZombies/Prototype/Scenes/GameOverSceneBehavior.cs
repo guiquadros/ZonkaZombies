@@ -20,7 +20,7 @@ namespace ZonkaZombies.Prototype.Scenes
         {
             if (_inputReaderController1.Start())
             {
-                SceneManager.LoadScene(SceneConstants.MANY_ENEMIES_VS_CHARACTER);
+                SceneManager.LoadScene(SceneConstants.P1_MANY_ENEMIES_VS_CHARACTER);
             }
             else if (_inputReaderController1.Back() || _inputReaderController2.Back())
             {

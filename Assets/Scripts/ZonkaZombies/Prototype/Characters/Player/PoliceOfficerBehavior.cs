@@ -1,4 +1,6 @@
-namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
+using ZonkaZombies.Prototype.Characters.PlayerCharacter;
+
+namespace ZonkaZombies.Prototype.Characters.Player
 {
     public class PoliceOfficerBehavior : Player
     {

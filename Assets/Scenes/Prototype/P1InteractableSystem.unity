@@ -210,6 +210,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!84 &136680719
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1920
+  m_Height: 1080
+  m_AntiAliasing: 2
+  m_DepthFormat: 2
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1001 &193787594
 Prefab:
   m_ObjectHideFlags: 0
@@ -469,21 +491,6 @@ Prefab:
     - target: {fileID: 4068924326164538, guid: d6272e85a3a14674b88b8d2cd9b24d1e, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 65129220025775884, guid: d6272e85a3a14674b88b8d2cd9b24d1e,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 65129220025775884, guid: d6272e85a3a14674b88b8d2cd9b24d1e,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65129220025775884, guid: d6272e85a3a14674b88b8d2cd9b24d1e,
-        type: 2}
-      propertyPath: m_Size.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6272e85a3a14674b88b8d2cd9b24d1e, type: 2}
@@ -920,28 +927,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4192534304221776, guid: 495045a7554e90442951986219c087bb,
     type: 2}
   m_PrefabInternal: {fileID: 1928260915}
---- !u!84 &1863767556
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1920
-  m_Height: 1080
-  m_AntiAliasing: 2
-  m_DepthFormat: 2
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1 &1911202948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,7 +1010,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1863767556}
+  m_TargetTexture: {fileID: 136680719}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0

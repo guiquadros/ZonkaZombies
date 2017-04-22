@@ -38,8 +38,6 @@ GameObject:
   - component: {fileID: 224992006291699344}
   - component: {fileID: 222197089563085130}
   - component: {fileID: 114652587317992928}
-  - component: {fileID: 114291787007881276}
-  - component: {fileID: 114726417495276778}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -47,20 +45,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114291787007881276
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1770444119848178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 0
 --- !u!114 &114600595227687712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,9 +56,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0582e5ead8b908c4c99b00306c4c0e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerCharacterBehavior: {fileID: 0}
+  _player: {fileID: 0}
   _lifePointsText: {fileID: 114652587317992928}
-  _pattern: 'Player 2: <color=black>{0}</color> pts'
+  _pattern: 'Player 1: <color=black>{0}</color> pts'
 --- !u!114 &114652587317992928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,27 +85,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 119
-    m_Alignment: 2
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 2: <color=black>{0}</color> pts'
---- !u!114 &114726417495276778
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1770444119848178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 0
+  m_Text: 'Player 1: <color=black>{0}</color> pts'
 --- !u!222 &222197089563085130
 CanvasRenderer:
   m_ObjectHideFlags: 1

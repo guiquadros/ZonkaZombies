@@ -2,6 +2,7 @@
 using System.Linq;
 using UnityEngine;
 using ZonkaZombies.Prototype.Characters.Enemy;
+using ZonkaZombies.Prototype.Characters.Player;
 using ZonkaZombies.Prototype.Characters.PlayerCharacter;
 using ZonkaZombies.Util;
 

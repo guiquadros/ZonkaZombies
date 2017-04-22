@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using ZonkaZombies.Input;
+using ZonkaZombies.Prototype.Characters.PlayerCharacter;
 using ZonkaZombies.Prototype.Scenery.Interaction;
 using ZonkaZombies.Util;
 
-namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
+namespace ZonkaZombies.Prototype.Characters.Player
 {
     [RequireComponent(typeof(InteractionHandler), typeof(MonoBehaviour), typeof(Rigidbody))]
     public class Player : Character
