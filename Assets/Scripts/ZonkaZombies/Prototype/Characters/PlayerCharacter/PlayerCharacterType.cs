@@ -2,6 +2,7 @@
 {
     public enum PlayerCharacterType
     {
-        PoliceOfficer, Brute, Cientist
+        PoliceOfficer, Brute, Cientist,
+        All
     }
 }

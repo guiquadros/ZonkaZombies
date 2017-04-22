@@ -115,7 +115,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
                 if (enemy != null)
                 {
                     // ... the enemy should take damage.
-                    enemy.Damage(ShotHitPoints, () => Destroy(enemy.gameObject));
+                    enemy.Damage(ShotHitPoints);
                 }
 
                 // Set the second position of the line renderer to the point the raycast hit.

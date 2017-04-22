@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using ZonkaZombies.Input;
+using ZonkaZombies.Prototype.Scenery.Interaction;
 using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
@@ -30,7 +31,7 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
         public PlayerCharacterType Type { get; internal set; }
 
         public InputReader InputReader;
-        private InteractionHandler _interactionHandler;
+        private ICommand _interactionHandler;
 
         private Rigidbody _characterRigidbody;
         private Vector3 _movement;
@@ -82,21 +83,23 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
                 Application.Quit();
             }
 
-            _interactionHandler = GetComponent<InteractionHandler>();
+            _interactionHandler = GetComponent<ICommand>();
 
-            if (!_interactionHandler)
+            if (_interactionHandler == null)
             {
                 Debug.LogError("InteractionBehaviour cannot be null!");
                 Application.Quit();
             }
 
-            _interactionHandler.SetUp(this);
+            (_interactionHandler as IInteractor).SetUp(this);
 
             _characterRigidbody = GetComponent<Rigidbody>();
         }
 
-        protected virtual void Start()
+        protected override void Start()
         {
+            base.Start();
+
             InputReader = InputFactory.Create(_inputType);
 
             SetState(CharacterState.CanMove, 
@@ -183,9 +186,10 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
             {
                 return;
             }
-
+            
             if (InputReader.ADown())
             {
+                Debug.Log("Aloha!");
                 _interactionHandler.Execute();
             }
         }

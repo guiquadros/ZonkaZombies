@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
+using ZonkaZombies.Prototype.Characters.PlayerCharacter;
 using ZonkaZombies.Prototype.Managers;
 using ZonkaZombies.Util;
 
@@ -9,9 +9,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
     [RequireComponent(typeof(NavMeshAgent))]
     public class Enemy : Character
     {
-        [SerializeField] private Transform _target;
-
-        [SerializeField] private Transform _playerCharacterTransform;
+        [SerializeField] private Player _target;
 
         [SerializeField] private bool _useFieldOfView = false, _agentStopped = false;
 
@@ -26,9 +24,18 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
         //TODO Move this to a ScriptableObject so It can be easily accessed by each enemy on scene
         [SerializeField] private AudioClip _damagedAudioClip;
 
+        private EntityManager _entityManager;
+
         protected virtual void Awake()
         {
             Agent = GetComponent<NavMeshAgent>();
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+
+            _entityManager = EntityManager.Instance;
         }
 
         protected virtual void Update()
@@ -39,7 +46,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             if (CanSeePlayerCharacter())
             {
                 //Debug.Log("Can see the player");
-                Agent.SetDestination(_target.position);
+                Agent.SetDestination(_target.transform.position);
                 _timeWithoutSeeingThePlayer = 0f;
 
                 if (_agentStopped)
@@ -63,13 +70,18 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             }
         }
 
+        private void FixedUpdate()
+        {
+            _target = _entityManager.GetNearestPlayer(this);
+        }
+
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.layer == LayerConstants.PLAYER_CHARACTER_LAYER)
             {
                 PlayerCharacter.Player abstractPlayerCharacter = other.gameObject.GetComponent<PlayerCharacter.Player>();
 
-                abstractPlayerCharacter.Damage(HitPoints, () => SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME));
+                abstractPlayerCharacter.Damage(HitPoints);
             }
         }
 
@@ -78,8 +90,8 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             //The enemy was punched by the player
             if (other.CompareTag(TagConstants.PLAYER_DAMAGER))
             {
-                var playerCharacter = other.gameObject.GetComponentInParent<PlayerCharacter.Player>();
-                this.Damage(playerCharacter.HitPoints, () => Destroy(this.gameObject));
+                var playerCharacter = other.gameObject.GetComponentInParent<Player>();
+                Damage(playerCharacter.HitPoints);
             }
         }
 
@@ -93,8 +105,8 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             if (!_useFieldOfView) return true;
 
             RaycastHit hit;
-            Vector3 rayDirection = _playerCharacterTransform.position - transform.position;
-            float distanceToPlayer = Vector3.Distance(transform.position, _playerCharacterTransform.position);
+            Vector3 rayDirection = _target.transform.position - transform.position;
+            float distanceToPlayer = Vector3.Distance(transform.position, _target.transform.position);
 
             //raycast to the player direction
             bool raycastObj = Physics.Raycast(transform.position, rayDirection, out hit);

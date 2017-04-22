@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 135228767659057470}
   - component: {fileID: 114821271487742982}
   m_Layer: 13
-  m_Name: SmallBox
+  m_Name: CollectablelBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,10 +107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc1b5df35c15f54aa405decf8b98807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
-  _validCharacterTypes: 000000000200000001000000
+  _validTypes: 03000000
   _glowableObject: {fileID: 114991355220529618}
-  MainGameObject: {fileID: 1363815550244726}
+  _type: 0
 --- !u!114 &114823809028817596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,8 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ec0fb3ff2a5454e8863609a58514d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 1, g: 0.8896551, b: 0, a: 0}
-  LerpFactor: 10
+  _glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  _lerpFactor: 8
 --- !u!135 &135228767659057470
 SphereCollider:
   m_ObjectHideFlags: 1

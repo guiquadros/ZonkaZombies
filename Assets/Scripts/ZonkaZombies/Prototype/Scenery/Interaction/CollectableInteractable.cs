@@ -1,45 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using ZonkaZombies.Prototype.Characters;
+﻿using UnityEngine;
 using ZonkaZombies.Prototype.Characters.PlayerCharacter;
 
 namespace ZonkaZombies.Prototype.Scenery.Interaction
 {
-    public class DestructableInteractable : Interactable
-    {
-        public override void OnAwake()
-        {
-            
-        }
-
-        public override void OnBegin(IInteractor interactor)
-        {
-            
-        }
-
-        public override void OnFinish()
-        {
-            
-        }
-
-        public override void OnSleep()
-        {
-            
-        }
-    }
-
     //public class WeaponInteractable : MonoBehaviour, IInteractable { }
     //public class TriggerInteractable : MonoBehaviour, IInteractable { }
     //public class ActionInteractable : MonoBehaviour, IInteractable { }
 
     [RequireComponent(typeof(Collider))]
-    public class CollectableInteractable : Interactable
+    public class CollectableInteractable : InteractableGlowable
     {
         [SerializeField]
         private InteractableType _type;
-        [SerializeField]
-        private List<PlayerCharacterType> _validCharacterTypes;
 
         private Collider _collider;
 
@@ -54,21 +26,18 @@ namespace ZonkaZombies.Prototype.Scenery.Interaction
         {
             Player player = interactor.GetCharacter() as Player;
 
-            bool isValidCharacter = player != null && _validCharacterTypes.Any(t => t == player.Type);
-
-            if (isValidCharacter)
+            if (IsValidCharacter(player))
             {
-                //TODO Check to know if the character has the correct object on its inventory, for example...
-
                 _collider.enabled = false;
-                
-                //TODO
+
+                //TODO Add the item to the player's inventory
+
+                Debug.LogFormat("'{0}' added to the character's inventory!", gameObject.name);
+
+                Destroy(gameObject);
             }
         }
 
-        public override void OnFinish()
-        {
-            _collider.enabled = true;
-        }
+        public override void OnFinish() { }
     }
 }

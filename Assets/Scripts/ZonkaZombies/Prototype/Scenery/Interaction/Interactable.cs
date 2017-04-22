@@ -1,40 +1,37 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using ZonkaZombies.Prototype.Characters;
+using ZonkaZombies.Prototype.Characters.PlayerCharacter;
 
 namespace ZonkaZombies.Prototype.Scenery.Interaction
 {
-    public abstract class Interactable : MonoBehaviour, IInteractable
+    public abstract class InteractableBase : MonoBehaviour, IInteractable
     {
-        [SerializeField, Tooltip("This is not obligatory")]
-        private GlowableObject _glowableObject;
-        private int _playersInteractingCount;
+        [SerializeField]
+        private List<PlayerCharacterType> _validTypes = new List<PlayerCharacterType>();
+
+        protected int Count;
 
         public virtual void OnAwake()
         {
-            _playersInteractingCount++;
-
-            if (_glowableObject != null)
-            {
-                _glowableObject.Glow(true);
-            }
+            Count++;
         }
 
         public virtual void OnSleep()
         {
-            _playersInteractingCount--;
+            Count--;
 
-            _playersInteractingCount = Mathf.Max(_playersInteractingCount, 0);
-
-            if (_playersInteractingCount == 0)
-            {
-                if (_glowableObject != null)
-                {
-                    _glowableObject.Glow(false);
-                }
-            }
+            Count = Mathf.Max(Count, 0);
         }
 
         public abstract void OnBegin(IInteractor interactor);
         public abstract void OnFinish();
+
+        protected bool IsValidCharacter(Player player)
+        {
+            return player != null && _validTypes.Any(c => c == player.Type || c == PlayerCharacterType.All);
+        }
 
         public GameObject GetGameObject()
         {

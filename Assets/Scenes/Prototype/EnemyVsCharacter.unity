@@ -676,6 +676,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f9572ca2e00b31444be4552476110bd9, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1048788203
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4550585668209876, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -11.399938
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550585668209876, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.4745002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550585668209876, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.104305
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550585668209876, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550585668209876, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550585668209876, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550585668209876, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550585668209876, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1169088534 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4218829520987330, guid: 495045a7554e90442951986219c087bb,
