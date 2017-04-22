@@ -63,9 +63,11 @@ namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 
         public void OnExit(IInteractable interactable)
         {
+            interactable.OnSleep();
+
             if (_interactable != null && interactable.GetGameObject() == _interactable.GetGameObject())
             {
-                _interactable.OnSleep();
+                _interactable.OnFinish();
                 _interactable = null;
             }
         }
