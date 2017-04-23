@@ -190,7 +190,6 @@ namespace ZonkaZombies.Prototype.Characters.Player
             
             if (InputReader.ADown())
             {
-                Debug.Log("Aloha!");
                 _interactionHandler.Execute();
             }
         }

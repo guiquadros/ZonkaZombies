@@ -11,12 +11,25 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
 
         private float _agentMaximmumSpeed;
 
-        private void Start()
+        protected override void OnPursuit()
         {
-            _agentMaximmumSpeed = Agent.speed;
+            base.OnPursuit();
+            UpdateCrawlSpeed();
         }
 
-        protected override void Update()
+        protected override void OnLoseSight()
+        {
+            base.OnLoseSight();
+            UpdateCrawlSpeed();
+        }
+
+        protected override void OnPatrol()
+        {
+            base.OnPatrol();
+            UpdateCrawlSpeed();
+        }
+
+        private void UpdateCrawlSpeed()
         {
             float currentDelta = Time.time * _velocityMultiplier;
 
@@ -26,8 +39,13 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
 
             // Dynamically sets the agent's speed based on the Animation Curve, to make the creeping effect
             Agent.speed = _animationCurve.Evaluate(currentAgentSpeed) * _agentMaximmumSpeed;
+        }
 
-            base.Update();
+        protected override void Start()
+        {
+            base.Start();
+
+            _agentMaximmumSpeed = Agent.speed;
         }
     }
 }

@@ -27,7 +27,6 @@ namespace ZonkaZombies.Prototype.Characters.Player
         private float _timer; // A timer to determine when to fire.
         private Ray _shootRay = new Ray(); // A ray from the gun end forwards.
         private RaycastHit _shootHit; // A raycast hit to get information about what was hit.
-        private int _enemyLayerMask; // A layer mask so the raycast only hits enemies.
         private ParticleSystem _gunParticles; // Reference to the particle system.
         private LineRenderer _gunLine; // Reference to the line renderer.
         private AudioSource _gunAudio; // Reference to the audio source.
@@ -38,9 +37,6 @@ namespace ZonkaZombies.Prototype.Characters.Player
 
         private void Awake()
         {
-            // Create a layer mask for the Shootable layer.
-            _enemyLayerMask = LayerMask.GetMask(LayerConstants.ENEMY_LAYER_NAME);
-
             // Set up the references.
             _gunParticles = GetComponent<ParticleSystem>();
             _gunLine = GetComponent<LineRenderer>();
@@ -105,7 +101,7 @@ namespace ZonkaZombies.Prototype.Characters.Player
             _shootRay.direction = transform.forward;
 
             // Perform the raycast against gameobjects on the shootable layer and if it hits something...
-            if (Physics.Raycast(_shootRay, out _shootHit, _range, _enemyLayerMask))
+            if (Physics.Raycast(_shootRay, out _shootHit, _range, LayerConstants.ENEMY_LAYER | LayerConstants.SCENERY_LAYER))
             {
                 // Try and find an EnemyHealth script on the gameobject hit.
                 Enemy.Enemy enemy = _shootHit.collider.GetComponent<Enemy.Enemy>();

@@ -32,6 +32,9 @@ namespace ZonkaZombies.Prototype.Managers
             Player result = null;
             foreach (Player player in Players)
             {
+                if (player == null)
+                    continue;
+
                 float playerDistance = Vector3.Distance(enemy.transform.position, player.transform.position);
                 if (result == null || playerDistance < minDistanceFound)
                 {

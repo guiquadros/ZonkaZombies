@@ -11,6 +11,7 @@ namespace ZonkaZombies.Util
         public const string FLOOR_LAYER_NAME = "Floor";
 
         //layer index
+        public static readonly int SCENERY_LAYER = LayerMask.NameToLayer(ENEMY_LAYER_NAME);
         public static readonly int ENEMY_LAYER = LayerMask.NameToLayer(ENEMY_LAYER_NAME);
         public static readonly int FLOOR_LAYER = LayerMask.NameToLayer(FLOOR_LAYER_NAME);
         public static readonly int PLAYER_CHARACTER_LAYER = LayerMask.NameToLayer(PLAYER_CHARACTER_LAYER_NAME);

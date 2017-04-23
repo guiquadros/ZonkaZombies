@@ -5,18 +5,24 @@ using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.Characters.Enemy
 {
+    internal enum EnemyState
+    {
+        Pursuit,
+        Patrol,
+        Sleeping,
+        LoseSight,
+        Attack
+    }
+
     [RequireComponent(typeof(NavMeshAgent))]
     public class Enemy : Character
     {
         private Player.Player _target;
-
         [SerializeField] private bool _useFieldOfView = false, _agentStopped = false;
+        [SerializeField] private float _minPlayerDetectDistance = 5.0f, _fieldOfVisionTimeout = 5f;
+        public float FieldOfViewAngle = 68.0f; // in degrees (I use 68, this gives the enemy a vision of 136 degrees) 
 
         protected NavMeshAgent Agent;
-
-        [SerializeField] private float _minPlayerDetectDistance = 5.0f, _fieldOfVisionTimeout = 5f;
-
-        public float FieldOfViewAngle = 68.0f; // in degrees (I use 68, this gives the enemy a vision of 136 degrees) 
 
         private float _timeWithoutSeeingThePlayer;
 
@@ -24,6 +30,8 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
         [SerializeField] private AudioClip _damagedAudioClip;
 
         private EntityManager _entityManager;
+
+        private EnemyState _currentState;
 
         protected virtual void Awake()
         {
@@ -35,37 +43,90 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             base.Start();
 
             _entityManager = EntityManager.Instance;
+
+            _currentState = EnemyState.Sleeping;
         }
 
-        protected virtual void Update()
+#region ENEMY STATES
+
+        protected virtual void OnPursuit()
         {
             if (_target == null)
                 return;
 
-            if (CanSeePlayerCharacter())
-            {
-                //Debug.Log("Can see the player");
-                Agent.SetDestination(_target.transform.position);
-                _timeWithoutSeeingThePlayer = 0f;
+            Agent.SetDestination(_target.transform.position);
+            _timeWithoutSeeingThePlayer = 0f;
 
-                if (_agentStopped)
-                {
-                    Agent.Resume();
-                }
-            }
-            else
+            if (_agentStopped)
+                Agent.Resume();
+
+            if (!CanSeePlayerCharacter())
             {
-                //Debug.Log("Can NOT see the player");
-                _timeWithoutSeeingThePlayer += Time.deltaTime;
+                _currentState = EnemyState.LoseSight;
+                _timeWithoutSeeingThePlayer = 0;
             }
+        }
+
+        protected virtual void OnLoseSight()
+        {
+            _timeWithoutSeeingThePlayer += Time.deltaTime;
 
             //stops the pursuit after some time without see the player
             if (_timeWithoutSeeingThePlayer >= _fieldOfVisionTimeout)
             {
+                _currentState = EnemyState.Sleeping;
                 _timeWithoutSeeingThePlayer = 0f;
                 Agent.Stop();
-
                 _agentStopped = true;
+            }
+            else
+            {
+                if (CanSeePlayerCharacter())
+                {
+                    _currentState = EnemyState.Pursuit;
+                }
+            }
+        }
+
+        protected virtual void OnPatrol()
+        {
+            //TODO
+        }
+
+        protected virtual void OnSleeping()
+        {
+            if (CanSeePlayerCharacter())
+            {
+                _currentState = EnemyState.Pursuit;
+            }
+        }
+
+        protected virtual void OnAttack()
+        {
+            //TODO
+        }
+
+#endregion
+
+        protected virtual void Update()
+        {
+            switch (_currentState)
+            {
+                case EnemyState.Pursuit:
+                    OnPursuit();
+                    break;
+                case EnemyState.Patrol:
+                    OnPatrol();
+                    break;
+                case EnemyState.Sleeping:
+                    OnSleeping();
+                    break;
+                case EnemyState.LoseSight:
+                    OnLoseSight();
+                    break;
+                case EnemyState.Attack:
+                    OnAttack();
+                    break;
             }
         }
 
@@ -103,12 +164,24 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
         {
             if (!_useFieldOfView) return true;
 
+            if (_target == null)
+            {
+                return false;
+            }
+
             RaycastHit hit;
             Vector3 rayDirection = _target.transform.position - transform.position;
             float distanceToPlayer = Vector3.Distance(transform.position, _target.transform.position);
 
             //raycast to the player direction
             bool raycastObj = Physics.Raycast(transform.position, rayDirection, out hit);
+            
+            if (!raycastObj)
+            {
+                return false;
+            }
+
+            Debug.DrawLine(transform.position, hit.point, Color.yellow);
 
             //verify if the object hit is a player character
             bool playerHit = hit.transform.CompareTag(TagConstants.PLAYER);
@@ -121,7 +194,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             //verify the player is in the angle range of the field of vision of the enemy
             bool matchedFieldOfVisionAngle = angle < FieldOfViewAngle;
 
-            return raycastObj && playerHit && (matchedMinDistance || matchedFieldOfVisionAngle);
+            return playerHit && (matchedMinDistance || matchedFieldOfVisionAngle);
         }
     }
 }
