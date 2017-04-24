@@ -130,12 +130,12 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             }
         }
 
-        private void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             _target = _entityManager.GetNearestPlayer(this);
         }
 
-        private void OnCollisionEnter(Collision other)
+        protected virtual void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.layer == LayerConstants.PLAYER_CHARACTER_LAYER)
             {
@@ -145,7 +145,7 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        protected virtual void OnTriggerEnter(Collider other)
         {
             //The enemy was punched by the player
             if (other.CompareTag(TagConstants.PLAYER_DAMAGER))
