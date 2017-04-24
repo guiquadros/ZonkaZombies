@@ -101,7 +101,7 @@ namespace ZonkaZombies.Prototype.Characters.Player
             _shootRay.direction = transform.forward;
 
             // Perform the raycast against gameobjects on the shootable layer and if it hits something...
-            if (Physics.Raycast(_shootRay, out _shootHit, _range, LayerConstants.ENEMY_LAYER | LayerConstants.SCENERY_LAYER))
+            if (Physics.Raycast(_shootRay, out _shootHit, _range))
             {
                 // Try and find an EnemyHealth script on the gameobject hit.
                 Enemy.Enemy enemy = _shootHit.collider.GetComponent<Enemy.Enemy>();
@@ -112,7 +112,7 @@ namespace ZonkaZombies.Prototype.Characters.Player
                     // ... the enemy should take damage.
                     enemy.Damage(ShotHitPoints);
                 }
-
+                
                 // Set the second position of the line renderer to the point the raycast hit.
                 _gunLine.SetPosition(1, _shootHit.point);
             }
