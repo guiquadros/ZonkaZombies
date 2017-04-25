@@ -25,6 +25,11 @@ namespace ZonkaZombies.Prototype.Characters
         /// <returns>Returns true if the character is dead.</returns>
         public void Damage(int damage)
         {
+#if UNITY_EDITOR
+            Player.Player player = this as Player.Player;
+            if (player != null && !player.CanReceiveDamage) return;
+#endif
+
             LifePoints -= damage;
 
             IsAlive = LifePoints > 0;

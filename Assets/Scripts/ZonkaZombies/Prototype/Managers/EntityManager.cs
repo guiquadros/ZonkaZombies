@@ -15,8 +15,11 @@ namespace ZonkaZombies.Prototype.Managers
         [HideInInspector]
         public List<Enemy> Enemies;
 
-        private void Start()
+        protected override void Awake()
         {
+            base.Awake();
+
+            //this need to be done in Awake(), the GameManager.Start() was running before the EntityManager.Start() in some cases
             Players = FindObjectsOfType<Player>().ToList();
             Enemies = FindObjectsOfType<Enemy>().ToList();
         }

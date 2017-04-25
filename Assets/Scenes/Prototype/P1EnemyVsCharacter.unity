@@ -320,11 +320,11 @@ Prefab:
         type: 2}
       propertyPath: _target
       value: 
-      objectReference: {fileID: 1169088534}
+      objectReference: {fileID: 0}
     - target: {fileID: 114353560634271112, guid: 822751f5e4efb7b4f90ace0d2f0c9479,
         type: 2}
       propertyPath: _useFieldOfView
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 822751f5e4efb7b4f90ace0d2f0c9479, type: 2}
@@ -392,11 +392,11 @@ Prefab:
         type: 2}
       propertyPath: _target
       value: 
-      objectReference: {fileID: 1169088534}
+      objectReference: {fileID: 0}
     - target: {fileID: 114652635271180608, guid: c04d8c107779b394cadc38889b7ad66c,
         type: 2}
       propertyPath: _useFieldOfView
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04d8c107779b394cadc38889b7ad66c, type: 2}
@@ -718,11 +718,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1169088534 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4218829520987330, guid: 495045a7554e90442951986219c087bb,
-    type: 2}
-  m_PrefabInternal: {fileID: 720924272}
 --- !u!1001 &1196565339
 Prefab:
   m_ObjectHideFlags: 0

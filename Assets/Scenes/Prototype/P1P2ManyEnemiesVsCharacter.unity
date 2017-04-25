@@ -2921,6 +2921,16 @@ Prefab:
       propertyPath: m_Name
       value: NewPlayerHUD2
       objectReference: {fileID: 0}
+    - target: {fileID: 114652587317992928, guid: 570d595020fb66640be14b0d843ab62f,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Player 2: <color=black>{0}</color> pts'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114600595227687712, guid: 570d595020fb66640be14b0d843ab62f,
+        type: 2}
+      propertyPath: _pattern
+      value: 'Player 2: <color=black>{0}</color> pts'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 570d595020fb66640be14b0d843ab62f, type: 2}
   m_IsPrefabParent: 0

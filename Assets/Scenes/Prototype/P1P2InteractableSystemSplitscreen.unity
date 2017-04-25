@@ -386,7 +386,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1570277227858556, guid: 495045a7554e90442951986219c087bb, type: 2}
       propertyPath: m_Name
-      value: PoliceOfficer (1)
+      value: P2PoliceOfficer
       objectReference: {fileID: 0}
     - target: {fileID: 114144592912273310, guid: 495045a7554e90442951986219c087bb,
         type: 2}
@@ -1084,6 +1084,10 @@ Prefab:
     - target: {fileID: 4192534304221776, guid: 495045a7554e90442951986219c087bb, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570277227858556, guid: 495045a7554e90442951986219c087bb, type: 2}
+      propertyPath: m_Name
+      value: P1PoliceOfficer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 495045a7554e90442951986219c087bb, type: 2}
