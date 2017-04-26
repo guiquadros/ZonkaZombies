@@ -24,7 +24,7 @@ namespace ZonkaZombies.Prototype.Scenes
             }
             else if (_inputReaderController1.Back() || _inputReaderController2.Back())
             {
-                SceneManager.LoadScene(SceneConstants.P1P2_MANY_ENEMIES_VS_CHARACTER);
+                SceneManager.LoadScene(SceneConstants.P2_MANY_ENEMIES_VS_CHARACTER);
             }
         }
     }
