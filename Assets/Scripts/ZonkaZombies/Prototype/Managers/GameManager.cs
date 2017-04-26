@@ -1,14 +1,31 @@
-﻿using UnityEngine.SceneManagement;
+﻿using System.Linq;
+using UnityEngine.SceneManagement;
+using ZonkaZombies.Input;
 using ZonkaZombies.Prototype.Characters;
 using ZonkaZombies.Prototype.Scenery.Interaction;
 using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.Managers
 {
+    public enum GameModeType
+    {
+        Singleplayer, Multiplayer
+    }
+
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
+        private InputReader _inputReader;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _inputReader = InputFactory.Create(InputType.Controller1);
+        }
+
         private EntityManager _entityManager;
         private int toDoMissionsCount;
+
+        public GameModeType GameMode { get; set; }
 
         private void Start()
         {
@@ -27,6 +44,15 @@ namespace ZonkaZombies.Prototype.Managers
             foreach (InteractableBase interactable in FindObjectsOfType<InteractableBase>())
             {
                 interactable.OnInteract += OnGetInteractable;
+            }
+        }
+
+        private void Update()
+        {
+            if (_inputReader.StartDown())
+            {
+                //TODO: fix: is entering many times here
+                SceneController.Instance.LoadNextScene();
             }
         }
 

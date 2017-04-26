@@ -6,22 +6,40 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Prototype/InputDebugger.unity
-  - enabled: 1
-    path: Assets/Scenes/Prototype/EnemyMovementandPursuit.unity
-  - enabled: 1
-    path: Assets/Scenes/Prototype/EnemyVsCharacter.unity
-  - enabled: 1
     path: Assets/Scenes/Prototype/GameOver.unity
   - enabled: 1
-    path: Assets/Scenes/Prototype/ManyEnemiesVsCharacter.unity
+    path: Assets/Scenes/Prototype/InputDebugger.unity
   - enabled: 1
-    path: Assets/Scenes/Prototype/P1P2Movement.unity
+    path: Assets/Scenes/Prototype/MenuPrototype.unity
   - enabled: 1
-    path: Assets/Scenes/Prototype/PlayerCharacterMovement.unity
+    path: Assets/Scenes/Prototype/P1EnemyMovementandPursuit.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P1EnemyVsCharacter.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P1FieldOfVision.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P1FullScenery.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P1InteractableSystem.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P1ManyEnemiesVsCharacter.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P1PlayerCharacterMovement.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P2FullScenery.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P2InteractableSystemSplitscreen.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P2ManyEnemiesVsCharacter.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/P2Movement.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/Persistent.unity
   - enabled: 1
     path: Assets/Scenes/Prototype/PlayerWin.unity
   - enabled: 1
-    path: Assets/Scenes/Prototype/P1P2ManyEnemiesVsCharacter.unity
+    path: Assets/Scenes/Prototype/SampleScenery 1.unity
   - enabled: 1
-    path: Assets/Scenes/Prototype/P1ManyEnemiesVsCharacter.unity
+    path: Assets/Scenes/Prototype/SampleScenery.unity
+  - enabled: 1
+    path: Assets/Scenes/Prototype/Scenery.unity

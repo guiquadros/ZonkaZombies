@@ -25,10 +25,25 @@ namespace ZonkaZombies.Util
 
     public static class SceneConstants
     {
-        public const string GAME_OVER_SCENE_NAME = "GameOver";
+        //menu input debug
+        public const string MENU_PROTOTYPE = "MenuPrototype";
+        public const string INPUT_DEBUGGER = "InputDebugger";
+        
+        //singleplayer
+        public const string P1PlayerCharacterMovement = "P1PlayerCharacterMovement";
+        public const string P1EnemyMovementandPursuit = "P1EnemyMovementandPursuit";
+        public const string P1EnemyVsCharacter = "P1EnemyVsCharacter";
         public const string P1_MANY_ENEMIES_VS_CHARACTER = "P1ManyEnemiesVsCharacter";
-        public const string PLAYER_WIN_SCENE_NAME = "PlayerWin";
+        public const string P1FieldOfVision = "P1FieldOfVision";
+        public const string P1InteractableSystem = "P1InteractableSystem";
+        public const string P1FullScenery = "P1FullScenery";
+
+        //multiplayer
         public const string P2_MANY_ENEMIES_VS_CHARACTER = "P2ManyEnemiesVsCharacter";
+
+        //win lose
+        public const string GAME_OVER_SCENE_NAME = "GameOver";
+        public const string PLAYER_WIN_SCENE_NAME = "PlayerWin";
     }
 
     public static class SharedAnimatorParameters
