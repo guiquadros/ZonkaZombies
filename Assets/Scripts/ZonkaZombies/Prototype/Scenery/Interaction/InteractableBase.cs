@@ -4,7 +4,6 @@ using UnityEngine;
 using ZonkaZombies.Prototype.Characters;
 using ZonkaZombies.Prototype.Characters.PlayerCharacter;
 using GlowingObjects.Scripts;
-using UnityEngine;
 using ZonkaZombies.Prototype.Characters.Player;
 
 namespace ZonkaZombies.Prototype.Scenery.Interaction
@@ -15,6 +14,9 @@ namespace ZonkaZombies.Prototype.Scenery.Interaction
         private List<PlayerCharacterType> _validTypes = new List<PlayerCharacterType>();
 
         protected int Count;
+
+        public delegate void OnGet(InteractableBase interactable);
+        public OnGet OnInteract;
 
         public virtual void OnAwake()
         {

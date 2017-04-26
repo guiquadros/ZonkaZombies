@@ -1,5 +1,6 @@
 ﻿using UnityEngine.SceneManagement;
 using ZonkaZombies.Prototype.Characters;
+using ZonkaZombies.Prototype.Scenery.Interaction;
 using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.Managers
@@ -7,6 +8,7 @@ namespace ZonkaZombies.Prototype.Managers
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         private EntityManager _entityManager;
+        private int toDoMissionsCount;
 
         private void Start()
         {
@@ -20,6 +22,11 @@ namespace ZonkaZombies.Prototype.Managers
             foreach (var player in _entityManager.Players)
             {
                 player.OnDead += OnPlayerDead;
+            }
+
+            foreach (InteractableBase interactable in FindObjectsOfType<InteractableBase>())
+            {
+                interactable.OnInteract += OnGetInteractable;
             }
         }
 
@@ -40,6 +47,11 @@ namespace ZonkaZombies.Prototype.Managers
         private void OnPlayerDead(Character character)
         {
             SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME);
+        }
+
+        private void OnGetInteractable(InteractableBase interactable)
+        {
+            //TODO
         }
     }
 }

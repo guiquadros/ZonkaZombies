@@ -3,7 +3,6 @@ using ZonkaZombies.Prototype.Characters.PlayerCharacter;
 ﻿using System.Collections.Generic;
 using System.Linq;
 using GlowingObjects.Scripts;
-using UnityEngine;
 using ZonkaZombies.Prototype.Characters;
 using ZonkaZombies.Prototype.Characters.Player;
 
@@ -49,10 +48,18 @@ namespace ZonkaZombies.Prototype.Scenery.Interaction
 
                 Debug.LogFormat("'{0}' added to the character's inventory!", gameObject.name);
 
-                Destroy(gameObject);
+                OnFinish();
             }
         }
 
-        public override void OnFinish() { }
+        public override void OnFinish()
+        {
+            if (OnInteract != null)
+            {
+                OnInteract(this);
+            }
+
+            Destroy(gameObject);
+        }
     }
 }
