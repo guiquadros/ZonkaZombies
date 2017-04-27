@@ -1,48 +1,23 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using ZonkaZombies.Input;
-using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Prototype.Managers
 {
     public class MenuManager : MonoBehaviour
     {
-        [SerializeField]
-        private InputType _inputType = InputType.Controller1;
-
-        [SerializeField]
-        private Image _singleplayerSelectionImage, _multiplayerSelectionImage; 
-
-        private InputReader _inputReader;
-
-        private void Awake()
+        public void StartSingleplayerMode()
         {
-            _inputReader = InputFactory.Create(_inputType);
+            StartNewGame(GameModeType.Singleplayer);
         }
 
-        public void Update()
+        public void StartMultiplayerMode()
         {
-            if (_inputReader.DigitalPadHorizontal() < 0)
-            {
-                _singleplayerSelectionImage.enabled = true;
-                _multiplayerSelectionImage.enabled = false;
-            }
+            StartNewGame(GameModeType.Multiplayer);
+        }
 
-            if (_inputReader.DigitalPadHorizontal() > 0)
-            {
-                _singleplayerSelectionImage.enabled = false;
-                _multiplayerSelectionImage.enabled = true;
-            }
-
-            if (_inputReader.ADown())
-            {
-                GameManager.Instance.GameMode = _multiplayerSelectionImage.enabled
-                    ? GameModeType.Multiplayer
-                    : GameModeType.Singleplayer;
-
-                SceneController.Instance.LoadNextScene();
-            }
+        private void StartNewGame(GameModeType gameType)
+        {
+            GameManager.Instance.GameMode = gameType;
+            SceneController.Instance.LoadNextScene();
         }
     }
 }
