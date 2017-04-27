@@ -28,13 +28,11 @@ namespace ZonkaZombies.Prototype.Managers
         /// </summary>
         private int _toDoMissionsCount;
 
-        public GameModeType GameMode { get; set; }
+        public GameModeType GameMode;
 
         private void Start()
         {
             _entityManager = EntityManager.Instance;
-
-            
         }
 
         private void Update()

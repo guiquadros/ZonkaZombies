@@ -30,16 +30,19 @@ namespace ZonkaZombies.Util
         public const string INPUT_DEBUGGER = "InputDebugger";
         
         //singleplayer
-        public const string P1PlayerCharacterMovement = "P1PlayerCharacterMovement";
-        public const string P1EnemyMovementandPursuit = "P1EnemyMovementandPursuit";
-        public const string P1EnemyVsCharacter = "P1EnemyVsCharacter";
+        public const string P1_PLAYER_CHARACTER_MOVEMENT = "P1PlayerCharacterMovement";
+        public const string P1_ENEMY_MOVEMENT_AND_PURSUIT = "P1EnemyMovementandPursuit";
+        public const string P1_ENEMY_VS_CHARACTER = "P1EnemyVsCharacter";
         public const string P1_MANY_ENEMIES_VS_CHARACTER = "P1ManyEnemiesVsCharacter";
-        public const string P1FieldOfVision = "P1FieldOfVision";
-        public const string P1InteractableSystem = "P1InteractableSystem";
-        public const string P1FullScenery = "P1FullScenery";
+        public const string P1_FIELD_OF_VISION = "P1FieldOfVision";
+        public const string P1_INTERACTABLE_SYSTEM = "P1InteractableSystem";
+        public const string P1_FULL_SCENERY = "P1FullScenery";
 
         //multiplayer
+        public const string P2_MOVEMENT = "P2Movement";
         public const string P2_MANY_ENEMIES_VS_CHARACTER = "P2ManyEnemiesVsCharacter";
+        public const string P2_INTERACTABLE_SYSTEM_SPLITSCREEN = "P2InteractableSystemSplitscreen";
+        public const string P2_FULL_SCENERY = "P2FullScenery";
 
         //win lose
         public const string GAME_OVER_SCENE_NAME = "GameOver";

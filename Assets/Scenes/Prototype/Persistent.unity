@@ -328,4 +328,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faderCanvasGroup: {fileID: 50454258}
   fadeDuration: 1
-  startingSceneName: InputDebugger

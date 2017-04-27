@@ -22,11 +22,16 @@ namespace ZonkaZombies.Prototype.Managers
         public float fadeDuration = 1f;                 // How long it should take to fade to and from black.
 
         private bool isFading;                          // Flag used to determine if the Image is currently fading to or from black.
-        private string _currentScene = SceneConstants.MENU_PROTOTYPE; // The name of the scene that should be loaded first.
 
-        private readonly string[] _singleplayerScenes = { SceneConstants.MENU_PROTOTYPE, SceneConstants.INPUT_DEBUGGER, SceneConstants.P1PlayerCharacterMovement, SceneConstants.P1EnemyMovementandPursuit, SceneConstants.P1EnemyVsCharacter, SceneConstants.P1_MANY_ENEMIES_VS_CHARACTER, SceneConstants.P1FieldOfVision, SceneConstants.P1InteractableSystem, SceneConstants.P1FullScenery };
+        [SerializeField]
+        private int _currentSceneIndex = 0;             // The index of the current scene.
 
-        private readonly string[] _multiplayerScenes = {""};
+        [SerializeField]
+        private string _currentSceneName = SceneConstants.MENU_PROTOTYPE;
+
+        private readonly string[] _singleplayerScenes = { SceneConstants.MENU_PROTOTYPE, SceneConstants.INPUT_DEBUGGER, SceneConstants.P1_PLAYER_CHARACTER_MOVEMENT, SceneConstants.P1_ENEMY_MOVEMENT_AND_PURSUIT, SceneConstants.P1_ENEMY_VS_CHARACTER, SceneConstants.P1_MANY_ENEMIES_VS_CHARACTER, SceneConstants.P1_FIELD_OF_VISION, SceneConstants.P1_INTERACTABLE_SYSTEM, SceneConstants.P1_FULL_SCENERY };
+
+        private readonly string[] _multiplayerScenes = { SceneConstants.MENU_PROTOTYPE, SceneConstants.INPUT_DEBUGGER, SceneConstants.P2_MOVEMENT, SceneConstants.P2_MANY_ENEMIES_VS_CHARACTER, SceneConstants.P2_INTERACTABLE_SYSTEM_SPLITSCREEN, SceneConstants.P2_FULL_SCENERY };
 
         private IEnumerator Start ()
         {
@@ -36,7 +41,7 @@ namespace ZonkaZombies.Prototype.Managers
             faderCanvasGroup.alpha = 1f;
 
             // Start the first scene loading and wait for it to finish.
-            yield return StartCoroutine (LoadSceneAndSetActive (_currentScene));
+            yield return StartCoroutine (LoadSceneAndSetActive (_currentSceneName));
 
             // Once the scene is finished loading, start fading in.
             StartCoroutine (Fade (0f));
@@ -44,18 +49,18 @@ namespace ZonkaZombies.Prototype.Managers
 
         public void LoadNextScene()
         {
+            _currentSceneIndex++;
+
             string[] scenes = GameManager.Instance.GameMode == GameModeType.Multiplayer ? _multiplayerScenes : _singleplayerScenes;
 
-            for (int i = 0; i < scenes.Length; i++)
+            if (_currentSceneIndex >= scenes.Length)
             {
-                if (_singleplayerScenes[i] == _currentScene)
-                {
-                    _currentScene = i + 1 == _singleplayerScenes.Length ? _singleplayerScenes[0] : _singleplayerScenes[i + 1];
-                    break;
-                }
+                _currentSceneIndex = 0;
             }
 
-            FadeAndLoadScene(_currentScene);
+            _currentSceneName = scenes[_currentSceneIndex];
+            
+            FadeAndLoadScene(_currentSceneName);
         }
 
         private void FadeAndLoadScene(string sceneName)
