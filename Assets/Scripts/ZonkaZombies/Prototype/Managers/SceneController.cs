@@ -18,6 +18,7 @@ namespace ZonkaZombies.Prototype.Managers
 
         public event Action BeforeSceneUnload;          // Event delegate that is called just before a scene is unloaded.
         public event Action AfterSceneLoad;             // Event delegate that is called just after a scene is loaded.
+        public event Action OnSceneLoading;
         public CanvasGroup faderCanvasGroup;            // The CanvasGroup that controls the Image used for fading to black.
         public float fadeDuration = 1f;                 // How long it should take to fade to and from black.
 
@@ -49,6 +50,7 @@ namespace ZonkaZombies.Prototype.Managers
 
         public void LoadNextScene()
         {
+            Debug.LogFormat("LoadNextScene() - start: _currentSceneName = {0}", _currentSceneName);
             _currentSceneIndex++;
 
             string[] scenes = GameManager.Instance.GameMode == GameModeType.Multiplayer ? _multiplayerScenes : _singleplayerScenes;
@@ -59,7 +61,9 @@ namespace ZonkaZombies.Prototype.Managers
             }
 
             _currentSceneName = scenes[_currentSceneIndex];
-            
+
+            Debug.LogFormat("LoadNextScene() - end: _currentSceneName = {0}", _currentSceneName);
+
             FadeAndLoadScene(_currentSceneName);
         }
 
@@ -99,6 +103,9 @@ namespace ZonkaZombies.Prototype.Managers
 
         private IEnumerator LoadSceneAndSetActive (string sceneName)
         {
+            if (OnSceneLoading != null)
+                OnSceneLoading();
+
             // Allow the given scene to load over several frames and add it to the already loaded scenes (just the Persistent scene at this point).
             yield return SceneManager.LoadSceneAsync (sceneName, LoadSceneMode.Additive);
 
