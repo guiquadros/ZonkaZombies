@@ -20,11 +20,11 @@ namespace ZonkaZombies.Prototype.Characters.Player
         [SerializeField, Header("Input Settings")]
         private InputType _inputType = InputType.Controller1;
 
-#if UNITY_EDITOR
         [Header("Debug Attributes")]
-        public bool FrezeePlayer = false;
         public bool CanReceiveDamage = true;
-#endif
+
+        [SerializeField]
+        private bool _frezeePlayer = false;
 
         public bool CanMove { get; internal set; }
         public bool CanPunch { get; internal set; }
@@ -80,15 +80,7 @@ namespace ZonkaZombies.Prototype.Characters.Player
 
         protected virtual void Awake()
         {
-#if UNITY_EDITOR
-            if (!FrezeePlayer)
-#endif
-            if (!Animator)
-            {
-                Debug.LogError("Animator component cannot be null!");
-                Application.Quit();
-            }
-
+            _frezeePlayer = !Animator;
             _interactionHandler = GetComponent<ICommand>();
 
             if (_interactionHandler == null)
@@ -116,9 +108,7 @@ namespace ZonkaZombies.Prototype.Characters.Player
 
         protected virtual void Update()
         {
-#if UNITY_EDITOR
-            if (FrezeePlayer) return;
-#endif
+            if (_frezeePlayer) return;
 
             HandleMovement();
             HandlePunch();
