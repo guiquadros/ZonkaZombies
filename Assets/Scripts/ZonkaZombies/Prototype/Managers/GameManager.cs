@@ -103,9 +103,6 @@ namespace ZonkaZombies.Prototype.Managers
         private void OnGetInteractable(InteractableBase interactable)
         {
             _toDoMissionsCount--;
-
-            Debug.Log(_toDoMissionsCount);
-
             if (_toDoMissionsCount <= 0)
             {
                 SceneManager.LoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
