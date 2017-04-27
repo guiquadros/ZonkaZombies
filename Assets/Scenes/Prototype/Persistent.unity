@@ -210,10 +210,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1110140455140972, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
-      propertyPath: m_Name
-      value: GameManager
-      objectReference: {fileID: 0}
+    - target: {fileID: 114236625363506828, guid: 806e442f4f6907141adb7e6b05e6d5df,
+        type: 2}
+      propertyPath: faderCanvasGroup
+      value: 
+      objectReference: {fileID: 50454258}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
   m_IsPrefabParent: 0
@@ -401,23 +402,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &2060899364 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1110140455140972, guid: 806e442f4f6907141adb7e6b05e6d5df,
-    type: 2}
-  m_PrefabInternal: {fileID: 283292568}
---- !u!114 &2060899365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2060899364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aaa8d3f575e28646910508e72fc2fbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  faderCanvasGroup: {fileID: 50454258}
-  fadeDuration: 1
-  _currentSceneIndex: 0
-  _currentSceneName: MenuPrototype

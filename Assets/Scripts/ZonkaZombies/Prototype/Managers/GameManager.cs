@@ -11,19 +11,13 @@ namespace ZonkaZombies.Prototype.Managers
     {
         Singleplayer, Multiplayer
     }
-
-    public enum GameState
-    {
-        Playing, Loading
-    }
-
+    
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         private InputReader _inputReader;
         private EntityManager _entityManager;
         private SceneController _sceneController;
-        private GameState _currentGameState = GameState.Loading;
-
+        
         /// <summary>
         /// Holds the ramaining quantity of collectables into the current scene.
         /// </summary>
@@ -41,14 +35,11 @@ namespace ZonkaZombies.Prototype.Managers
         {
             _entityManager = EntityManager.Instance;
             _sceneController = SceneController.Instance;
-
-            _sceneController.OnSceneLoading += () => { _currentGameState = GameState.Loading; };
-            _sceneController.AfterSceneLoad += () => { _currentGameState = GameState.Playing; };
         }
 
         private void Update()
         {
-            if (_inputReader.StartDown() || UnityEngine.Input.GetKeyDown(KeyCode.Space) && _currentGameState != GameState.Loading)
+            if (_inputReader.StartDown() || UnityEngine.Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("Start button down. Loading next scene.");
                 SceneController.Instance.LoadNextScene();

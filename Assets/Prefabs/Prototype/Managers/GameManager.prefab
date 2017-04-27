@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114125285980925994}
   - component: {fileID: 114046078942727230}
   - component: {fileID: 82326385711470288}
+  - component: {fileID: 114236625363506828}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -147,6 +148,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Players: []
   Enemies: []
+--- !u!114 &114236625363506828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110140455140972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aaa8d3f575e28646910508e72fc2fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faderCanvasGroup: {fileID: 0}
+  fadeDuration: 0
+  _currentSceneIndex: 0
+  _currentSceneName: MenuPrototype
+  _previousSceneName: 
 --- !u!114 &114820079584409772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,3 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5151bd246418d64e86bda97e3e3cda9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameMode: 0
