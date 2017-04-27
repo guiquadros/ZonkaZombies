@@ -49,7 +49,7 @@ namespace ZonkaZombies.Prototype.Managers
 
         private void Update()
         {
-            if (_inputReader.StartDown() && _currentGameState != GameState.Loading)
+            if (_inputReader.StartDown() || UnityEngine.Input.GetKeyDown(KeyCode.Space) && _currentGameState != GameState.Loading)
             {
                 Debug.Log("Start button down. Loading next scene.");
                 SceneController.Instance.LoadNextScene();
@@ -73,9 +73,9 @@ namespace ZonkaZombies.Prototype.Managers
                 player.OnDead += OnPlayerDead;
             }
 
-            InteractableBase[] interactablesInScene = FindObjectsOfType<InteractableBase>();
+            CollectableInteractable[] interactablesInScene = FindObjectsOfType<CollectableInteractable>();
             _toDoMissionsCount = interactablesInScene.Length;
-            foreach (InteractableBase interactable in interactablesInScene)
+            foreach (CollectableInteractable interactable in interactablesInScene)
             {
                 interactable.OnInteract += OnGetInteractable;
             }
@@ -103,6 +103,8 @@ namespace ZonkaZombies.Prototype.Managers
         private void OnGetInteractable(InteractableBase interactable)
         {
             _toDoMissionsCount--;
+
+            Debug.Log(_toDoMissionsCount);
 
             if (_toDoMissionsCount <= 0)
             {
