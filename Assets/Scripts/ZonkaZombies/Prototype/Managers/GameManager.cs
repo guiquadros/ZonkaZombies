@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using ZonkaZombies.Input;
 using ZonkaZombies.Prototype.Characters;
@@ -103,9 +102,6 @@ namespace ZonkaZombies.Prototype.Managers
         private void OnGetInteractable(InteractableBase interactable)
         {
             _toDoMissionsCount--;
-
-            Debug.Log(_toDoMissionsCount);
-
             if (_toDoMissionsCount <= 0)
             {
                 SceneManager.LoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
