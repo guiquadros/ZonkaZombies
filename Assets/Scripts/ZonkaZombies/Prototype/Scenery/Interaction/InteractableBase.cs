@@ -16,7 +16,7 @@ namespace ZonkaZombies.Prototype.Scenery.Interaction
         protected int Count;
 
         public delegate void OnGet(InteractableBase interactable);
-        public OnGet OnInteract;
+        public event OnGet OnInteract;
 
         public virtual void OnAwake()
         {
@@ -41,6 +41,14 @@ namespace ZonkaZombies.Prototype.Scenery.Interaction
         public GameObject GetGameObject()
         {
             return gameObject;
+        }
+
+        protected void DispatchOnInteractEvent()
+        {
+            if (OnInteract != null)
+            {
+                OnInteract(this);
+            }
         }
     }
 }

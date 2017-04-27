@@ -14,6 +14,8 @@ namespace ZonkaZombies.Prototype.Managers
 {
     public class SceneController : SingletonMonoBehaviour<SceneController>
     {
+        private GameManager _gameManager;
+
         public event Action BeforeSceneUnload;          // Event delegate that is called just before a scene is unloaded.
         public event Action AfterSceneLoad;             // Event delegate that is called just after a scene is loaded.
         public CanvasGroup faderCanvasGroup;            // The CanvasGroup that controls the Image used for fading to black.
@@ -22,12 +24,14 @@ namespace ZonkaZombies.Prototype.Managers
         private bool isFading;                          // Flag used to determine if the Image is currently fading to or from black.
         private string _currentScene = SceneConstants.MENU_PROTOTYPE; // The name of the scene that should be loaded first.
 
-        private string[] _singleplayerScenes = new[] { SceneConstants.MENU_PROTOTYPE, SceneConstants.INPUT_DEBUGGER, SceneConstants.P1PlayerCharacterMovement, SceneConstants.P1EnemyMovementandPursuit, SceneConstants.P1EnemyVsCharacter, SceneConstants.P1_MANY_ENEMIES_VS_CHARACTER, SceneConstants.P1FieldOfVision, SceneConstants.P1InteractableSystem, SceneConstants.P1FullScenery };
+        private readonly string[] _singleplayerScenes = { SceneConstants.MENU_PROTOTYPE, SceneConstants.INPUT_DEBUGGER, SceneConstants.P1PlayerCharacterMovement, SceneConstants.P1EnemyMovementandPursuit, SceneConstants.P1EnemyVsCharacter, SceneConstants.P1_MANY_ENEMIES_VS_CHARACTER, SceneConstants.P1FieldOfVision, SceneConstants.P1InteractableSystem, SceneConstants.P1FullScenery };
 
-        private string[] _multiplayerScenes = new[] {""};
+        private readonly string[] _multiplayerScenes = {""};
 
         private IEnumerator Start ()
         {
+            _gameManager = GameManager.Instance;
+
             // Set the initial alpha to start off with a black screen.
             faderCanvasGroup.alpha = 1f;
 
@@ -98,6 +102,8 @@ namespace ZonkaZombies.Prototype.Managers
 
             // Set the newly loaded scene as the active scene (this marks it as the one to be unloaded next).
             SceneManager.SetActiveScene (newlyLoadedScene);
+
+            _gameManager.UpdateReferences();
         }
 
 

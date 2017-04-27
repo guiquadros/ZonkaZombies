@@ -54,11 +54,7 @@ namespace ZonkaZombies.Prototype.Scenery.Interaction
 
         public override void OnFinish()
         {
-            if (OnInteract != null)
-            {
-                OnInteract(this);
-            }
-
+            DispatchOnInteractEvent();
             Destroy(gameObject);
         }
     }

@@ -23,13 +23,35 @@ namespace ZonkaZombies.Prototype.Managers
         }
 
         private EntityManager _entityManager;
-        private int toDoMissionsCount;
+        /// <summary>
+        /// Holds the ramaining quantity of collectables into the current scene.
+        /// </summary>
+        private int _toDoMissionsCount;
 
         public GameModeType GameMode { get; set; }
 
         private void Start()
         {
             _entityManager = EntityManager.Instance;
+
+            
+        }
+
+        private void Update()
+        {
+            if (_inputReader.StartDown())
+            {
+                //TODO: fix: is entering many times here
+                SceneController.Instance.LoadNextScene();
+            }
+        }
+
+        /// <summary>
+        /// Call this method to update the references os the EntityManager and GameManager classes.
+        /// </summary>
+        internal void UpdateReferences()
+        {
+            _entityManager.UpdateReferences();
 
             foreach (var enemy in _entityManager.Enemies)
             {
@@ -41,18 +63,11 @@ namespace ZonkaZombies.Prototype.Managers
                 player.OnDead += OnPlayerDead;
             }
 
-            foreach (InteractableBase interactable in FindObjectsOfType<InteractableBase>())
+            InteractableBase[] interactablesInScene = FindObjectsOfType<InteractableBase>();
+            _toDoMissionsCount = interactablesInScene.Length;
+            foreach (InteractableBase interactable in interactablesInScene)
             {
                 interactable.OnInteract += OnGetInteractable;
-            }
-        }
-
-        private void Update()
-        {
-            if (_inputReader.StartDown())
-            {
-                //TODO: fix: is entering many times here
-                SceneController.Instance.LoadNextScene();
             }
         }
 
@@ -77,7 +92,12 @@ namespace ZonkaZombies.Prototype.Managers
 
         private void OnGetInteractable(InteractableBase interactable)
         {
-            //TODO
+            _toDoMissionsCount--;
+
+            if (_toDoMissionsCount <= 0)
+            {
+                SceneManager.LoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
+            }
         }
     }
 }

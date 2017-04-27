@@ -15,15 +15,6 @@ namespace ZonkaZombies.Prototype.Managers
         [HideInInspector]
         public List<Enemy> Enemies;
 
-        protected override void Awake()
-        {
-            base.Awake();
-
-            //this need to be done in Awake(), the GameManager.Start() was running before the EntityManager.Start() in some cases
-            Players = FindObjectsOfType<Player>().ToList();
-            Enemies = FindObjectsOfType<Enemy>().ToList();
-        }
-
         public bool AreAllEnemiesDead()
         {
             return !Enemies.Any(e => e.IsAlive);
@@ -46,6 +37,15 @@ namespace ZonkaZombies.Prototype.Managers
                 }
             }
             return result;
+        }
+
+        /// <summary>
+        /// This method is used by the GameManager class when It's necessary to update the references inside EntityManager class.
+        /// </summary>
+        internal void UpdateReferences()
+        {
+            Players = FindObjectsOfType<Player>().ToList();
+            Enemies = FindObjectsOfType<Enemy>().ToList();
         }
     }
 }
