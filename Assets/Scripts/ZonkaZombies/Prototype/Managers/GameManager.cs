@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using ZonkaZombies.Input;
 using ZonkaZombies.Prototype.Characters;
@@ -12,17 +13,18 @@ namespace ZonkaZombies.Prototype.Managers
         Singleplayer, Multiplayer
     }
 
+    public enum GameState
+    {
+        Playing, Loading
+    }
+
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         private InputReader _inputReader;
-
-        protected override void Awake()
-        {
-            base.Awake();
-            _inputReader = InputFactory.Create(InputType.Controller1);
-        }
-
         private EntityManager _entityManager;
+        private SceneController _sceneController;
+        private GameState _currentGameState = GameState.Loading;
+
         /// <summary>
         /// Holds the ramaining quantity of collectables into the current scene.
         /// </summary>
@@ -30,16 +32,26 @@ namespace ZonkaZombies.Prototype.Managers
 
         public GameModeType GameMode;
 
+        protected override void Awake()
+        {
+            base.Awake();
+            _inputReader = InputFactory.Create(InputType.Controller1);
+        }
+
         private void Start()
         {
             _entityManager = EntityManager.Instance;
+            _sceneController = SceneController.Instance;
+
+            _sceneController.OnSceneLoading += () => { _currentGameState = GameState.Loading; };
+            _sceneController.AfterSceneLoad += () => { _currentGameState = GameState.Playing; };
         }
 
         private void Update()
         {
-            if (_inputReader.StartDown())
+            if (_inputReader.StartDown() && _currentGameState != GameState.Loading)
             {
-                //TODO: fix: is entering many times here
+                Debug.Log("Start button down. Loading next scene.");
                 SceneController.Instance.LoadNextScene();
             }
         }
