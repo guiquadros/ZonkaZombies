@@ -25,6 +25,9 @@ namespace ZonkaZombies.Util
 
     public static class SceneConstants
     {
+        //general
+        public const string PERSISTENT = "Persistent";
+
         //menu input debug
         public const string MENU_PROTOTYPE = "MenuPrototype";
         public const string INPUT_DEBUGGER = "InputDebugger";

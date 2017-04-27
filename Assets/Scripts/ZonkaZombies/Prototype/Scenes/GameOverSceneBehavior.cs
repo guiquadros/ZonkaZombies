@@ -28,11 +28,6 @@ namespace ZonkaZombies.Prototype.Scenes
 
         private void Update()
         {
-            if (_inputReaderController1.Back() || _inputReaderController2.Back())
-            {
-                SceneManager.LoadScene(SceneConstants.P2_MANY_ENEMIES_VS_CHARACTER);
-            }
-
             if (_inputReaderController1.Start() || _inputReaderController2.Start() || Time.time - _lastTime >= _autoRestartDelay)
             {
                 SceneManager.LoadScene(SceneConstants.PERSISTENT);
