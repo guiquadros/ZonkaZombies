@@ -1,6 +1,4 @@
-﻿#if UNITY_EDITOR
-
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ZonkaZombies.Prototype.Characters.Enemy
 {
@@ -45,4 +43,3 @@ namespace ZonkaZombies.Prototype.Characters.Enemy
         }
     }
 }
-#endif
