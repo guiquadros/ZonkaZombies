@@ -226,10 +226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a196d5d765fb14042b67229726e69d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraDistance: 30
-  triggerDistance: 9
-  primaryCamera: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  showSeparator: 1
+  _primaryCamera: {fileID: 0}
+  _cameraDistance: 30
+  _triggerDistance: 9
   _audioListener: {fileID: 81736197183695630}
+  _player1: {fileID: 0}
+  _player2: {fileID: 0}
