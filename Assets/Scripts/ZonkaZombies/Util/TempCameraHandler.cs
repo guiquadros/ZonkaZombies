@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using ZonkaZombies.Prototype.Managers;
 
-namespace ZonkaZombies.Prototype.Util
+namespace ZonkaZombies.Util
 {
     public class TempCameraHandler : MonoBehaviour
     {

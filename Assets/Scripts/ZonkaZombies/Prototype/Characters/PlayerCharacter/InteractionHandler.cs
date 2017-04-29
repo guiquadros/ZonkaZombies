@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using ZonkaZombies.Prototype.Scenery.Interaction;
-using ZonkaZombies.Util;
+using ZonkaZombies.Util.Commands;
 
 namespace ZonkaZombies.Prototype.Characters.PlayerCharacter
 {

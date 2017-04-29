@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using ZonkaZombies.Util;
+using ZonkaZombies.Util.Events;
 using UnityInput = UnityEngine.Input;
 
 namespace ZonkaZombies.Input

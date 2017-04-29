@@ -3,6 +3,7 @@ using ZonkaZombies.Input;
 using ZonkaZombies.Prototype.Characters.PlayerCharacter;
 using ZonkaZombies.Prototype.Scenery.Interaction;
 using ZonkaZombies.Util;
+using ZonkaZombies.Util.Commands;
 
 namespace ZonkaZombies.Prototype.Characters.Player
 {
