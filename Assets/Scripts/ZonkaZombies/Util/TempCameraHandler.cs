@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using ZonkaZombies.Prototype.Managers;
+using ZonkaZombies.Managers;
 
 namespace ZonkaZombies.Util
 {
