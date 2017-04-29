@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ZonkaZombies.Util
+namespace ZonkaZombies.Util.Commands
 {
     public class CommandAwake : MonoBehaviour, ICommand
     {

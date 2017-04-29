@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ZonkaZombies.Util
+namespace ZonkaZombies.Util.Events
 {
     public sealed class EventProxy : MonoBehaviour
     {

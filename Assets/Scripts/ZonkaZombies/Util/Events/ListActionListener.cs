@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ZonkaZombies.Util
+namespace ZonkaZombies.Util.Events
 {
     public sealed class ListActionListener
     {

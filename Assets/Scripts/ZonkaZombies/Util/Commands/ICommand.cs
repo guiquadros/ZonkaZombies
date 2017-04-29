@@ -1,4 +1,4 @@
-﻿namespace ZonkaZombies.Util
+﻿namespace ZonkaZombies.Util.Commands
 {
     public interface ICommand
     {
