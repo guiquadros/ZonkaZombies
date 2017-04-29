@@ -1,33 +1,30 @@
-﻿using System;
-using UnityEngine;
-using UnityInput = UnityEngine.Input;
+﻿using UnityInput = UnityEngine.Input;
 
 namespace ZonkaZombies.Input
 {
     public sealed class ControllerReader : InputReader
     {
-        internal ControllerReader(MappingKeys mapping) : base(mapping)
+        internal ControllerReader(MappingKeys mapping) : base(mapping, true)
         {
             IsAController = true;
 
             // Create the input keys into the Memento object, to be used later
-            SavedData.CreateState(MappingKeys.LeftTrigger, LeftTrigger());
-            SavedData.CreateState(MappingKeys.RightTrigger, RightTrigger());
+            SavedData.CreateState(MappingKeys.LeftTrigger, LeftTriggerValue());
+            SavedData.CreateState(MappingKeys.RightTrigger, RightTriggerValue());
         }
 
-        public override void Update()
+        public override void SaveState()
         {
             // Save the input's current data into the Memento object
-            SavedData.SetState(MappingKeys.LeftTrigger, LeftTrigger());
-            SavedData.SetState(MappingKeys.RightTrigger, RightTrigger());
+            SavedData.SetState(MappingKeys.LeftTrigger, LeftTriggerValue());
+            SavedData.SetState(MappingKeys.RightTrigger, RightTriggerValue());
         }
 
         #region TRIGGERS
-
         /// <summary>
         /// Value between 0 (released) and 1 (pressed).
         /// </summary>
-        public override float LeftTrigger()
+        public override float LeftTriggerValue()
         {
             return UnityInput.GetAxisRaw(MappingKeys.LeftTrigger);
         }
@@ -37,7 +34,7 @@ namespace ZonkaZombies.Input
         /// </summary>
         public override bool LeftTriggerDown()
         {
-            return PreviousLeftTrigger() < 1f && LeftTrigger() >= 1f;
+            return PreviousLeftTriggerValue() < 1f && LeftTriggerValue() >= 1f;
         }
 
         /// <summary>
@@ -45,13 +42,13 @@ namespace ZonkaZombies.Input
         /// </summary>
         public override bool LeftTriggerUp()
         {
-            return PreviousLeftTrigger() > 0f && LeftTrigger() <= 0f;
+            return PreviousLeftTriggerValue() > 0f && LeftTriggerValue() <= 0f;
         }
 
         /// <summary>
         /// Value between 0 (released) and 1 (pressed).
         /// </summary>
-        public override float RightTrigger()
+        public override float RightTriggerValue()
         {
             return UnityInput.GetAxisRaw(MappingKeys.RightTrigger);
         }
@@ -61,7 +58,7 @@ namespace ZonkaZombies.Input
         /// </summary>
         public override bool RightTriggerDown()
         {
-            return PreviousRightTrigger() < 1f && RightTrigger() >= 1f;
+            return PreviousRightTriggerValue() < 1f && RightTriggerValue() >= 1f;
         }
 
         /// <summary>
@@ -69,25 +66,17 @@ namespace ZonkaZombies.Input
         /// </summary>
         public override bool RightTriggerUp()
         {
-            return PreviousRightTrigger() > 0f && RightTrigger() <= 0f;
+            return PreviousRightTriggerValue() > 0f && RightTriggerValue() <= 0f;
         }
 
-        /// <summary>
-        /// Returns the previous of the RightTrigger.
-        /// </summary>
-        /// <returns>The previous of the RightTrigger</returns>
-        public override float PreviousRightTrigger()
+        public override bool RightTrigger()
         {
-            return SavedData.GetState<float>(MappingKeys.RightTrigger);
+            return RightTriggerValue() >= 1.0f;
         }
-
-        /// <summary>
-        /// Returns the previous of the LeftTrigger.
-        /// </summary>
-        /// <returns>The previous of the LeftTrigger</returns>
-        public override float PreviousLeftTrigger()
+        
+        public override bool LeftTrigger()
         {
-            return SavedData.GetState<float>(MappingKeys.LeftTrigger);
+            return LeftTriggerValue() >= 1.0f;
         }
         #endregion
     }

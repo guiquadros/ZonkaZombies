@@ -389,11 +389,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: ZonkaZombies
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: C:\GQS\GitHub\ZonkaZombies\Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: Zonka Zombies Studio
+  metroCertificateIssuer: Zonka Zombies Studio
+  metroCertificateNotAfter: 8031a75719ded301
   metroApplicationDescription: ZonkaZombies
   wsaImages: {}
   metroTileShortName: TinyCrew_Outbreak
