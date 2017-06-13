@@ -18,10 +18,17 @@ namespace ZonkaZombies.Input
         [SerializeField]
         private SkinnedMeshRenderer _skinnedMeshRenderer;
 
+        private bool _canSpawn = true;
+
+        private void Start()
+        {
+            _canSpawn = true;
+        }
+
         private void Update()
         {
             //if _playerPrefab != null (the player 2 was not in game before) and the Start button was pressed in the player 2 controller and  we have only 1 player playing then... 
-            if (_playerPrefab != null && PlayerInput.InputReaderController2.Start() && EntityManager.Instance.Players.Count == 1)
+            if (_canSpawn && PlayerInput.InputReaderController2.Start() && EntityManager.Instance.Players.Count == 1)
             {
                 //instantiate the player -- after this Awake() and Start() should happen and do the rest of the job...
                 //Vector3.zero, Quaternion.identity - consider the use of player spawn points n the future
@@ -35,7 +42,7 @@ namespace ZonkaZombies.Input
                 _skinnedMeshRenderer = player2Instance.GetComponentInChildren<SkinnedMeshRenderer>();
                 _skinnedMeshRenderer.material = _material;
 
-                _playerPrefab = null;
+                _canSpawn = false;
             }
         }
     }

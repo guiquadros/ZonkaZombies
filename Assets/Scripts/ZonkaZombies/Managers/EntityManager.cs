@@ -27,7 +27,7 @@ namespace ZonkaZombies.Managers
             MessageRouter.AddListener<OnPlayerHasBornMessage>(OnPlayerHasBornCallback);
             MessageRouter.AddListener<OnEnemyHasBornMessage>(OnEnemyHasBornCallback);
             MessageRouter.AddListener<OnEnemyDeadMessage>(OnEnemyDeadCallback);
-            MessageRouter.AddListener<OnPlayerDeadMessage>(OnPlayerDeadCallback);
+            MessageRouter.AddListener<OnPlayerDeadMessage>(OnPlayerDeadCallback);            
         }
 
         public void Dispose()
@@ -72,15 +72,18 @@ namespace ZonkaZombies.Managers
             {
                 Debug.LogError("Enemy must not be null!");
             }
+
             Enemies.Add(message.Enemy);
         }
 
         private void OnPlayerHasBornCallback(OnPlayerHasBornMessage message)
         {
+
             if (message.Player == null)
             {
                 Debug.LogError("Player must not be null!");
             }
+
             Players.Add(message.Player);
         }
 
@@ -90,6 +93,7 @@ namespace ZonkaZombies.Managers
             {
                 Debug.LogError("Enemy must not be null!");
             }
+
             Enemies.Remove(message.Enemy);
         }
 

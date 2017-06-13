@@ -97,7 +97,7 @@ namespace ZonkaZombies.Managers
             FadeAndLoadScene(CurrentSceneName);
         }
 
-        private void FadeAndLoadScene(string sceneName)
+        public void FadeAndLoadScene(string sceneName)
         {
             Debug.Log("FadeAndSwitchScenes()");
 
@@ -142,7 +142,7 @@ namespace ZonkaZombies.Managers
 
         private IEnumerator LoadSceneAndSetActive (string sceneName)
         {
-            Debug.Log("LoadSceneAndSetActive()");
+            //Debug.Log("LoadSceneAndSetActive()");
 
             if (OnSceneLoading != null)
                 OnSceneLoading();

@@ -14,7 +14,7 @@ namespace ZonkaZombies.Scenery.Interaction
             if (Count == EntityManager.Instance.Players.Count && EntityManager.Instance.Enemies.Count <= 0)
             {
                 //TODO: execute elevator event
-                SceneManager.LoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
+                GameManager.Instance.PlayerWon();
             }
         }
 

@@ -499,7 +499,7 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
-    1: STATS_DEBUGGER
+    1: 
   platformArchitecture: {}
   scriptingBackend:
     Metro: 2

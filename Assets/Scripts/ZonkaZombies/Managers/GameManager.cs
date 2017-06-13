@@ -86,9 +86,8 @@ namespace ZonkaZombies.Managers
             Player player = character as Player;
             if (player != null)
             {
-                MessageRouter.SendMessage(new OnPlayerDeadMessage(player));
-
                 Destroy(player.gameObject);
+                MessageRouter.SendMessage(new OnPlayerDeadMessage(player));
             }
 
             GenericEnemy enemy = character as GenericEnemy;
@@ -151,9 +150,21 @@ namespace ZonkaZombies.Managers
 
         private void OnAllPlayersAreDeadCallback(OnAllPlayersAreDead message)
         {
-            SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME);
+            GameOver();
         }
 
-        #endregion
+#endregion
+        
+        public void PlayerWon()
+        {
+            EntityManager.Instance.Enemies.Clear();
+            SceneController.Instance.FadeAndLoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
+        }
+
+        public void GameOver()
+        {
+            EntityManager.Instance.Enemies.Clear();
+            SceneController.Instance.FadeAndLoadScene(SceneConstants.GAME_OVER_SCENE_NAME);
+        }
     }
 }

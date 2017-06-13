@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace ZonkaZombies.Util.Events
 {
+    /// <summary>
+    /// WARNING: YOU CANNOT UNLOAD ALL SCENES OF THE GAME. Otherwise you will lost the static references of the message classes. So keep the Persistent scene always loaded in the game.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public static class GenericListActionListener<T>
     {
         private static readonly List<Action<T>> Listeners = new List<Action<T>>();
