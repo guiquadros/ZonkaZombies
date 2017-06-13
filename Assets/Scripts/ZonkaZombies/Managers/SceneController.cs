@@ -19,8 +19,6 @@ namespace ZonkaZombies.Managers
             Playing, Loading
         }
 
-        private GameManager _gameManager;
-
         public event Action BeforeSceneUnload;          // Event delegate that is called just before a scene is unloaded.
         public event Action AfterSceneLoad;             // Event delegate that is called just after a scene is loaded.
         public event Action OnSceneLoading;
@@ -35,25 +33,24 @@ namespace ZonkaZombies.Managers
         [SerializeField]
         private int _currentSceneIndex = 0;             // The index of the current scene.
 
-        [SerializeField]
-        private string _currentSceneName = SceneConstants.MENU_PROTOTYPE;
+        public string CurrentSceneName;
 
         [SerializeField]
         private string _previousSceneName = string.Empty;
         
-        private readonly string[] _singleplayerScenes = { SceneConstants.MENU_PROTOTYPE, SceneConstants.INPUT_DEBUGGER, SceneConstants.P1_PLAYER_CHARACTER_MOVEMENT, SceneConstants.P1_ENEMY_MOVEMENT_AND_PURSUIT, SceneConstants.P1_ENEMY_VS_CHARACTER, SceneConstants.P1_MANY_ENEMIES_VS_CHARACTER, SceneConstants.P1_FIELD_OF_VISION, SceneConstants.P1_INTERACTABLE_SYSTEM, SceneConstants.P1_FULL_SCENERY };
+        public static readonly string[] SingleplayerScenes = { SceneConstants.HALL_FIRST_FLOOR };
 
-        private readonly string[] _multiplayerScenes = { SceneConstants.MENU_PROTOTYPE, SceneConstants.INPUT_DEBUGGER, SceneConstants.P2_MOVEMENT, SceneConstants.P2_MANY_ENEMIES_VS_CHARACTER, SceneConstants.P2_INTERACTABLE_SYSTEM_SPLITSCREEN, SceneConstants.P2_FULL_SCENERY };
+        public static readonly string[] MultiplayerScenes = { SceneConstants.HALL_FIRST_FLOOR }; 
 
         private IEnumerator Start ()
         {
-            _gameManager = GameManager.Instance;
+            CurrentSceneName = SceneConstants.HALL_FIRST_FLOOR;
 
             // Set the initial alpha to start off with a black screen.
             faderCanvasGroup.alpha = 1f;
 
             // Start the first scene loading and wait for it to finish.
-            yield return StartCoroutine (LoadSceneAndSetActive (_currentSceneName));
+            yield return StartCoroutine (LoadSceneAndSetActive (CurrentSceneName));
 
             // Once the scene is finished loading, start fading in.
             StartCoroutine (Fade (0f));
@@ -73,7 +70,7 @@ namespace ZonkaZombies.Managers
 
                     Debug.Log("Trying to reload the scene.");
                     StopAllCoroutines();
-                    FadeAndLoadScene(_currentSceneName);
+                    FadeAndLoadScene(CurrentSceneName);
                 }
                 else
                 {
@@ -82,26 +79,28 @@ namespace ZonkaZombies.Managers
                 return;
             }
 
-            Debug.LogFormat("LoadNextScene() - start: _currentSceneName = {0}", _currentSceneName);
+            Debug.LogFormat("LoadNextScene() - start: _currentSceneName = {0}", CurrentSceneName);
             _currentSceneIndex++;
 
-            string[] scenes = GameManager.Instance.GameMode == GameModeType.Multiplayer ? _multiplayerScenes : _singleplayerScenes;
+            string[] scenes = GameManager.Instance.GameMode == GameModeType.Multiplayer ? MultiplayerScenes : SingleplayerScenes;
 
             if (_currentSceneIndex >= scenes.Length)
             {
                 _currentSceneIndex = 0;
             }
 
-            _previousSceneName = _currentSceneName;
-            _currentSceneName = scenes[_currentSceneIndex];
+            _previousSceneName = CurrentSceneName;
+            CurrentSceneName = scenes[_currentSceneIndex];
 
-            Debug.LogFormat("LoadNextScene() - end: _currentSceneName = {0}", _currentSceneName);
+            Debug.LogFormat("LoadNextScene() - end: _currentSceneName = {0}", CurrentSceneName);
             _currentGameState = GameState.Loading;
-            FadeAndLoadScene(_currentSceneName);
+            FadeAndLoadScene(CurrentSceneName);
         }
 
         private void FadeAndLoadScene(string sceneName)
         {
+            Debug.Log("FadeAndSwitchScenes()");
+
             // If a fade isn't happening then start fading and switching scenes.
             //if (!isFading)
             //{
@@ -135,11 +134,7 @@ namespace ZonkaZombies.Managers
 
             // Start loading the given scene and wait for it to finish.
             yield return StartCoroutine (LoadSceneAndSetActive (sceneName));
-
-            // If this event has any subscribers, call it.
-            if (AfterSceneLoad != null)
-                AfterSceneLoad ();
-        
+            
             // Start fading back in and wait for it to finish before exiting the function.
             yield return StartCoroutine (Fade (0f));
         }
@@ -147,6 +142,8 @@ namespace ZonkaZombies.Managers
 
         private IEnumerator LoadSceneAndSetActive (string sceneName)
         {
+            Debug.Log("LoadSceneAndSetActive()");
+
             if (OnSceneLoading != null)
                 OnSceneLoading();
 
@@ -161,7 +158,11 @@ namespace ZonkaZombies.Managers
 
             _currentGameState = GameState.Playing;
 
-            _gameManager.UpdateReferences();
+            // If this event has any subscribers, call it.
+            if (AfterSceneLoad != null)
+            {
+                AfterSceneLoad();
+            }
         }
 
 

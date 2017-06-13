@@ -19,11 +19,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4550585668209876}
-  - component: {fileID: 114820079584409772}
   - component: {fileID: 114125285980925994}
   - component: {fileID: 114046078942727230}
   - component: {fileID: 82326385711470288}
   - component: {fileID: 114236625363506828}
+  - component: {fileID: 114820079584409772}
+  - component: {fileID: 114475089706537114}
+  - component: {fileID: 114528033408186714}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -162,8 +164,34 @@ MonoBehaviour:
   faderCanvasGroup: {fileID: 0}
   fadeDuration: 0
   _currentSceneIndex: 0
-  _currentSceneName: MenuPrototype
+  CurrentSceneName: 
   _previousSceneName: 
+--- !u!114 &114475089706537114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110140455140972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b7fcfaf0af91445a49d557c1dea286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameUiManager: {fileID: 0}
+--- !u!114 &114528033408186714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110140455140972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b83e4fe6bfac034caece864f7507fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerPrefab: {fileID: 1213980446466406, guid: b89ce5f207841ae4c8f31293e6c25885,
+    type: 2}
+  _material: {fileID: 2100000, guid: 15de983e4a9a8d34bb3c1a5796e7809a, type: 2}
 --- !u!114 &114820079584409772
 MonoBehaviour:
   m_ObjectHideFlags: 1

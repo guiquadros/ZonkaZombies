@@ -2,6 +2,6 @@
 {
     public enum InteractableType
     {
-        SlightBox, HeavyBox, Collectable
+        SlightBox, HeavyBox, Collectable, Weapon
     }
 }

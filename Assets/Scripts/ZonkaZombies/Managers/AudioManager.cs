@@ -15,7 +15,7 @@ namespace ZonkaZombies.Managers
                 if (_instance == null)
                 {
                     _instance = FindObjectOfType<AudioManager>();
-
+                    
                     if (_instance == null)
                     {
                         GameObject go = new GameObject("AudioManager");
@@ -30,28 +30,17 @@ namespace ZonkaZombies.Managers
             }
         }
 
-        private SplitscreenHandler _splitscreenHandler;
         private AudioSource _audioSource;
 
         private void Initialize()
         {
             _audioSource = GetComponent<AudioSource>();
-            _splitscreenHandler = FindObjectOfType<SplitscreenHandler>();
         }
 
-        private void LateUpdate()
+        public void Play(AudioClip clip, float volume = 1.0f)
         {
-            if (_splitscreenHandler == null)
-            {
-                return;
-            }
+            //TODO Able to change the pitch before playing the sound effect
 
-            // Moves this AudioSource to the middle position between the two splited cameras
-            transform.position = _splitscreenHandler.GetCentralPosition();
-        }
-
-        public void PlayEffect(AudioClip clip, float volume = 1.0f)
-        {
             if (clip == null)
             {
                 return;

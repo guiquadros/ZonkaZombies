@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerDamager
   - PlayerCharacter
+  - EnemyDamager
   layers:
   - Default
   - TransparentFX
@@ -22,8 +23,8 @@ TagManager:
   - PlayerCharacterDamager
   - Interactables
   - Floor
-  - 
-  - 
+  - EnemyDamager
+  - PlayerDamager
   - 
   - 
   - 

@@ -9,6 +9,11 @@
 /Assets/AssetStoreTools*
 sysinfo.txt
 *.pidb.meta
+
+# Paid Assets
+/Assets/PaidAssets/
+/Assets/Plugins/PaidAssets/
+*PaidAssets.meta
  
 # VS/Rider/MD/Consulo
 ExportedObj/

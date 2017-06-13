@@ -25,7 +25,7 @@ namespace ZonkaZombies.Input.Test
 
         private void Start()
         {
-            _inputReader = InputFactory.Create(_inputType);
+            _inputReader = PlayerInput.GetInputReader(_inputType);
         }
 
         private void FixedUpdate()
@@ -47,8 +47,6 @@ namespace ZonkaZombies.Input.Test
             DebugAnalogSticksState(sb);
 
             _debugText.text = sb.ToString();
-
-            _inputReader.SaveState();
         }
 
         private void DebugButtonsState(StringBuilder sb)

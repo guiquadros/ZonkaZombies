@@ -38,7 +38,7 @@ namespace ZonkaZombies.Input
 /// <summary>
         /// Updates this InputReader to maintain data between frames. This method needs to be called each frame to updates its internal data to be used in the next frame, correctly.
         /// </summary>
-        public virtual void SaveState() { }
+        protected virtual void SaveState() { }
 
         #region BUTTONS
 
@@ -174,6 +174,19 @@ namespace ZonkaZombies.Input
         public bool RightBumperUp()
         {
             return UnityInput.GetButtonUp(MappingKeys.RightBumper);
+        }
+
+        public bool AnyBumper()
+        {
+            return LeftBumper() || RightBumper();
+        }
+        public bool AnyBumperDown()
+        {
+            return LeftBumperDown() || RightBumperDown();
+        }
+        public bool AnyBumperUp()
+        {
+            return LeftBumperUp() || RightBumperUp();
         }
 
         #endregion
@@ -313,6 +326,21 @@ namespace ZonkaZombies.Input
         public float PreviousLeftTriggerValue()
         {
             return SavedData.GetState<float>(MappingKeys.LeftTrigger);
+        }
+
+        public bool AnyTrigger()
+        {
+            return RightTrigger() || LeftTrigger();
+        }
+
+        public bool AnyTriggerDown()
+        {
+            return RightTriggerDown() || LeftTriggerDown();
+        }
+
+        public bool AnyTriggerUp()
+        {
+            return RightTriggerUp() || LeftTriggerUp();
         }
 
         public virtual bool RightTrigger()

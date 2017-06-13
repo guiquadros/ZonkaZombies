@@ -5,6 +5,8 @@ namespace ZonkaZombies.Input
 {
     public static class InputFactory
     {
+        private const string PathToMappingKeys = "Input/{0}";
+
         public static InputReader Create(InputType inputType)
         {
             string inputFilePath = ToFileName(inputType);
@@ -42,18 +44,18 @@ namespace ZonkaZombies.Input
         /// <summary>
         /// Find, deserialize and returns an instance of MappingKeys containing the correct input's mapping, according to the parameter 'inputFilePath'.
         /// </summary>
-        private static MappingKeys FindMappingKeysFromResources(string inputFilePath)
+        private static MappingKeys FindMappingKeysFromResources(string inputFileName)
         {
-            TextAsset fileTextAsset = Resources.Load<TextAsset>(inputFilePath);
+            TextAsset fileTextAsset = Resources.Load<TextAsset>(string.Format(PathToMappingKeys, inputFileName));
 
             if (!fileTextAsset)
             {
-                throw new NullReferenceException(string.Format("\"{0}\" doesn't exist inside Resources folder!", inputFilePath));
+                throw new NullReferenceException(string.Format("\"{0}\" doesn't exist inside Resources folder!", inputFileName));
             }
 
             if (string.IsNullOrEmpty(fileTextAsset.text))
             {
-                throw new NullReferenceException(string.Format("The file \"{0}\" is blank!", inputFilePath));
+                throw new NullReferenceException(string.Format("The file \"{0}\" is blank!", inputFileName));
             }
 
             MappingKeys mappingKeys = JsonUtility.FromJson<MappingKeys>(fileTextAsset.text);

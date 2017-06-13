@@ -7,8 +7,9 @@ namespace ZonkaZombies.Scenery.Interaction
         void SetUp(object obj);
         void OnEnter(IInteractable interactable);
         void OnExit(IInteractable interactable);
-        void OnFinish();
         void OnBegin();
+        void OnFinish();
         Character GetCharacter();
+        void ForceFinish();
     }
 }

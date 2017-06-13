@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85387212a5644f9a908316f9a3cd11db, type: 3}
+  m_Name: ShotgunDetails
+  m_EditorClassIdentifier: 
+  WeaponSubType: 2
+  Type: 1
+  HitPoints: 0
+  ShotHitPoints: 5
+  TimeBetweenBullets: 1
+  Range: 20
+  ShootAudioEffect: {fileID: 8300000, guid: c396f828b6b113848b9aaa8ce4bb8c0d, type: 3}

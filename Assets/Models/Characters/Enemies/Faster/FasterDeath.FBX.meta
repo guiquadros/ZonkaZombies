@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 91716266d3727c34a9f12efa6ccdf54c
+timeCreated: 1496904140
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bn_Head01
+    100002: Bn_L_Ankle01
+    100004: Bn_L_Arm01
+    100006: Bn_L_Ball01
+    100008: Bn_L_Elbow01
+    100010: Bn_L_Forearm01
+    100012: Bn_L_Hand01
+    100014: Bn_L_Shin01
+    100016: Bn_L_Shld01
+    100018: Bn_L_Thigh01
+    100020: Bn_Neck01
+    100022: Bn_R_Ankle01
+    100024: Bn_R_Arm01
+    100026: Bn_R_Ball01
+    100028: Bn_R_Elbow01
+    100030: Bn_R_Forearm01
+    100032: Bn_R_Hand01
+    100034: Bn_R_Shin01
+    100036: Bn_R_Shld01
+    100038: Bn_R_Thigh01
+    100040: Bn_SpA01
+    100042: Bn_SpB01
+    100044: Bn_SpC01
+    100046: Bn_SpD01
+    100048: Bn_SpE01
+    100050: CC_Chest01
+    100052: CC_CoM01
+    100054: CC_Global01
+    100056: //RootNode
+    100058: Pt_CoM01
+    100060: PtOri_L_WristIKFK01
+    100062: PtOri_R_WristIKFK01
+    100064: Zombie_Mesh
+    400000: Bn_Head01
+    400002: Bn_L_Ankle01
+    400004: Bn_L_Arm01
+    400006: Bn_L_Ball01
+    400008: Bn_L_Elbow01
+    400010: Bn_L_Forearm01
+    400012: Bn_L_Hand01
+    400014: Bn_L_Shin01
+    400016: Bn_L_Shld01
+    400018: Bn_L_Thigh01
+    400020: Bn_Neck01
+    400022: Bn_R_Ankle01
+    400024: Bn_R_Arm01
+    400026: Bn_R_Ball01
+    400028: Bn_R_Elbow01
+    400030: Bn_R_Forearm01
+    400032: Bn_R_Hand01
+    400034: Bn_R_Shin01
+    400036: Bn_R_Shld01
+    400038: Bn_R_Thigh01
+    400040: Bn_SpA01
+    400042: Bn_SpB01
+    400044: Bn_SpC01
+    400046: Bn_SpD01
+    400048: Bn_SpE01
+    400050: CC_Chest01
+    400052: CC_CoM01
+    400054: CC_Global01
+    400056: //RootNode
+    400058: Pt_CoM01
+    400060: PtOri_L_WristIKFK01
+    400062: PtOri_R_WristIKFK01
+    400064: Zombie_Mesh
+    4300000: Zombie_Mesh
+    7400000: FasterDeath
+    9500000: //RootNode
+    13700000: Zombie_Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: FasterDeath
+      takeName: Take 001
+      firstFrame: 134
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CC_Global01
+        weight: 1
+      - path: CC_Global01/Bn_L_Arm01
+        weight: 1
+      - path: CC_Global01/Bn_L_Arm01/Bn_L_Elbow01
+        weight: 1
+      - path: CC_Global01/Bn_L_Arm01/Bn_L_Elbow01/Bn_L_Forearm01
+        weight: 1
+      - path: CC_Global01/Bn_Neck01
+        weight: 1
+      - path: CC_Global01/Bn_Neck01/Bn_Head01
+        weight: 1
+      - path: CC_Global01/Bn_R_Arm01
+        weight: 1
+      - path: CC_Global01/Bn_R_Arm01/Bn_R_Elbow01
+        weight: 1
+      - path: CC_Global01/Bn_R_Arm01/Bn_R_Elbow01/Bn_R_Forearm01
+        weight: 1
+      - path: CC_Global01/CC_CoM01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/CC_Chest01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/CC_Chest01/Bn_SpE01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/CC_Chest01/Bn_SpE01/Bn_L_Shld01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/CC_Chest01/Bn_SpE01/Bn_R_Shld01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpA01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpA01/Bn_L_Thigh01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpA01/Bn_L_Thigh01/Bn_L_Shin01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpA01/Bn_L_Thigh01/Bn_L_Shin01/Bn_L_Ankle01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpA01/Bn_L_Thigh01/Bn_L_Shin01/Bn_L_Ankle01/Bn_L_Ball01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpA01/Bn_R_Thigh01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpA01/Bn_R_Thigh01/Bn_R_Shin01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpA01/Bn_R_Thigh01/Bn_R_Shin01/Bn_R_Ankle01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpA01/Bn_R_Thigh01/Bn_R_Shin01/Bn_R_Ankle01/Bn_R_Ball01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpB01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpC01
+        weight: 1
+      - path: CC_Global01/CC_CoM01/Pt_CoM01/Bn_SpD01
+        weight: 1
+      - path: CC_Global01/PtOri_L_WristIKFK01
+        weight: 1
+      - path: CC_Global01/PtOri_L_WristIKFK01/Bn_L_Hand01
+        weight: 1
+      - path: CC_Global01/PtOri_R_WristIKFK01
+        weight: 1
+      - path: CC_Global01/PtOri_R_WristIKFK01/Bn_R_Hand01
+        weight: 1
+      - path: Zombie_Mesh
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

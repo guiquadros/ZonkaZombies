@@ -13,7 +13,7 @@ namespace ZonkaZombies.Input
             SavedData.CreateState(MappingKeys.RightTrigger, RightTriggerValue());
         }
 
-        public override void SaveState()
+        protected override void SaveState()
         {
             // Save the input's current data into the Memento object
             SavedData.SetState(MappingKeys.LeftTrigger, LeftTriggerValue());

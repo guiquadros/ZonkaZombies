@@ -1,7 +1,10 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 using ZonkaZombies.Characters;
-using ZonkaZombies.Input;
+using ZonkaZombies.Characters.Enemy.EnemyIA;
+using ZonkaZombies.Characters.Player.Behaviors;
+using ZonkaZombies.Characters.Player.Weapon;
+using ZonkaZombies.Messaging;
+using ZonkaZombies.Messaging.Messages.UI;
 using ZonkaZombies.Scenery.Interaction;
 using ZonkaZombies.Util;
 
@@ -14,89 +17,143 @@ namespace ZonkaZombies.Managers
     
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
-        private InputReader _inputReader;
-        private EntityManager _entityManager;
-        private SceneController _sceneController;
-        
         /// <summary>
         /// Holds the ramaining quantity of collectables into the current scene.
         /// </summary>
         private int _toDoMissionsCount;
-
         public GameModeType GameMode;
 
-        protected override void Awake()
+        private void OnEnable()
         {
-            base.Awake();
-            _inputReader = InputFactory.Create(InputType.Controller1);
+            //Desubscribe to player and enemy callbacks
+            MessageRouter.AddListener<OnPlayerHasBornMessage>(OnPlayerHasBornCallback);
+            MessageRouter.AddListener<OnEnemyHasBornMessage>(OnEnemyHasBornCallback);
+            MessageRouter.AddListener<OnEnemyDeadMessage>(OnEnemyDeadCallback);
+
+            //Subscribe to gameplay callbacks
+            MessageRouter.AddListener<OnAllPlayersAreDead>(OnAllPlayersAreDeadCallback);
+
+            EntityManager.Instance.Initialize();
+        }
+
+        private void OnDisable()
+        {
+            //Desubscribe to player and enemy callbacks
+            MessageRouter.RemoveListener<OnPlayerDeadMessage>(OnPlayerDeadCallback);
+            MessageRouter.RemoveListener<OnEnemyHasBornMessage>(OnEnemyHasBornCallback);
+            MessageRouter.RemoveListener<OnEnemyDeadMessage>(OnEnemyDeadCallback);
+
+            //Desubscribe to gameplay callbacks
+            MessageRouter.RemoveListener<OnAllPlayersAreDead>(OnAllPlayersAreDeadCallback);
+
+            EntityManager.Instance.Dispose();
         }
 
         private void Start()
         {
-            _entityManager = EntityManager.Instance;
-            _sceneController = Managers.SceneController.Instance;
+            SceneController.Instance.AfterSceneLoad += OnAfterSceneLoad;
+            FindInteractablesReference();
         }
 
-        private void Update()
+        private void FindInteractablesReference()
         {
-            if (_inputReader.StartDown() || UnityEngine.Input.GetKeyDown(KeyCode.Space))
-            {
-                Debug.Log("Start button down. Loading next scene.");
-                SceneController.Instance.LoadNextScene();
-            }
-        }
-
-        /// <summary>
-        /// Call this method to update the references os the EntityManager and GameManager classes.
-        /// </summary>
-        internal void UpdateReferences()
-        {
-            _entityManager.UpdateReferences();
-
-            foreach (var enemy in _entityManager.Enemies)
-            {
-                enemy.OnDead += OnEnemyDead;
-            }
-
-            foreach (var player in _entityManager.Players)
-            {
-                player.OnDead += OnPlayerDead;
-            }
-
             CollectableInteractable[] interactablesInScene = FindObjectsOfType<CollectableInteractable>();
-            _toDoMissionsCount = interactablesInScene.Length;
             foreach (CollectableInteractable interactable in interactablesInScene)
             {
                 interactable.OnInteract += OnGetInteractable;
             }
+
+            _toDoMissionsCount = interactablesInScene.Length;
         }
 
-        private void OnEnemyDead(Character character)
+        private void OnAfterSceneLoad()
         {
-            // ReSharper disable once DelegateSubtraction
-            character.OnDead -= OnEnemyDead;
+            FindInteractablesReference();
+            UIManager.Instance.FindGameUiManager();
+        }
 
-            // Don't destroy the enemy, just disable It
-            character.gameObject.SetActive(false);
+#region GAMEPLAY LOGIC - METHODS
 
-            if (_entityManager.AreAllEnemiesDead())
+        private void OnCharacterDamaged(int current, int damage, Character character)
+        {
+            if (character.IsAlive)
             {
-                SceneManager.LoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
+                return;
+            }
+
+            character.Health.RemoveListener(OnCharacterDamaged);
+
+            Player player = character as Player;
+            if (player != null)
+            {
+                MessageRouter.SendMessage(new OnPlayerDeadMessage(player));
+
+                Destroy(player.gameObject);
+            }
+
+            GenericEnemy enemy = character as GenericEnemy;
+            if (enemy != null)
+            {
+                MessageRouter.SendMessage(new OnEnemyDeadMessage(enemy));
             }
         }
 
-        private void OnPlayerDead(Character character)
+        private void OnGetInteractable(InteractableBase interactable, Player player, params object[] args)
+        {
+            if (interactable is CollectableInteractable)
+            {
+                CollectableInteractable collectableInteractable = (CollectableInteractable) interactable;
+
+                switch (collectableInteractable.Type)
+                {
+                    case InteractableType.SlightBox:
+                        break;
+                    case InteractableType.HeavyBox:
+                        break;
+                    case InteractableType.Collectable:
+                        _toDoMissionsCount--;
+                        if (_toDoMissionsCount <= 0)
+                        {
+                            SceneManager.LoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
+                        }
+                        break;
+                    case InteractableType.Weapon:
+                        WeaponModel weaponModel = (WeaponModel) args[0];
+                        player.SelectWeapon(weaponModel);
+                        break;
+                }
+            }
+        }
+
+#endregion
+
+#region MESSAGE ROUTER - CALLBACKS
+
+        public void OnEnemyHasBornCallback(OnEnemyHasBornMessage message)
+        {
+            message.Enemy.Health.AddListener(OnCharacterDamaged);
+        }
+
+        private void OnPlayerHasBornCallback(OnPlayerHasBornMessage message)
+        {
+            message.Player.Health.AddListener(OnCharacterDamaged);
+        }
+
+        public void OnEnemyDeadCallback(OnEnemyDeadMessage message)
+        {
+            message.Enemy.Health.RemoveListener(OnCharacterDamaged);
+        }
+
+        private void OnPlayerDeadCallback(OnPlayerDeadMessage message)
+        {
+            message.Player.Health.RemoveListener(OnCharacterDamaged);
+        }
+
+        private void OnAllPlayersAreDeadCallback(OnAllPlayersAreDead message)
         {
             SceneManager.LoadScene(SceneConstants.GAME_OVER_SCENE_NAME);
         }
 
-        private void OnGetInteractable(InteractableBase interactable)
-        {
-            _toDoMissionsCount--;
-            if (_toDoMissionsCount <= 0)
-            {
-                SceneManager.LoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
-            }
-        }
+        #endregion
     }
 }

@@ -1,14 +1,10 @@
 ﻿using UnityEngine;
-using ZonkaZombies.Characters.Player;
+using ZonkaZombies.Characters.Player.Behaviors;
 
 namespace ZonkaZombies.Scenery.Interaction
 {
-    //public class WeaponInteractable : MonoBehaviour, IInteractable { }
-    //public class TriggerInteractable : MonoBehaviour, IInteractable { }
-    //public class ActionInteractable : MonoBehaviour, IInteractable { }
-
     [RequireComponent(typeof(Collider))]
-    public class CollectableInteractable : InteractableGlowable
+    public class CollectableInteractable : InteractableGlowable, ICollectable
     {
         [SerializeField]
         private InteractableType _type;
@@ -18,6 +14,8 @@ namespace ZonkaZombies.Scenery.Interaction
         public InteractableType Type { get { return _type; } }
 
         private bool _isBeingInteracted;
+
+        protected Player PlayerInteracting;
 
         private void Awake()
         {
@@ -37,20 +35,36 @@ namespace ZonkaZombies.Scenery.Interaction
 
             if (IsValidCharacter(player))
             {
+                PlayerInteracting = player;
+
                 _collider.enabled = false;
 
                 //TODO Add the item to the player's inventory
 
                 Debug.LogFormat("'{0}' added to the character's inventory!", gameObject.name);
 
-                OnFinish();
+
+                interactor.ForceFinish();
+
+                Collect();
             }
+
+            _isBeingInteracted = false;
         }
 
-        public override void OnFinish()
+        public override void OnFinish(IInteractor interactor) { }
+
+        public virtual void Collect()
         {
-            DispatchOnInteractEvent();
+            DispatchOnInteractEvent(PlayerInteracting);
             Destroy(gameObject);
+        }
+
+        protected void ResetInteractable()
+        {
+            ResetGlow();
+            ResetCounter();
+            _collider.enabled = true;
         }
     }
 }

@@ -9,16 +9,19 @@ namespace ZonkaZombies.Util
         public const string ENEMY_LAYER_NAME = "Enemy";
         public const string PLAYER_CHARACTER_LAYER_NAME = "PlayerCharacter";
         public const string FLOOR_LAYER_NAME = "Floor";
+        public const string ENEMY_DAMAGE_LAYER_NAME = "EnemyDamager";
 
         //layer index
         public static readonly int SCENERY_LAYER = LayerMask.NameToLayer(ENEMY_LAYER_NAME);
         public static readonly int ENEMY_LAYER = LayerMask.NameToLayer(ENEMY_LAYER_NAME);
         public static readonly int FLOOR_LAYER = LayerMask.NameToLayer(FLOOR_LAYER_NAME);
         public static readonly int PLAYER_CHARACTER_LAYER = LayerMask.NameToLayer(PLAYER_CHARACTER_LAYER_NAME);
+        public static readonly int ENEMY_DAMAGER_LAYER = LayerMask.NameToLayer(ENEMY_DAMAGE_LAYER_NAME);
     }
 
     public static class TagConstants
     {
+        public const string ENEMY_DAMAGER = "EnemyDamager";
         public const string PLAYER_DAMAGER = "PlayerDamager";
         public const string PLAYER = "Player";
     }
@@ -27,25 +30,7 @@ namespace ZonkaZombies.Util
     {
         //general
         public const string PERSISTENT = "Persistent";
-
-        //menu input debug
-        public const string MENU_PROTOTYPE = "MenuPrototype";
-        public const string INPUT_DEBUGGER = "InputDebugger";
-        
-        //singleplayer
-        public const string P1_PLAYER_CHARACTER_MOVEMENT = "P1PlayerCharacterMovement";
-        public const string P1_ENEMY_MOVEMENT_AND_PURSUIT = "P1EnemyMovementandPursuit";
-        public const string P1_ENEMY_VS_CHARACTER = "P1EnemyVsCharacter";
-        public const string P1_MANY_ENEMIES_VS_CHARACTER = "P1ManyEnemiesVsCharacter";
-        public const string P1_FIELD_OF_VISION = "P1FieldOfVision";
-        public const string P1_INTERACTABLE_SYSTEM = "P1InteractableSystem";
-        public const string P1_FULL_SCENERY = "P1FullScenery";
-
-        //multiplayer
-        public const string P2_MOVEMENT = "P2Movement";
-        public const string P2_MANY_ENEMIES_VS_CHARACTER = "P2ManyEnemiesVsCharacter";
-        public const string P2_INTERACTABLE_SYSTEM_SPLITSCREEN = "P2InteractableSystemSplitscreen";
-        public const string P2_FULL_SCENERY = "P2FullScenery";
+        public const string HALL_FIRST_FLOOR = "HallFirstFloor";
 
         //win lose
         public const string GAME_OVER_SCENE_NAME = "GameOver";
@@ -54,7 +39,31 @@ namespace ZonkaZombies.Util
 
     public static class SharedAnimatorParameters
     {
-        public static readonly int WALKING_ID = Animator.StringToHash("Walking");
-        public static readonly int PUNCH_ID = Animator.StringToHash("Punch");
+        public static readonly int CALL_ELEVATOR_ID = Animator.StringToHash("CallElevator");
+        public static readonly int HUD_DAMAGE_ID = Animator.StringToHash("HudDamage");
     }
+
+    public static class PlayerAnimatorParameters
+    {
+        public static readonly int WALKING = Animator.StringToHash("Walking");
+        public static readonly int PUNCH = Animator.StringToHash("Punch");
+        public static readonly int MOVEMENT_DIRECTION = Animator.StringToHash("MovementDirection");
+        public static readonly int IDLE = Animator.StringToHash("Idle");
+        public static readonly int DAMAGE_FRONT = Animator.StringToHash("DamageFront");
+        public static readonly int DAMAGE_BACK = Animator.StringToHash("DamageBack");
+    }
+
+    public static class EnemyAnimatorParameters
+    {
+        public static readonly int IS_MOVING = Animator.StringToHash("IsMoving");
+        public static readonly int ATTACK = Animator.StringToHash("Attack");
+        public static readonly int TAKE_DAMAGE = Animator.StringToHash("TakeDamage");
+        public static readonly int IS_DEAD = Animator.StringToHash("IsDead");
+        public static readonly int DEATH_SPEED = Animator.StringToHash("DeathSpeed");
+    }
+
+    public static class ScriptableObjectsConstants
+    {
+        public const string SPAWN_ENEMIES_ASSET_PATH = "Assets/Data/SpawnPointsZombies{0}.asset";
+    } 
 }

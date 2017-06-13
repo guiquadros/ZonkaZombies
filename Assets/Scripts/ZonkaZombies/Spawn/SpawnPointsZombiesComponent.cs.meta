@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 642f03c334294527b77223b4df08ca38
+timeCreated: 1494302330
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - PrefabBasic: {fileID: 1665345165575208, guid: c04d8c107779b394cadc38889b7ad66c,
+      type: 2}
+  - PrefabCrawler: {fileID: 1061002872015860, guid: 822751f5e4efb7b4f90ace0d2f0c9479,
+      type: 2}
+  - PrefabExplosive: {fileID: 1533458904133364, guid: ebec74b2e8954594187e323bc0e32ee2,
+      type: 2}
+  - PrefabFaster: {fileID: 1193080485859938, guid: a75e952228263a34cad6dbeaf72ee28b,
+      type: 2}
+  - PrefabArmor: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

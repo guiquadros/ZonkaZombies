@@ -4,10 +4,10 @@
     {
         public override void OnBegin(IInteractor interactor)
         {
-            OnFinish();
+            OnFinish(interactor);
         }
 
-        public override void OnFinish()
+        public override void OnFinish(IInteractor interactor)
         {
             Destroy(gameObject);
         }

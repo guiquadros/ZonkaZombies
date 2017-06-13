@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using ZonkaZombies.Characters.Player;
-using ZonkaZombies.Characters.PlayerCharacter;
+using ZonkaZombies.Characters.Player.Behaviors;
 
 namespace ZonkaZombies.Scenery.Interaction
 {
@@ -13,7 +13,7 @@ namespace ZonkaZombies.Scenery.Interaction
 
         protected int Count;
 
-        public delegate void OnGet(InteractableBase interactable);
+        public delegate void OnGet(InteractableBase interactable, Player player, object[] args);
         public event OnGet OnInteract;
 
         public virtual void OnAwake()
@@ -28,8 +28,13 @@ namespace ZonkaZombies.Scenery.Interaction
             Count = Mathf.Max(Count, 0);
         }
 
+        protected void ResetCounter()
+        {
+            Count = 0;
+        }
+
         public abstract void OnBegin(IInteractor interactor);
-        public abstract void OnFinish();
+        public abstract void OnFinish(IInteractor interactor);
 
         protected bool IsValidCharacter(Player player)
         {
@@ -41,11 +46,11 @@ namespace ZonkaZombies.Scenery.Interaction
             return gameObject;
         }
 
-        protected void DispatchOnInteractEvent()
+        protected void DispatchOnInteractEvent(Player player, params object[] args)
         {
             if (OnInteract != null)
             {
-                OnInteract(this);
+                OnInteract(this, player, args);
             }
         }
     }

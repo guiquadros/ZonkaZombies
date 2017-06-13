@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2deb4b9258c0d74b85b1621eb93c702, type: 3}
+  m_Name: basicEnemyDetails
+  m_EditorClassIdentifier: 
+  MurmursClip:
+  - {fileID: 8300000, guid: 0b66ff09ced41dc408a839b035172d7b, type: 3}
+  - {fileID: 8300000, guid: e0b0f51252b69c4489378d0c7058a4d2, type: 3}
+  - {fileID: 8300000, guid: 1b500209b935a9a4fbac928cddf62733, type: 3}
+  GotHitClip: {fileID: 8300000, guid: e0620973afe56c24592b8e76f5ae1a75, type: 3}

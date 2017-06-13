@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using ZonkaZombies.Messaging;
+using ZonkaZombies.Messaging.Messages.UI;
 
 namespace ZonkaZombies.Multiplayer
 {
@@ -13,9 +15,9 @@ namespace ZonkaZombies.Multiplayer
         [SerializeField]
         private AudioListener _audioListener;
         [SerializeField, Tooltip("A Transform that moves with player 1")]
-        private Transform _player1;
+        public Transform Player1;
         [SerializeField, Tooltip("A Transform that moves with player 2")]
-        private Transform _player2;
+        public Transform Player2;
 
         /// <summary>
         /// 2d camera displacement from player to camera target (the same as <c>cameraDisplacement3d</c> with <c>y</c> set to 0)
@@ -49,7 +51,7 @@ namespace ZonkaZombies.Multiplayer
         /// <summary>
         /// The Transform on the splitscreen mask
         /// </summary>
-        private Transform _maskTransform;
+        private Transform _maskTransform, _maskTransform2;
         private Quaternion _defaultCameraQuaternion;
         private Camera _secondaryCamera;
         /// <summary>
@@ -73,7 +75,7 @@ namespace ZonkaZombies.Multiplayer
         {
             get
             {
-                return _player1 ? _player1 : _player2 ? _player2 : null;
+                return Player1 ? Player1 : Player2 ? Player2 : null;
             }
         }
 
@@ -84,8 +86,20 @@ namespace ZonkaZombies.Multiplayer
         {
             get
             {
-                return (_player1 ? 1 : 0) + (_player2 ? 1 : 0);
+                return (Player1 ? 1 : 0) + (Player2 ? 1 : 0);
             }
+        }
+
+        private void OnEnable()
+        {
+            MessageRouter.AddListener<OnPlayerHasBornMessage>(OnPlayerHasBornCallback);
+            MessageRouter.AddListener<OnPlayerDeadMessage>(OnPlayerDeadCallback);
+        }
+
+        private void OnDisable()
+        {
+            MessageRouter.RemoveListener<OnPlayerHasBornMessage>(OnPlayerHasBornCallback);
+            MessageRouter.RemoveListener<OnPlayerDeadMessage>(OnPlayerDeadCallback);
         }
 
         private void Awake()
@@ -120,11 +134,11 @@ namespace ZonkaZombies.Multiplayer
                 _cameraDisplacement2D = _distanceBetweenPlayers.normalized * _triggerDistance;
 
                 // Aim cameras at players
-                SetCameraPos(_primaryCamera,    _player1.position + _cameraDisplacement2D);
-                SetCameraPos(_secondaryCamera, _player2.position - _cameraDisplacement2D);
+                SetCameraPos(_primaryCamera,   Player1.position + _cameraDisplacement2D);
+                SetCameraPos(_secondaryCamera, Player2.position - _cameraDisplacement2D);
 
                 // Position the splitscreen mask in front of the second camera
-                SetSplitscreenMaskPos(_secondaryCamera, _player2.position, _player2.position + _cameraDisplacement2D);
+                SetSplitscreenMaskPos(_secondaryCamera, Player2.position, Player2.position + _cameraDisplacement2D, _maskTransform);
 
                 if (_distanceBetweenPlayers.sqrMagnitude < _triggerDistance * _triggerDistance)
                 {
@@ -151,12 +165,13 @@ namespace ZonkaZombies.Multiplayer
             if (NumPlayers == 2)
             {
                 Vector3 tempCentralPos = Vector3.zero;
-                tempCentralPos += _player1.position;
-                tempCentralPos += _player2.position;
+                tempCentralPos += Player1.position;
+                tempCentralPos += Player2.position;
                 tempCentralPos /= NumPlayers;
                 return tempCentralPos;
             }
-            return _player1.position;
+            
+            return MainPlayer ? MainPlayer.position : Vector3.zero;
         }
 
         private void Initialize()
@@ -183,7 +198,8 @@ namespace ZonkaZombies.Multiplayer
             else
             {
                 _maskLayer = _splitscreenMask.gameObject.layer;
-                _maskTransform = _splitscreenMask.transform;
+                _maskTransform  = _splitscreenMask.transform;
+                _maskTransform2 = _splitscreenMask.transform;
 
                 MeshRenderer[] renderers = _splitscreenMask.GetComponentsInChildren<MeshRenderer>();
                 foreach (MeshRenderer mr in renderers)
@@ -205,7 +221,10 @@ namespace ZonkaZombies.Multiplayer
         private void InitializeCameras()
         {
             // Clone the primary camera
-            this._secondaryCamera = GameObject.Instantiate(this._primaryCamera);
+            this._secondaryCamera = Instantiate(this._primaryCamera);
+
+            _secondaryCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.Skybox;
+
             this._secondaryCamera.transform.parent = this.transform;
 
             GetCentralPosition();
@@ -233,7 +252,7 @@ namespace ZonkaZombies.Multiplayer
         /// <param name="target">The camera to position the mask in front of</param>
         /// <param name="playerPos">The position of the player to place the mask over</param>
         /// <param name="targetPos">A 3D position that should be considered along the line from the player toward of the center of the screen</param>
-        private void SetSplitscreenMaskPos(Camera target, Vector3 playerPos, Vector3 targetPos)
+        private void SetSplitscreenMaskPos(Camera target, Vector3 playerPos, Vector3 targetPos, Transform maskTranform)
         {
             if (target.aspect >= 1.0f)
             {
@@ -244,17 +263,17 @@ namespace ZonkaZombies.Multiplayer
                 _maskScale.x = _maskScale.y = 2.83f /* 2√2 */ * _maskOffset * Mathf.Tan(target.fieldOfView * 0.5f * Mathf.Deg2Rad) / target.aspect;
             }
 
-            _maskTransform.localScale = _maskScale;
+            maskTranform.localScale = _maskScale;
 
             // Project the two points onto the camera's 2D view
             _screenDisplacement2D = target.WorldToScreenPoint(playerPos) - target.WorldToScreenPoint(targetPos);
 
             // Align the splitscreen mask with the camera and rotate it based on the split angle
-            _maskTransform.rotation = target.transform.rotation;
-            _maskTransform.Rotate(_maskTransform.forward, Mathf.Atan2(_screenDisplacement2D.y, _screenDisplacement2D.x) * Mathf.Rad2Deg, Space.World);
+            maskTranform.rotation = target.transform.rotation;
+            maskTranform.Rotate(maskTranform.forward, Mathf.Atan2(_screenDisplacement2D.y, _screenDisplacement2D.x) * Mathf.Rad2Deg, Space.World);
 
             // Place the mask in front of the camera, far enough to the side to only conceal half of the screen
-            _maskTransform.position = target.transform.position + (target.transform.forward * _maskOffset) + (_maskTransform.right * _splitscreenMask.transform.lossyScale.x * 0.5f);
+            maskTranform.position = target.transform.position + (target.transform.forward * _maskOffset) + (maskTranform.right * _splitscreenMask.transform.lossyScale.x * 0.5f);
         }
         
         private void EnableSplitscreen()
@@ -262,6 +281,7 @@ namespace ZonkaZombies.Multiplayer
             // Activate the splitscreen components
             _secondaryCamera.gameObject.SetActive(true);
             _maskTransform.gameObject.SetActive(true);
+            _maskTransform2.gameObject.SetActive(true);
 
             // Position the new camera
             _secondaryCamera.transform.position = _primaryCamera.transform.position;
@@ -274,13 +294,44 @@ namespace ZonkaZombies.Multiplayer
             _separatorRenderer.enabled = true;
         }
         
-        private void DisableSplitscreen()
+        public void DisableSplitscreen()
         {
             // Just turn everything off
-            this.IsSplitscreenOn = false;
-            this._secondaryCamera.gameObject.SetActive(false);
-            this._maskTransform.gameObject.SetActive(false);
-            this._separatorRenderer.enabled = false;
+            IsSplitscreenOn = false;
+            _secondaryCamera.gameObject.SetActive(false);
+            _maskTransform.gameObject.SetActive(false);
+            _maskTransform2.gameObject.SetActive(false);
+            _separatorRenderer.enabled = false;
         }
+
+#region CALLBACKS
+
+        private void OnPlayerHasBornCallback(OnPlayerHasBornMessage message)
+        {
+            if (message.Player.IsFirstPlayer)
+            {
+                Player1 = message.Player.transform;
+            }
+            else
+            {
+                Player2 = message.Player.transform;
+            }
+        }
+
+        private void OnPlayerDeadCallback(OnPlayerDeadMessage message)
+        {
+            if (message.Player.IsFirstPlayer)
+            {
+                Player1 = null;
+            }
+            else
+            {
+                Player2 = null;
+            }
+
+            DisableSplitscreen();
+        }
+
+#endregion
     }
 }

@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using ZonkaZombies.Characters.Enemy.EnemyIA;
 
 namespace ZonkaZombies.Characters.Enemy
 {
     public class VisionRayDebugger : MonoBehaviour
     {
         [SerializeField]
-        private Enemy _enemyBehavior;
+        private GenericEnemy _genericEnemyBehavior;
          
         [SerializeField]
         private float _fieldOfViewSize = 5f;
@@ -20,7 +21,7 @@ namespace ZonkaZombies.Characters.Enemy
 
         private void BuildMesh()
         {
-            _angle = _enemyBehavior.FieldOfViewAngle * 2f;
+            _angle = _genericEnemyBehavior.FieldOfViewAngle * 2f;
 
             Vector3 v0 = Vector3.zero;
             Vector3 v1 = new Vector3(Mathf.Cos(Mathf.Deg2Rad * _angle), 0, Mathf.Sin(Mathf.Deg2Rad * _angle)) * _fieldOfViewSize;
@@ -35,11 +36,11 @@ namespace ZonkaZombies.Characters.Enemy
 
         private void OnDrawGizmos()
         {
-            if (_mesh == null || _enemyBehavior == null) return;
+            if (_mesh == null || _genericEnemyBehavior == null) return;
 
             BuildMesh();
 
-            Gizmos.DrawMesh(_mesh, _enemyBehavior.transform.position, _enemyBehavior.transform.rotation, Vector3.one);
+            Gizmos.DrawMesh(_mesh, _genericEnemyBehavior.transform.position, _genericEnemyBehavior.transform.rotation, Vector3.one);
         }
     }
 }

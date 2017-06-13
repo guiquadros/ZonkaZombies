@@ -8,9 +8,16 @@ namespace ZonkaZombies.Scenery.Interaction
         [SerializeField, Tooltip("This is not obligatory")]
         private GlowableObject _glowableObject;
 
+        protected bool CanGlow = true;
+
         public override void OnAwake()
         {
             base.OnAwake();
+
+            if (!CanGlow || _glowableObject.IsGlowing)
+            {
+                return;
+            }
 
             if (_glowableObject != null)
             {
@@ -22,6 +29,11 @@ namespace ZonkaZombies.Scenery.Interaction
         {
             base.OnSleep();
 
+            if (!CanGlow || !_glowableObject.IsGlowing)
+            {
+                return;
+            }
+
             if (Count == 0)
             {
                 if (_glowableObject != null)
@@ -31,14 +43,30 @@ namespace ZonkaZombies.Scenery.Interaction
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        protected void StopGlowing()
         {
-            _glowableObject.Glow(true);
+            CanGlow = false;
+            SetGlowState(false);
         }
 
-        private void OnTriggerExit(Collider other)
+        protected void ContinueGlowing()
         {
-            _glowableObject.Glow(false);
+            CanGlow = true;
+            if (Count > 0)
+            {
+                SetGlowState(true);
+            }
+        }
+
+        protected void ResetGlow()
+        {
+            CanGlow = true;
+            SetGlowState(false);
+        }
+
+        private void SetGlowState(bool state)
+        {
+            _glowableObject.Glow(state);
         }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace ZonkaZombies.Scenery.Interaction
 {
@@ -6,15 +7,16 @@ namespace ZonkaZombies.Scenery.Interaction
     {
         private bool _isOpened;
 
-        [SerializeField]
-        private Renderer _renderer;
+        [SerializeField] protected Renderer _renderer;
 
         [SerializeField]
-        private Collider _collider;
+        protected Collider _collider;
 
-        private Color _transparentGreen;
+        [SerializeField] protected NavMeshObstacle _navMeshObstacle;
 
-        private void Start()
+        protected Color _transparentGreen;
+
+        protected virtual void Start()
         {
             _transparentGreen = Color.green;
             _transparentGreen.a = .5f;
@@ -29,12 +31,12 @@ namespace ZonkaZombies.Scenery.Interaction
             UpdateDoorState();
         }
 
-        public override void OnFinish()
+        public override void OnFinish(IInteractor interactor)
         {
             // Not necessary...
         }
 
-        private void UpdateDoorState()
+        protected virtual void UpdateDoorState()
         {
             if (_renderer == null || _collider == null)
             {
@@ -42,6 +44,7 @@ namespace ZonkaZombies.Scenery.Interaction
             }
 
             _renderer.material.color = _isOpened ? _transparentGreen : Color.red;
+            _navMeshObstacle.enabled = !_isOpened;
             _collider.enabled = !_isOpened;
         }
     }

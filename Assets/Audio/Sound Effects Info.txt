@@ -1,0 +1,35 @@
+SOUND EFFECTS
+	GUN SHOOT:
+	    Gun Shoot: https://www.freesound.org/people/Michel%20Hollicardo/sounds/52593/
+		Shoot 6: https://www.freesound.org/people/fins/sounds/368735/
+		Pistol 3 : https://www.freesound.org/people/senitiel/sounds/220611/
+		Gun Cock: https://www.freesound.org/people/woodmoose/sounds/155388/
+		Empty Gun Shot: https://www.freesound.org/people/KlawyKogut/sounds/154934/
+		Empty Gun Failure: https://www.freesound.org/people/CosmicEmbers/sounds/387483/
+		Colt 1911: https://www.freesound.org/people/Nanashi/sounds/104412/
+			Shotgun
+				https://www.freesound.org/people/Deganoth/sounds/348671/
+				https://www.freesound.org/people/Kodack/sounds/258194/
+				https://www.freesound.org/people/Deganoth/sounds/348670/
+				https://www.freesound.org/people/Deganoth/sounds/348718/
+				
+			Uzi
+				https://www.freesound.org/people/Deganoth/sounds/348716/
+				Reload: https://www.freesound.org/people/ermfilm/sounds/162430/
+			Pistol
+				https://www.freesound.org/people/senitiel/sounds/220611/
+				Reload: https://www.freesound.org/people/Bunny_Clark/sounds/377549/
+				
+		
+	
+	EVENT / AMBIENT
+		Scary Violins: https://www.freesound.org/people/lennyboy/sounds/244417/
+		Nostromo: https://www.freesound.org/people/fectoper/sounds/59/
+		Dark Ambience: https://www.freesound.org/people/PatrickLieberkind/sounds/244961/ (main theme?)
+		Horro Ambience: https://www.freesound.org/people/klankbeeld/sounds/133100/ (main theme?)
+		Suonho Scary Scape: https://www.freesound.org/people/suonho/sounds/9695/ (Running on the streets)
+		Ambience 3: https://www.freesound.org/people/yewbic/sounds/33796/
+		Control Room: https://www.freesound.org/people/Diboz/sounds/211683/
+		Break Through Blocked Door: https://www.freesound.org/people/nothayama/sounds/172491/
+		Rattly metal elevator: https://www.freesound.org/people/Tomlija/sounds/198787/
+		Panska Prochanzkova Lucie: https://www.freesound.org/people/13FPanska_Prochazkova_Lucie/sounds/377739/

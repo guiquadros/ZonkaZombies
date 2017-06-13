@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using ZonkaZombies.Characters.Player;
+using ZonkaZombies.Characters.Player.Behaviors;
 
 namespace ZonkaZombies.UI
 {
@@ -25,7 +25,7 @@ namespace ZonkaZombies.UI
 
         private void Update()
         {
-            _lifePointsText.text = string.Format(_pattern, _player.LifePoints.ToString("00"));
+            _lifePointsText.text = string.Format(_pattern, _player.Health.Current.ToString("00"));
         }
     }
 }
