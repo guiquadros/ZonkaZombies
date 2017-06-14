@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 using ZonkaZombies.Characters.Enemy.EnemyIA;
+using ZonkaZombies.Managers;
 using ZonkaZombies.Util;
 using Random = UnityEngine.Random;
 
@@ -10,6 +11,9 @@ namespace ZonkaZombies.Spawn
     [RequireComponent(typeof(Collider))]
     public class SpawnManager : MonoBehaviour
     {
+        [SerializeField]
+        private int _maxEnemiesSpawn = 100;
+
         private float _time;
         private SpawnPointsZombiesComponent _spawnDataZombies;
         private bool _stopSpawn;
@@ -99,7 +103,7 @@ namespace ZonkaZombies.Spawn
         //do spawn only if the playe enters on the collision
         private void OnTriggerStay(Collider other)
         {
-            if (_stopSpawn || _time <= 0f) return;
+            if (_stopSpawn || _time <= 0f || EntityManager.Instance.Enemies.Count >= _maxEnemiesSpawn) return;
 
             if (other.CompareTag(TagConstants.PLAYER))
             {
