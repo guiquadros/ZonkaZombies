@@ -22,7 +22,7 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA
     /// Represents an generic enemy that implements an Finite State Machine to handle its EEnemyStates.
     /// </summary>
     [RequireComponent(typeof(NavMeshAgent))]
-    public class GenericEnemy : Character
+    public class GenericEnemy : Character, IResetable
     {
         #region SerializeFields and Public Attributes
         [SerializeField]
@@ -47,7 +47,7 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA
         [SerializeField]
         private EnemyDetails _enemyDetails;
 
-        [SerializeField]
+        [HideInInspector]
         private Player.Behaviors.Player _characterTarget;
 
         [SerializeField]
@@ -224,7 +224,7 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA
             _characterTarget = EntityManager.Instance.GetNearestPlayer(transform);
         }
 
-        protected override void OnTakeDamage()
+        protected override void OnDamaged()
         {
             TryChangeBehavior(EEnemyBehavior.TakeDamage);
         }
@@ -276,6 +276,11 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA
 
                 AudioManager.Instance.Play(EnemyDetails.AnyMurmur, Random.Range(minVolume, maxVolume));
             }
+        }
+
+        public void Reset()
+        {
+            gameObject.SetActive(true);
         }
     }
 }

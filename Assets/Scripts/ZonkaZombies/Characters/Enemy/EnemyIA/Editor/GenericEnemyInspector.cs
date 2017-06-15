@@ -24,9 +24,16 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA.Editor
 
             DrawDefaultInspector();
 
-            GUILayout.Space(30);
+            GUILayout.Space(15);
 
-            GUILayout.BeginVertical("Editor Helpers", GUI.skin.window);
+            GUIStyle windowStyle = new GUIStyle(GUI.skin.window)
+            {
+                stretchHeight = false,
+                fontStyle = FontStyle.Bold
+            };
+
+            //AI HELPERS
+            GUILayout.BeginVertical("Editor Helpers", windowStyle);
 
             if (GUILayout.Button("Generate Behaviors", GUI.skin.button))
             {
@@ -37,10 +44,28 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA.Editor
             {
                 ImplementMissingGeneralTypes(genericEnemy);
             }
+            //DAMAGE AND HEAL
+            if (GUILayout.Button("Instant Kill", GUI.skin.button))
+            {
+                genericEnemy.Damage(int.MaxValue);
+            }
+
+            if (GUILayout.Button("Full Heal", GUI.skin.button))
+            {
+                genericEnemy.Heal(int.MaxValue);
+            }
+
+            if (GUILayout.Button("Damage 5%", GUI.skin.button))
+            {
+                genericEnemy.Damage(Mathf.FloorToInt(genericEnemy.Health.Maximum * 0.05f));
+            }
+
+            if (GUILayout.Button("Heal 5%", GUI.skin.button))
+            {
+                genericEnemy.Heal(Mathf.FloorToInt(genericEnemy.Health.Maximum * 0.05f));
+            }
 
             GUILayout.EndVertical();
-            GUILayout.FlexibleSpace();
-            GUILayout.MaxHeight(0);
         }
 
         private void GenerateGeneralTypes(GenericEnemy genericEnemy)

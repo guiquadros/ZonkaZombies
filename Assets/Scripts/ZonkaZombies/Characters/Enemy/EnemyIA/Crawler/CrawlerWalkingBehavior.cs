@@ -40,16 +40,18 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA.Crawler
         private void OnEnable()
         {
             GenericEnemy.Animator.SetBool(EnemyAnimatorParameters.IS_MOVING, true);
-
-            if (GenericEnemy.Agent.isActiveAndEnabled)
-            {
-                GenericEnemy.Agent.isStopped = false;
-            }
         }
 
         private void Update()
         {
-            if (GenericEnemy.HasTarget)
+            if (GenericEnemy.Agent.isStopped)
+            {
+                if (GenericEnemy.Agent.isOnNavMesh && GenericEnemy.Agent.isActiveAndEnabled)
+                {
+                    GenericEnemy.Agent.isStopped = false;
+                }
+            }
+            else if (GenericEnemy.HasTarget)
             {
                 UpdateCrawlSpeed();
             }

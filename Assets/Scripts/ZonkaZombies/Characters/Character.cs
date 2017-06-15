@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using ZonkaZombies.Characters.Data.Stats;
 using ZonkaZombies.Characters.Debugger;
@@ -41,16 +42,24 @@ namespace ZonkaZombies.Characters
         /// <summary>
         /// Apply damage to the character.
         /// </summary>
-        /// <param name="damage">Life Points the character lost.</param>
+        /// <param name="amount">Life Points the character lost.</param>
         /// <returns>Returns true if the character is dead.</returns>
-        public void Damage(int damage)
+        public void Damage(int amount)
         {
-            OnTakeDamage();
-            Health.Remove(damage);
+            OnDamaged();
+            Health.Remove(amount);
+        }
+
+        public void Heal(int amount)
+        {
+            OnHealed();
+            Health.Add(amount);
         }
 
         //TODO Move this method to another class, It does not belong this class..
-        protected virtual void OnTakeDamage() { }
+        protected virtual void OnDamaged() { }
+
+        protected virtual void OnHealed() { }
 
         protected virtual bool CanReceiveDamage()
         {
