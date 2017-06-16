@@ -30,7 +30,8 @@ namespace ZonkaZombies.Util
     {
         //general
         public const string PERSISTENT = "Persistent";
-        public const string HALL_FIRST_FLOOR = "HallFirstFloor";
+        public const string HALL_FIRST_FLOOR_NAME = "HallFirstFloor";
+        public const string DIALLOGUE_SCIENTIST_NAME = "DiallogueScientist";
 
         //win lose
         public const string GAME_OVER_SCENE_NAME = "GameOver";

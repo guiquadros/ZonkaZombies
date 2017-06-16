@@ -10,18 +10,12 @@ using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Managers
 {
-    public enum GameModeType
-    {
-        Singleplayer, Multiplayer
-    }
-    
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         /// <summary>
         /// Holds the ramaining quantity of collectables into the current scene.
         /// </summary>
         private int _toDoMissionsCount;
-        public GameModeType GameMode;
 
         private void OnEnable()
         {
@@ -158,13 +152,13 @@ namespace ZonkaZombies.Managers
         public void PlayerWon()
         {
             EntityManager.Instance.Enemies.Clear();
-            SceneController.Instance.FadeAndLoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
+            SceneController.Instance.FadeAndLoadScene(GameScenes.PLAYER_WIN_SCENE);
         }
 
         public void GameOver()
         {
             EntityManager.Instance.Enemies.Clear();
-            SceneController.Instance.FadeAndLoadScene(SceneConstants.GAME_OVER_SCENE_NAME);
+            SceneController.Instance.FadeAndLoadScene(GameScenes.GAME_OVER_SCENE);
         }
     }
 }

@@ -13,8 +13,7 @@ namespace ZonkaZombies.Scenery.Interaction
             //if all players are inside the elevator and all enemies were killed
             if (Count == EntityManager.Instance.Players.Count && EntityManager.Instance.Enemies.Count <= 0)
             {
-                //TODO: execute elevator event
-                GameManager.Instance.PlayerWon();
+                SceneController.Instance.LoadNextScene();
             }
         }
 
