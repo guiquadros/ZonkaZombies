@@ -53,7 +53,10 @@ namespace ZonkaZombies.Managers
 
         private void OnPlayerHasBornCallback(OnPlayerHasBornMessage message)
         {
-            _gameUiManager.AddPlayerHud(message.Player);
+            if (_gameUiManager != null)
+            {
+                _gameUiManager.AddPlayerHud(message.Player);
+            }
         }
 
         private void OnPlayerDeadCallback(OnPlayerDeadMessage message)
