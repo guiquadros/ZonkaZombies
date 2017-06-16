@@ -97,6 +97,7 @@ namespace ZonkaZombies.Managers
         public void FadeAndLoadScene(GameSceneType gameScene)
         {
             Debug.Log("FadeAndSwitchScenes()");
+            EntityManager.Instance.Enemies.Clear();
 
             // If a fade isn't happening then start fading and switching scenes.
             //if (!isFading)
@@ -117,15 +118,18 @@ namespace ZonkaZombies.Managers
 
             Debug.Log("Current active scene: " + SceneManager.GetActiveScene().name);
 
-            // Unload the current active scene.
-            //yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-            var allScenes = SceneManager.GetAllScenes();
-
-            foreach (var scene in allScenes)
+            if (gameScene.UnloadAllOtherScenes)
             {
-                if (scene.name != SceneConstants.PERSISTENT)
+                // Unload the current active scene.
+                //yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+                var allScenes = SceneManager.GetAllScenes();
+
+                foreach (var scene in allScenes)
                 {
-                    yield return SceneManager.UnloadSceneAsync(scene.name);
+                    if (scene.name != SceneConstants.PERSISTENT)
+                    {
+                        yield return SceneManager.UnloadSceneAsync(scene.name);
+                    }
                 }
             }
 

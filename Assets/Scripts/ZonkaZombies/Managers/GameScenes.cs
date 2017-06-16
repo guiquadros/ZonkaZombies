@@ -14,17 +14,17 @@ namespace ZonkaZombies.Managers
 
         public static GameSceneType DIALLOGUE_SCIENTIST
         {
-            get { return new GameSceneType(SceneConstants.DIALLOGUE_SCIENTIST_NAME, false); }
+            get { return new GameSceneType(SceneConstants.DIALLOGUE_SCIENTIST_NAME/*, false*/); }
         }
         
         public static GameSceneType PLAYER_WIN_SCENE
         {
-            get { return new GameSceneType(SceneConstants.PLAYER_WIN_SCENE_NAME, false); }
+            get { return new GameSceneType(SceneConstants.PLAYER_WIN_SCENE_NAME); }
         }
         
         public static GameSceneType GAME_OVER_SCENE
         {
-            get { return new GameSceneType(SceneConstants.GAME_OVER_SCENE_NAME, false); }
+            get { return new GameSceneType(SceneConstants.GAME_OVER_SCENE_NAME); }
         }
     }
 }
