@@ -1,4 +1,5 @@
-﻿using ZonkaZombies.Characters.Enemy.EnemyIA;
+﻿using UnityEngine;
+using ZonkaZombies.Characters.Enemy.EnemyIA;
 using ZonkaZombies.Characters.Player.Behaviors;
 
 namespace ZonkaZombies.Messaging.Messages.UI
@@ -59,5 +60,14 @@ namespace ZonkaZombies.Messaging.Messages.UI
 
     public struct OnAllPlayersAreDead { }
 
+    #endregion
+
+#region MAIN MENU MESSAGES
+    public class MoveCameraMessage
+    {
+        public Vector3 Position;
+        public Quaternion Rotation;
+        public float Duration = 2;
+    }
 #endregion
 }

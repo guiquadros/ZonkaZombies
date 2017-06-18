@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ZonkaZombies.Input
@@ -7,20 +8,33 @@ namespace ZonkaZombies.Input
     {
         private const string PathToMappingKeys = "Input/{0}";
 
+        private static readonly Dictionary<InputType, InputReader> InstantiatedInputReaders = new Dictionary<InputType, InputReader>();
+
         public static InputReader Create(InputType inputType)
         {
+            InputReader result;
+
+            if (InstantiatedInputReaders.TryGetValue(inputType, out result))
+            {
+                return result;
+            }
+
             string inputFilePath = ToFileName(inputType);
 
             MappingKeys mappingKeys = FindMappingKeysFromResources(inputFilePath);
 
             if (inputType == InputType.Keyboard)
             {
-                return new KeyboardReader(mappingKeys);
+                result = new KeyboardReader(mappingKeys);
             }
             else
             {
-                return new ControllerReader(mappingKeys);
+                result = new ControllerReader(mappingKeys);
             }
+
+            InstantiatedInputReaders[inputType] = result;
+
+            return result;
         }
 
         /// <summary>
