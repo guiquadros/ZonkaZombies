@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224167414582761656}
-  - component: {fileID: 114777002282878496}
+  - component: {fileID: 114014578754024098}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -102,12 +102,28 @@ GameObject:
   m_Component:
   - component: {fileID: 224843595634166214}
   m_Layer: 5
-  m_Name: DialogueComponents
+  m_Name: DialogueUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &114014578754024098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1238414710103294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22d9f8a98484e1f8032e4cb61ee27c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueUIGameObject: {fileID: 1940669844340718}
+  _mugshot: {fileID: 114698067871641908}
+  _text: {fileID: 114398272361989040}
+  _timeBetweenDialogues: 0.5
+  _waitTimeStartDialogue: 1
 --- !u!114 &114398272361989040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,36 +213,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114777002282878496
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1238414710103294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b570940be9787d40ae0b205e64ca5fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mugshot: {fileID: 114698067871641908}
-  _text: {fileID: 114398272361989040}
-  _dialogueDetailsListOrdered:
-  - {fileID: 11400000, guid: 1890924d6f0cb854d8a3e658b9d3652c, type: 2}
-  - {fileID: 11400000, guid: 4e795afda690510449c5c5c13d99ed15, type: 2}
-  - {fileID: 11400000, guid: 6d8881a071ff2fc49ab10d8dbaea82e0, type: 2}
-  - {fileID: 11400000, guid: 787af319efea4bc4d892cb6c354e2386, type: 2}
-  - {fileID: 11400000, guid: 988149482831c7942a3ed80037beac95, type: 2}
-  - {fileID: 11400000, guid: ba38bcdb032ff81499126f4a8567f756, type: 2}
-  - {fileID: 11400000, guid: 81905f167fe171f439e33f29124b6768, type: 2}
-  - {fileID: 11400000, guid: c894ef6f224eec549b2847cb463e9c5c, type: 2}
-  - {fileID: 11400000, guid: 03e4dcbfc3732e34d9d35a59dae6f560, type: 2}
-  - {fileID: 11400000, guid: d1a967aa32f6cd54fbac66aef3b5c8f6, type: 2}
-  - {fileID: 11400000, guid: a460e4218894b184f9a03909f8cc60f4, type: 2}
-  - {fileID: 11400000, guid: 3a93966c816362d48808dd1ab422f6eb, type: 2}
-  _timeBetweenDialogues: 0.5
-  _waitTimeStartDialogue: 1
-  _nextSentence: 0
-  _dialogueComponents: {fileID: 1940669844340718}
 --- !u!222 &222139263543928906
 CanvasRenderer:
   m_ObjectHideFlags: 1

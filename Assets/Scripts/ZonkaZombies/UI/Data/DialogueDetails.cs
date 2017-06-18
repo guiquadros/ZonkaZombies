@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace ZonkaZombies.UI.Data
 {
-    [CreateAssetMenu(fileName = "DialogueDetails", menuName = "ZonkaZombies/Dialogue/DialogueDetails")]
+    [CreateAssetMenu(fileName = "DialogueDetails", menuName = "ZonkaZombies/Dialogues/DialogueDetails")]
     public class DialogueDetails : ScriptableObject
     {
         public Sprite MugshotImage;

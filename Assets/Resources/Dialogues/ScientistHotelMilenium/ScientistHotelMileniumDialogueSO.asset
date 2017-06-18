@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe883d5562e410980d69aa67f419528, type: 3}
+  m_Name: ScientistHotelMileniumDialogueSO
+  m_EditorClassIdentifier: 
+  DetailsOrdered:
+  - {fileID: 11400000, guid: 1890924d6f0cb854d8a3e658b9d3652c, type: 2}
+  - {fileID: 11400000, guid: 4e795afda690510449c5c5c13d99ed15, type: 2}
+  - {fileID: 11400000, guid: 6d8881a071ff2fc49ab10d8dbaea82e0, type: 2}
+  - {fileID: 11400000, guid: 787af319efea4bc4d892cb6c354e2386, type: 2}
+  - {fileID: 11400000, guid: 988149482831c7942a3ed80037beac95, type: 2}
+  - {fileID: 11400000, guid: ba38bcdb032ff81499126f4a8567f756, type: 2}
+  - {fileID: 11400000, guid: 81905f167fe171f439e33f29124b6768, type: 2}
+  - {fileID: 11400000, guid: c894ef6f224eec549b2847cb463e9c5c, type: 2}
+  - {fileID: 11400000, guid: 03e4dcbfc3732e34d9d35a59dae6f560, type: 2}
+  - {fileID: 11400000, guid: d1a967aa32f6cd54fbac66aef3b5c8f6, type: 2}
+  - {fileID: 11400000, guid: a460e4218894b184f9a03909f8cc60f4, type: 2}
+  - {fileID: 11400000, guid: 3a93966c816362d48808dd1ab422f6eb, type: 2}

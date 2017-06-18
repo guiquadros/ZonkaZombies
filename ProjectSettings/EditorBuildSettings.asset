@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/HallFirstFloor.unity
     guid: c1a93821860b9034e8dbab5063417a86
   - enabled: 1
-    path: Assets/Scenes/Diallogue.unity
+    path: Assets/Scenes/DialogueScientist.unity
     guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Prototype/PlayerWin.unity
