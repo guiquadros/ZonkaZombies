@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4573097443578402}
   - component: {fileID: 108570065421006190}
   m_Layer: 0
-  m_Name: LighDirectional
+  m_Name: LightDirectional
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 500
   m_SpotAngle: 170
   m_CookieSize: 10
@@ -69,7 +69,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
