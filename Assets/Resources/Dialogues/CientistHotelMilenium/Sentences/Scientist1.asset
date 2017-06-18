@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Name: Scientist1
   m_EditorClassIdentifier: 
   MugshotImage: {fileID: 21300000, guid: 7f43b36b1034b3a44b511644c667dd43, type: 3}
-  DiallogueText:
-  - Oh, thank God!
-  - You have to help me!
+  DialogueText: []

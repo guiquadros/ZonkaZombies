@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 224167414582761656}
   - component: {fileID: 114777002282878496}
   m_Layer: 5
-  m_Name: Diallogue
+  m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mugshot: {fileID: 114698067871641908}
   _text: {fileID: 114398272361989040}
-  _diallogueDetailsListOrdered:
+  _dialogueDetailsListOrdered:
   - {fileID: 11400000, guid: 1890924d6f0cb854d8a3e658b9d3652c, type: 2}
   - {fileID: 11400000, guid: 4e795afda690510449c5c5c13d99ed15, type: 2}
   - {fileID: 11400000, guid: 6d8881a071ff2fc49ab10d8dbaea82e0, type: 2}

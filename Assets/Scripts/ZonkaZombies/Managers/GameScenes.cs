@@ -5,16 +5,16 @@ namespace ZonkaZombies.Managers
 {
     public struct GameScenes
     {
-        public static readonly GameSceneType[] GameScenesOrdered = {HALL_FIRST_FLOOR, DIALLOGUE_SCIENTIST};
+        public static readonly GameSceneType[] GameScenesOrdered = {HALL_FIRST_FLOOR, DIALOGUE_SCIENTIST};
 
         public static GameSceneType HALL_FIRST_FLOOR
         {
             get { return new GameSceneType(SceneConstants.HALL_FIRST_FLOOR_NAME); }
         }
 
-        public static GameSceneType DIALLOGUE_SCIENTIST
+        public static GameSceneType DIALOGUE_SCIENTIST
         {
-            get { return new GameSceneType(SceneConstants.DIALLOGUE_SCIENTIST_NAME/*, false*/); }
+            get { return new GameSceneType(SceneConstants.DIALOGUE_SCIENTIST_NAME/*, false*/); }
         }
         
         public static GameSceneType PLAYER_WIN_SCENE

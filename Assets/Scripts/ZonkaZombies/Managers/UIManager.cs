@@ -61,9 +61,11 @@ namespace ZonkaZombies.Managers
 
         private void OnPlayerDeadCallback(OnPlayerDeadMessage message)
         {
-            _gameUiManager.RemovePlayerHud(message.Player);
-
-            //_gameUiManager.EnableHealthBar(false, message.Player.IsFirstPlayer);
+            if (_gameUiManager != null)
+            {
+                _gameUiManager.RemovePlayerHud(message.Player);
+                //_gameUiManager.EnableHealthBar(false, message.Player.IsFirstPlayer);
+            }
         }
 
 #endregion

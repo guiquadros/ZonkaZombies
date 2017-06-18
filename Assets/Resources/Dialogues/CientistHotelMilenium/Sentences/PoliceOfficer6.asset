@@ -9,8 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 124be2de9bfa16a4ca34afe53462c77d, type: 3}
-  m_Name: Scientist2
+  m_Name: PoliceOfficer6
   m_EditorClassIdentifier: 
-  MugshotImage: {fileID: 21300000, guid: 7f43b36b1034b3a44b511644c667dd43, type: 3}
-  DiallogueText:
-  - Well... They are not exacly people now...
+  MugshotImage: {fileID: 21300000, guid: 969ca4d81959b4441ab9373850b4c71e, type: 3}
+  DialogueText: []

@@ -7,7 +7,7 @@ using ZonkaZombies.UI.Data;
 
 namespace ZonkaZombies.UI
 {
-    public class DiallogueHandler : MonoBehaviour
+    public class DialogueHandler : MonoBehaviour
     {
         [SerializeField]
         private Image _mugshot;
@@ -16,7 +16,7 @@ namespace ZonkaZombies.UI
         private Text _text;
 
         [SerializeField]
-        private DiallogueDetails[] _diallogueDetailsListOrdered;
+        private DialogueDetails[] _dialogueDetailsListOrdered;
 
         [SerializeField]
         private float _timeBetweenDialogues = 0.5f;
@@ -33,7 +33,7 @@ namespace ZonkaZombies.UI
         private int _currentDiallogTextIndex = 0;
         private int _currentDiallogDetailsIndex = 0;
 
-        public event Action DiallogueFinished;
+        public event Action DialogueFinished;
 
         private void Start ()
         {
@@ -50,14 +50,14 @@ namespace ZonkaZombies.UI
             yield return new WaitForSeconds(_waitTimeStartDialogue);
 
             _dialogueComponents.SetActive(true);
-            _mugshot.sprite = _diallogueDetailsListOrdered[_currentDiallogDetailsIndex].MugshotImage;
-            _text.text = _diallogueDetailsListOrdered[_currentDiallogDetailsIndex].DiallogueText[_currentDiallogTextIndex];
+            _mugshot.sprite = _dialogueDetailsListOrdered[_currentDiallogDetailsIndex].MugshotImage;
+            _text.text = _dialogueDetailsListOrdered[_currentDiallogDetailsIndex].DialogueText[_currentDiallogTextIndex];
 
-            while (_currentDiallogDetailsIndex + 1 <= _diallogueDetailsListOrdered.Length)
+            while (_currentDiallogDetailsIndex + 1 <= _dialogueDetailsListOrdered.Length)
             {
                 if (_nextSentence)
                 {
-                    if (_diallogueDetailsListOrdered[_currentDiallogDetailsIndex].DiallogueText.Length == _currentDiallogTextIndex + 1)
+                    if (_dialogueDetailsListOrdered[_currentDiallogDetailsIndex].DialogueText.Length == _currentDiallogTextIndex + 1)
                     {
                         _currentDiallogDetailsIndex++;
                         _currentDiallogTextIndex = 0;
@@ -73,19 +73,19 @@ namespace ZonkaZombies.UI
                         _currentDiallogTextIndex++;
                     }
 
-                    if (_currentDiallogDetailsIndex + 1 > _diallogueDetailsListOrdered.Length)
+                    if (_currentDiallogDetailsIndex + 1 > _dialogueDetailsListOrdered.Length)
                     {
                         _dialogueComponents.SetActive(false);
 
-                        if (DiallogueFinished != null)
+                        if (DialogueFinished != null)
                         {
-                            DiallogueFinished();
+                            DialogueFinished();
                         }
                     }
                     else
                     {
-                        _mugshot.sprite = _diallogueDetailsListOrdered[_currentDiallogDetailsIndex].MugshotImage;
-                        _text.text = _diallogueDetailsListOrdered[_currentDiallogDetailsIndex].DiallogueText[_currentDiallogTextIndex];
+                        _mugshot.sprite = _dialogueDetailsListOrdered[_currentDiallogDetailsIndex].MugshotImage;
+                        _text.text = _dialogueDetailsListOrdered[_currentDiallogDetailsIndex].DialogueText[_currentDiallogTextIndex];
                     }
                 }
 
