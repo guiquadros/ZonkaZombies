@@ -41,7 +41,7 @@ namespace ZonkaZombies.Managers
 
         private IEnumerator Start ()
         {
-            _currentScene = new GameSceneType(SceneConstants.HALL_FIRST_FLOOR_NAME);
+            _currentScene = GameScenes.HALL_FIRST_FLOOR;
 
             // Set the initial alpha to start off with a black screen.
             faderCanvasGroup.alpha = 1f;
