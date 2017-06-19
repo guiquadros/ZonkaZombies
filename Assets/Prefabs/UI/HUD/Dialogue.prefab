@@ -123,7 +123,7 @@ MonoBehaviour:
   _mugshot: {fileID: 114698067871641908}
   _text: {fileID: 114398272361989040}
   _timeBetweenDialogues: 0.5
-  _waitTimeStartDialogue: 1
+  _waitTimeStartDialogue: 0
 --- !u!114 &114398272361989040
 MonoBehaviour:
   m_ObjectHideFlags: 1

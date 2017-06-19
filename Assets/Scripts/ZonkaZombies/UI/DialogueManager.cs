@@ -31,9 +31,10 @@ namespace ZonkaZombies.UI
         private bool _nextSentence;
         private Dialogue _dialogue;
 
-        public event Action DialogueFinished;
-        
-        public void Initialize(Dialogue dialogue, bool waitStartDialogue = false)
+        public event Action<Dialogue> DialogueFinished;
+        public event Action<Dialogue, Transform> DialogueStarted;
+
+        public void Initialize(Dialogue dialogue, bool waitStartDialogue = false, Transform interactableTransform = null)
         {
             if (_dialogueStarted)
             {
@@ -47,7 +48,7 @@ namespace ZonkaZombies.UI
             _currentDiallogTextIndex = 0;
             _currentDiallogDetailsIndex = 0;
 
-            StartDialogueCoroutine(_dialogue.DetailsOrdered);
+            StartDialogueCoroutine(_dialogue.DetailsOrdered, interactableTransform);
         }
 
         private void Update()
@@ -58,12 +59,12 @@ namespace ZonkaZombies.UI
             }
         }
 
-        private void StartDialogueCoroutine(DialogueDetails[] dialogueDetailsListOrdered)
+        private void StartDialogueCoroutine(DialogueDetails[] dialogueDetailsListOrdered, Transform interactableTransform)
         {
-            StartCoroutine(DialogueCoroutine(dialogueDetailsListOrdered));
+            StartCoroutine(DialogueCoroutine(dialogueDetailsListOrdered, interactableTransform));
         }
 
-        private IEnumerator DialogueCoroutine(DialogueDetails[] dialogueDetailsListOrdered)
+        private IEnumerator DialogueCoroutine(DialogueDetails[] dialogueDetailsListOrdered, Transform interactableTransform)
         {
             if (_waitTimeStartDialogue > 0f)
             {
@@ -71,6 +72,12 @@ namespace ZonkaZombies.UI
             }
 
             _dialogueStarted = true;
+
+            if (DialogueStarted != null)
+            {
+                DialogueStarted(_dialogue, interactableTransform);
+            }
+
             _dialogueUIGameObject.SetActive(true);
 
             SetDialogueTextAndImage(dialogueDetailsListOrdered);
@@ -102,7 +109,7 @@ namespace ZonkaZombies.UI
 
                         if (DialogueFinished != null)
                         {
-                            DialogueFinished();
+                            DialogueFinished(_dialogue);
                         }
                     }
                     else

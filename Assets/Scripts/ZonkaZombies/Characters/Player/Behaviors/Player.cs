@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using ZonkaZombies.Characters.Enemy;
 using ZonkaZombies.Characters.Player.Util;
 using ZonkaZombies.Characters.Player.Weapon;
@@ -8,6 +9,8 @@ using ZonkaZombies.Util;
 using ZonkaZombies.Characters.Player.Interaction;
 using ZonkaZombies.Messaging;
 using ZonkaZombies.Messaging.Messages.UI;
+using ZonkaZombies.UI;
+using ZonkaZombies.UI.Data;
 
 namespace ZonkaZombies.Characters.Player.Behaviors
 {
@@ -125,6 +128,34 @@ namespace ZonkaZombies.Characters.Player.Behaviors
                      CharacterStateMessage.EnableInteraction);
 
             MessageRouter.SendMessage(new OnPlayerHasBornMessage(this));
+        }
+
+        private void OnEnable()
+        {
+            DialogueManager.Instance.DialogueStarted += OnDialogueStarted;
+            DialogueManager.Instance.DialogueFinished += OnDialogueFinished;
+        }
+
+        private void OnDisable()
+        {
+            DialogueManager.Instance.DialogueStarted -= OnDialogueStarted;
+            DialogueManager.Instance.DialogueFinished -= OnDialogueFinished;
+        }
+
+        private void OnDialogueFinished(Dialogue dialogue)
+        {
+            _frezeePlayer = false;
+        }
+
+        private void OnDialogueStarted(Dialogue dialogue, Transform interactableTransform)
+        {
+            _frezeePlayer = true;
+            Animator.SetTrigger(PlayerAnimatorParameters.IDLE);
+
+            if (interactableTransform != null)
+            {
+                transform.LookAt(interactableTransform);
+            }
         }
 
         protected virtual void Update()

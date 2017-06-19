@@ -15,17 +15,43 @@ namespace ZonkaZombies.UI
         [SerializeField]
         private Dialogue _dialogue;
 
+        public event Action DialogueStarted;
+        public event Action DialogueFinished;
+
         private void Start()
         {
             if (_initializeDialogueOnStart)
             {
-                DialogueManager.Instance.Initialize(_dialogue, true);
+                StartDialogue();
             }
         }
 
-        public void StartDialogue()
+        private void OnEnable()
         {
-            DialogueManager.Instance.Initialize(_dialogue);
+            DialogueManager.Instance.DialogueFinished += OnDialogueFinished;
+        }
+
+        private void OnDisable()
+        {
+            DialogueManager.Instance.DialogueFinished -= OnDialogueFinished;
+        }
+
+        public void StartDialogue(Transform interactableTransform = null)
+        {
+            if (DialogueStarted != null)
+            {
+                DialogueStarted();
+            }
+            
+            DialogueManager.Instance.Initialize(_dialogue, _initializeDialogueOnStart, interactableTransform);
+        }
+
+        private void OnDialogueFinished(Dialogue dialogue)
+        {
+            if (DialogueFinished != null && dialogue == _dialogue)
+            {
+                DialogueFinished();
+            }
         }
     }
 }
