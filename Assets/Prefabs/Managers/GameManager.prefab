@@ -161,10 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faderCanvasGroup: {fileID: 0}
-  fadeDuration: 0
+  fadeDuration: 1
   _currentSceneIndex: 0
-  CurrentSceneName: 
-  _previousSceneName: 
 --- !u!114 &114475089706537114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,4 +186,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5151bd246418d64e86bda97e3e3cda9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameMode: 0

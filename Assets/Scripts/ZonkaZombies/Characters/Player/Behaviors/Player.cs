@@ -118,6 +118,8 @@ namespace ZonkaZombies.Characters.Player.Behaviors
             _weaponSelector = weaponSelector;
 
             ((WeaponSelector)_weaponSelector).Initialize(this, _inputReader);
+
+            DontDestroyOnLoad(gameObject);
         }
 
         private void Start()

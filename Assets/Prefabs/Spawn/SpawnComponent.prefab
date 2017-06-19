@@ -69,21 +69,26 @@ MonoBehaviour:
   SpawnPointsBasic: []
   PrefabBasic: {fileID: 1665345165575208, guid: c04d8c107779b394cadc38889b7ad66c,
     type: 2}
+  BasicSpawnDelay: 3
   UseCrawlerFieldOfView: 0
   SpawnPointsCrawler: []
   PrefabCrawler: {fileID: 1061002872015860, guid: 822751f5e4efb7b4f90ace0d2f0c9479,
     type: 2}
+  CrawlerSpawnDelay: 3
   UseExplosiveFieldOfView: 0
   SpawnPointsExplosive: []
   PrefabExplosive: {fileID: 1533458904133364, guid: ebec74b2e8954594187e323bc0e32ee2,
     type: 2}
+  ExplosiveSpawnDelay: 20
   UseFasterFieldOfView: 0
   SpawnPointsFaster: []
   PrefabFaster: {fileID: 1193080485859938, guid: a75e952228263a34cad6dbeaf72ee28b,
     type: 2}
+  FasterSpawnDelay: 10
   UseArmorFieldOfView: 0
   SpawnPointsArmor: []
   PrefabArmor: {fileID: 0}
+  ArmorSpawnDelay: 20
 --- !u!114 &114370011405666376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,4 +100,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6428f2a6748f01c46b2812e1d5b049fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnDelay: 3
+  _maxEnemiesSpawn: 100

@@ -118,21 +118,6 @@ namespace ZonkaZombies.Managers
 
             Debug.Log("Current active scene: " + SceneManager.GetActiveScene().name);
 
-            if (gameScene.UnloadAllOtherScenes)
-            {
-                // Unload the current active scene.
-                //yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-                var allScenes = SceneManager.GetAllScenes();
-
-                foreach (var scene in allScenes)
-                {
-                    if (scene.name != SceneConstants.PERSISTENT)
-                    {
-                        yield return SceneManager.UnloadSceneAsync(scene.name);
-                    }
-                }
-            }
-
             // Start loading the given scene and wait for it to finish.
             yield return StartCoroutine (LoadSceneAndSetActive (gameScene));
             
@@ -141,7 +126,7 @@ namespace ZonkaZombies.Managers
         }
 
 
-        private IEnumerator LoadSceneAndSetActive (GameSceneType sceneName)
+        private IEnumerator LoadSceneAndSetActive (GameSceneType gameScene)
         {
             //Debug.Log("LoadSceneAndSetActive()");
 
@@ -149,7 +134,22 @@ namespace ZonkaZombies.Managers
                 OnSceneLoading();
 
             // Allow the given scene to load over several frames and add it to the already loaded scenes (just the Persistent scene at this point).
-            yield return SceneManager.LoadSceneAsync (sceneName.SceneName, LoadSceneMode.Additive);
+            yield return SceneManager.LoadSceneAsync (gameScene.SceneName, LoadSceneMode.Additive);
+            
+            if (gameScene.UnloadAllOtherScenes)
+            {
+                // Unload the current active scene.
+                //yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+                var allScenes = SceneManager.GetAllScenes();
+
+                foreach (var scene in allScenes)
+                {
+                    if (scene.name != SceneConstants.PERSISTENT && scene.name != gameScene.SceneName)
+                    {
+                        yield return SceneManager.UnloadSceneAsync(scene.name);
+                    }
+                }
+            }
 
             // Find the scene that was most recently loaded (the one at the last index of the loaded scenes).
             Scene newlyLoadedScene = SceneManager.GetSceneAt (SceneManager.sceneCount - 1);
