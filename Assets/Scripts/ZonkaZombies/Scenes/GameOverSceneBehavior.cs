@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using ZonkaZombies.Input;
 using ZonkaZombies.Managers;
@@ -26,7 +27,7 @@ namespace ZonkaZombies.Scenes
             if ((PlayerInput.InputReaderController1.Start() || PlayerInput.InputReaderController2.Start() || Time.time - _lastTime >= _autoRestartDelay) && !_alreadyLoaded)
             {
                 _alreadyLoaded = true;
-                SceneController.Instance.FadeAndLoadScene(GameScenes.HALL_FIRST_FLOOR);
+                SceneController.Instance.FadeAndLoadScene(GameScenes.GameScenesOrdered.First());
             }
         }
     }
