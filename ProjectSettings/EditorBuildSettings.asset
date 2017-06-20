@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Persistent.unity
     guid: 9886cb104322b4d4ba78123260e83544
   - enabled: 1
+    path: Assets/Scenes/Intro1.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
     path: Assets/Scenes/HallFirstFloor.unity
     guid: c1a93821860b9034e8dbab5063417a86
   - enabled: 1
     path: Assets/Scenes/DialogueScientist.unity
-    guid: 00000000000000000000000000000000
+    guid: 14bca12dc4de07a4fa034a57575afc2c
   - enabled: 1
     path: Assets/Scenes/Prototype/PlayerWin.unity
     guid: 176ee18223aab044baf9adc6a679a6b0
