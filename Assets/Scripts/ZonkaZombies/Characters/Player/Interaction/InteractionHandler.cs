@@ -64,7 +64,7 @@ namespace ZonkaZombies.Characters.Player.Interaction
         public void OnEnter(IInteractable interactable)
         {
             // If we are already interacting with something, do nothing
-            if (_interactable != null)
+            if (_interactable != null && _interactable.ToString() != "null")
             {
                 OnExit(_interactable);
             }

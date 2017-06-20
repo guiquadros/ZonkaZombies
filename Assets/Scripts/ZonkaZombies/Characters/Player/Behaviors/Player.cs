@@ -146,13 +146,17 @@ namespace ZonkaZombies.Characters.Player.Behaviors
 
         private void OnDialogueFinished(Dialogue dialogue)
         {
+            _characterRigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
             _frezeePlayer = false;
         }
 
         private void OnDialogueStarted(Dialogue dialogue, Transform interactableTransform)
         {
+            _characterRigidbody.constraints = RigidbodyConstraints.FreezeAll;
             _frezeePlayer = true;
-            Animator.SetTrigger(PlayerAnimatorParameters.IDLE);
+
+            Animator.SetFloat(PlayerAnimatorParameters.MOVEMENT_DIRECTION, -1);
+            Animator.SetTrigger(PlayerAnimatorParameters.FORCE_IDLE);
 
             if (interactableTransform != null)
             {

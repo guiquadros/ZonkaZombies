@@ -52,6 +52,7 @@ namespace ZonkaZombies.Util
         public static readonly int IDLE = Animator.StringToHash("Idle");
         public static readonly int DAMAGE_FRONT = Animator.StringToHash("DamageFront");
         public static readonly int DAMAGE_BACK = Animator.StringToHash("DamageBack");
+        public static readonly int FORCE_IDLE = Animator.StringToHash("ForceIdle");
     }
 
     public static class EnemyAnimatorParameters
