@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using ZonkaZombies.Util;
@@ -41,7 +42,7 @@ namespace ZonkaZombies.Managers
 
         private IEnumerator Start ()
         {
-            _currentScene = GameScenes.HALL_FIRST_FLOOR;
+            _currentScene = GameScenes.GameScenesOrdered.First();
 
             // Set the initial alpha to start off with a black screen.
             faderCanvasGroup.alpha = 1f;

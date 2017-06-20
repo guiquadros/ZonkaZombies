@@ -1,158 +1,168 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+using ZonkaZombies.Util;
 
-public class RetroPrinterScriptBasic : MonoBehaviour {
+namespace FreeAssets.Scripts
+{
+    public class RetroPrinterScriptBasic : SingletonMonoBehaviour<RetroPrinterScriptBasic> {
 
-	#region Private fields
+        #region Private fields
 	
-	private AudioSource Audio;
+        private AudioSource Audio;
 	
-	private string mainText = "";
-	private string textCursor;
-	private string closingTags = string.Empty;
+        private string mainText = "";
+        private string textCursor;
+        private string closingTags = string.Empty;
 	
-	private bool running = true;
+        private bool running = true;
 
-	private TextMesh textComponent;
+        private TextMesh textComponent;
 	
-	#endregion
+        #endregion
 	
-	#region Public fields
+        #region Public fields
 
-	public GameObject ObjectToUpdate = null;
+        public GameObject ObjectToUpdate = null;
 	
-	public string CursorCharacter = " █";
-	public string AlternateCursorCharacter = " _";
+        public string CursorCharacter = " █";
+        public string AlternateCursorCharacter = " _";
 	
-	public float LetterInterval = 0.1f;
-	public float EndLineWait = 0.0f;
+        public float LetterInterval = 0.1f;
+        public float EndLineWait = 0.0f;
 
-	public List<string> FullText;
+        public List<string> FullText;
 	
-	public bool alternateCursor = true;
+        public bool alternateCursor = true;
 	
-	public bool runOnStart = true;
-	
-	
-	#endregion
+        public bool runOnStart = true;
 
-	void Start () {
+        public event Action KeyboardAnimationFinished;
+        #endregion
+
+        void Start () {
 		
-		Init();
+            Init();
 
-		Run();
-	}
+            Run();
+        }
 
-	void Update () {
+        void Update () {
 		
-		UpdateProperty();
-	}
+            UpdateProperty();
+        }
 	
-	void Init()
-	{
-		textCursor = CursorCharacter;
+        void Init()
+        {
+            textCursor = CursorCharacter;
 
-		textComponent = (ObjectToUpdate.GetComponent(typeof(TextMesh)) as TextMesh);
+            textComponent = (ObjectToUpdate.GetComponent(typeof(TextMesh)) as TextMesh);
 
-		StartCoroutine( ChangeCursor() );
-	}
+            StartCoroutine( ChangeCursor() );
+        }
 	
-	IEnumerator ChangeCursor()
-	{
-		while(alternateCursor)
-		{
-			if(textCursor == CursorCharacter)
-				textCursor = AlternateCursorCharacter;
-			else
-				textCursor = CursorCharacter;
+        IEnumerator ChangeCursor()
+        {
+            while(alternateCursor)
+            {
+                if(textCursor == CursorCharacter)
+                    textCursor = AlternateCursorCharacter;
+                else
+                    textCursor = CursorCharacter;
 			
-			yield return new WaitForSeconds(0.5f);
-		}
-	}
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
 	
-	IEnumerator UpdateText()
-	{
-		foreach(string s in FullText)
-		{
-			if(!running)
-				yield break;
+        IEnumerator UpdateText()
+        {
+            foreach(string s in FullText)
+            {
+                if(!running)
+                    yield break;
 			
-			yield return StartCoroutine( UpdateLine(s) );
+                yield return StartCoroutine( UpdateLine(s) );
 			
-		}
+            }
 
-	    _printerAudioSource.Stop();
+            _printerAudioSource.Stop();
+
+            if (KeyboardAnimationFinished != null)
+            {
+                KeyboardAnimationFinished();
+            }
+        }
+	
+        IEnumerator UpdateLine(string line)
+        {
+            if(!running)
+                yield break;
+
+            if(string.IsNullOrEmpty(line))
+            {
+                mainText += "\n";
+                yield return new WaitForSeconds(EndLineWait);
+            }
+		
+            else
+            {
+                for(int i = 0; i < line.Length; i++)
+                {
+                    if(!running)
+                        yield break;
+
+                    else
+                    {
+                        mainText += line[i];
+
+                        yield return new WaitForSeconds(LetterInterval);
+                    }
+                }
+			
+                yield return new WaitForSeconds(EndLineWait);
+			
+                if(FullText.IndexOf(line) != (FullText.Count() - 1)) // make sure that we don't add an empty line at the end of our text
+                    mainText += "\n";
+            }
+		
+        }
+	
+        [SerializeField]
+        private AudioSource _printerAudioSource;
+
+        public void Run()
+        {
+            running = true;
+            StartCoroutine( UpdateText() );
+        }
+	
+        public void Stop()
+        {
+            running = false;
+        }
+	
+        public void EnableAlternateCursor()
+        {
+            alternateCursor = true;
+        }
+	
+        public void DisableAlternateCursor()
+        {
+            alternateCursor = false;
+            textCursor = CursorCharacter;
+        }
+	
+        void Clear()
+        {
+            mainText = string.Empty;
+        }
+	
+	
+        private void UpdateProperty()
+        {
+            textComponent.text = string.Format("{0}{1}{2}", mainText, closingTags, textCursor);
+        }
     }
-	
-	IEnumerator UpdateLine(string line)
-	{
-		if(!running)
-			yield break;
-
-		if(string.IsNullOrEmpty(line))
-		{
-			mainText += "\n";
-			yield return new WaitForSeconds(EndLineWait);
-		}
-		
-		else
-		{
-			for(int i = 0; i < line.Length; i++)
-			{
-				if(!running)
-					yield break;
-
-				else
-				{
-					mainText += line[i];
-
-					yield return new WaitForSeconds(LetterInterval);
-				}
-			}
-			
-			yield return new WaitForSeconds(EndLineWait);
-			
-			if(FullText.IndexOf(line) != (FullText.Count() - 1)) // make sure that we don't add an empty line at the end of our text
-				mainText += "\n";
-		}
-		
-	}
-	
-    [SerializeField]
-    private AudioSource _printerAudioSource;
-
-	public void Run()
-	{
-		running = true;
-		StartCoroutine( UpdateText() );
-    }
-	
-	public void Stop()
-	{
-		running = false;
-	}
-	
-	public void EnableAlternateCursor()
-	{
-		alternateCursor = true;
-	}
-	
-	public void DisableAlternateCursor()
-	{
-		alternateCursor = false;
-		textCursor = CursorCharacter;
-	}
-	
-	void Clear()
-	{
-		mainText = string.Empty;
-	}
-	
-	
-	private void UpdateProperty()
-	{
-		textComponent.text = string.Format("{0}{1}{2}", mainText, closingTags, textCursor);
-	}
 }
