@@ -1610,7 +1610,6 @@ MonoBehaviour:
   Animator: {fileID: 95428818043808726}
   Agent: {fileID: 195813037523809884}
   _enemyDetails: {fileID: 11400000, guid: 9549a1c84607f734f9778bc5f06561e7, type: 2}
-  _characterTarget: {fileID: 0}
   _defaultEEnemyBehavior: 2
   FieldOfViewAngle: 68
 --- !u!114 &114081856421722766
@@ -1758,7 +1757,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5c5b6bc3880c8424d884255578aeec96, type: 2}
+  - {fileID: 2100000, guid: ceb9b942236d0e64ba2164391b0af471, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
