@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 449932}
   - component: {fileID: 3399140}
   - component: {fileID: 2393390}
+  - component: {fileID: 65833418014298516}
   m_Layer: 0
   m_Name: Box1445
   m_TagString: Untagged
@@ -498,8 +499,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146412}
   m_LocalRotation: {x: -0.000000057601167, y: -0.7071067, z: -0.000000057601156, w: 0.7071068}
-  m_LocalPosition: {x: -223.8, y: 267.55, z: 604.3}
-  m_LocalScale: {x: 0.00088610104, y: 0.00088610075, z: 0.00088610075}
+  m_LocalPosition: {x: -7.256424, y: -17.387512, z: 121.72113}
+  m_LocalScale: {x: 0.0008861008, y: 0.00088610075, z: 0.0008861005}
   m_Children:
   - {fileID: 498300}
   m_Father: {fileID: 0}
@@ -1538,3 +1539,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 146412}
   m_IsPrefabParent: 1
+--- !u!65 &65833418014298516
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 64.29154, y: 30.898912, z: 15.851597}
+  m_Center: {x: 0.00012207031, y: -0.000015258789, z: 7.9257984}

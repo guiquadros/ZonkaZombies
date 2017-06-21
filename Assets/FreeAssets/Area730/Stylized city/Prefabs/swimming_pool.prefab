@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 427398}
   - component: {fileID: 3350286}
   - component: {fileID: 2312818}
+  - component: {fileID: 65020862058250158}
   m_Layer: 0
   m_Name: Box1437
   m_TagString: Untagged
@@ -696,8 +697,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.265686, y: -36.483337, z: 3.9412575}
-  m_LocalScale: {x: 1.3666619, y: 2.5176218, z: 1}
+  m_LocalPosition: {x: -9.7, y: -36.483337, z: 3.9412575}
+  m_LocalScale: {x: 1.3525289, y: 2.5176218, z: 1}
   m_Children: []
   m_Father: {fileID: 442498}
   m_RootOrder: 0
@@ -942,8 +943,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167234}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -4.9109836, y: 312.30246, z: 531.2606}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 36.410034, y: -4.8600006, z: -186.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 403008}
@@ -2728,3 +2729,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 167234}
   m_IsPrefabParent: 1
+--- !u!65 &65020862058250158
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.2622395, y: 4.980414, z: 0.60467994}
+  m_Center: {x: 0.000030517578, y: 0, z: 0.30233997}

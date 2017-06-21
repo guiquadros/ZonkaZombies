@@ -36,5 +36,10 @@ namespace ZonkaZombies.Managers
         {
             get { return new GameSceneType(SceneConstants.GAME_OVER_SCENE_NAME); }
         }
+
+        public static GameSceneType CITY
+        {
+            get { return new GameSceneType(SceneConstants.CITY_NAME); }
+        }
     }
 }

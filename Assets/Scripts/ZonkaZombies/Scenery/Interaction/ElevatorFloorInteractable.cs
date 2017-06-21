@@ -31,7 +31,7 @@ namespace ZonkaZombies.Scenery.Interaction
             if (Count == EntityManager.Instance.Players.Count && EntityManager.Instance.Enemies.Count <= 0 && !_alreadyInteracted)
             {
                 _alreadyInteracted = true;
-                SceneController.Instance.LoadNextScene();
+                SceneController.Instance.FadeAndLoadScene(GameScenes.DIALOGUE_SCIENTIST);
             }
         }
 
