@@ -161,8 +161,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faderCanvasGroup: {fileID: 0}
+  _loading: {fileID: 0}
+  _loadingWheel: {fileID: 0}
   fadeDuration: 1
-  _currentSceneIndex: 0
+  CurrentSceneIndex: 0
 --- !u!114 &114475089706537114
 MonoBehaviour:
   m_ObjectHideFlags: 1

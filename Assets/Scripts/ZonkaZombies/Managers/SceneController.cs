@@ -3,6 +3,8 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using ZonkaZombies.UI;
 using ZonkaZombies.Util;
 
 // This script exists in the Persistent scene and manages the content
@@ -24,6 +26,12 @@ namespace ZonkaZombies.Managers
         public event Action AfterSceneLoad;             // Event delegate that is called just after a scene is loaded.
         public event Action<GameSceneType> OnSceneLoading;
         public CanvasGroup faderCanvasGroup;            // The CanvasGroup that controls the Image used for fading to black.
+
+        [SerializeField]
+        private GameObject _loading;
+
+        [SerializeField]
+        private Loading _loadingWheel;
 
         //TODO: the fade was causing many problems to load the scenes async. Turning it to 0 seems to have solved the problem.
         public float fadeDuration = 0f;                 // How long it should take to fade to and from black.
@@ -129,6 +137,9 @@ namespace ZonkaZombies.Managers
 
         private IEnumerator LoadSceneAndSetActive (GameSceneType gameScene)
         {
+            _loading.SetActive(true);
+            _loadingWheel.enabled = true;
+
             //Debug.Log("LoadSceneAndSetActive()");
 
             if (OnSceneLoading != null)
@@ -167,9 +178,11 @@ namespace ZonkaZombies.Managers
             {
                 AfterSceneLoad();
             }
+
+            _loading.SetActive(false);
+            _loadingWheel.enabled = false;
         }
-
-
+        
         private IEnumerator Fade (float finalAlpha)
         {
             // Set the fading flag to true so the FadeAndSwitchScenes coroutine won't be called again.
