@@ -4735,7 +4735,6 @@ MonoBehaviour:
   Animator: {fileID: 95799893738060592}
   Agent: {fileID: 195936202760796768}
   _enemyDetails: {fileID: 11400000, guid: e98337c4aa87fc545ace17b4f973f99e, type: 2}
-  _characterTarget: {fileID: 0}
   _defaultEEnemyBehavior: 2
   FieldOfViewAngle: 68
 --- !u!114 &114708272553475878
@@ -4846,7 +4845,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2ccd45575ef66ca40a5a15fad31aa624, type: 2}
+  - {fileID: 2100000, guid: 550ad4d4feb4cdb4897d3fd0f961f51f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5009,7 +5008,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1602577462
+  randomSeed: -282994043
   InitialModule:
     serializedVersion: 3
     enabled: 1
