@@ -22,7 +22,7 @@ namespace ZonkaZombies.Managers
 
         public event Action BeforeSceneUnload;          // Event delegate that is called just before a scene is unloaded.
         public event Action AfterSceneLoad;             // Event delegate that is called just after a scene is loaded.
-        public event Action OnSceneLoading;
+        public event Action<GameSceneType> OnSceneLoading;
         public CanvasGroup faderCanvasGroup;            // The CanvasGroup that controls the Image used for fading to black.
 
         //TODO: the fade was causing many problems to load the scenes async. Turning it to 0 seems to have solved the problem.
@@ -132,7 +132,9 @@ namespace ZonkaZombies.Managers
             //Debug.Log("LoadSceneAndSetActive()");
 
             if (OnSceneLoading != null)
-                OnSceneLoading();
+            {
+                OnSceneLoading(gameScene);
+            }
 
             // Allow the given scene to load over several frames and add it to the already loaded scenes (just the Persistent scene at this point).
             yield return SceneManager.LoadSceneAsync (gameScene.SceneName, LoadSceneMode.Additive);

@@ -18,11 +18,6 @@ namespace ZonkaZombies.UI
         [SerializeField]
         private Text _pressStartForPlayer2;
 
-        public void Awake()
-        {
-            _pressStartForPlayer2.gameObject.SetActive(true);
-        }
-
         public void AddPlayerHud(Player player)
         {
             int index = GetPlayerIndex(player);

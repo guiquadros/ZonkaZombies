@@ -9,12 +9,12 @@ namespace ZonkaZombies.Managers
 
         public static GameSceneType INTRO1
         {
-            get { return new GameSceneType(SceneConstants.INTRO1_NAME); }
+            get { return new GameSceneType(SceneConstants.INTRO1_NAME, showHud: false); }
         }
 
         public static GameSceneType INTRO2
         {
-            get { return new GameSceneType(SceneConstants.INTRO2_NAME); }
+            get { return new GameSceneType(SceneConstants.INTRO2_NAME, showHud: false); }
         }
 
         public static GameSceneType HALL_FIRST_FLOOR
