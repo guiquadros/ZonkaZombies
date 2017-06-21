@@ -7,10 +7,13 @@ using ZonkaZombies.Util;
 
 namespace FreeAssets.Scripts
 {
-    public class RetroPrinterScriptBasic : SingletonMonoBehaviour<RetroPrinterScriptBasic> {
+    public class RetroPrinterScriptBasic : SingletonMonoBehaviour<RetroPrinterScriptBasic>
+    {
+        [SerializeField]
+        private float _waitTimeBeforeLoadScene = 2f;
 
         #region Private fields
-	
+
         private AudioSource Audio;
 	
         private string mainText = "";
@@ -86,9 +89,11 @@ namespace FreeAssets.Scripts
                 yield return StartCoroutine( UpdateLine(s) );
 			
             }
-
+            
             _printerAudioSource.Stop();
 
+            yield return new WaitForSeconds(_waitTimeBeforeLoadScene);
+            
             if (KeyboardAnimationFinished != null)
             {
                 KeyboardAnimationFinished();

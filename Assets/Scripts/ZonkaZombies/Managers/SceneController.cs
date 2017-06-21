@@ -32,7 +32,7 @@ namespace ZonkaZombies.Managers
         private bool isFading;                          // Flag used to determine if the Image is currently fading to or from black.
 
         [SerializeField]
-        private int _currentSceneIndex = 0;             // The index of the current scene.
+        public int CurrentSceneIndex = 0;             // The index of the current scene.
 
         private GameSceneType _currentScene;
 
@@ -78,17 +78,17 @@ namespace ZonkaZombies.Managers
             }
 
             Debug.LogFormat("LoadNextScene() - start: _currentSceneName = {0}", _currentScene);
-            _currentSceneIndex++;
+            CurrentSceneIndex++;
 
             GameSceneType[] scenes = GameScenes.GameScenesOrdered;
 
-            if (_currentSceneIndex >= scenes.Length)
+            if (CurrentSceneIndex >= scenes.Length)
             {
-                _currentSceneIndex = 0;
+                CurrentSceneIndex = 0;
             }
 
             _previousScene = _currentScene;
-            _currentScene = scenes[_currentSceneIndex];
+            _currentScene = scenes[CurrentSceneIndex];
 
             Debug.LogFormat("LoadNextScene() - end: _currentSceneName = {0}", _currentScene);
             _currentGameState = GameState.Loading;

@@ -27,6 +27,7 @@ namespace ZonkaZombies.Scenes
             if ((PlayerInput.InputReaderController1.Start() || PlayerInput.InputReaderController2.Start() || Time.time - _lastTime >= _autoRestartDelay) && !_alreadyLoaded)
             {
                 _alreadyLoaded = true;
+                SceneController.Instance.CurrentSceneIndex = 0;
                 SceneController.Instance.FadeAndLoadScene(GameScenes.GameScenesOrdered.First());
             }
         }

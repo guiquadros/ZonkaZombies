@@ -14,13 +14,7 @@ namespace ZonkaZombies.UI
         [Header("Blink")] public bool AutoBlink;
         public float BlinkThreshold = 0.25f;
         public Animator BlinkAnimator;
-
-        private void Awake()
-        {
-            //Force this object to start disabled
-            gameObject.SetActive(false);
-        }
-
+        
         public void Initialize(Player player) 
         {
             //Subscribe to player callback
