@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 0.03448248, g: 0, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.17009084, g: 0.58670986, b: 0.8897059, a: 1}
   m_AmbientGroundColor: {r: 1, g: 0.8235295, b: 0.4705882, a: 1}
   m_AmbientIntensity: 1
@@ -174,6 +174,30 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 431624, guid: 0d90cc9e324b0404f81814f100344026, type: 2}
   m_PrefabInternal: {fileID: 512897817}
+--- !u!84 &2645467
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1279
+  m_Height: 719
+  m_AntiAliasing: 2
+  m_DepthFormat: 2
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &2732818
 Prefab:
   m_ObjectHideFlags: 0
@@ -6599,6 +6623,11 @@ Prefab:
         type: 2}
       propertyPath: m_Type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108570065421006190, guid: 65895b4d885f31941aace10374ad7ad4,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65895b4d885f31941aace10374ad7ad4, type: 2}
@@ -25461,7 +25490,7 @@ Transform:
   - {fileID: 560949113}
   - {fileID: 805088685}
   m_Father: {fileID: 1775479061}
-  m_RootOrder: 141
+  m_RootOrder: 136
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1266493741
 Animator:
@@ -35201,12 +35230,12 @@ Transform:
   - {fileID: 1149057325}
   - {fileID: 719386813}
   - {fileID: 1163640202}
+  - {fileID: 1266493740}
   - {fileID: 748513266}
   - {fileID: 1446351807}
   - {fileID: 1425013934}
   - {fileID: 307874579}
   - {fileID: 51272244}
-  - {fileID: 1266493740}
   - {fileID: 882649952}
   - {fileID: 919469740}
   - {fileID: 317434175}
@@ -36063,30 +36092,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.350941, y: 7.4324493, z: 7.7999268}
   m_Center: {x: -0.10615349, y: -0.16146088, z: 0.025634766}
---- !u!84 &1810347138
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1017
-  m_Height: 572
-  m_AntiAliasing: 2
-  m_DepthFormat: 2
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1810871010
 GameObject:
   m_ObjectHideFlags: 0
