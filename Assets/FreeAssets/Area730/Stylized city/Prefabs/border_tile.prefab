@@ -10,7 +10,6 @@ GameObject:
   - component: {fileID: 479300}
   - component: {fileID: 3352036}
   - component: {fileID: 2325550}
-  - component: {fileID: 65881634402251214}
   m_Layer: 0
   m_Name: border_tile
   m_TagString: Untagged
@@ -24,9 +23,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114400}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 221.77357, y: -34.707504, z: 7.091156}
-  m_LocalScale: {x: 0.86505896, y: 0.7564895, z: 0.828654}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5000001, w: 0.49999994}
+  m_LocalPosition: {x: 24.773575, y: -34.427505, z: 11.411133}
+  m_LocalScale: {x: 1.1235362, y: 0.86019474, z: 0.94225204}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,15 +80,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114400}
   m_IsPrefabParent: 1
---- !u!65 &65881634402251214
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114400}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.262237, y: 4.9804153, z: 0.60467994}
-  m_Center: {x: 0.00000333786, y: -4.2965086e-15, z: 0.30233997}
