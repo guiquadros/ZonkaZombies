@@ -14465,7 +14465,7 @@ Prefab:
         type: 2}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 832454464}
+      objectReference: {fileID: 1686943260}
     - target: {fileID: 4037754862184488, guid: 85830907b271a564ca2a004a8c256ccc, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 225
@@ -14754,6 +14754,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 2114888679}
   m_GameObject: {fileID: 724967284}
   m_Mesh: {fileID: 4300014, guid: b0c81591cc3faff4a99bd9f012057682, type: 3}
+--- !u!84 &725304286
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1195
+  m_Height: 672
+  m_AntiAliasing: 2
+  m_DepthFormat: 2
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &725651835 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: 4922c6d115252a54fa308e417a524316, type: 3}
@@ -17190,30 +17214,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1420039964}
   m_GameObject: {fileID: 832219505}
   m_Mesh: {fileID: 4300026, guid: 0b1baaf9e711813469303ac51e429841, type: 3}
---- !u!84 &832454464
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 640
-  m_Height: 480
-  m_AntiAliasing: 2
-  m_DepthFormat: 2
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &834151801 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: dd59be8777491364281289de45be9ca9, type: 3}
@@ -18551,8 +18551,8 @@ MonoBehaviour:
   - {fileID: 716524533}
   players:
   - {fileID: 1734846516}
-  - {fileID: 1842850498}
-  collisions: []
+  - {fileID: 0}
+  newCollisions: []
   oldCollisions: []
 --- !u!4 &877272867 stripped
 Transform:
@@ -23894,7 +23894,6 @@ Transform:
   - {fileID: 898519264}
   - {fileID: 963916519}
   - {fileID: 1734846516}
-  - {fileID: 1842850498}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34185,6 +34184,30 @@ Transform:
   m_Father: {fileID: 1560944178}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &1686943260
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 640
+  m_Height: 480
+  m_AntiAliasing: 2
+  m_DepthFormat: 2
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1690274030
 GameObject:
   m_ObjectHideFlags: 0
@@ -37728,74 +37751,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 479300, guid: e78ffc706c8bf5b4b98b17fd48149821, type: 2}
   m_PrefabInternal: {fileID: 989261316}
---- !u!1001 &1842850497
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1157470556}
-    m_Modifications:
-    - target: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -172.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 233.88725
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 544.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213980446466406, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-      propertyPath: m_Name
-      value: PoliceOfficer (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114123836187019592, guid: b89ce5f207841ae4c8f31293e6c25885,
-        type: 2}
-      propertyPath: InputType
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &1842850498 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4852015382059098, guid: b89ce5f207841ae4c8f31293e6c25885,
-    type: 2}
-  m_PrefabInternal: {fileID: 1842850497}
 --- !u!1 &1845477814
 GameObject:
   m_ObjectHideFlags: 0
