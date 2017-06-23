@@ -32,6 +32,8 @@ namespace ZonkaZombies.Scenery
             {
                 foreach (Transform player in players)
                 {
+                    if (player == null || player.ToString() == "null") continue;
+
                     //Get the new collisions
                     RaycastHit[] collisions = Physics.RaycastAll(
                         new Ray(targetCamera.position, Vector3.Normalize(player.position - targetCamera.position)),
@@ -47,7 +49,7 @@ namespace ZonkaZombies.Scenery
             }
 
             //Remove double entrances
-            //collisions = collisions.Distinct().ToList();
+            newCollisions = newCollisions.Distinct().ToList();
             
             //Remove recurrent objects from the old list
             for (int i = oldCollisions.Count - 1; i >= 0; i--)
