@@ -47,7 +47,7 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA
         [SerializeField]
         private EnemyDetails _enemyDetails;
 
-        [HideInInspector]
+        [SerializeField]
         private Player.Behaviors.Player _characterTarget;
 
         [SerializeField]
