@@ -10,8 +10,8 @@ namespace ZonkaZombies.Scenery
         public List<Transform> cameras;
         public List<Transform> players;
 
-        public List<TransparentObject> newCollisions = new List<TransparentObject>();
-        public List<TransparentObject> oldCollisions = new List<TransparentObject>();
+        public List<TransparentSceneObject> newCollisions = new List<TransparentSceneObject>();
+        public List<TransparentSceneObject> oldCollisions = new List<TransparentSceneObject>();
 
         //[SerializeField]
         //private SplitscreenHandler _splitscreenHandler;
@@ -26,7 +26,7 @@ namespace ZonkaZombies.Scenery
         {
             //Cicle the collisions list
             oldCollisions = newCollisions;
-            newCollisions = new List<TransparentObject>();
+            newCollisions = new List<TransparentSceneObject>();
 
             foreach (var targetCamera in cameras)
             {
@@ -43,7 +43,7 @@ namespace ZonkaZombies.Scenery
                     foreach (RaycastHit hit in collisions)
                     {
                         if (hit.transform.CompareTag("Transparent"))
-                            newCollisions.Add(hit.transform.GetComponent<TransparentObject>());
+                            newCollisions.Add(hit.transform.GetComponent<TransparentSceneObject>());
                     }
                 }
             }
@@ -59,7 +59,7 @@ namespace ZonkaZombies.Scenery
             }
 
             //Make remaining objects on the old list opaque
-            foreach (TransparentObject obj in oldCollisions)
+            foreach (TransparentSceneObject obj in oldCollisions)
             {
                 foreach (Renderer render in obj.objectRenderers)
                 {
@@ -68,7 +68,7 @@ namespace ZonkaZombies.Scenery
             }
 
             //Make objects transparent
-            foreach (TransparentObject obj in newCollisions)
+            foreach (TransparentSceneObject obj in newCollisions)
             {
                 foreach (Renderer render in obj.objectRenderers)
                 {
