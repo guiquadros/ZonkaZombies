@@ -30,6 +30,7 @@ namespace ZonkaZombies.Util
     {
         //general
         public const string PERSISTENT = "Persistent";
+        public static string MAIN_MENU = "MainMenu";
         public const string INTRO1_NAME = "Intro1";
         public const string INTRO2_NAME = "Intro2";
         public const string HALL_FIRST_FLOOR_NAME = "HallFirstFloor";

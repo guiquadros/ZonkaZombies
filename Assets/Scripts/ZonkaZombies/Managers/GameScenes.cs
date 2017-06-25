@@ -5,7 +5,12 @@ namespace ZonkaZombies.Managers
 {
     public struct GameScenes
     {
-        public static readonly GameSceneType[] GameScenesOrdered = { INTRO1, INTRO2, HALL_FIRST_FLOOR, DIALOGUE_SCIENTIST};
+        public static readonly GameSceneType[] GameScenesOrdered = { MAIN_MENU ,INTRO1, INTRO2, HALL_FIRST_FLOOR, DIALOGUE_SCIENTIST};
+
+        public static GameSceneType MAIN_MENU
+        {
+            get { return new GameSceneType(SceneConstants.MAIN_MENU, showHud: false); }
+        }
 
         public static GameSceneType INTRO1
         {
