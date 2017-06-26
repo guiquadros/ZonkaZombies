@@ -13,6 +13,8 @@ namespace ZonkaZombies.Scenery
         public List<TransparentSceneObject> newCollisions = new List<TransparentSceneObject>();
         public List<TransparentSceneObject> oldCollisions = new List<TransparentSceneObject>();
 
+        public float updateTime = 0.3f;
+        public float updateTimeCounter = 0f;
         //[SerializeField]
         //private SplitscreenHandler _splitscreenHandler;
 
@@ -22,7 +24,16 @@ namespace ZonkaZombies.Scenery
         //}
 
         // Update is called once per frame
-        private void Update ()
+        private void Update()
+        {
+            updateTimeCounter += Time.deltaTime;
+            if (updateTimeCounter >= updateTime)
+            {
+                UpdateTransparency();
+                updateTimeCounter -= updateTime;
+            }
+        }
+        private void UpdateTransparency ()
         {
             //Cicle the collisions list
             oldCollisions = newCollisions;
@@ -63,7 +74,15 @@ namespace ZonkaZombies.Scenery
             {
                 foreach (Renderer render in obj.objectRenderers)
                 {
-                    render.material.SetColor("_Color", new Color(render.material.color.r, render.material.color.g, render.material.color.b, 1f));
+                    render.material.SetFloat("_Mode", 0f);
+                    render.material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+                    render.material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+                    render.material.SetInt("_ZWrite", 1);
+                    render.material.DisableKeyword("_ALPHATEST_ON");
+                    render.material.DisableKeyword("_ALPHABLEND_ON");
+                    render.material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                    render.material.renderQueue = -1;
+                    render.material.color = new Color(render.material.color.r, render.material.color.g, render.material.color.b, 1f);
                 }
             }
 
@@ -72,7 +91,15 @@ namespace ZonkaZombies.Scenery
             {
                 foreach (Renderer render in obj.objectRenderers)
                 {
-                    render.material.SetColor("_Color", new Color(render.material.color.r, render.material.color.g, render.material.color.b, 0.05f));
+                    render.material.SetFloat("_Mode", 3f);
+                    render.material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+                    render.material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                    render.material.SetInt("_ZWrite", 0);
+                    render.material.DisableKeyword("_ALPHATEST_ON");
+                    render.material.DisableKeyword("_ALPHABLEND_ON");
+                    render.material.EnableKeyword("_ALPHAPREMULTIPLY_ON");
+                    render.material.renderQueue = 3000;
+                    render.material.color = new Color(render.material.color.r, render.material.color.g, render.material.color.b, 0.05f);
                 }
             }
         }
