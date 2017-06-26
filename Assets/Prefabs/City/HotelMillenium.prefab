@@ -53,9 +53,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4791730267707776}
-  m_Layer: 0
+  - component: {fileID: 65521898327315940}
+  - component: {fileID: 114584552610120482}
+  m_Layer: 17
   m_Name: HotelMillenium
-  m_TagString: Untagged
+  m_TagString: Transparent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,8 +101,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119029154420404}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.21090002, y: 0.011000061, z: 0.40500012}
-  m_LocalScale: {x: 0.014285719, y: 0.06195154, z: 0.07385166}
+  m_LocalPosition: {x: -0.2098, y: -0, z: 0.40500012}
+  m_LocalScale: {x: 0.014285719, y: 0.077713594, z: 0.07491905}
   m_Children: []
   m_Father: {fileID: 4998762221218692}
   m_RootOrder: 0
@@ -125,8 +127,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428131252039364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.843582, y: -34.837494, z: -26.178864}
-  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_LocalPosition: {x: -178.93646, y: 232.73035, z: 468.05002}
+  m_LocalScale: {x: 55, y: 55, z: 55}
   m_Children:
   - {fileID: 4204413746731748}
   - {fileID: 4998762221218692}
@@ -140,8 +142,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1763216781922986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21090002, y: 0.011000061, z: 0.40500012}
-  m_LocalScale: {x: 0.07385145, y: 0.06195154, z: 0.014285717}
+  m_LocalPosition: {x: -0.2098, y: -0, z: 0.40500012}
+  m_LocalScale: {x: 0.07491873, y: 0.077713594, z: 0.014285717}
   m_Children: []
   m_Father: {fileID: 4998762221218692}
   m_RootOrder: 1
@@ -278,3 +280,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119029154420404}
   m_Mesh: {fileID: 4300020, guid: aed58be6dba5efc4b90653b186643a2a, type: 3}
+--- !u!65 &65521898327315940
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1428131252039364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4936078, y: 1.8999705, z: 0.87862575}
+  m_Center: {x: -0.07255825, y: 0.89082915, z: -0.060686283}
+--- !u!114 &114584552610120482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1428131252039364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a79fd5256b83c46907ab3ddda08a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectRenderers:
+  - {fileID: 23367289255278482}
+  - {fileID: 23309377173247594}
+  - {fileID: 23724394473944182}

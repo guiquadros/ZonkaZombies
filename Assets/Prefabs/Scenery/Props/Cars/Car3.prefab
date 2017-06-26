@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4104718425944184}
   - component: {fileID: 33265275019088246}
   - component: {fileID: 23955449207056814}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Object331
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4615625134006922}
   - component: {fileID: 33655899217746058}
   - component: {fileID: 23010050789749476}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Object333
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4827815535945156}
   - component: {fileID: 33074067594213448}
   - component: {fileID: 23629675248488036}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Object338
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4003441513582962}
   - component: {fileID: 33748909684517140}
   - component: {fileID: 23272644265465406}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Box1492
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4798013550379500}
   - component: {fileID: 33499724818364684}
   - component: {fileID: 23152582350485846}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Object334
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4892121450392710}
   - component: {fileID: 33681083171447738}
   - component: {fileID: 23436974957950792}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Object337
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,8 +139,24 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4238389173064116}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: wheel2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!1 &1455659551289674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4599567906099874}
+  - component: {fileID: 65687820182915382}
+  m_Layer: 0
+  m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +172,7 @@ GameObject:
   - component: {fileID: 4250119408233772}
   - component: {fileID: 33282815688032860}
   - component: {fileID: 23265523190894870}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Box1491
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +189,7 @@ GameObject:
   - component: {fileID: 4623285716151648}
   - component: {fileID: 33642634204663782}
   - component: {fileID: 23911866399181574}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Object329
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +204,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4484552934853278}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +221,7 @@ GameObject:
   - component: {fileID: 4236575714089926}
   - component: {fileID: 33329280435398542}
   - component: {fileID: 23622153684877148}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Cylinder316
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +236,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4946369532353632}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: wheel4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +251,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4755348218386388}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: wheel3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +268,7 @@ GameObject:
   - component: {fileID: 4569552074288668}
   - component: {fileID: 33488542253205844}
   - component: {fileID: 23232135801343058}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Object335
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +285,7 @@ GameObject:
   - component: {fileID: 4906811808480686}
   - component: {fileID: 33687240662949878}
   - component: {fileID: 23317737772948630}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Object330
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +302,7 @@ GameObject:
   - component: {fileID: 4041552965148160}
   - component: {fileID: 33031504716225464}
   - component: {fileID: 23154335948218062}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Object332
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +317,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4444654568252100}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: wheel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +334,7 @@ GameObject:
   - component: {fileID: 4214068703457396}
   - component: {fileID: 33330942648539704}
   - component: {fileID: 23416611298070590}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Object336
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,6 +382,7 @@ Transform:
   - {fileID: 4238389173064116}
   - {fileID: 4755348218386388}
   - {fileID: 4946369532353632}
+  - {fileID: 4599567906099874}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -480,6 +497,19 @@ Transform:
   - {fileID: 4104718425944184}
   m_Father: {fileID: 4444654568252100}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4599567906099874
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1455659551289674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4081732432343776}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4615625134006922
 Transform:
@@ -1103,6 +1133,18 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400891317253302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.055025, y: 6.580337, z: 6.440824}
+  m_Center: {x: -0.088477604, y: 0.05253764, z: -0.013253969}
+--- !u!65 &65687820182915382
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1455659551289674}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
