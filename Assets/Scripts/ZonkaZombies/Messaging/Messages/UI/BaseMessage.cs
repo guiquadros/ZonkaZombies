@@ -26,9 +26,14 @@ namespace ZonkaZombies.Messaging.Messages.UI
         }
     }
 
-#endregion
+    #endregion
 
 #region Player Messages
+
+    public sealed class OnPlayerSpawnMessage : BasePlayerMessage
+    {
+        public OnPlayerSpawnMessage(Player player) : base(player) { }
+    }
 
     public sealed class OnPlayerHasBornMessage : BasePlayerMessage
     {

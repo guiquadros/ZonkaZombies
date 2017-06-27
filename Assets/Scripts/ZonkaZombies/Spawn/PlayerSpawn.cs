@@ -8,14 +8,14 @@ namespace ZonkaZombies.Spawn
 {
     public class PlayerSpawn : MonoBehaviour
     {
-        [SerializeField]
+        [SerializeField] 
         private Transform _spawnPointPlayer1, _spawnPointPlayer2;
 
         private void Start()
         {
-            foreach (Player player in EntityManager.Instance.Players)
+            for (var i = 0; i < EntityManager.Instance.Players.Count; i++)
             {
-                SpawnPlayer(player, player.IsFirstPlayer ? _spawnPointPlayer1 : _spawnPointPlayer2);
+                SpawnPlayer(EntityManager.Instance.Players[i], EntityManager.Instance.Players[i].IsFirstPlayer ? _spawnPointPlayer1 : _spawnPointPlayer2);
             }
         }
 
@@ -25,7 +25,7 @@ namespace ZonkaZombies.Spawn
             player.transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, playerTransform.position.z);
             player.transform.rotation = playerTransform.rotation;
 
-            MessageRouter.SendMessage(new OnPlayerHasBornMessage(player));
+            MessageRouter.SendMessage(new OnPlayerSpawnMessage(player));
         }
     }
 }

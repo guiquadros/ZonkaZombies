@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using ZonkaZombies.Characters.Player.Behaviors;
 using ZonkaZombies.Messaging;
 using ZonkaZombies.Messaging.Messages.UI;
 
@@ -92,13 +93,15 @@ namespace ZonkaZombies.Multiplayer
 
         private void OnEnable()
         {
-            MessageRouter.AddListener<OnPlayerHasBornMessage>(OnPlayerHasBornCallback);
+            MessageRouter.AddListener<OnPlayerHasBornMessage>(OnPlayerMessageCallback);
+            MessageRouter.AddListener<OnPlayerSpawnMessage>(OnPlayerMessageCallback);
             MessageRouter.AddListener<OnPlayerDeadMessage>(OnPlayerDeadCallback);
         }
-
+        
         private void OnDisable()
         {
-            MessageRouter.RemoveListener<OnPlayerHasBornMessage>(OnPlayerHasBornCallback);
+            MessageRouter.RemoveListener<OnPlayerHasBornMessage>(OnPlayerMessageCallback);
+            MessageRouter.RemoveListener<OnPlayerSpawnMessage>(OnPlayerMessageCallback);
             MessageRouter.RemoveListener<OnPlayerDeadMessage>(OnPlayerDeadCallback);
         }
 
@@ -306,7 +309,7 @@ namespace ZonkaZombies.Multiplayer
 
 #region CALLBACKS
 
-        private void OnPlayerHasBornCallback(OnPlayerHasBornMessage message)
+        private void OnPlayerMessageCallback(BasePlayerMessage message)
         {
             if (message.Player.IsFirstPlayer)
             {
