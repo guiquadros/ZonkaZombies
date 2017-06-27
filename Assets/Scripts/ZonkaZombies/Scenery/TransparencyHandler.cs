@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using ZonkaZombies.Messaging;
+using ZonkaZombies.Messaging.Messages.UI;
 using ZonkaZombies.Multiplayer;
+using ZonkaZombies.Spawn;
 
 namespace ZonkaZombies.Scenery
 {
@@ -15,13 +19,28 @@ namespace ZonkaZombies.Scenery
 
         public float updateTime = 0.3f;
         public float updateTimeCounter = 0f;
-        //[SerializeField]
-        //private SplitscreenHandler _splitscreenHandler;
 
-        //private void Awake()
-        //{
-        //    //_splitscreenHandler.
-        //}
+        private void OnEnable()
+        {
+            MessageRouter.AddListener<SplitScreenCamerasInitializedMessage>(SplitScreenHandler_OnCamerasInitialized);
+            MessageRouter.AddListener<OnPlayerSpawnMessage>(OnPlayerMessageCallback);
+        }
+
+        private void OnDisable()
+        {
+            MessageRouter.RemoveListener<SplitScreenCamerasInitializedMessage>(SplitScreenHandler_OnCamerasInitialized);
+            MessageRouter.RemoveListener<OnPlayerSpawnMessage>(OnPlayerMessageCallback);
+        }
+
+        private void SplitScreenHandler_OnCamerasInitialized(SplitScreenCamerasInitializedMessage splitScreenCamerasInitializedMessage)
+        {
+            cameras.Add(splitScreenCamerasInitializedMessage.CameraClone.transform);
+        }
+
+        private void OnPlayerMessageCallback(OnPlayerSpawnMessage msg)
+        {
+            players.Add(msg.Player.transform);
+        }
 
         // Update is called once per frame
         private void Update()

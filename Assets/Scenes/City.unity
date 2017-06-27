@@ -16709,30 +16709,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4843506540683118, guid: c04d8c107779b394cadc38889b7ad66c,
     type: 2}
   m_PrefabInternal: {fileID: 1017681579}
---- !u!84 &1021268723
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 234
-  m_Height: 271
-  m_AntiAliasing: 2
-  m_DepthFormat: 2
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1001 &1024476629
 Prefab:
   m_ObjectHideFlags: 0
@@ -19665,7 +19641,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4652092082535786, guid: 354a57ca19aab2e4e9eb5c633ec279d2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 249.55
+      value: 246.63
       objectReference: {fileID: 0}
     - target: {fileID: 4652092082535786, guid: 354a57ca19aab2e4e9eb5c633ec279d2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -35610,6 +35586,30 @@ Transform:
   m_PrefabParentObject: {fileID: 4459072283138334, guid: a75e952228263a34cad6dbeaf72ee28b,
     type: 2}
   m_PrefabInternal: {fileID: 2120329167}
+--- !u!84 &2123268618
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 234
+  m_Height: 271
+  m_AntiAliasing: 2
+  m_DepthFormat: 2
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &2124507593
 Prefab:
   m_ObjectHideFlags: 0

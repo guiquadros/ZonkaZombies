@@ -26,7 +26,7 @@ namespace ZonkaZombies.Messaging.Messages.UI
         }
     }
 
-    #endregion
+#endregion
 
 #region Player Messages
 
@@ -59,13 +59,18 @@ namespace ZonkaZombies.Messaging.Messages.UI
         public OnEnemyDeadMessage(GenericEnemy enemy) : base(enemy) { }
     }
 
-    #endregion
+#endregion
 
 #region GAMEPLAY MESSAGES
 
     public struct OnAllPlayersAreDead { }
 
-    #endregion
+    public struct SplitScreenCamerasInitializedMessage
+    {
+        public Camera CameraClone { get; set; }
+    }
+
+#endregion
 
 #region MAIN MENU MESSAGES
     public class MoveCameraMessage

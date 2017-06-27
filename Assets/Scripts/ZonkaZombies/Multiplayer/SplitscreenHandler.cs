@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using ZonkaZombies.Characters.Player.Behaviors;
 using ZonkaZombies.Messaging;
 using ZonkaZombies.Messaging.Messages.UI;
@@ -107,7 +108,7 @@ namespace ZonkaZombies.Multiplayer
 
         private void Awake()
         {
-            this.Initialize();
+            Initialize();
             InitializeCameras();
         }
 
@@ -224,17 +225,19 @@ namespace ZonkaZombies.Multiplayer
         private void InitializeCameras()
         {
             // Clone the primary camera
-            this._secondaryCamera = Instantiate(this._primaryCamera);
+            _secondaryCamera = Instantiate(_primaryCamera);
 
             _secondaryCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.Skybox;
 
-            this._secondaryCamera.transform.parent = this.transform;
+            _secondaryCamera.transform.parent = transform;
 
             GetCentralPosition();
 
-            SetCameraPos(this._primaryCamera, _centralPosition);
+            SetCameraPos(_primaryCamera, _centralPosition);
 
             DisableSplitscreen();
+
+            MessageRouter.SendMessage(new SplitScreenCamerasInitializedMessage() { CameraClone = _secondaryCamera } );
         }
 
         /// <summary>
