@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.542
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 309107042}
-  m_IndirectSpecularColor: {r: 0.089718215, g: 0.13454047, b: 0.28887144, a: 0.542}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.542}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -6904,30 +6904,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4573097443578402, guid: 65895b4d885f31941aace10374ad7ad4,
     type: 2}
   m_PrefabInternal: {fileID: 309107041}
---- !u!84 &306690374
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 712
-  m_Height: 401
-  m_AntiAliasing: 2
-  m_DepthFormat: 2
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1001 &307405695
 Prefab:
   m_ObjectHideFlags: 0
@@ -14593,6 +14569,30 @@ Transform:
   m_Father: {fileID: 927584612}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &637007307
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 234
+  m_Height: 338
+  m_AntiAliasing: 2
+  m_DepthFormat: 2
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &637812271
 GameObject:
   m_ObjectHideFlags: 0
@@ -43063,7 +43063,7 @@ Prefab:
     - target: {fileID: 114123836187019592, guid: b89ce5f207841ae4c8f31293e6c25885,
         type: 2}
       propertyPath: InputType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b89ce5f207841ae4c8f31293e6c25885, type: 2}
