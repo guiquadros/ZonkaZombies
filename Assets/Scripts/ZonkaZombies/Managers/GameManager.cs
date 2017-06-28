@@ -1,4 +1,5 @@
-﻿using UnityEngine.SceneManagement;
+﻿using System.Linq;
+using UnityEngine.SceneManagement;
 using ZonkaZombies.Characters;
 using ZonkaZombies.Characters.Enemy.EnemyIA;
 using ZonkaZombies.Characters.Player.Behaviors;
@@ -6,6 +7,7 @@ using ZonkaZombies.Characters.Player.Weapon;
 using ZonkaZombies.Messaging;
 using ZonkaZombies.Messaging.Messages.UI;
 using ZonkaZombies.Scenery.Interaction;
+using ZonkaZombies.UI;
 using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Managers
@@ -57,7 +59,7 @@ namespace ZonkaZombies.Managers
                 interactable.OnInteract += OnGetInteractable;
             }
 
-            _toDoMissionsCount = interactablesInScene.Length;
+            _toDoMissionsCount = interactablesInScene.Count(i => i.Type == InteractableType.Chocolate);
         }
 
         private void OnAfterSceneLoad()
@@ -99,15 +101,14 @@ namespace ZonkaZombies.Managers
 
                 switch (collectableInteractable.Type)
                 {
-                    case InteractableType.SlightBox:
-                        break;
-                    case InteractableType.HeavyBox:
-                        break;
-                    case InteractableType.Collectable:
+                    case InteractableType.Chocolate:
                         _toDoMissionsCount--;
+
                         if (_toDoMissionsCount <= 0)
                         {
-                            SceneManager.LoadScene(SceneConstants.PLAYER_WIN_SCENE_NAME);
+                            //TODO: performance issues
+                            //EntityManager.Instance.Enemies.ForEach(e => e.UseFieldOfView = false);
+                            //MessageRouter.SendMessage(new ForceEnemyPursuitMode());
                         }
                         break;
                     case InteractableType.Weapon:

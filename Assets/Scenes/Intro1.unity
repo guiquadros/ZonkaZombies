@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd3bc4c1b3c153479e8821850e4057d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _waitTimeBeforeLoadScene: 2
   ObjectToUpdate: {fileID: 295728435}
   CursorCharacter: " \u2588"
   AlternateCursorCharacter: ' _'
@@ -212,7 +213,7 @@ MonoBehaviour:
   - Zonka City, July 6, 2017
   - 
   - The great chocolate company, Zonka, created a formula for an
-  - 'incredible product: The New Zonka Cholate.'
+  - 'incredible product: The New Zonka Chocolate.'
   - 
   - Instead of make people fat, this chocolate makes people thin. It
   - was an instant success.

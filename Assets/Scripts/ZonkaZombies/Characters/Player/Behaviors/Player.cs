@@ -11,6 +11,7 @@ using ZonkaZombies.Messaging;
 using ZonkaZombies.Messaging.Messages.UI;
 using ZonkaZombies.UI;
 using ZonkaZombies.UI.Data;
+using ZonkaZombies.UI.Dialogues;
 
 namespace ZonkaZombies.Characters.Player.Behaviors
 {
@@ -144,23 +145,30 @@ namespace ZonkaZombies.Characters.Player.Behaviors
             DialogueManager.Instance.DialogueFinished -= OnDialogueFinished;
         }
 
-        private void OnDialogueFinished(Dialogue dialogue)
+        private void OnDialogueFinished(Dialogue dialogue, bool freezePlayers)
         {
-            _characterRigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-            _frezeePlayer = false;
+            if (freezePlayers)
+            {
+                _characterRigidbody.constraints = RigidbodyConstraints.FreezeRotationZ |
+                                                  RigidbodyConstraints.FreezeRotationX;
+                _frezeePlayer = false;
+            }
         }
 
-        private void OnDialogueStarted(Dialogue dialogue, Transform interactableTransform)
+        private void OnDialogueStarted(Dialogue dialogue, Transform interactableTransform, bool freezePlayers)
         {
-            _characterRigidbody.constraints = RigidbodyConstraints.FreezeAll;
-            _frezeePlayer = true;
-
-            Animator.SetFloat(PlayerAnimatorParameters.MOVEMENT_DIRECTION, -1);
-            Animator.SetTrigger(PlayerAnimatorParameters.FORCE_IDLE);
-
-            if (interactableTransform != null)
+            if (freezePlayers)
             {
-                transform.LookAt(interactableTransform);
+                _characterRigidbody.constraints = RigidbodyConstraints.FreezeAll;
+                _frezeePlayer = true;
+
+                Animator.SetFloat(PlayerAnimatorParameters.MOVEMENT_DIRECTION, -1);
+                Animator.SetTrigger(PlayerAnimatorParameters.FORCE_IDLE);
+
+                if (interactableTransform != null)
+                {
+                    transform.LookAt(interactableTransform);
+                }
             }
         }
 

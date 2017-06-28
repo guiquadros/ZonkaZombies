@@ -59,6 +59,10 @@ namespace ZonkaZombies.Messaging.Messages.UI
         public OnEnemyDeadMessage(GenericEnemy enemy) : base(enemy) { }
     }
 
+    public class ForceEnemyPursuitMode
+    {
+    }
+
 #endregion
 
 #region GAMEPLAY MESSAGES

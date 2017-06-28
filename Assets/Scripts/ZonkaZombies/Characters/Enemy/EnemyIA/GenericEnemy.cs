@@ -72,7 +72,11 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA
         
         public bool HasTarget { get { return _characterTarget != null; } }
 
-        public bool UseFieldOfView { get; set; }
+        public bool UseFieldOfView
+        {
+            get { return _useFieldOfView; }
+            set { _useFieldOfView = value; }
+        }
 
         internal Player.Behaviors.Player CharacterTarget { get { return _characterTarget; } }
 

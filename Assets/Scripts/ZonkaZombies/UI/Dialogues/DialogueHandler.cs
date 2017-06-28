@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
-using ZonkaZombies.Input;
 using ZonkaZombies.UI.Data;
 
-namespace ZonkaZombies.UI
+namespace ZonkaZombies.UI.Dialogues
 {
     public class DialogueHandler : MonoBehaviour
     {
@@ -18,6 +15,11 @@ namespace ZonkaZombies.UI
         public event Action DialogueStarted;
         public event Action DialogueFinished;
 
+        public Dialogue Dialogue
+        {
+            get { return _dialogue; }
+        }
+
         private void Start()
         {
             if (_initializeDialogueOnStart)
@@ -26,12 +28,12 @@ namespace ZonkaZombies.UI
             }
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             DialogueManager.Instance.DialogueFinished += OnDialogueFinished;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             DialogueManager.Instance.DialogueFinished -= OnDialogueFinished;
         }
@@ -46,7 +48,7 @@ namespace ZonkaZombies.UI
             DialogueManager.Instance.Initialize(_dialogue, _initializeDialogueOnStart, interactableTransform);
         }
 
-        private void OnDialogueFinished(Dialogue dialogue)
+        private void OnDialogueFinished(Dialogue dialogue, bool freezePlayer)
         {
             if (DialogueFinished != null && dialogue == _dialogue)
             {

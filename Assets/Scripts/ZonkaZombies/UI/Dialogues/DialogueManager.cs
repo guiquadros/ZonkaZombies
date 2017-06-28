@@ -6,7 +6,7 @@ using ZonkaZombies.Input;
 using ZonkaZombies.UI.Data;
 using ZonkaZombies.Util;
 
-namespace ZonkaZombies.UI
+namespace ZonkaZombies.UI.Dialogues
 {
     public class DialogueManager : SingletonMonoBehaviour<DialogueManager>
     {
@@ -29,12 +29,12 @@ namespace ZonkaZombies.UI
         private int _currentDiallogDetailsIndex = 0;
         private bool _dialogueStarted = false;
         private bool _nextSentence;
-        private Dialogue _dialogue;
+        private Data.Dialogue _dialogue;
 
-        public event Action<Dialogue> DialogueFinished;
-        public event Action<Dialogue, Transform> DialogueStarted;
+        public event Action<Data.Dialogue, bool> DialogueFinished;
+        public event Action<Data.Dialogue, Transform, bool> DialogueStarted;
 
-        public void Initialize(Dialogue dialogue, bool waitStartDialogue = false, Transform interactableTransform = null)
+        public void Initialize(Data.Dialogue dialogue, bool waitStartDialogue = false, Transform interactableTransform = null, bool freezePlayer = true)
         {
             if (_dialogueStarted)
             {
@@ -48,7 +48,7 @@ namespace ZonkaZombies.UI
             _currentDiallogTextIndex = 0;
             _currentDiallogDetailsIndex = 0;
 
-            StartDialogueCoroutine(_dialogue.DetailsOrdered, interactableTransform);
+            StartDialogueCoroutine(_dialogue.DetailsOrdered, interactableTransform, freezePlayer);
         }
 
         private void Update()
@@ -59,12 +59,12 @@ namespace ZonkaZombies.UI
             }
         }
 
-        private void StartDialogueCoroutine(DialogueDetails[] dialogueDetailsListOrdered, Transform interactableTransform)
+        private void StartDialogueCoroutine(DialogueDetails[] dialogueDetailsListOrdered, Transform interactableTransform, bool freezePlayer)
         {
-            StartCoroutine(DialogueCoroutine(dialogueDetailsListOrdered, interactableTransform));
+            StartCoroutine(DialogueCoroutine(dialogueDetailsListOrdered, interactableTransform, freezePlayer));
         }
 
-        private IEnumerator DialogueCoroutine(DialogueDetails[] dialogueDetailsListOrdered, Transform interactableTransform)
+        private IEnumerator DialogueCoroutine(DialogueDetails[] dialogueDetailsListOrdered, Transform interactableTransform, bool freezePlayer)
         {
             if (_waitTimeStartDialogue > 0f)
             {
@@ -75,7 +75,7 @@ namespace ZonkaZombies.UI
 
             if (DialogueStarted != null)
             {
-                DialogueStarted(_dialogue, interactableTransform);
+                DialogueStarted(_dialogue, interactableTransform, freezePlayer);
             }
 
             _dialogueUIGameObject.SetActive(true);
@@ -109,7 +109,7 @@ namespace ZonkaZombies.UI
 
                         if (DialogueFinished != null)
                         {
-                            DialogueFinished(_dialogue);
+                            DialogueFinished(_dialogue, freezePlayer);
                         }
                     }
                     else

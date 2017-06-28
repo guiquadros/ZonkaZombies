@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using ZonkaZombies.Managers;
 using ZonkaZombies.UI;
+using ZonkaZombies.UI.Dialogues;
 using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Scenery.Interaction

@@ -5,6 +5,7 @@ using ZonkaZombies.Input;
 using ZonkaZombies.Managers;
 using ZonkaZombies.UI;
 using ZonkaZombies.UI.Data;
+using ZonkaZombies.UI.Dialogues;
 
 namespace ZonkaZombies.Scenes
 {

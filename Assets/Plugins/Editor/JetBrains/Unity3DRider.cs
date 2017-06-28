@@ -1,16 +1,20 @@
-using System;
+// 1.9.0.0
+// This file was automatically generated
+using Application = UnityEngine.Application;
+using Debug = UnityEngine.Debug;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
+using System.Text;
+using System.Xml.Linq;
+using System;
 using UnityEditor;
 using UnityEngine;
-using Application = UnityEngine.Application;
-using Debug = UnityEngine.Debug;
 
 namespace Plugins.Editor.JetBrains
 {

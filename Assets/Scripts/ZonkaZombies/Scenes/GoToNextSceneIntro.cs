@@ -5,6 +5,7 @@ using ZonkaZombies.Input;
 using ZonkaZombies.Managers;
 using ZonkaZombies.UI;
 using ZonkaZombies.UI.Data;
+using ZonkaZombies.UI.Dialogues;
 
 namespace ZonkaZombies.Scenes
 {
@@ -32,7 +33,7 @@ namespace ZonkaZombies.Scenes
             }
         }
 
-        private void OnDialogueFinished(Dialogue dialogue)
+        private void OnDialogueFinished(Dialogue dialogue, bool freezePlayer)
         {
             _isReady = true;
         }
