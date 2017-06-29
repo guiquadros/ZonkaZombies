@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MugshotImage: {fileID: 21300000, guid: 7f43b36b1034b3a44b511644c667dd43, type: 3}
   DialogueText:
-  - So, I need your help to collect these 5 ingredients to build a cure for this!
-  - These 5 ingredients are the 5 kind of candies the Zonka Company produced.
+  - 'So, I need your help to collect these 5 items to build a vacine for this! '
+  - This vacine will make us immune to the infection. So then we can leave this city!
+  - These 5 items are the 5 kind of chocolate candies the Zonka Company produced.
   - Can you help me? Please. The future of Zonka City is on your hands.

@@ -15,6 +15,11 @@ namespace ZonkaZombies.Scenery.Interaction
         [SerializeField]
         private GameObject _exclamationMarkGameObject;
 
+        [SerializeField]
+        private bool _interactOnlyOnce = false;
+
+        private bool _alreadyInteracted = false;
+
         private DialogueHandler _dialogueHandler;
 
         private void Awake()
@@ -36,6 +41,12 @@ namespace ZonkaZombies.Scenery.Interaction
 
         public override void OnBegin(IInteractor interactor)
         {
+            if (_interactOnlyOnce && _alreadyInteracted)
+            {
+                return;
+            }
+
+            _alreadyInteracted = true;
             _dialogueHandler.StartDialogue(transform);
         }
 

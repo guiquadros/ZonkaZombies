@@ -824,6 +824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _validTypes: 03000000
   _exclamationMarkGameObject: {fileID: 1674098965789980}
+  _interactOnlyOnce: 1
 --- !u!114 &114552044097695376
 MonoBehaviour:
   m_ObjectHideFlags: 1

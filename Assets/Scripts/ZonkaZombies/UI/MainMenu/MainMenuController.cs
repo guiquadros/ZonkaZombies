@@ -7,7 +7,7 @@ namespace ZonkaZombies.UI.MainMenu
     {
         public void StartGameButton()
         {
-            SceneController.Instance.LoadNextScene();
+            SceneController.Instance.FadeAndLoadScene(GameScenes.INTRO1);
         }
     }
 }
