@@ -28,6 +28,7 @@ namespace ZonkaZombies.UI
         private void OnSceneLoading(GameSceneType gameScene)
         {
             gameObject.SetActive(gameScene.ShowHud);
+            _pressStartForPlayer2.gameObject.SetActive(gameScene.ShowPressStart);
         }
     }
 }

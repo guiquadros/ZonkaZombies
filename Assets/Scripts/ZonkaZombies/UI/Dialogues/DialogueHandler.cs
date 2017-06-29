@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using ZonkaZombies.Managers;
 using ZonkaZombies.UI.Data;
 
 namespace ZonkaZombies.UI.Dialogues
@@ -10,7 +11,7 @@ namespace ZonkaZombies.UI.Dialogues
         private bool _initializeDialogueOnStart = false;
 
         [SerializeField]
-        private Dialogue _dialogue;
+        protected Dialogue _dialogue;
 
         public event Action DialogueStarted;
         public event Action DialogueFinished;

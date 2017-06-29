@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using ZonkaZombies.Characters;
 using ZonkaZombies.Characters.Enemy.EnemyIA;
@@ -8,12 +9,16 @@ using ZonkaZombies.Messaging;
 using ZonkaZombies.Messaging.Messages.UI;
 using ZonkaZombies.Scenery.Interaction;
 using ZonkaZombies.UI;
+using ZonkaZombies.UI.Data;
+using ZonkaZombies.UI.Dialogues;
 using ZonkaZombies.Util;
 
 namespace ZonkaZombies.Managers
 {
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
+        public bool MissionCompleted { get; set; }
+        
         /// <summary>
         /// Holds the ramaining quantity of collectables into the current scene.
         /// </summary>
@@ -106,6 +111,9 @@ namespace ZonkaZombies.Managers
 
                         if (_toDoMissionsCount <= 0)
                         {
+                            MissionCompleted = true;
+                            SceneController.Instance.FadeAndLoadScene(GameScenes.DIALOGUE_SCIENTIST);
+
                             //TODO: performance issues
                             //EntityManager.Instance.Enemies.ForEach(e => e.UseFieldOfView = false);
                             //MessageRouter.SendMessage(new ForceEnemyPursuitMode());
@@ -149,12 +157,6 @@ namespace ZonkaZombies.Managers
         }
 
 #endregion
-        
-        public void PlayerWon()
-        {
-            EntityManager.Instance.Enemies.Clear();
-            SceneController.Instance.FadeAndLoadScene(GameScenes.PLAYER_WIN_SCENE);
-        }
 
         public void GameOver()
         {

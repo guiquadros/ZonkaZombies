@@ -278,6 +278,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114482308573398660, guid: 462b957ed0c582a48b1e6c37d61eaf2e,
+        type: 2}
+      propertyPath: _sceneToLoad
+      value: HallFirstFloor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 462b957ed0c582a48b1e6c37d61eaf2e, type: 2}
   m_IsPrefabParent: 0

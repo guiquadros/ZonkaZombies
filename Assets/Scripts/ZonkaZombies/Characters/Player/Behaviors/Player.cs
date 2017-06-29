@@ -137,39 +137,63 @@ namespace ZonkaZombies.Characters.Player.Behaviors
         {
             DialogueManager.Instance.DialogueStarted += OnDialogueStarted;
             DialogueManager.Instance.DialogueFinished += OnDialogueFinished;
+            SceneController.Instance.OnSceneLoading += OnOnSceneLoading;
+            SceneController.Instance.AfterSceneLoad += OnAfterSceneLoad;
         }
-
+        
         private void OnDisable()
         {
             DialogueManager.Instance.DialogueStarted -= OnDialogueStarted;
             DialogueManager.Instance.DialogueFinished -= OnDialogueFinished;
+            SceneController.Instance.OnSceneLoading -= OnOnSceneLoading;
+            SceneController.Instance.AfterSceneLoad -= OnAfterSceneLoad;
         }
 
+        private void OnOnSceneLoading(GameSceneType gameSceneType)
+        {
+            FreezePlayer();
+        }
+
+        private void OnAfterSceneLoad()
+        {
+            UnfreezePlayer();
+        }
+        
         private void OnDialogueFinished(Dialogue dialogue, bool freezePlayers)
         {
             if (freezePlayers)
             {
-                _characterRigidbody.constraints = RigidbodyConstraints.FreezeRotationZ |
-                                                  RigidbodyConstraints.FreezeRotationX;
-                _frezeePlayer = false;
+                UnfreezePlayer();
             }
         }
-
+        
         private void OnDialogueStarted(Dialogue dialogue, Transform interactableTransform, bool freezePlayers)
         {
             if (freezePlayers)
             {
-                _characterRigidbody.constraints = RigidbodyConstraints.FreezeAll;
-                _frezeePlayer = true;
-
-                Animator.SetFloat(PlayerAnimatorParameters.MOVEMENT_DIRECTION, -1);
-                Animator.SetTrigger(PlayerAnimatorParameters.FORCE_IDLE);
+                FreezePlayer();
 
                 if (interactableTransform != null)
                 {
                     transform.LookAt(interactableTransform);
                 }
             }
+        }
+
+        private void FreezePlayer()
+        {
+            _characterRigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            _frezeePlayer = true;
+
+            Animator.SetFloat(PlayerAnimatorParameters.MOVEMENT_DIRECTION, -1);
+            Animator.SetTrigger(PlayerAnimatorParameters.FORCE_IDLE);
+        }
+
+        private void UnfreezePlayer()
+        {
+            _characterRigidbody.constraints = RigidbodyConstraints.FreezeRotationZ |
+                                              RigidbodyConstraints.FreezeRotationX;
+            _frezeePlayer = false;
         }
 
         protected virtual void Update()

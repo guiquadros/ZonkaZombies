@@ -5,7 +5,7 @@ namespace ZonkaZombies.Managers
 {
     public struct GameScenes
     {
-        public static readonly GameSceneType[] GameScenesOrdered = { MAIN_MENU ,INTRO1, INTRO2, HALL_FIRST_FLOOR, DIALOGUE_SCIENTIST};
+        public static readonly GameSceneType[] GameScenesOrdered = { MAIN_MENU ,INTRO1, INTRO2, HALL_FIRST_FLOOR, DIALOGUE_SCIENTIST, CITY, DIALOGUE_SCIENTIST, END_GAME1, END_GAME2};
 
         public static GameSceneType MAIN_MENU
         {
@@ -24,7 +24,7 @@ namespace ZonkaZombies.Managers
 
         public static GameSceneType HALL_FIRST_FLOOR
         {
-            get { return new GameSceneType(SceneConstants.HALL_FIRST_FLOOR_NAME); }
+            get { return new GameSceneType(SceneConstants.HALL_FIRST_FLOOR_NAME, showPressStart: true); }
         }
 
         public static GameSceneType DIALOGUE_SCIENTIST
@@ -32,14 +32,19 @@ namespace ZonkaZombies.Managers
             get { return new GameSceneType(SceneConstants.DIALOGUE_SCIENTIST_NAME/*, false*/); }
         }
         
-        public static GameSceneType PLAYER_WIN_SCENE
+        public static GameSceneType END_GAME1
         {
-            get { return new GameSceneType(SceneConstants.PLAYER_WIN_SCENE_NAME); }
+            get { return new GameSceneType(SceneConstants.END_GAME_1_SCENE_NAME, showHud: false); }
         }
-        
+
+        public static GameSceneType END_GAME2
+        {
+            get { return new GameSceneType(SceneConstants.END_GAME_2_SCENE_NAME, showHud: false); }
+        }
+
         public static GameSceneType GAME_OVER_SCENE
         {
-            get { return new GameSceneType(SceneConstants.GAME_OVER_SCENE_NAME); }
+            get { return new GameSceneType(SceneConstants.GAME_OVER_SCENE_NAME, showHud: false); }
         }
 
         public static GameSceneType CITY

@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4602639426434400}
-  - component: {fileID: 114400937259946012}
   - component: {fileID: 114511743933161842}
   - component: {fileID: 136453398871033358}
   - component: {fileID: 65447401594864674}
+  - component: {fileID: 114753011378338972}
   m_Layer: 0
   m_Name: toon_scientist
   m_TagString: Untagged
@@ -798,19 +798,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxYOffset: 0.25
---- !u!114 &114400937259946012
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1027578471132156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b570940be9787d40ae0b205e64ca5fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _initializeDialogueOnStart: 0
-  _dialogue: {fileID: 11400000, guid: ca6dde1606d917f4083f5f47f1663eff, type: 2}
 --- !u!114 &114511743933161842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -838,6 +825,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   _lerpFactor: 8
+--- !u!114 &114753011378338972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1027578471132156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca173f950bcf40828bc1ff853f091e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initializeDialogueOnStart: 0
+  _dialogue: {fileID: 11400000, guid: ca6dde1606d917f4083f5f47f1663eff, type: 2}
+  _finalScientistDialogue: {fileID: 11400000, guid: eeacd07382fa86640af66a9fe55068d3,
+    type: 2}
 --- !u!136 &136453398871033358
 CapsuleCollider:
   m_ObjectHideFlags: 1

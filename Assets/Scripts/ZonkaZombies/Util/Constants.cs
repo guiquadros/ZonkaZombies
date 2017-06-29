@@ -30,16 +30,17 @@ namespace ZonkaZombies.Util
     {
         //general
         public const string PERSISTENT = "Persistent";
-        public static string MAIN_MENU = "MainMenu";
+        public const string MAIN_MENU = "MainMenu";
         public const string INTRO1_NAME = "Intro1";
         public const string INTRO2_NAME = "Intro2";
         public const string HALL_FIRST_FLOOR_NAME = "HallFirstFloor";
         public const string DIALOGUE_SCIENTIST_NAME = "DialogueScientist";
         public const string CITY_NAME = "City";
 
-        //win lose
+        //end game
         public const string GAME_OVER_SCENE_NAME = "GameOver";
-        public const string PLAYER_WIN_SCENE_NAME = "PlayerWin";
+        public const string END_GAME_1_SCENE_NAME = "EndGame1";
+        public const string END_GAME_2_SCENE_NAME = "EndGame2";
     }
 
     public static class SharedAnimatorParameters

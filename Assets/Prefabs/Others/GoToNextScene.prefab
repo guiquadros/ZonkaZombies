@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4110648133825332}
   - component: {fileID: 114482308573398660}
   m_Layer: 0
-  m_Name: GoToNextSceneIntro
+  m_Name: GoToNextScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,4 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8901cd6da38e3a6428c40cbaae9cb3ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skipPressA: 0
+  _sceneToLoad: 

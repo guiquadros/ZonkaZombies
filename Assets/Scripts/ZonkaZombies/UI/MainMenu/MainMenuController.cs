@@ -5,9 +5,14 @@ namespace ZonkaZombies.UI.MainMenu
 {
     public class MainMenuController : MonoBehaviour
     {
+        private void Awake()
+        {
+            SceneController.Instance.CurrentSceneIndex = 0;
+        }
+
         public void StartGameButton()
         {
-            SceneController.Instance.FadeAndLoadScene(GameScenes.INTRO1);
+            SceneController.Instance.LoadNextScene();
         }
     }
 }

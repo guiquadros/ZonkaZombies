@@ -27,8 +27,11 @@ EditorBuildSettings:
     path: Assets/Scenes/City.unity
     guid: 21b0e668c4f44aa44b77fb5ee1737953
   - enabled: 1
-    path: Assets/Scenes/Prototype/PlayerWin.unity
-    guid: 176ee18223aab044baf9adc6a679a6b0
-  - enabled: 1
-    path: Assets/Scenes/Prototype/GameOver.unity
+    path: Assets/Scenes/GameOver.unity
     guid: 3beaf58c34817a04f95ef883158f1f6e
+  - enabled: 1
+    path: Assets/Scenes/EndGame1.unity
+    guid: c03d3630e1731b644a325d3e9de633fa
+  - enabled: 1
+    path: Assets/Scenes/EndGame2.unity
+    guid: 00000000000000000000000000000000

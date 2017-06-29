@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using FreeAssets.Scripts;
 using UnityEngine;
 using ZonkaZombies.Input;
@@ -11,11 +12,24 @@ namespace ZonkaZombies.Scenes
 {
     public class GoToNextSceneIntro : MonoBehaviour
     {
+        [SerializeField]
+        private string _sceneToLoad;
+
+        [SerializeField]
+        private bool _skipNextSceneWhenPressA = false;
+
+        [SerializeField]
+        private bool _forceLoadSceneParameter = false;
+
         private bool _isReady = false;
+        //private bool _sceneAlreadyLoaded = false;
 
         private void Start()
         {
-            DialogueManager.Instance.DialogueFinished += OnDialogueFinished;
+            if (DialogueManager.Instance != null)
+            {
+                DialogueManager.Instance.DialogueFinished += OnDialogueFinished;
+            }
 
             if (RetroPrinterScriptBasic.Instance != null)
             {
@@ -25,7 +39,10 @@ namespace ZonkaZombies.Scenes
         
         private void OnDisable()
         {
-            DialogueManager.Instance.DialogueFinished -= OnDialogueFinished;
+            if (DialogueManager.Instance != null)
+            {
+                DialogueManager.Instance.DialogueFinished -= OnDialogueFinished;
+            }
 
             if (RetroPrinterScriptBasic.Instance != null)
             {
@@ -45,10 +62,35 @@ namespace ZonkaZombies.Scenes
 
         private void Update()
         {
-            if (_isReady)
+            GameSceneType scene = GameScenes.GameScenesOrdered.First(gso => gso.SceneName == _sceneToLoad);
+
+            if (_skipNextSceneWhenPressA && /*!_sceneAlreadyLoaded &&*/ (PlayerInput.InputReaderController1.ADown() || PlayerInput.InputReaderController2.ADown() ||
+                PlayerInput.InputReaderKeyboard.ADown()))
+            {
+                if (_forceLoadSceneParameter)
+                {
+                    SceneController.Instance.FadeAndLoadScene(scene);
+                }
+                else
+                {
+                    //_sceneAlreadyLoaded = true;
+                    //SceneController.Instance.FadeAndLoadScene(scene);
+                    SceneController.Instance.LoadNextScene();
+                }
+            }
+            else if (_isReady)
             {
                 _isReady = false;
-                SceneController.Instance.LoadNextScene();
+
+                if (_forceLoadSceneParameter)
+                {
+                    SceneController.Instance.FadeAndLoadScene(scene);
+                }
+                else
+                {
+                    //SceneController.Instance.FadeAndLoadScene(scene);
+                    SceneController.Instance.LoadNextScene();
+                }
             }
         }
     }

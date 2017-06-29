@@ -50,7 +50,7 @@ namespace ZonkaZombies.Managers
 
         private IEnumerator Start ()
         {
-            _currentScene = GameScenes./*MAIN_MENU;*/GameScenesOrdered.First();
+            _currentScene = GameScenes.GameScenesOrdered.First();
 
             // Set the initial alpha to start off with a black screen.
             faderCanvasGroup.alpha = 1f;
@@ -160,7 +160,24 @@ namespace ZonkaZombies.Managers
                 {
                     if (scene.name != SceneConstants.PERSISTENT && scene.name != gameScene.SceneName)
                     {
-                        yield return SceneManager.UnloadSceneAsync(scene.name);
+                        if (scene.IsValid())
+                        {
+                            yield return SceneManager.UnloadSceneAsync(scene.name);
+                        }
+                    }
+                }
+
+                var allScenesDuplicated = allScenes.Where(s => s.name == gameScene.SceneName).ToList();
+
+                //removes the duplicated scenes
+                if (allScenesDuplicated.Count > 1)
+                {
+                    for (int i = 1; i < allScenesDuplicated.Count; i++)
+                    {
+                        if (allScenesDuplicated[i].IsValid())
+                        {
+                            yield return SceneManager.UnloadSceneAsync(allScenesDuplicated[i]);
+                        }
                     }
                 }
             }

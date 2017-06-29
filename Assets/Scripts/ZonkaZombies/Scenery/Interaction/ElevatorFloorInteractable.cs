@@ -28,7 +28,7 @@ namespace ZonkaZombies.Scenery.Interaction
         public override void OnBegin(IInteractor interactor)
         {
             //if all players are inside the elevator and all enemies were killed
-            if (Count == EntityManager.Instance.Players.Count && EntityManager.Instance.Enemies.Count <= 0 && !_alreadyInteracted)
+            if (Count == EntityManager.Instance.Players.Count && !_alreadyInteracted)
             {
                 _alreadyInteracted = true;
                 SceneController.Instance.FadeAndLoadScene(GameScenes.DIALOGUE_SCIENTIST);

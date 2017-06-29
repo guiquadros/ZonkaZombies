@@ -210,17 +210,18 @@ MonoBehaviour:
   LetterInterval: 0.05
   EndLineWait: 0
   FullText:
-  - Zonka City, July 6, 2017
+  - 'The scientist was able to make a vaccine with the candies and, '
+  - together with the police officers, escaped from the Zonka City.
   - 
-  - The great chocolate company, Zonka, created a formula for an
-  - 'incredible product: The New Zonka Chocolate.'
+  - 'The government sent a missile to the city to avoid the spread '
+  - of the contamination.
   - 
-  - Instead of make people fat, this chocolate makes people thin. It
-  - was an instant success.
+  - 'The Zonka Company owners, who escaped from the outbreak '
+  - 'before the contamination spread, received a 90 years penalty '
+  - in jail.
   - 
-  - After 1 month being a sales champion, the consumers started not
-  - 'to feel well... '
-  - 
+  - 'The scientist, who made the formula of the chocolate, is gone '
+  - and his presence is still unknown.
   alternateCursor: 1
   runOnStart: 1
   _printerAudioSource: {fileID: 949588944}
@@ -489,11 +490,16 @@ Prefab:
     - target: {fileID: 114482308573398660, guid: 462b957ed0c582a48b1e6c37d61eaf2e,
         type: 2}
       propertyPath: _sceneToLoad
-      value: Intro2
+      value: EndGame2
       objectReference: {fileID: 0}
     - target: {fileID: 114482308573398660, guid: 462b957ed0c582a48b1e6c37d61eaf2e,
         type: 2}
       propertyPath: _skipNextSceneWhenPressA
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482308573398660, guid: 462b957ed0c582a48b1e6c37d61eaf2e,
+        type: 2}
+      propertyPath: _forceLoadSceneParameter
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

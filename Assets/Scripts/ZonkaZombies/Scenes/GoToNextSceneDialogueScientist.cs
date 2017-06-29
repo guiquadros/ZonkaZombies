@@ -36,7 +36,15 @@ namespace ZonkaZombies.Scenes
             if (_isReady)
             {
                 _isReady = false;
-                SceneController.Instance.FadeAndLoadScene(GameScenes.CITY);
+
+                if (!GameManager.Instance.MissionCompleted)
+                {
+                    SceneController.Instance.FadeAndLoadScene(GameScenes.CITY);
+                }
+                else
+                {
+                    SceneController.Instance.FadeAndLoadScene(GameScenes.END_GAME1);
+                }
             }
         }
     }
