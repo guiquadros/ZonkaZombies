@@ -47,7 +47,7 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA.General
 
         private void OnEnemyTriggerExit(Collider other) 
         {
-            if (other.CompareTag(TagConstants.PLAYER))
+            if (other.CompareTag(TagConstants.PLAYER) || !GenericEnemy.HasTarget)
             {
                 ChangeBehavior(EEnemyBehavior.Pursuit);
             }
