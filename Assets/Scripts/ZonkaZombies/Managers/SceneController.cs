@@ -151,13 +151,13 @@ namespace ZonkaZombies.Managers
                 //yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
                 Scene[] allScenes = SceneManager.GetAllScenes();
 
-                foreach (var allScene in allScenes)
+                foreach (var scene in allScenes)
                 {
-                    if (allScene.name != SceneConstants.PERSISTENT && allScene.name != gameScene.SceneName)
+                    if (scene.name != SceneConstants.PERSISTENT && scene.name != gameScene.SceneName)
                     {
-                        if (allScene.IsValid())
+                        if (scene.IsValid())
                         {
-                            yield return SceneManager.UnloadSceneAsync(allScene.name);
+                            yield return SceneManager.UnloadSceneAsync(scene.name);
                         }
                     }
                 }
