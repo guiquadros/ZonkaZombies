@@ -34,7 +34,7 @@ namespace ZonkaZombies.Scenery
 
         private void SplitScreenHandler_OnCamerasInitialized(SplitScreenCamerasInitializedMessage splitScreenCamerasInitializedMessage)
         {
-            cameras.Add(splitScreenCamerasInitializedMessage.CameraClone.transform);
+            cameras.AddRange(splitScreenCamerasInitializedMessage.CameraTransforms);
         }
 
         private void OnPlayerMessageCallback(OnPlayerSpawnMessage msg)

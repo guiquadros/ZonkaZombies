@@ -255,7 +255,6 @@ namespace ZonkaZombies.Multiplayer
             _secondaryCamera.transform.parent = transform;
             SetCameraPos(_primaryCamera, _centralPosition);
             DisableSplitscreen();
-            MessageRouter.SendMessage(new SplitScreenCamerasInitializedMessage() {CameraClone = _secondaryCamera});
         }
         
         /// <summary>
@@ -307,6 +306,10 @@ namespace ZonkaZombies.Multiplayer
         private void OnAfterSceneLoad()
         {
             _primaryCamera.gameObject.SetActive(true);
+            MessageRouter.SendMessage(new SplitScreenCamerasInitializedMessage()
+            {
+                CameraTransforms = new [] { _primaryCamera.transform, _secondaryCamera.transform }
+            });
         }
 
         private void EnableSplitscreen()

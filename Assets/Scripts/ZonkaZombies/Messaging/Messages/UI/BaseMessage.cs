@@ -71,7 +71,7 @@ namespace ZonkaZombies.Messaging.Messages.UI
 
     public struct SplitScreenCamerasInitializedMessage
     {
-        public Camera CameraClone { get; set; }
+        public Transform[] CameraTransforms { get; set; }
     }
 
 #endregion
