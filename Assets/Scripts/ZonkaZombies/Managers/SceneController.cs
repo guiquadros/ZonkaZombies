@@ -45,7 +45,7 @@ namespace ZonkaZombies.Managers
 
         private IEnumerator Start ()
         {
-            _currentScene = GameScenes.GameScenesOrdered.First();
+            _currentScene = GameScenes.DIALOGUE_SCIENTIST;//GameScenesOrdered.First();
 
             // Set the initial alpha to start off with a black screen.
             faderCanvasGroup.alpha = 1f;
