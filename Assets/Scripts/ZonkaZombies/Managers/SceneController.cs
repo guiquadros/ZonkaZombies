@@ -51,7 +51,7 @@ namespace ZonkaZombies.Managers
             faderCanvasGroup.alpha = 1f;
 
             // Start the first scene loading and wait for it to finish.
-            yield return StartCoroutine (LoadSceneAndSetActive (_currentScene));
+            yield return LoadSceneAndSetActive (_currentScene);
 
             // Once the scene is finished loading, start fading in.
             StartCoroutine (Fade (0f));
@@ -113,7 +113,7 @@ namespace ZonkaZombies.Managers
         private IEnumerator FadeAndSwitchScenes (GameSceneType gameScene)
         {
             // Start fading to black and wait for it to finish before continuing.
-            yield return StartCoroutine (Fade (1f));
+            yield return Fade (1f);
 
             // If this event has any subscribers, call it.
             if (BeforeSceneUnload != null)
@@ -127,7 +127,7 @@ namespace ZonkaZombies.Managers
             yield return LoadSceneAndSetActive (gameScene);
             
             // Start fading back in and wait for it to finish before exiting the function.
-            yield return StartCoroutine (Fade (0f));
+            yield return Fade (0f);
         }
 
         private IEnumerator LoadSceneAndSetActive (GameSceneType gameScene)
