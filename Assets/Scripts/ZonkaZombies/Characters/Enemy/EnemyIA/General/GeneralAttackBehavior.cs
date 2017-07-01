@@ -28,6 +28,11 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA.General
         
         private void Update()
         {
+            if (!GenericEnemy.HasTarget)
+            {
+                ChangeBehavior(EEnemyBehavior.Pursuit);
+            }
+
             _time += Time.deltaTime;
 
             if (_time >= _timeBetweenAttacks)
@@ -47,7 +52,7 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA.General
 
         private void OnEnemyTriggerExit(Collider other) 
         {
-            if (other.CompareTag(TagConstants.PLAYER) || !GenericEnemy.HasTarget)
+            if (other.CompareTag(TagConstants.PLAYER))
             {
                 ChangeBehavior(EEnemyBehavior.Pursuit);
             }
