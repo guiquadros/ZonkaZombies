@@ -279,18 +279,20 @@ namespace ZonkaZombies.Characters.Player.Behaviors
             
             //rotation
             //TODO Review this fucked code, later! We cannot negate the result of the Stick values!
-            Vector3 rotationDirection = Camera.main.transform.right * -_inputReader.RightAnalogStickHorizontal() +
-                        Camera.main.transform.forward * -_inputReader.RightAnalogStickVertical();
+            Vector3 rotationDirection = Camera.main.transform.right   * -_inputReader.RightAnalogStickHorizontal() +
+                                        Camera.main.transform.forward * -_inputReader.RightAnalogStickVertical();
 
             rotationDirection.y = 0;
 
             _isRotating = false;
 
-            if (Mathf.Abs(rotationDirection.x) >= .2f || Mathf.Abs(rotationDirection.z) >= .2f)
+            float rotationX = Mathf.Abs(rotationDirection.x);
+            float rotationZ = Mathf.Abs(rotationDirection.z);
+
+            if (rotationX >= .2f || rotationZ >= .2f)
             {
                 _isRotating = true;
                 _endRotation = Quaternion.LookRotation(rotationDirection);
-
                 if (!IsMoving)
                 {
                     Animator.SetFloat(PlayerAnimatorParameters.MOVEMENT_DIRECTION, 0.5f);
