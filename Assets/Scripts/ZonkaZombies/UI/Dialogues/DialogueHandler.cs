@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 using ZonkaZombies.Managers;
 using ZonkaZombies.UI.Data;
@@ -25,7 +26,7 @@ namespace ZonkaZombies.UI.Dialogues
         {
             if (_initializeDialogueOnStart)
             {
-                StartDialogue();
+                StartDialogue(isPlayer2Dialogue: EntityManager.Instance.Players.Count == 1 && !EntityManager.Instance.Players.Single().IsFirstPlayer);
             }
         }
 
