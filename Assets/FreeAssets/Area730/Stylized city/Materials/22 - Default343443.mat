@@ -22,7 +22,7 @@ Material:
         m_Scale: {x: 3, y: 2.5}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _MoveSpeedU: 0.5
-    - _MoveSpeedV: 0.5
+    - _MoveSpeedU: 2
+    - _MoveSpeedV: 2
     m_Colors:
-    - _Color: {r: 0.227451, g: 0.7686275, b: 0.6862745, a: 0.53}
+    - _Color: {r: 0.18490487, g: 0.66176474, b: 0.58919907, a: 0.053}
