@@ -304,27 +304,6 @@ namespace ZonkaZombies.Multiplayer
                                     (maskTranform.right * _splitscreenMask.transform.lossyScale.x * 0.5f);
         }
 
-        private void OnDrawGizmos()
-        {
-            if (_primaryCamera && _firstPlayer)
-            {
-                Gizmos.color = Color.red;
-                Gizmos.DrawLine(_primaryCamera.transform.position, _firstPlayer.transform.position);
-            }
-            if (_secondaryCamera && _secondPlayer)
-            {
-                Gizmos.color = Color.yellow;
-                Gizmos.DrawLine(_secondaryCamera.transform.position, _secondPlayer.transform.position);
-            }
-
-            if (MainPlayerTransform != null)
-            {
-                Vector3 gizmoPos = GetCentralPosition();
-                Gizmos.color = Color.blue;
-                Gizmos.DrawSphere(gizmoPos, 2);
-            }
-        }
-
         private void OnAfterSceneLoad()
         {
             _primaryCamera.gameObject.SetActive(true);

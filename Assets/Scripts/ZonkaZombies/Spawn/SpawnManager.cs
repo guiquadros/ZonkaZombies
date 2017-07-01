@@ -27,12 +27,14 @@ namespace ZonkaZombies.Spawn
 
         private void Update()
         {
+#if !DISABLE_ENEMY_SPAWN
             _time += Time.deltaTime;
 
             if (_time > _spawnDataZombies.AllSpawnDelays.Max())
             {
                 _time = 0f;
             }
+#endif
         }
 
         private void SpawnEnemiesInRandomSpawnPoints()
