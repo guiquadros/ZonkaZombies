@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Name: PoliceOfficer4
   m_EditorClassIdentifier: 
   MugshotImage: {fileID: 21300000, guid: 969ca4d81959b4441ab9373850b4c71e, type: 3}
+  AlternativeMugshotImage: {fileID: 21300000, guid: 971b53e640d22cc4da18a66da51f5a90,
+    type: 3}
   DialogueText:
   - The one that make people thin instead of fat?
+  IsPlayerDialogue: 1

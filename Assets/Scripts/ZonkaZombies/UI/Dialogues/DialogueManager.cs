@@ -30,18 +30,21 @@ namespace ZonkaZombies.UI.Dialogues
         private bool _dialogueStarted = false;
         private bool _nextSentence;
         private Data.Dialogue _dialogue;
+        private bool _isPlayer2Dialogue = false;
 
         public event Action<Data.Dialogue, bool> DialogueFinished;
         public event Action<Data.Dialogue, Transform, bool> DialogueStarted;
 
-        public void Initialize(Data.Dialogue dialogue, bool waitStartDialogue = false, Transform interactableTransform = null, bool freezePlayer = true)
+        public void Initialize(Data.Dialogue dialogue, bool waitStartDialogue = false, Transform interactableTransform = null, bool freezePlayer = true, bool isPlayer2Dialogue = false)
         {
             if (_dialogueStarted)
             {
                 Debug.Log("A dialog is already in place. This dialog will not be initialized.");
                 return;
             }
- 
+
+            _isPlayer2Dialogue = isPlayer2Dialogue;
+
             _dialogue = dialogue;
             _waitTimeStartDialogue = waitStartDialogue ? _waitTimeStartDialogue : 0f;
 
@@ -124,8 +127,10 @@ namespace ZonkaZombies.UI.Dialogues
 
         private void SetDialogueTextAndImage(DialogueDetails[] dialogueDetailsListOrdered)
         {
-            _mugshot.sprite = dialogueDetailsListOrdered[_currentDiallogDetailsIndex].MugshotImage;
-            _text.text = dialogueDetailsListOrdered[_currentDiallogDetailsIndex].DialogueText[_currentDiallogTextIndex];
+            DialogueDetails dialogueDetails = dialogueDetailsListOrdered[_currentDiallogDetailsIndex];
+            
+            _mugshot.sprite = _isPlayer2Dialogue && dialogueDetails.IsPlayerDialogue ? dialogueDetails.AlternativeMugshotImage : dialogueDetails.MugshotImage;
+            _text.text = dialogueDetails.DialogueText[_currentDiallogTextIndex];
         }
 
         private void VerifyInputForNextSentence()

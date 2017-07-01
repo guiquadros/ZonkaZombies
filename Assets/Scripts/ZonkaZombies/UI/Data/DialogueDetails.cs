@@ -7,6 +7,8 @@ namespace ZonkaZombies.UI.Data
     public class DialogueDetails : ScriptableObject
     {
         public Sprite MugshotImage;
+        public Sprite AlternativeMugshotImage;
         public string[] DialogueText;
+        public bool IsPlayerDialogue = false;
     }
 }

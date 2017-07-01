@@ -2,6 +2,8 @@
 using GlowingObjects.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using ZonkaZombies.Characters;
+using ZonkaZombies.Characters.Player.Behaviors;
 using ZonkaZombies.Managers;
 using ZonkaZombies.UI;
 using ZonkaZombies.UI.Dialogues;
@@ -46,8 +48,17 @@ namespace ZonkaZombies.Scenery.Interaction
                 return;
             }
 
+            Player player = interactor.GetCharacter() as Player;
+
+            bool isPlayer2Dialogue = false;
+
+            if (player != null)
+            {
+                isPlayer2Dialogue = !player.IsFirstPlayer;
+            }
+
             _alreadyInteracted = true;
-            _dialogueHandler.StartDialogue(transform);
+            _dialogueHandler.StartDialogue(transform, isPlayer2Dialogue);
         }
 
         public override void OnFinish(IInteractor interactor)

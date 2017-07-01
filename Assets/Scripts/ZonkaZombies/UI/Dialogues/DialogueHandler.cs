@@ -39,14 +39,14 @@ namespace ZonkaZombies.UI.Dialogues
             DialogueManager.Instance.DialogueFinished -= OnDialogueFinished;
         }
 
-        public void StartDialogue(Transform interactableTransform = null)
+        public void StartDialogue(Transform interactableTransform = null, bool isPlayer2Dialogue = false)
         {
             if (DialogueStarted != null)
             {
                 DialogueStarted();
             }
             
-            DialogueManager.Instance.Initialize(_dialogue, _initializeDialogueOnStart, interactableTransform);
+            DialogueManager.Instance.Initialize(_dialogue, _initializeDialogueOnStart, interactableTransform, isPlayer2Dialogue: isPlayer2Dialogue);
         }
 
         private void OnDialogueFinished(Dialogue dialogue, bool freezePlayer)

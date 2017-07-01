@@ -197,6 +197,26 @@ namespace ZonkaZombies.Characters.Player.Behaviors
 
         protected virtual void Update()
         {
+#if UNITY_EDITOR || CHEAT_ENABLED
+            if (
+                (UnityEngine.Input.GetKey(KeyCode.RightControl) || UnityEngine.Input.GetKey(KeyCode.LeftControl))
+                && (UnityEngine.Input.GetKey(KeyCode.LeftShift) || UnityEngine.Input.GetKey(KeyCode.RightShift))
+                && UnityEngine.Input.GetKey(KeyCode.F2)
+            )
+            {
+                this._doNotReceiveDamage = true;
+            }
+
+            if (
+                (UnityEngine.Input.GetKey(KeyCode.RightControl) || UnityEngine.Input.GetKey(KeyCode.LeftControl))
+                && (UnityEngine.Input.GetKey(KeyCode.LeftShift) || UnityEngine.Input.GetKey(KeyCode.RightShift))
+                && UnityEngine.Input.GetKey(KeyCode.F3)
+            )
+            {
+                this._doNotReceiveDamage = false;
+            }
+#endif
+
             if (_frezeePlayer) return;
 
             HandleMovement();
