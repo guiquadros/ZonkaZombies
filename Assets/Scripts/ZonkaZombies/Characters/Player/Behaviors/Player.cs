@@ -9,7 +9,6 @@ using ZonkaZombies.Util;
 using ZonkaZombies.Characters.Player.Interaction;
 using ZonkaZombies.Messaging;
 using ZonkaZombies.Messaging.Messages.UI;
-using ZonkaZombies.UI;
 using ZonkaZombies.UI.Data;
 using ZonkaZombies.UI.Dialogues;
 

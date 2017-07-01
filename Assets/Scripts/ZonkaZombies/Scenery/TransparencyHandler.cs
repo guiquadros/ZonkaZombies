@@ -58,11 +58,16 @@ namespace ZonkaZombies.Scenery
             oldCollisions = newCollisions;
             newCollisions = new List<TransparentSceneObject>();
 
-            foreach (var targetCamera in cameras)
+            for (var i = 0; i < cameras.Count; i++)
             {
-                foreach (Transform player in players)
+                var targetCamera = cameras[i];
+                for (var j = 0; j < players.Count; j++)
                 {
-                    if (player == null || player.ToString() == "null") continue;
+                    Transform player = players[j];
+                    if (player == null || player.ToString() == "null")
+                    {
+                        continue;
+                    }
 
                     //Get the new collisions
                     RaycastHit[] collisions = Physics.RaycastAll(
@@ -89,13 +94,15 @@ namespace ZonkaZombies.Scenery
             }
 
             //Make remaining objects on the old list opaque
-            foreach (TransparentSceneObject obj in oldCollisions)
+            for (var i = 0; i < oldCollisions.Count; i++)
             {
-                foreach (Renderer render in obj.objectRenderers)
+                TransparentSceneObject obj = oldCollisions[i];
+                for (var j = 0; j < obj.objectRenderers.Count; j++)
                 {
+                    Renderer render = obj.objectRenderers[j];
                     render.material.SetFloat("_Mode", 0f);
-                    render.material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-                    render.material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+                    render.material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.One);
+                    render.material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.Zero);
                     render.material.SetInt("_ZWrite", 1);
                     render.material.DisableKeyword("_ALPHATEST_ON");
                     render.material.DisableKeyword("_ALPHABLEND_ON");
@@ -106,19 +113,22 @@ namespace ZonkaZombies.Scenery
             }
 
             //Make objects transparent
-            foreach (TransparentSceneObject obj in newCollisions)
+            for (var i = 0; i < newCollisions.Count; i++)
             {
-                foreach (Renderer render in obj.objectRenderers)
+                TransparentSceneObject obj = newCollisions[i];
+                for (var j = 0; j < obj.objectRenderers.Count; j++)
                 {
+                    Renderer render = obj.objectRenderers[j];
                     render.material.SetFloat("_Mode", 3f);
-                    render.material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-                    render.material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                    render.material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.One);
+                    render.material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
                     render.material.SetInt("_ZWrite", 0);
                     render.material.DisableKeyword("_ALPHATEST_ON");
                     render.material.DisableKeyword("_ALPHABLEND_ON");
                     render.material.EnableKeyword("_ALPHAPREMULTIPLY_ON");
                     render.material.renderQueue = 3000;
-                    render.material.color = new Color(render.material.color.r, render.material.color.g, render.material.color.b, 0.05f);
+                    render.material.color = new Color(render.material.color.r, render.material.color.g,
+                        render.material.color.b, 0.05f);
                 }
             }
         }

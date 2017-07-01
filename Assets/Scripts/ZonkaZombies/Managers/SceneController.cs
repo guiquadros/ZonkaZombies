@@ -3,7 +3,6 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using ZonkaZombies.UI;
 using ZonkaZombies.Util;
 
@@ -37,16 +36,12 @@ namespace ZonkaZombies.Managers
         public float fadeDuration = 0f;                 // How long it should take to fade to and from black.
 
         private GameState _currentGameState = GameState.Playing;
-        private bool isFading;                          // Flag used to determine if the Image is currently fading to or from black.
+        private bool _isFading;                          // Flag used to determine if the Image is currently fading to or from black.
 
         [SerializeField]
         public int CurrentSceneIndex = 0;             // The index of the current scene.
 
         private GameSceneType _currentScene;
-
-        [SerializeField]
-        private GameSceneType _previousScene;
-        
 
         private IEnumerator Start ()
         {
@@ -62,17 +57,17 @@ namespace ZonkaZombies.Managers
             StartCoroutine (Fade (0f));
         }
 
-        private int tryReload = 0;
+        private int _tryReload = 0;
 
         public void LoadNextScene()
         {
             if (_currentGameState == GameState.Loading)
             {
-                tryReload++;
+                _tryReload++;
 
-                if (tryReload == 2)
+                if (_tryReload == 2)
                 {
-                    tryReload = 0;
+                    _tryReload = 0;
 
                     Debug.Log("Trying to reload the scene.");
                     StopAllCoroutines();
@@ -95,7 +90,6 @@ namespace ZonkaZombies.Managers
                 CurrentSceneIndex = 0;
             }
 
-            _previousScene = _currentScene;
             _currentScene = scenes[CurrentSceneIndex];
 
             Debug.LogFormat("LoadNextScene() - end: _currentSceneName = {0}", _currentScene);
@@ -123,17 +117,18 @@ namespace ZonkaZombies.Managers
 
             // If this event has any subscribers, call it.
             if (BeforeSceneUnload != null)
-                BeforeSceneUnload ();
+            {
+                BeforeSceneUnload();
+            }
 
             Debug.Log("Current active scene: " + SceneManager.GetActiveScene().name);
 
             // Start loading the given scene and wait for it to finish.
-            yield return StartCoroutine (LoadSceneAndSetActive (gameScene));
+            yield return LoadSceneAndSetActive (gameScene);
             
             // Start fading back in and wait for it to finish before exiting the function.
             yield return StartCoroutine (Fade (0f));
         }
-
 
         private IEnumerator LoadSceneAndSetActive (GameSceneType gameScene)
         {
@@ -154,15 +149,17 @@ namespace ZonkaZombies.Managers
             {
                 // Unload the current active scene.
                 //yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-                var allScenes = SceneManager.GetAllScenes();
+                Scene[] allScenes = new Scene[SceneManager.sceneCount];
 
-                foreach (var scene in allScenes)
+                for (int i = 0; i < SceneManager.sceneCount; i++)
                 {
-                    if (scene.name != SceneConstants.PERSISTENT && scene.name != gameScene.SceneName)
+                    allScenes[i] = SceneManager.GetSceneAt(i);
+
+                    if (allScenes[i].name != SceneConstants.PERSISTENT && allScenes[i].name != gameScene.SceneName)
                     {
-                        if (scene.IsValid())
+                        if (allScenes[i].IsValid())
                         {
-                            yield return SceneManager.UnloadSceneAsync(scene.name);
+                            yield return SceneManager.UnloadSceneAsync(allScenes[i].name);
                         }
                     }
                 }
@@ -203,7 +200,7 @@ namespace ZonkaZombies.Managers
         private IEnumerator Fade (float finalAlpha)
         {
             // Set the fading flag to true so the FadeAndSwitchScenes coroutine won't be called again.
-            isFading = true;
+            _isFading = true;
 
             // Make sure the CanvasGroup blocks raycasts into the scene so no more input can be accepted.
             faderCanvasGroup.blocksRaycasts = true;
@@ -223,7 +220,7 @@ namespace ZonkaZombies.Managers
             }
 
             // Set the flag to false since the fade has finished.
-            isFading = false;
+            _isFading = false;
 
             // Stop the CanvasGroup from blocking raycasts so input is no longer ignored.
             faderCanvasGroup.blocksRaycasts = false;

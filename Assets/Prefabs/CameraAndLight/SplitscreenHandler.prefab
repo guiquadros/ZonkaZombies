@@ -83,8 +83,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1172214515173224}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.2276068, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.2364597, y: -13.592046, z: 14.95002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4689998745436918}
@@ -232,5 +232,4 @@ MonoBehaviour:
   _cameraDistance: 30
   _triggerDistance: 9
   _audioListener: {fileID: 81736197183695630}
-  _player1: {fileID: 0}
-  _player2: {fileID: 0}
+  _secondaryCamera: {fileID: 0}
