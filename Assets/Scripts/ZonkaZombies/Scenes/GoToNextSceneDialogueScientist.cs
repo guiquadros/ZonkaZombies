@@ -43,6 +43,7 @@ namespace ZonkaZombies.Scenes
                 }
                 else
                 {
+                    GameManager.Instance.MissionCompleted = false;
                     SceneController.Instance.FadeAndLoadScene(GameScenes.END_GAME1);
                 }
             }
