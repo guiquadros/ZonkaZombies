@@ -70,7 +70,7 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA
             get { return _enemyDetails ?? new EnemyDetails(); }
         }
         
-        public bool HasTarget { get { return _characterTarget != null; } }
+        public bool HasTarget { get { return _characterTarget != null && !_characterTarget.Equals(null); } }
 
         public bool UseFieldOfView
         {
