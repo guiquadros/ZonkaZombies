@@ -11,6 +11,7 @@ using ZonkaZombies.Messaging;
 using ZonkaZombies.Messaging.Messages.UI;
 using ZonkaZombies.UI.Data;
 using ZonkaZombies.UI.Dialogues;
+using ZonkaZombies.UI.PauseMenu;
 
 namespace ZonkaZombies.Characters.Player.Behaviors
 {
@@ -197,6 +198,11 @@ namespace ZonkaZombies.Characters.Player.Behaviors
 
         protected virtual void Update()
         {
+            if (_inputReader.StartDown() || UnityEngine.Input.GetKeyDown(KeyCode.Space))
+            {
+                PauseMenuController.Instance.Pause();
+            }
+
 #if UNITY_EDITOR || CHEAT_ENABLED
             if (
                 (UnityEngine.Input.GetKey(KeyCode.RightControl) || UnityEngine.Input.GetKey(KeyCode.LeftControl))
