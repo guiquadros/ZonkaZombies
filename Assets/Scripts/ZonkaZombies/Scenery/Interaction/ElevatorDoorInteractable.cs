@@ -58,7 +58,7 @@ namespace ZonkaZombies.Scenery.Interaction
             if (_time <= 2f && !_animCalled)
             {
                 _animCalled = true;
-                _elevatorAnimator.SetTrigger(SharedAnimatorParameters.CALL_ELEVATOR_ID);
+                _elevatorAnimator.SetTrigger(ElevatorAnimatorParameters.CALL_ELEVATOR_ID);
             }
 
             if (_elevatorCalled && _time > 0f)

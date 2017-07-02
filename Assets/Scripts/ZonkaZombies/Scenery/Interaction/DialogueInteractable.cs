@@ -15,6 +15,9 @@ namespace ZonkaZombies.Scenery.Interaction
     public class DialogueInteractable : InteractableBase
     {
         [SerializeField]
+        private Animator _animator;
+
+        [SerializeField]
         private GameObject _exclamationMarkGameObject;
 
         [SerializeField]
@@ -59,6 +62,8 @@ namespace ZonkaZombies.Scenery.Interaction
 
             _alreadyInteracted = true;
             _dialogueHandler.StartDialogue(transform, isPlayer2Dialogue);
+
+            _animator.SetTrigger(DialogueAnimatorParameters.TALK);
         }
 
         public override void OnFinish(IInteractor interactor)
@@ -69,6 +74,7 @@ namespace ZonkaZombies.Scenery.Interaction
         private void DialogueHandler_OnDialogueFinished()
         {
             ExclamationMark(true);
+            _animator.SetTrigger(DialogueAnimatorParameters.IDLE);
         }
 
         private void DialogueHandler_OnDialogueStarted()

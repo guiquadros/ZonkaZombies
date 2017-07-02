@@ -43,7 +43,7 @@ namespace ZonkaZombies.Util
         public const string END_GAME_2_SCENE_NAME = "EndGame2";
     }
 
-    public static class SharedAnimatorParameters
+    public static class ElevatorAnimatorParameters
     {
         public static readonly int CALL_ELEVATOR_ID = Animator.StringToHash("CallElevator");
         public static readonly int HUD_DAMAGE_ID = Animator.StringToHash("HudDamage");
@@ -67,6 +67,12 @@ namespace ZonkaZombies.Util
         public static readonly int TAKE_DAMAGE = Animator.StringToHash("TakeDamage");
         public static readonly int IS_DEAD = Animator.StringToHash("IsDead");
         public static readonly int DEATH_SPEED = Animator.StringToHash("DeathSpeed");
+    }
+
+    public static class DialogueAnimatorParameters
+    {
+        public static readonly int IDLE = Animator.StringToHash("Idle");
+        public static readonly int TALK = Animator.StringToHash("Talk");
     }
 
     public static class ScriptableObjectsConstants
