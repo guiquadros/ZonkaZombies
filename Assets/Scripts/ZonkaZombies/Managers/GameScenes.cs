@@ -24,7 +24,7 @@ namespace ZonkaZombies.Managers
 
         public static GameSceneType HALL_FIRST_FLOOR
         {
-            get { return new GameSceneType(SceneConstants.HALL_FIRST_FLOOR_NAME, showPressStart: true); }
+            get { return new GameSceneType(SceneConstants.HALL_FIRST_FLOOR_NAME, showPressStart: true, showHallFirstFloorMissions: true); }
         }
 
         public static GameSceneType DIALOGUE_SCIENTIST
@@ -49,7 +49,7 @@ namespace ZonkaZombies.Managers
 
         public static GameSceneType CITY
         {
-            get { return new GameSceneType(SceneConstants.CITY_NAME, showPlayerMissionCount: true); }
+            get { return new GameSceneType(SceneConstants.CITY_NAME, showChocolateMissionCount: true); }
         }
     }
 }

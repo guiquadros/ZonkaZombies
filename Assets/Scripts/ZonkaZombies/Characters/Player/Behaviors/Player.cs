@@ -212,7 +212,8 @@ namespace ZonkaZombies.Characters.Player.Behaviors
                 && UnityEngine.Input.GetKey(KeyCode.F2)
             )
             {
-                this._doNotReceiveDamage = true;
+                Debug.Log("_doNotReceiveDamage = true");
+                _doNotReceiveDamage = true;
             }
 
             if (
@@ -221,7 +222,8 @@ namespace ZonkaZombies.Characters.Player.Behaviors
                 && UnityEngine.Input.GetKey(KeyCode.F3)
             )
             {
-                this._doNotReceiveDamage = false;
+                Debug.Log("_doNotReceiveDamage = false");
+                _doNotReceiveDamage = false;
             }
 #endif
 

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ZonkaZombies.Managers;
 using ZonkaZombies.Spawn;
+using ZonkaZombies.UI;
 using ZonkaZombies.Util;
 using ZonkaZombies.Util.Commands;
 
@@ -68,12 +69,15 @@ namespace ZonkaZombies.Scenery.Interaction
 
             string timeStr = _time.ToString("##");
             _timeTextMesh.text = string.IsNullOrEmpty(timeStr) ? "0" : timeStr;
+
+            GameUIManager.Instance.UpdateElevatorNumber(_timeTextMesh.text);
         }
 
         public override void OnBegin(IInteractor interactor)
         {
             if (!_elevatorCalled)
             {
+                GameUIManager.Instance.MarkPressElevatorButtonTextAsCompleted();
                 _elevatorCalled = true;
                 _commands.ForEach(c => c.Execute());
                 AudioManager.Instance.Play(_buttonClickClip);

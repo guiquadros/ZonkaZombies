@@ -24,6 +24,18 @@ namespace ZonkaZombies.UI
         [SerializeField]
         private Text _playerMissionCountText;
 
+        [SerializeField]
+        private Text _pressElevatorButtonText;
+
+        [SerializeField]
+        private Text _pressElevatorButtonShadow;
+
+        [SerializeField]
+        private Text _elevatorCountText;
+
+        [SerializeField]
+        private Text _elevatorCountShadow;
+
         public void UpdatePlayerMissionCountText(int count)
         {
             _playerMissionCountText.text = count.ToString();
@@ -77,6 +89,7 @@ namespace ZonkaZombies.UI
             if (gameSceneType.SceneName == GameScenes.GameScenesOrdered.First().SceneName && EntityManager.Instance.Players.Count <= 1 && _playerHealthBar.Length >= 2)
             {
                 _playerHealthBar[1].gameObject.SetActive(false);
+                ResetHallMissions();
             }
         }
 
@@ -95,5 +108,47 @@ namespace ZonkaZombies.UI
         }
 
         #endregion
+
+        public void UpdateElevatorNumber(string elevatorCount)
+        {
+            _elevatorCountText.text = elevatorCount;
+            _elevatorCountShadow.text = elevatorCount;
+        }
+
+        public void MarkPressElevatorButtonTextAsCompleted()
+        {
+            //ChangeHallMissionsTextTransparency(true);
+            _pressElevatorButtonText.gameObject.SetActive(false);
+            _pressElevatorButtonShadow.gameObject.SetActive(false);
+
+            _elevatorCountText.gameObject.SetActive(true);
+            _elevatorCountShadow.gameObject.SetActive(true);
+        }
+
+        public void ResetHallMissions()
+        {
+            _elevatorCountText.text = "60";
+            _elevatorCountShadow.text = "60";
+
+            //ChangeHallMissionsTextTransparency(false);
+            _pressElevatorButtonText.gameObject.SetActive(true);
+            _pressElevatorButtonShadow.gameObject.SetActive(true);
+            
+            _elevatorCountText.gameObject.SetActive(false);
+            _elevatorCountShadow.gameObject.SetActive(false);
+        }
+
+        private void ChangeHallMissionsTextTransparency(bool transparent)
+        {
+            float alpha = transparent ? 65f : 225f;
+
+            var colorText = _pressElevatorButtonText.color;
+            colorText.a = alpha;
+            _pressElevatorButtonText.color = colorText;
+
+            var colorShadow = _pressElevatorButtonShadow.color;
+            colorShadow.a = alpha;
+            _pressElevatorButtonShadow.color = colorShadow;
+        }
     }
 }
