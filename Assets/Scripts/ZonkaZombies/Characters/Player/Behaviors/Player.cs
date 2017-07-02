@@ -203,6 +203,8 @@ namespace ZonkaZombies.Characters.Player.Behaviors
                 PauseMenuController.Instance.Pause();
             }
 
+            if (Time.timeScale <= 0) return;
+
 #if UNITY_EDITOR || CHEAT_ENABLED
             if (
                 (UnityEngine.Input.GetKey(KeyCode.RightControl) || UnityEngine.Input.GetKey(KeyCode.LeftControl))
