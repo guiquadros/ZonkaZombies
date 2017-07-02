@@ -13,6 +13,8 @@ namespace ZonkaZombies.Scenery.Interaction
 
         private Renderer _renderer;
 
+        private int _playersBehindThePillar = 0;
+
         private void Awake()
         {
             _renderer = GetComponent<Renderer>();
@@ -23,6 +25,7 @@ namespace ZonkaZombies.Scenery.Interaction
         {
             if (other.CompareTag(TagConstants.PLAYER))
             {
+                _playersBehindThePillar++;
                 _renderer.material = _transparentMaterial;
             }
         }
@@ -31,7 +34,12 @@ namespace ZonkaZombies.Scenery.Interaction
         {
             if (other.CompareTag(TagConstants.PLAYER))
             {
-                _renderer.material = _originalMaterial;
+                _playersBehindThePillar--;
+                
+                if (_playersBehindThePillar <= 0)
+                {
+                    _renderer.material = _originalMaterial;
+                }
             }
         }
     }
