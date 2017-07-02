@@ -63,7 +63,10 @@ namespace ZonkaZombies.Scenery.Interaction
             _alreadyInteracted = true;
             _dialogueHandler.StartDialogue(transform, isPlayer2Dialogue);
 
-            _animator.SetTrigger(DialogueAnimatorParameters.TALK);
+            if (!GameManager.Instance.MissionCompleted)
+            {
+                _animator.SetTrigger(DialogueAnimatorParameters.TALK);
+            }
         }
 
         public override void OnFinish(IInteractor interactor)
