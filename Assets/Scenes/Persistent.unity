@@ -1151,6 +1151,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114475089706537114, guid: 806e442f4f6907141adb7e6b05e6d5df,
+        type: 2}
+      propertyPath: _gameUiManager
+      value: 
+      objectReference: {fileID: 2140562206}
     - target: {fileID: 114236625363506828, guid: 806e442f4f6907141adb7e6b05e6d5df,
         type: 2}
       propertyPath: faderCanvasGroup
@@ -1169,3 +1174,9 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 806e442f4f6907141adb7e6b05e6d5df, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2140562206 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114457360304227938, guid: 0d90878a2156224408ce8f20041f3e67,
+    type: 2}
+  m_PrefabInternal: {fileID: 1741678489}
+  m_Script: {fileID: 11500000, guid: 0c6b5e19115ac674f92da48116d4b98f, type: 3}

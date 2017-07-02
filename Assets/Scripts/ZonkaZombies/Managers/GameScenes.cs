@@ -49,7 +49,7 @@ namespace ZonkaZombies.Managers
 
         public static GameSceneType CITY
         {
-            get { return new GameSceneType(SceneConstants.CITY_NAME); }
+            get { return new GameSceneType(SceneConstants.CITY_NAME, showPlayerMissionCount: true); }
         }
     }
 }

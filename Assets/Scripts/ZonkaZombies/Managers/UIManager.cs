@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Linq;
+using UnityEngine;
 using ZonkaZombies.Characters;
 using ZonkaZombies.Characters.Data.Stats;
 using ZonkaZombies.Characters.Player.Behaviors;
@@ -37,37 +39,25 @@ namespace ZonkaZombies.Managers
             MessageRouter.AddListener<OnPlayerHasBornMessage>(OnPlayerHasBornCallback);
             MessageRouter.AddListener<OnPlayerDeadMessage>(OnPlayerDeadCallback);
         }
-
+        
         private void OnDisable()
         {
             MessageRouter.RemoveListener<OnPlayerHasBornMessage>(OnPlayerHasBornCallback);
             MessageRouter.RemoveListener<OnPlayerDeadMessage>(OnPlayerDeadCallback);
         }
 
-        public void FindGameUiManager()
-        {
-            _gameUiManager = FindObjectOfType<GameUIManager>();
-        }
-
-#region CALLBACKS - MESSAGE ROUTER
+        #region CALLBACKS - MESSAGE ROUTER
 
         private void OnPlayerHasBornCallback(OnPlayerHasBornMessage message)
         {
-            if (_gameUiManager != null)
-            {
-                _gameUiManager.AddPlayerHud(message.Player);
-            }
+            _gameUiManager.AddPlayerHud(message.Player);
         }
 
         private void OnPlayerDeadCallback(OnPlayerDeadMessage message)
         {
-            if (_gameUiManager != null)
-            {
-                _gameUiManager.RemovePlayerHud(message.Player);
-                //_gameUiManager.EnableHealthBar(false, message.Player.IsFirstPlayer);
-            }
+            _gameUiManager.RemovePlayerHud(message.Player);
         }
 
-#endregion
+        #endregion
     }
 }

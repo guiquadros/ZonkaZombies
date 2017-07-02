@@ -9,6 +9,9 @@ namespace ZonkaZombies.UI
         [SerializeField]
         private Text _pressStartForPlayer2;
 
+        [SerializeField]
+        private GameObject _playerMissionCount;
+
         public void OnEnable()
         {
             _pressStartForPlayer2.gameObject.SetActive(true);
@@ -29,6 +32,7 @@ namespace ZonkaZombies.UI
         {
             gameObject.SetActive(gameScene.ShowHud);
             _pressStartForPlayer2.gameObject.SetActive(gameScene.ShowPressStart);
+            _playerMissionCount.SetActive(gameScene.ShowPlayerMissionCount);
         }
     }
 }

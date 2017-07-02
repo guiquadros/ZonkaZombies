@@ -65,12 +65,12 @@ namespace ZonkaZombies.Managers
             }
 
             _toDoMissionsCount = interactablesInScene.Count(i => i.Type == InteractableType.Chocolate);
+            GameUIManager.Instance.UpdatePlayerMissionCountText(_toDoMissionsCount);
         }
 
         private void OnAfterSceneLoad()
         {
             FindInteractablesReference();
-            UIManager.Instance.FindGameUiManager();
         }
 
 #region GAMEPLAY LOGIC - METHODS
@@ -107,7 +107,7 @@ namespace ZonkaZombies.Managers
                 switch (collectableInteractable.Type)
                 {
                     case InteractableType.Chocolate:
-                        _toDoMissionsCount--;
+                        GameUIManager.Instance.UpdatePlayerMissionCountText(--_toDoMissionsCount);
 
                         if (_toDoMissionsCount <= 0)
                         {

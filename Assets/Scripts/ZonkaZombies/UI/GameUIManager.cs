@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using ZonkaZombies.Characters.Player.Behaviors;
 using ZonkaZombies.Characters.Player.Weapon;
+using ZonkaZombies.Managers;
+using ZonkaZombies.Util;
 
 namespace ZonkaZombies.UI
 {
-    public class GameUIManager : MonoBehaviour
+    public class GameUIManager : SingletonMonoBehaviour<GameUIManager>
     {
         [Header("HealthBars"), SerializeField]
         private PlayerHealthBar[] _playerHealthBar = new PlayerHealthBar[2];
@@ -18,6 +21,24 @@ namespace ZonkaZombies.UI
         [SerializeField]
         private Text _pressStartForPlayer2;
 
+        [SerializeField]
+        private Text _playerMissionCountText;
+
+        public void UpdatePlayerMissionCountText(int count)
+        {
+            _playerMissionCountText.text = count.ToString();
+        }
+
+        private void OnEnable()
+        {
+            SceneController.Instance.OnSceneLoading += OnSceneLoading;
+        }
+
+        private void OnDisable()
+        {
+            SceneController.Instance.OnSceneLoading -= OnSceneLoading;
+        }
+        
         public void AddPlayerHud(Player player)
         {
             int index = GetPlayerIndex(player);
@@ -41,7 +62,7 @@ namespace ZonkaZombies.UI
             _playerHealthBar[index].Uninitialize(player);
         }
 
-#region PLAYER - CALLBACKS
+        #region PLAYER - CALLBACKS
 
         private void OnWeaponChangedCallback(WeaponDetails weapon, Player player)
         {
@@ -50,14 +71,22 @@ namespace ZonkaZombies.UI
             weaponIcons[iconIndex].sprite = weaponIndex < 0 ? null : weaponIconSprites[weaponIndex];
         }
 
-#endregion
+        private void OnSceneLoading(GameSceneType gameSceneType)
+        {
+            //force gameObject of second health bar to false when the first scene is loaded (new game started)
+            if (gameSceneType.SceneName == GameScenes.GameScenesOrdered.First().SceneName && EntityManager.Instance.Players.Count <= 1 && _playerHealthBar.Length >= 2)
+            {
+                _playerHealthBar[1].gameObject.SetActive(false);
+            }
+        }
 
-#region HELPERS
+        #endregion
 
-       /// <summary>
+        #region HELPERS
+
+        /// <summary>
         /// Perse from bool to an index between 0 and 1 that represent the choosen player. ZERO for player 1, and ONE for player 2.
         /// </summary>
-        /// <param name="isFirstPlayer"></param>
         /// <param name="player"></param>
         /// <returns></returns>
         private int GetPlayerIndex(Player player)
@@ -65,6 +94,6 @@ namespace ZonkaZombies.UI
             return player.IsFirstPlayer ? 0 : 1;
         }
 
-#endregion
+        #endregion
     }
 }
