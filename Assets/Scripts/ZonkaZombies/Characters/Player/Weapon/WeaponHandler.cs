@@ -18,10 +18,10 @@ namespace ZonkaZombies.Characters.Player.Weapon
         private Transform _aimStartTransform;
 
         [SerializeField]
-        private ParticleSystem _gunParticles; // Reference to the particle system.
+        private ParticleSystem[] _gunParticles; // Reference to the particle system.
 
         [SerializeField]
-        private LineRenderer _gunLine; // Reference to the line renderer.
+        private LineRenderer[] _gunLine; // Reference to the line renderer.
 
         [SerializeField]
         private Light _gunLight; // Reference to the light component.
@@ -66,7 +66,10 @@ namespace ZonkaZombies.Characters.Player.Weapon
         private void DisableEffects()
         {
             // Disable the line renderer and the light.
-            _gunLine.enabled = false;
+            for (int i = 0; i < _gunLine.Length; i++)
+            {
+                _gunLine[i].enabled = false;
+            }
             _faceLight.enabled = false;
             _gunLight.enabled = false;
         }
@@ -84,44 +87,50 @@ namespace ZonkaZombies.Characters.Player.Weapon
             // Enable the lights.
             _gunLight.enabled = true;
             _faceLight.enabled = true;
+            
+            for (int i = 0; i < _gunParticles.Length; i++)
+            {
+                // Stop the particles from playing if they were, then start the particles.
+                _gunParticles[i].Stop();
+                _gunParticles[i].Play();
 
-            // Stop the particles from playing if they were, then start the particles.
-            _gunParticles.Stop();
-            _gunParticles.Play();
-
-            // Enable the line renderer and set it's first position to be the end of the gun.
-            _gunLine.enabled = true;
-            _gunLine.SetPosition(0, _aimStartTransform.position);
-
-            // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
-            _shootRay.origin = _aimStartTransform.position;
-            _shootRay.direction = _aimStartTransform.forward;
+                // Enable the line renderer and set it's first position to be the end of the gun.
+                _gunLine[i].enabled = true;
+                _gunLine[i].SetPosition(0, _aimStartTransform.position);
+            }
 
             Debug.DrawLine(_shootRay.origin, _shootRay.origin + _shootRay.direction * _weaponDetails.Range, Color.magenta);
 
-            // Perform the raycast against gameobjects on the shootable layer and if it hits something...
-            if (Physics.Raycast(_shootRay, out _shootHit, _weaponDetails.Range, Physics.AllLayers))
+            for (int i = 0; i < _gunLine.Length; i++)
             {
-                // Try and find an EnemyHealth script on the gameobject hit.
-                GenericEnemy genericEnemy = _shootHit.collider.GetComponent<GenericEnemy>();
+                // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
+                _shootRay.origin    = _gunLine[i].transform.position;
+                _shootRay.direction = _gunLine[i].transform.forward;
 
-                // If the EnemyBehavior component exist...
-                if (genericEnemy != null)
+                // Perform the raycast against gameobjects on the shootable layer and if it hits something...
+                if (Physics.Raycast(_shootRay, out _shootHit, _weaponDetails.Range, Physics.AllLayers))
                 {
-                    // ... the enemy should take damage.
-                    //TODO get damage from current gun
-                    genericEnemy.Damage(_weaponDetails.ShotHitPoints);
+                    // Try and find an EnemyHealth script on the gameobject hit.
+                    GenericEnemy genericEnemy = _shootHit.collider.GetComponent<GenericEnemy>();
+
+                    // If the EnemyBehavior component exist...
+                    if (genericEnemy != null)
+                    {
+                        // ... the enemy should take damage.
+                        // get damage from current gun
+                        genericEnemy.Damage(_weaponDetails.ShotHitPoints);
+                    }
+
+                    // Set the second position of the line renderer to the point the raycast hit.
+                    _gunLine[i].SetPosition(1, _shootHit.point);
+                    //transform.parent.LookAt(_shootHit.point);
                 }
-                
-                // Set the second position of the line renderer to the point the raycast hit.
-                _gunLine.SetPosition(1, _shootHit.point);
-                //transform.parent.LookAt(_shootHit.point);
-            }
-            // If the raycast didn't hit anything on the shootable layer...
-            else
-            {
-                // ... set the second position of the line renderer to the fullest extent of the gun's range.
-                _gunLine.SetPosition(1, _shootRay.origin + _shootRay.direction * _weaponDetails.Range);
+                // If the raycast didn't hit anything on the shootable layer...
+                else
+                {
+                    // ... set the second position of the line renderer to the fullest extent of the gun's range.
+                    _gunLine[i].SetPosition(1, _shootRay.origin + _shootRay.direction * _weaponDetails.Range);
+                }
             }
 
             return true;

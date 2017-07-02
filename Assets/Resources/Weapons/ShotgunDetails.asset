@@ -14,7 +14,7 @@ MonoBehaviour:
   WeaponSubType: 2
   Type: 1
   HitPoints: 0
-  ShotHitPoints: 5
+  ShotHitPoints: 10
   TimeBetweenBullets: 1
-  Range: 20
+  Range: 10
   ShootAudioEffect: {fileID: 8300000, guid: c396f828b6b113848b9aaa8ce4bb8c0d, type: 3}

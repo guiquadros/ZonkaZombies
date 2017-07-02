@@ -46,8 +46,8 @@ namespace ZonkaZombies.Characters
         /// <returns>Returns true if the character is dead.</returns>
         public void Damage(int amount)
         {
-            OnDamaged();
             Health.Remove(amount);
+            OnDamaged();
         }
 
         public void Heal(int amount)
