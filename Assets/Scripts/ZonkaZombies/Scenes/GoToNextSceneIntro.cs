@@ -31,10 +31,10 @@ namespace ZonkaZombies.Scenes
                 DialogueManager.Instance.DialogueFinished += OnDialogueFinished;
             }
 
-            if (RetroPrinterScriptBasic.Instance != null)
-            {
-                RetroPrinterScriptBasic.Instance.KeyboardAnimationFinished += OnKeyboardAnimationFinished;
-            }
+            //if (RetroPrinterScriptBasic.Instance != null)
+            //{
+            //    RetroPrinterScriptBasic.Instance.KeyboardAnimationFinished += OnKeyboardAnimationFinished;
+            //}
         }
         
         private void OnDisable()
@@ -44,10 +44,10 @@ namespace ZonkaZombies.Scenes
                 DialogueManager.Instance.DialogueFinished -= OnDialogueFinished;
             }
 
-            if (RetroPrinterScriptBasic.Instance != null)
-            {
-                RetroPrinterScriptBasic.Instance.KeyboardAnimationFinished -= OnKeyboardAnimationFinished;
-            }
+            //if (RetroPrinterScriptBasic.Instance != null)
+            //{
+            //    RetroPrinterScriptBasic.Instance.KeyboardAnimationFinished -= OnKeyboardAnimationFinished;
+            //}
         }
 
         private void OnDialogueFinished(Dialogue dialogue, bool freezePlayer)
@@ -55,10 +55,10 @@ namespace ZonkaZombies.Scenes
             _isReady = true;
         }
 
-        private void OnKeyboardAnimationFinished()
-        {
-            _isReady = true;
-        }
+        //private void OnKeyboardAnimationFinished()
+        //{
+        //    _isReady = true;
+        //}
 
         private void Update()
         {
