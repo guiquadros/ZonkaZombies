@@ -1605,7 +1605,7 @@ MonoBehaviour:
   _hitPoints: 1
   _hitBoxCollider: {fileID: 135554347068104010}
   _useFieldOfView: 0
-  _minPlayerDetectDistance: 5
+  _minPlayerDetectDistance: 15
   _damagedAudioClip: {fileID: 8300000, guid: c9792b7cb9677254a8e66c5aa84bc715, type: 3}
   Animator: {fileID: 95428818043808726}
   Agent: {fileID: 195813037523809884}
