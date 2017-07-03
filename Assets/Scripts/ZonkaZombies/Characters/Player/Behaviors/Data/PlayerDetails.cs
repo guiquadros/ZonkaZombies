@@ -12,12 +12,12 @@ namespace ZonkaZombies.Characters.Player.Behaviors.Data
 
         public AudioClip[] TakeDamageClips;
 
-        public AudioClip AnyFootstepClip
-        {
-            get { return FootstepClips[Random.Range(0, FootstepClips.Length)]; }
-        }
+        //public AudioClip AnyFootstepClip
+        //{
+        //    get { return FootstepClips[Random.Range(0, FootstepClips.Length)]; }
+        //}
 
-        public AudioClip[] FootstepClips;
+        //public AudioClip[] FootstepClips;
 
         public AudioClip DyingClip;
     }
