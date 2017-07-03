@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using ZonkaZombies.Characters.Enemy;
+using ZonkaZombies.Characters.Player.Behaviors.Data;
 using ZonkaZombies.Characters.Player.Util;
 using ZonkaZombies.Characters.Player.Weapon;
 using ZonkaZombies.Input;
@@ -19,6 +20,8 @@ namespace ZonkaZombies.Characters.Player.Behaviors
     public abstract class Player : Character
     {
         public bool IsFirstPlayer { get { return InputType != InputType.Controller2; } }
+
+        public PlayerDetails PlayerDetails;
 
         [SerializeField]
         protected Animator Animator;
@@ -122,7 +125,7 @@ namespace ZonkaZombies.Characters.Player.Behaviors
 
             DontDestroyOnLoad(gameObject);
         }
-
+        
         private void Start()
         {
             SetState(CharacterStateMessage.EnableMovement, 
@@ -194,6 +197,16 @@ namespace ZonkaZombies.Characters.Player.Behaviors
             _characterRigidbody.constraints = RigidbodyConstraints.FreezeRotationZ |
                                               RigidbodyConstraints.FreezeRotationX;
             _frezeePlayer = false;
+        }
+
+        protected override void OnDamaged()
+        {
+            base.OnDamaged();
+
+            if (IsAlive)
+            {
+                AudioManager.Instance.Play(PlayerDetails.AnyTakeDamageClip);
+            }
         }
 
         protected virtual void Update()

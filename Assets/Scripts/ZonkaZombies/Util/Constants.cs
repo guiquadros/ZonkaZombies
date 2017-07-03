@@ -74,9 +74,4 @@ namespace ZonkaZombies.Util
         public static readonly int IDLE = Animator.StringToHash("Idle");
         public static readonly int TALK = Animator.StringToHash("Talk");
     }
-
-    public static class ScriptableObjectsConstants
-    {
-        public const string SPAWN_ENEMIES_ASSET_PATH = "Assets/Data/SpawnPointsZombies{0}.asset";
-    } 
 }

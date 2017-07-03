@@ -4401,6 +4401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthPoints: 20
   _hitPoints: 1
+  PlayerDetails: {fileID: 11400000, guid: 744999ae43f9da5439634e727ff333c7, type: 2}
   Animator: {fileID: 95423596850074060}
   _speed: 20
   _angularSpeed: 720

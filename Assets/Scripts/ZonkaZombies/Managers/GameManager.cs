@@ -87,6 +87,7 @@ namespace ZonkaZombies.Managers
             Player player = character as Player;
             if (player != null)
             {
+                AudioManager.Instance.Play(player.PlayerDetails.DyingClip);
                 Destroy(player.gameObject);
                 MessageRouter.SendMessage(new OnPlayerDeadMessage(player));
             }

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007154a5e7786094390730d7998a8db4, type: 3}
+  m_Name: PoliceOfficerDetails
+  m_EditorClassIdentifier: 
+  TakeDamageClips:
+  - {fileID: 8300000, guid: 2e6b0a96aec2b7b47b50eee6e25e11ca, type: 3}
+  - {fileID: 8300000, guid: 2a80515effe4e18439794257b7368a02, type: 3}
+  - {fileID: 8300000, guid: 460b063dda1bb0845a163daedac3bc14, type: 3}
+  - {fileID: 8300000, guid: e86d4e8ff9b26324a841cd7848f90eb3, type: 3}
+  - {fileID: 8300000, guid: 2a988d225f4b7eb4493c187960d73bae, type: 3}
+  FootstepClips:
+  - {fileID: 8300000, guid: d739b742f6d68b34f9f608bd72746283, type: 3}
+  - {fileID: 8300000, guid: 97503beb8d113184c813aec24c968994, type: 3}
+  - {fileID: 8300000, guid: 48135b65d32357c48a69ab96a20a138b, type: 3}
+  - {fileID: 8300000, guid: 7f5a78b46ce555f4f9b865091830e012, type: 3}
+  - {fileID: 8300000, guid: ac850184d08a3a44f980d328342a2573, type: 3}
+  - {fileID: 8300000, guid: 47c9f80fab60e05478da8c02a5f3d804, type: 3}
+  - {fileID: 8300000, guid: 688bf080feefd47439adf609a5db6763, type: 3}
+  - {fileID: 8300000, guid: db5fb08ba5d1b8649b27b83a3a27522e, type: 3}
+  DyingClip: {fileID: 8300000, guid: ff944d5be8aa7914488f0d0953710cc4, type: 3}
