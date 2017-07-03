@@ -22,21 +22,20 @@ namespace ZonkaZombies.Characters.Enemy.EnemyIA.General
 
         private void OnEnable()
         {
-            if (!GenericEnemy.IsAlive)
-            {
-                ChangeBehavior(EEnemyBehavior.Die);
-                return;
-            }
-
             AudioManager.Instance.Play(GenericEnemy.EnemyDetails.GotHitClip);
-
-            GenericEnemy.Animator.SetTrigger(EnemyAnimatorParameters.TAKE_DAMAGE);
 
             if (_damageParticleSystem != null)
             {
                 _damageParticleSystem.Play();
             }
 
+            if (!GenericEnemy.IsAlive)
+            {
+                ChangeBehavior(EEnemyBehavior.Die);
+                return;
+            }
+            
+            GenericEnemy.Animator.SetTrigger(EnemyAnimatorParameters.TAKE_DAMAGE);
             ChangeBehavior(EEnemyBehavior.Pursuit);
 
         }
