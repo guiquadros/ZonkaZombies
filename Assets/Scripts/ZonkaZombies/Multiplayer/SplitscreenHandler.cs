@@ -106,7 +106,7 @@ namespace ZonkaZombies.Multiplayer
             get { return (_firstPlayer ? 1 : 0) + (_secondPlayer ? 1 : 0); }
         }
 
-        private void OnEnable()
+        private void Start()
         {
             MessageRouter.AddListener<OnPlayerHasBornMessage>(OnPlayerHasBornMessageCallback);
             MessageRouter.AddListener<OnPlayerSpawnMessage>(OnPlayerHasBornMessageCallback);
@@ -115,7 +115,7 @@ namespace ZonkaZombies.Multiplayer
             SceneController.Instance.AfterSceneLoad += OnAfterSceneLoad;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             MessageRouter.RemoveListener<OnPlayerHasBornMessage>(OnPlayerHasBornMessageCallback);
             MessageRouter.RemoveListener<OnPlayerSpawnMessage>(OnPlayerHasBornMessageCallback);

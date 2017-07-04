@@ -11,6 +11,12 @@ namespace ZonkaZombies.Scenery
 {
     public class TransparencyHandler : MonoBehaviour
     {
+        [SerializeField]
+        private Shader _transparentShader;
+
+        [SerializeField]
+        private Shader _standardShader;
+        
         public List<Transform> cameras;
         public List<Transform> players;
 
@@ -100,14 +106,18 @@ namespace ZonkaZombies.Scenery
                 for (var j = 0; j < obj.objectRenderers.Count; j++)
                 {
                     Renderer render = obj.objectRenderers[j];
-                    render.material.SetFloat("_Mode", 0f);
-                    render.material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.One);
-                    render.material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.Zero);
-                    render.material.SetInt("_ZWrite", 1);
-                    render.material.DisableKeyword("_ALPHATEST_ON");
-                    render.material.DisableKeyword("_ALPHABLEND_ON");
-                    render.material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-                    render.material.renderQueue = -1;
+
+                    //render.material.SetFloat("_Mode", 0f);
+                    //render.material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.One);
+                    //render.material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.Zero);
+                    //render.material.SetInt("_ZWrite", 1);
+                    //render.material.DisableKeyword("_ALPHATEST_ON");
+                    //render.material.DisableKeyword("_ALPHABLEND_ON");
+                    //render.material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                    //render.material.renderQueue = -1;
+
+                    render.material.shader = _standardShader;
+
                     render.material.color = new Color(render.material.color.r, render.material.color.g, render.material.color.b, 1f);
                 }
             }
@@ -119,14 +129,18 @@ namespace ZonkaZombies.Scenery
                 for (var j = 0; j < obj.objectRenderers.Count; j++)
                 {
                     Renderer render = obj.objectRenderers[j];
-                    render.material.SetFloat("_Mode", 3f);
-                    render.material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.One);
-                    render.material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-                    render.material.SetInt("_ZWrite", 0);
-                    render.material.DisableKeyword("_ALPHATEST_ON");
-                    render.material.DisableKeyword("_ALPHABLEND_ON");
-                    render.material.EnableKeyword("_ALPHAPREMULTIPLY_ON");
-                    render.material.renderQueue = 3000;
+
+                    //render.material.SetFloat("_Mode", 3f);
+                    //render.material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.One);
+                    //render.material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                    //render.material.SetInt("_ZWrite", 0);
+                    //render.material.DisableKeyword("_ALPHATEST_ON");
+                    //render.material.DisableKeyword("_ALPHABLEND_ON");
+                    //render.material.EnableKeyword("_ALPHAPREMULTIPLY_ON");
+                    //render.material.renderQueue = 3000;
+                    
+                    render.material.shader = _transparentShader;
+
                     render.material.color = new Color(render.material.color.r, render.material.color.g,
                         render.material.color.b, 0.05f);
                 }

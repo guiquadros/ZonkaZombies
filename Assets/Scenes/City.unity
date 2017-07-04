@@ -37179,6 +37179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97ed702ca538a041809f159f17a079c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transparentShader: {fileID: 34, guid: 0000000000000000f000000000000000, type: 0}
+  _standardShader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   cameras: []
   players: []
   newCollisions: []
